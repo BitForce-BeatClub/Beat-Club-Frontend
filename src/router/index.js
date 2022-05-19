@@ -23,9 +23,19 @@ const router = createRouter({
       component: () => import("../beat-club/pages/song-list.component.vue"),
     },
     {
-      path: "/sign-in",
+      path: "/sign-in-",
       name: "sign-in",
       component: () => import("../beat-club/pages/sign-in.component.vue"),
+    },
+    {
+      path: "/sign-up-",
+      name: "sign-up",
+      component: () => import("../beat-club/pages/sign-up.component.vue"),
+    },
+    {
+      path: "/sign-up-form-",
+      name: "sign-up-form",
+      component: () => import("../beat-club/pages/sign-up.component.vue"),
     },
     /* {
       path: "/about",
