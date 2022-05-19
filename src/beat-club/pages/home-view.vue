@@ -3,7 +3,10 @@
     <div class="container slogan">
       <span> the </span>
       <span> world’s #1 </span>
-      <span> platform for <br> music production </span>
+      <span>
+        platform for <br />
+        music production
+      </span>
       <img src="../../assets/background.png" alt="banner" />
     </div>
     <song-card-list></song-card-list>

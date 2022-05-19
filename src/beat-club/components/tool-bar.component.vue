@@ -14,7 +14,7 @@
     <template #end>
       <div class="flex-column">
         <router-link
-          v-for="item in items"
+          v-for="item in label"
           :to="item.to"
           custom
           v-slot="{ navigate, href }"
@@ -24,8 +24,35 @@
             class="p-button-text text-white font-poppins"
             :href="href"
             @click="navigate"
-            >{{ item.label }}</pv-button
           >
+            <div v-if="!open">
+              {{ item.label }}
+            </div>
+            <div v-else>
+              {{ item.label }}
+            </div>
+          </pv-button>
+        </router-link>
+        <router-link
+          v-for="item in logged"
+          :to="item.to"
+          custom
+          v-slot="{ navigate, href }"
+          :key="item.label"
+        >
+          <pv-button
+            class="p-button-text text-white font-poppins"
+            :href="href"
+            @click="navigate"
+            @click.once="open = !open"
+          >
+            <div v-if="!open">
+              {{ item.label }}
+            </div>
+            <div v-else>
+              {{ item.label }}
+            </div>
+          </pv-button>
         </router-link>
       </div>
     </template>
@@ -43,7 +70,39 @@ export default {
         { label: "Sign Up", to: "/profile" },
         { label: "Start Collaborating", to: "/songs" },
       ],
+      access: [
+        { label: "Hi user", to: "/" },
+        { label: "Message", to: "/profile" },
+        { label: "Creator Hub", to: "/" },
+        { label: "Upload", to: "/songs" },
+      ],
+      login: [{ label: "Log in", to: "/profile" }],
+      logout: [{ label: "Log out", to: "/" }],
+      text: "Accede a tu cuenta",
+      open: false,
+      username: "",
     };
+  },
+  watch: {
+    // open(value) {
+    //   if (value) {
+    //     this.text = "Cierra sesión";
+    //   } else {
+    //     this.text = "Accede a tu cuenta";
+    //     this.username = "";
+    //   }
+    // },
+  },
+  computed: {
+    label() {
+      return this.open ? this.access : this.items;
+    },
+    logged() {
+      return this.open ? this.logout : this.login;
+    },
+    styles() {
+      return this.open ? ["open"] : ["closed"];
+    },
   },
 };
 </script>
