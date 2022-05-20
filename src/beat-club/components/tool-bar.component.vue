@@ -6,10 +6,6 @@
           <img src="../../assets/logo.svg" alt="logo" />
         </router-link>
       </div>
-      <span class="p-input-icon-right">
-        <i class="pi pi-search" />
-        <InputText type="text" placeholder="Search" />
-      </span>
     </template>
     <template #end>
       <div class="flex-column">
@@ -25,33 +21,13 @@
             :href="href"
             @click="navigate"
           >
-            <div v-if="!open">
+            <span v-if="!loggedIn">
               {{ item.label }}
-            </div>
-            <div v-else>
+            </span>
+            <span v-else>
               {{ item.label }}
-            </div>
-          </pv-button>
-        </router-link>
-        <router-link
-          v-for="item in logged"
-          :to="item.to"
-          custom
-          v-slot="{ navigate, href }"
-          :key="item.label"
-        >
-          <pv-button
-            class="p-button-text text-white font-poppins"
-            :href="href"
-            @click="navigate"
-            @click.once="open = !open"
-          >
-            <div v-if="!open">
-              {{ item.label }}
-            </div>
-            <div v-else>
-              {{ item.label }}
-            </div>
+              <pv-button @click="logOut">Sign out</pv-button>
+            </span>
           </pv-button>
         </router-link>
       </div>
@@ -60,6 +36,8 @@
 </template>
 
 <script>
+import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
+
 export default {
   name: "tool-bar",
   data() {
@@ -76,39 +54,35 @@ export default {
         { label: "Creator Hub", to: "/" },
         { label: "Upload", to: "/songs" },
       ],
-      login: [{ label: "Log in", to: "/profile" }],
-      logout: [{ label: "Log out", to: "/" }],
-      text: "Accede a tu cuenta",
-      open: false,
-      username: "",
+      loggedIn: false,
     };
   },
-  watch: {
-    // open(value) {
-    //   if (value) {
-    //     this.text = "Cierra sesión";
-    //   } else {
-    //     this.text = "Accede a tu cuenta";
-    //     this.username = "";
-    //   }
-    // },
+
+  created() {
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const uid = user.uid;
+        console.log("usuario conectado", uid);
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        // ...
+      } else {
+        console.log("usuario no esta conectado");
+        // User is signed out
+        // ...
+      }
+    });
   },
   computed: {
     label() {
       return this.open ? this.access : this.items;
-    },
-    logged() {
-      return this.open ? this.logout : this.login;
-    },
-    styles() {
-      return this.open ? ["open"] : ["closed"];
     },
   },
 };
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Rajdhani&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 .logo img {

@@ -219,7 +219,6 @@ export default {
       this.songs.forEach((challenge) =>
         this.getDisplayableChallenge(challenge)
       );
-      console.log(this.songs);
     });
     this.initFilters();
   },

@@ -2,76 +2,102 @@
   <div>
     <div v-if="error" class="error">{{ error.message }}}</div>
     <form @submit.prevent="loginWithEmail">
-      Register
+      Login
       <div class="email">
-        <input type="email" v-model="email" placeholder="email" />
+        <span class="p-input-icon-left">
+          <i class="pi pi-envelope"></i>
+          <p-inputtext
+            type="text"
+            v-model="email"
+            placeholder="Email"
+          ></p-inputtext
+          ><br />
+          <span v-if="msg.email">{{ msg.email }}</span>
+        </span>
       </div>
+
       <div class="password">
-        <input type="password" v-model="password" placeholder="password" />
+        <p-password
+          v-model="password"
+          toggle-mask
+          placeholder="password"
+          :feedback="false"
+        ></p-password
+        ><br />
+        <span v-if="msg.password">{{ msg.password }}</span>
       </div>
-      <button type="submit">Register</button>
+      <pv-button
+        type="submit"
+        label="Login"
+        class="p-button-raised p-button-secondary p-button-text"
+      />
     </form>
     <form @submit.prevent="loginWithGoogle">
-      <button type="submit">Login with Google</button>
-    </form>
-    <form @submit.prevent="logOut">
-      <button type="submit">logOut</button>
+      <pv-button
+        type="submit"
+        label="Login With Google"
+        class="p-button-raised p-button-secondary p-button-text"
+      />
     </form>
   </div>
 </template>
 
 <script>
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signOut,
-} from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 export default {
-  name: "SignIn",
+  name: "sign-in",
+  watch: {
+    email(value) {
+      // binding this to the data value in the email input
+      this.email = value;
+      this.validateEmail(value);
+    },
+    password(value) {
+      this.password = value;
+      this.validatePassword(value);
+    },
+  },
   methods: {
+    validateEmail(value) {
+      if (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
+        this.msg["email"] = "";
+      } else {
+        this.msg["email"] = "Invalid Email Address";
+      }
+    },
+    validatePassword(value) {
+      if (value.length > 0 && value.length < 8) {
+        this.msg["password"] = "Must be 8 characters! ";
+      } else {
+        this.msg["password"] = "";
+      }
+    },
+
     loginWithEmail() {
       const auth = getAuth();
-      createUserWithEmailAndPassword(auth, this.email, this.password)
+      signInWithEmailAndPassword(auth, this.email, this.password)
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log(user);
-          this.$router.replace({ name: "SongList" });
+
           // ...
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          console.log(errorCode);
-          console.log(errorMessage);
-          // ..
         });
     },
     loginWithGoogle() {
       const auth = getAuth();
       const provider = new GoogleAuthProvider();
       signInWithPopup(auth, provider)
-        .then((result) => {
-          // This gives you a Google Access Token. You can use it to access the Google API.
-          const credential = GoogleAuthProvider.credentialFromResult(result);
-          const token = credential.accessToken;
-          // The signed-in user info.
-          const user = result.user;
+        .then(() => {
           this.$router.replace({ name: "SongList" });
-
-          // ...
         })
         .catch((error) => {
-          // Handle Errors here.
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          // The email of the user's account used.
           const email = error.email;
           console.log(email);
-          // The AuthCredential type that was used.
-          const credential = GoogleAuthProvider.credentialFromError(error);
-          // ...
         });
     },
     logOut() {
@@ -93,6 +119,11 @@ export default {
       email: "",
       password: "",
       error: "",
+      msg: [],
+      emailRules: [
+        (v) => !!v || "Email is required",
+        (v) => /.+@.+/.test(v) || "E-mail must be valid",
+      ],
     };
   },
 };

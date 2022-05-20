@@ -1,110 +1,132 @@
 <template>
-  <div class="login">
-    <h1 class="title"><img src="../../assets/logo.svg" alt="logo" /></h1>
-    <h1 class="title">Sign up to Cotinue</h1>
-    <form action class="form">
-      <label class="form-label" for="#email"
-        >Create a BeatClub account & start collaborating!</label
-      >
-      <input
-        class="form-input"
-        type="email"
-        id="email"
-        required
-        placeholder="Sing Up with Email"
-      />
+  <div>
+    <div v-if="error" class="error">{{ error.message }}}</div>
+    <form @submit.prevent="registerWithEmail">
+      Register
+      <div class="email">
+        <span class="p-input-icon-left">
+          <i class="pi pi-envelope"></i>
+          <p-inputtext
+            type="text"
+            v-model="email"
+            placeholder="Email"
+          ></p-inputtext
+          ><br />
+          <span v-if="msg.email">{{ msg.email }}</span>
+        </span>
+      </div>
 
-      <h1></h1>
-      <p>-------------------------------or------------------------------</p>
-      <input class="form-submit2" type="submit" value="Sign Up With Google" />
-      <h1></h1>
-      <p>
-        Already have an account?<p-btn
-          @click.prevent="login"
-          block
-          color="primary"
-          ><router-link to="/sign-in-" class="text-warning">
-            Sign in
-          </router-link></p-btn
-        >
-      </p>
+      <div class="password">
+        <p-password
+          v-model="password"
+          toggle-mask
+          placeholder="password"
+          :feedback="false"
+        ></p-password
+        ><br />
+        <span v-if="msg.password">{{ msg.password }}</span>
+      </div>
+      <pv-button
+        type="submit"
+        label="Register"
+        class="p-button-raised p-button-secondary p-button-text"
+      />
+    </form>
+    <form @submit.prevent="logOut">
+      <pv-button
+        type="submit"
+        label="LogOut"
+        class="p-button-raised p-button-secondary p-button-text"
+      />
     </form>
   </div>
 </template>
 
 <script>
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signOut,
+} from "firebase/auth";
 export default {
   name: "sign-up",
+  watch: {
+    email(value) {
+      // binding this to the data value in the email input
+      this.email = value;
+      this.validateEmail(value);
+    },
+    password(value) {
+      this.password = value;
+      this.validatePassword(value);
+    },
+  },
+  methods: {
+    validateEmail(value) {
+      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
+        this.msg["email"] = "";
+      } else {
+        this.msg["email"] = "Invalid Email Address";
+      }
+    },
+    validatePassword(value) {
+      // let difference = 8 - value.length;
+      if (value.length > 0 && value.length < 8) {
+        this.msg["password"] = "Must be 8 characters! ";
+        // + difference + " characters left";
+      } else {
+        this.msg["password"] = "";
+      }
+    },
+    registerWithEmail() {
+      const auth = getAuth();
+      createUserWithEmailAndPassword(auth, this.email, this.password)
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          console.log(user);
+          this.$router.replace({ name: "SongList" });
+          // ...
+        })
+        .catch((error) => {
+          this.error = error;
+          const errorCode = this.error.code;
+          const errorMessage = this.error.message;
+          console.log(errorCode);
+          console.log(errorMessage);
+          // ..
+        });
+    },
+    logOut() {
+      const auth = getAuth();
+      signOut(auth)
+        .then(() => {
+          console.log(auth);
+          this.$router.replace({ name: "HomeView" });
+
+          // Sign-out successful.
+        })
+        .catch((error) => {
+          this.error = error;
+          console.log(this.error);
+          // An error happened.
+        });
+    },
+  },
+  data() {
+    return {
+      email: "",
+      password: "",
+      error: "",
+      msg: [],
+    };
+  },
 };
 </script>
 
-<style lang="scss" scoped>
-.login {
-  padding: 7rem;
-  background: black;
-}
-.login img {
-  width: 30%;
-  justify-content: center;
-}
-.title {
-  text-align: center;
-  color: yellow;
-}
-.form {
-  margin: 3rem auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 40%;
-  min-width: 350px;
-  max-width: 200%;
-  background: rgba(19, 35, 47, 0.9);
-  border-radius: 5px;
-  padding: 40px;
-  box-shadow: 0 4px 10px 4px rgba(0, 0, 0, 0.3);
-}
-.form-label {
-  margin-top: 2rem;
-  color: white;
-  margin-bottom: 2rem;
-  &:first-of-type {
-    margin-top: 0rem;
-  }
-}
-.form-input {
-  padding: 10px 15px;
-  background: #3c3f41;
-  background-image: none;
-  border: 1px solid white;
-  color: white;
-  &:focus {
-    outline: 0;
-    border-color: #1ab188;
-  }
-}
-.form-submit {
-  background: #1a29b1;
-  border: none;
-  color: white;
-  margin-top: 3rem;
-  padding: 1rem 0;
-  cursor: pointer;
-  transition: background 0.2s;
-  &:hover {
-    background: #0b9185;
-  }
-}
-.form-submit2 {
-  background: #53c8d5;
-  border: none;
-  color: white;
-  margin-top: 3rem;
-  padding: 1rem 0;
-  cursor: pointer;
-  transition: background 0.2s;
-  &:hover {
-    background: #0b9185;
-  }
+<style>
+.error {
+  color: red;
+  font-size: 18px;
 }
 </style>
