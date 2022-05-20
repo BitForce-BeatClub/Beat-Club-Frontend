@@ -1,23 +1,36 @@
 <template>
-  <div class="login" >
+  <div class="login">
     <h1 class="title"><img src="../../assets/logo.svg" alt="logo" /></h1>
     <h1 class="title">Sign up to Cotinue</h1>
     <form action class="form">
-      <label class="form-label" for="#email">Create a BeatClub account & start collaborating!</label>
-      <input  class="form-input" type="email" id="email" required placeholder="Sing Up with Email">
+      <label class="form-label" for="#email"
+        >Create a BeatClub account & start collaborating!</label
+      >
+      <input
+        class="form-input"
+        type="email"
+        id="email"
+        required
+        placeholder="Sing Up with Email"
+      />
 
       <h1></h1>
       <p>-------------------------------or------------------------------</p>
-      <input class="form-submit2" type="submit" value="Sign Up With Google">
+      <input class="form-submit2" type="submit" value="Sign Up With Google" />
       <h1></h1>
-      <p>Already have an account?<p-btn @click.prevent="login" block color="primary"><router-link to="/sign-in-" class="text-warning" >
-        Sign in
-      </router-link></p-btn> </p>
+      <p>
+        Already have an account?<p-btn
+          @click.prevent="login"
+          block
+          color="primary"
+          ><router-link to="/sign-in-" class="text-warning">
+            Sign in
+          </router-link></p-btn
+        >
+      </p>
     </form>
   </div>
 </template>
-
-
 
 <script>
 export default {
@@ -26,11 +39,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .login {
   padding: 7rem;
   background: black;
-
 }
 .login img {
   width: 30%;

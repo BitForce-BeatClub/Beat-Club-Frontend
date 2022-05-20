@@ -66,8 +66,8 @@ export default {
     return {
       drawer: false,
       items: [
-        { label: "Sign In", to: "/sign-in-" },
-        { label: "Sign Up", to: "/sign-up-" },
+        { label: "Sign In", to: "/sign-in" },
+        { label: "Sign Up", to: "/sign-up" },
         { label: "Start Collaborating", to: "/songs" },
       ],
       access: [
