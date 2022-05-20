@@ -8,7 +8,7 @@ export default {
 };
 </script>
 
-<template  class="background">
+<template class="background">
   <tool-bar-component></tool-bar-component>
   <RouterView></RouterView>
 </template>
@@ -17,8 +17,7 @@ export default {
 * {
   margin: 0;
 }
-.background{
-  background: #0d1b29 ;
-
+.background {
+  background: #0d1b29;
 }
 </style>
