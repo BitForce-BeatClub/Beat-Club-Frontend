@@ -4,6 +4,8 @@ import router from "./router";
 import PrimeVue from "primevue/config";
 import ToastService from "primevue/toastservice";
 import firebase from "firebase/compat";
+import DisableAutocomplete from "@aacassandra/vue-disable-autocomplete";
+
 // PrimeVue Styles
 import "primevue/resources/themes/md-light-indigo/theme.css";
 import "primevue/resources/primevue.min.css";
@@ -25,14 +27,8 @@ import Dropdown from "primevue/dropdown";
 import InputNumber from "primevue/inputnumber";
 import Password from "primevue/password";
 import InputText from "primevue/inputtext";
-
-// PrimeVue Styles
-import "primevue/resources/themes/md-light-indigo/theme.css";
-import "primevue/resources/primevue.min.css";
-import "primeicons/primeicons.css";
-// PrimeFlex Companion
-import "primeflex/primeflex.css";
-
+import Calendar from "primevue/calendar";
+import Checkbox from "primevue/checkbox";
 const firebaseConfig = {
   apiKey: "AIzaSyB5_Hqojo_tJCludylcYIY16R7If-dfFAo",
   authDomain: "beatclub-45762.firebaseapp.com",
@@ -54,6 +50,7 @@ firebase.auth().onAuthStateChanged((user) => {
     app.use(router);
     app.use(PrimeVue, { ripple: true });
     app.use(ToastService);
+    app.use(DisableAutocomplete);
     // PrimeVue Components
     app.component("pv-data-table", DataTable);
     app.component("pv-column", Column);
@@ -68,8 +65,9 @@ firebase.auth().onAuthStateChanged((user) => {
     app.component("pv-tag", Tag);
     app.component("pv-card", Card);
     app.component("InputNumber", InputNumber);
-    app.component("p-password", Password);
-    app.component("p-inputtext", InputText);
+    app.component("pv-password", Password);
+    app.component("pv-calendar", Calendar);
+    app.component("pv-checkbox", Checkbox);
     app.mount("#app");
   }
 });

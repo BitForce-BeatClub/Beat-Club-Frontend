@@ -1,44 +1,53 @@
 <template>
-  <div>
-    <div v-if="error" class="error">{{ error.message }}}</div>
-    <form @submit.prevent="loginWithEmail">
-      Login
-      <div class="email">
-        <span class="p-input-icon-left">
-          <i class="pi pi-envelope"></i>
-          <p-inputtext
-            type="text"
-            v-model="email"
-            placeholder="Email"
-          ></p-inputtext
-          ><br />
-          <span v-if="msg.email">{{ msg.email }}</span>
-        </span>
-      </div>
+  <div class="grid">
+    <div class="col-12 md:col-6 lg:col-3">
+      <img
+        src="https://github.com/BitForce-BeatClub/LandingPage/blob/main/img/logo.png?raw=true"
+        alt="beat-club-logo"
+      />
+    </div>
+  </div>
+  <div class="field-grid">
+    <div class="col-fixed" style="width: 80%">
+      <div v-if="error" class="error">{{ error.message }}}</div>
+      <form @submit.prevent="loginWithEmail">
+        <div class="email">
+          <span class="p-input-icon-right">
+            <i class="pi pi-envelope"></i>
+            <pv-input-text
+              type="text"
+              v-model="email"
+              placeholder="Email"
+            ></pv-input-text
+            ><br />
+            <span v-if="msg.email">{{ msg.email }}</span>
+          </span>
+        </div>
 
-      <div class="password">
-        <p-password
-          v-model="password"
-          toggle-mask
-          placeholder="password"
-          :feedback="false"
-        ></p-password
-        ><br />
-        <span v-if="msg.password">{{ msg.password }}</span>
-      </div>
-      <pv-button
-        type="submit"
-        label="Login"
-        class="p-button-raised p-button-secondary p-button-text"
-      />
-    </form>
-    <form @submit.prevent="loginWithGoogle">
-      <pv-button
-        type="submit"
-        label="Login With Google"
-        class="p-button-raised p-button-secondary p-button-text"
-      />
-    </form>
+        <div class="password">
+          <pv-password
+            v-model="password"
+            toggle-mask
+            placeholder="password"
+            :feedback="false"
+          ></pv-password
+          ><br />
+          <span v-if="msg.password">{{ msg.password }}</span>
+        </div>
+        <div class="col-fixed" style="width: 100%">
+          <pv-button class="btn-width" type="submit" label="Login" />
+        </div>
+      </form>
+      <form @submit.prevent="loginWithGoogle">
+        <div class="col-fixed" style="width: 100%">
+          <pv-button
+            class="btn-width"
+            type="submit"
+            label="Login With Google"
+          />
+        </div>
+      </form>
+    </div>
   </div>
 </template>
 
@@ -133,5 +142,8 @@ export default {
 .error {
   color: red;
   font-size: 18px;
+}
+.btn-width {
+  min-width: 100% !important;
 }
 </style>

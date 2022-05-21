@@ -6,23 +6,23 @@
       <div class="email">
         <span class="p-input-icon-left">
           <i class="pi pi-envelope"></i>
-          <p-inputtext
+          <pv-input-text
             type="text"
             v-model="email"
             placeholder="Email"
-          ></p-inputtext
+          ></pv-input-text
           ><br />
           <span v-if="msg.email">{{ msg.email }}</span>
         </span>
       </div>
 
       <div class="password">
-        <p-password
+        <pv-password
           v-model="password"
           toggle-mask
           placeholder="password"
           :feedback="false"
-        ></p-password
+        ></pv-password
         ><br />
         <span v-if="msg.password">{{ msg.password }}</span>
       </div>

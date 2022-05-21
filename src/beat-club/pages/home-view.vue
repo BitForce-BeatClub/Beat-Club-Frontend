@@ -25,9 +25,9 @@ export default {
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-.background {
-  background: #0e1315;
-}
+/*.background {*/
+/*  background: #0e1315;*/
+/*}*/
 
 .slogan span {
   font-family: "Bebas Neue", cursive;
