@@ -1,31 +1,31 @@
 <template>
-  <div class="background">
-    <div class="container slogan">
-      <span> the </span>
-      <span> world’s #1 </span>
-      <span>
-        platform for <br />
-        music production
-      </span>
-      <img src="../../assets/background.png" alt="banner" />
-    </div>
-    <h1>Trending Tracks</h1>
+  <div class="containers">
+    <h1 align="left">Spotlight</h1>
     <song-card-list></song-card-list>
-    <user-card-list></user-card-list>
+
   </div>
+
+  <div class="containers">
+    <producer-card-list></producer-card-list>
+  </div>
+
 </template>
 
 <script>
 import SongCardList from "../components/song-card/song-card-list.component.vue";
-import UserCardList from "../components/user-card/user-card-list.component.vue";
+import ProducerCardList from "../components/producer-card/producer-card-list.component.vue";
 export default {
-  name: "home-view",
-  components: { UserCardList, SongCardList },
+  name: "user-view",
+  components: { ProducerCardList, SongCardList },
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+.containers {
+  width: 100%;
+  background: #0e1315;
+}
 .background {
   background: #0e1315;
 }

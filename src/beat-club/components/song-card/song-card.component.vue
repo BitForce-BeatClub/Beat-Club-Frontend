@@ -7,7 +7,6 @@
       <template #content>
         {{ songData.title }}
         <p>{{ songData.description }}</p>
-        <p>{{ songData.userId }}</p>
       </template>
     </pv-card>
   </div>
