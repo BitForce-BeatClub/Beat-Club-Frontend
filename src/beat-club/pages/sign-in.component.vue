@@ -9,7 +9,6 @@
   </div>
   <div class="field-grid">
     <div class="col-fixed" style="width: 80%">
-      <div v-if="error" class="error">{{ error.message }}}</div>
       <form @submit.prevent="loginWithEmail">
         <div class="email">
           <span class="p-input-icon-right">
@@ -34,9 +33,12 @@
           ><br />
           <span v-if="msg.password">{{ msg.password }}</span>
         </div>
+        <div v-if="error" class="error">{{ error.slice(9) }}</div>
+
         <div class="col-fixed" style="width: 100%">
           <pv-button class="btn-width" type="submit" label="Login" />
         </div>
+
       </form>
       <form @submit.prevent="loginWithGoogle">
         <div class="col-fixed" style="width: 100%">
@@ -45,6 +47,11 @@
             type="submit"
             label="Login With Google"
           />
+        </div>
+      </form>
+      <form @submit.prevent="logOut">
+        <div class="col-fixed" style="width: 100%">
+          <pv-button class="btn-width" type="submit" label="Logout" />
         </div>
       </form>
     </div>
@@ -67,6 +74,18 @@ export default {
       this.validatePassword(value);
     },
   },
+  data() {
+    return {
+      email: "",
+      password: "",
+      error: "",
+      msg: [],
+      emailRules: [
+        (v) => !!v || "Email is required",
+        (v) => /.+@.+/.test(v) || "E-mail must be valid",
+      ],
+    };
+  },
   methods: {
     validateEmail(value) {
       if (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
@@ -82,7 +101,6 @@ export default {
         this.msg["password"] = "";
       }
     },
-
     loginWithEmail() {
       const auth = getAuth();
       signInWithEmailAndPassword(auth, this.email, this.password)
@@ -94,7 +112,8 @@ export default {
         })
         .catch((error) => {
           const errorCode = error.code;
-          const errorMessage = error.message;
+          // const errorMessage =error.message
+          this.error = error.message;
         });
     },
     loginWithGoogle() {
@@ -122,18 +141,6 @@ export default {
           // An error happened.
         });
     },
-  },
-  data() {
-    return {
-      email: "",
-      password: "",
-      error: "",
-      msg: [],
-      emailRules: [
-        (v) => !!v || "Email is required",
-        (v) => /.+@.+/.test(v) || "E-mail must be valid",
-      ],
-    };
   },
 };
 </script>
