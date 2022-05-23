@@ -1,5 +1,5 @@
 <template>
-  <pv-toolbar style="background-color: #0d1b29; border-radius: 0">
+  <pv-toolbar>
     <template #start>
       <div class="logo">
         <router-link to="/">
@@ -8,35 +8,53 @@
       </div>
     </template>
     <template #end>
-      <div class="flex-column">
-        <router-link
-          v-for="item in label"
-          :to="item.to"
-          custom
-          v-slot="{ navigate, href }"
-          :key="item.label"
-        >
-          <pv-button
-            class="p-button-text text-white font-poppins"
-            :href="href"
-            @click="navigate"
+      <div v-if="!isConnected">
+        <div class="flex-column">
+          <router-link
+            v-for="item in items"
+            :to="item.to"
+            custom
+            v-slot="{ navigate, href }"
+            :key="item.label"
           >
-            <span v-if="!loggedIn">
+            <pv-button
+              class="p-button-text text-white font-poppins"
+              :href="href"
+              @click="navigate"
+            >
               {{ item.label }}
-            </span>
-            <span v-else>
+            </pv-button>
+          </router-link>
+        </div>
+      </div>
+      <div v-else>
+        <div class="grid">
+          <router-link
+            v-for="item in access"
+            :to="item.to"
+            custom
+            v-slot="{ navigate, href }"
+            :key="item.label"
+          >
+            <pv-button
+              class="p-button-text text-white font-poppins"
+              :href="href"
+              @click="navigate"
+            >
               {{ item.label }}
-              <pv-button @click="logOut">Sign out</pv-button>
-            </span>
-          </pv-button>
-        </router-link>
+            </pv-button>
+          </router-link>
+          <form @submit.prevent="logOut">
+            <pv-button class="btn-width" type="submit" label="Logout" />
+          </form>
+        </div>
       </div>
     </template>
   </pv-toolbar>
 </template>
 
 <script>
-import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
+import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 
 export default {
   name: "tool-bar",
@@ -55,36 +73,52 @@ export default {
         { label: "Upload", to: "/songs" },
       ],
       loggedIn: false,
+      isConnected: false,
     };
+  },
+  methods: {
+    logOut() {
+      const auth = getAuth();
+      signOut(auth)
+        .then(() => {
+          this.isConnected = false;
+          console.log(auth);
+          this.$router.replace({ name: "HomeView" });
+          // Sign-out successful.
+        })
+        .catch((error) => {
+          console.log(error);
+          // An error happened.
+        });
+    },
   },
 
   created() {
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
-      if (user) {
+      this.isConnected = false;
+      try {
         const uid = user.uid;
         console.log("usuario conectado", uid);
-        // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/firebase.User
-        // ...
-      } else {
-        console.log("usuario no esta conectado");
-        // User is signed out
-        // ...
+        this.isConnected = true;
+      } catch (err) {
+        console.log("usuario no esta conectado", err);
       }
     });
   },
   computed: {
     label() {
-      return this.open ? this.access : this.items;
+      return this.loggedIn ? this.access : this.items;
     },
   },
 };
 </script>
 
-<style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-
+<style lang="scss" scoped>
+.p-toolbar {
+  background-color: #0d1b29;
+  border-radius: 0;
+}
 .logo img {
   width: 100%;
 }

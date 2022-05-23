@@ -13,9 +13,9 @@
         ></i>
         <h5>Registration Successful!</h5>
         <p :style="{ lineHeight: 1.5, textIndent: '1rem' }">
-          Your account is registered under name <b>{{ name }}</b> ; it'll be
-          valid next 30 days without activation. Please check
-          <b>{{ email }}</b> for activation instructions.
+          Your account is registered under name <b>{{ this.state.name }}</b> ;
+          it'll be valid next 30 days without activation. Please check
+          <b>{{ this.state.email }}</b> for activation instructions.
         </p>
       </div>
       <template #footer>
@@ -35,7 +35,6 @@
                 id="name"
                 v-model="v$.name.$model"
                 :class="{ 'p-invalid': v$.name.$invalid && submitted }"
-                autocomplete="off"
               />
               <label
                 for="name"
@@ -59,7 +58,6 @@
                 v-model="v$.email.$model"
                 :class="{ 'p-invalid': v$.email.$invalid && submitted }"
                 aria-describedby="email-error"
-                autocomplete="off"
               />
               <label
                 for="email"
@@ -130,6 +128,17 @@
               <label for="date">Birthday</label>
             </div>
           </div>
+          <div class="field">
+            <div class="p-float-label">
+              <pv-dropdown
+                id="country"
+                v-model="country"
+                :options="countries"
+                optionLabel="name"
+              />
+              <label for="country">Country</label>
+            </div>
+          </div>
           <div class="field-checkbox">
             <pv-checkbox
               id="accept"
@@ -152,67 +161,71 @@
 </template>
 
 <script>
+import { reactive, ref } from "vue";
 import { email, required } from "@vuelidate/validators";
 import { useVuelidate } from "@vuelidate/core";
 
 export default {
-  name: "test-sign-in",
-  setup: () => ({ v$: useVuelidate() }),
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       name: "",
       email: "",
       password: "",
-      date: null,
-      country: null,
       accept: null,
-      submitted: false,
-      showMessage: false,
-    };
-  },
-  validations() {
-    return {
-      name: {
-        required,
-      },
-      email: {
-        required,
-        email,
-      },
-      password: {
-        required,
-      },
-      accept: {
-        required,
-      },
-    };
-  },
+    });
 
-  methods: {
-    handleSubmit(isFormValid) {
-      this.submitted = true;
+    const rules = {
+      name: { required },
+      email: { required, email },
+      password: { required },
+      accept: { required },
+    };
+
+    const submitted = ref(false);
+    const countries = ref();
+    const showMessage = ref(false);
+    const date = ref();
+    const country = ref();
+
+    const v$ = useVuelidate(rules, state);
+
+    const handleSubmit = (isFormValid) => {
+      submitted.value = true;
 
       if (!isFormValid) {
         return;
       }
 
-      this.toggleDialog();
-    },
-    toggleDialog() {
-      this.showMessage = !this.showMessage;
+      toggleDialog();
+    };
+    const toggleDialog = () => {
+      showMessage.value = !showMessage.value;
 
-      if (!this.showMessage) {
-        this.resetForm();
+      if (!showMessage.value) {
+        resetForm();
       }
-    },
-    resetForm() {
-      this.name = "";
-      this.email = "";
-      this.password = "";
-      this.date = null;
-      this.accept = null;
-      this.submitted = false;
-    },
+    };
+    const resetForm = () => {
+      state.name = "";
+      state.email = "";
+      state.password = "";
+      state.date = null;
+      state.country = null;
+      state.accept = null;
+      submitted.value = false;
+    };
+
+    return {
+      state,
+      v$,
+      handleSubmit,
+      toggleDialog,
+      submitted,
+      countries,
+      showMessage,
+      date,
+      country,
+    };
   },
 };
 </script>

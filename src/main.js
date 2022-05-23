@@ -3,8 +3,8 @@ import App from "./App.vue";
 import router from "./router";
 import PrimeVue from "primevue/config";
 import ToastService from "primevue/toastservice";
-import firebase from "firebase/compat";
 import DisableAutocomplete from "@aacassandra/vue-disable-autocomplete";
+import firebase from "firebase/compat";
 
 // PrimeVue Styles
 import "primevue/resources/themes/md-light-indigo/theme.css";
@@ -29,6 +29,8 @@ import Password from "primevue/password";
 import InputText from "primevue/inputtext";
 import Calendar from "primevue/calendar";
 import Checkbox from "primevue/checkbox";
+import Divider from "primevue/divider";
+
 const firebaseConfig = {
   apiKey: "AIzaSyB5_Hqojo_tJCludylcYIY16R7If-dfFAo",
   authDomain: "beatclub-45762.firebaseapp.com",
@@ -42,9 +44,8 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 let app;
-
-firebase.auth().onAuthStateChanged((user) => {
-  console.log("user", user);
+firebase.auth().onAuthStateChanged(() => {
+  // console.log("user", user);
   if (!app) {
     app = createApp(App);
     app.use(router);
@@ -68,6 +69,7 @@ firebase.auth().onAuthStateChanged((user) => {
     app.component("pv-password", Password);
     app.component("pv-calendar", Calendar);
     app.component("pv-checkbox", Checkbox);
+    app.component("pv-divider", Divider);
     app.mount("#app");
   }
 });
