@@ -11,6 +11,10 @@ import UserProfile2 from "../beat-club/pages/user-profile-2.vue";
 
 import { getAuth } from "firebase/auth";
 
+
+import UserProfile3 from "../beat-club/pages/user-profile/user-profile-3.vue";
+import UserProfile4 from "../beat-club/pages/user-profile/user-profile-4.vue";
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -60,6 +64,18 @@ const router = createRouter({
       name: "user-profile-2",
       component: UserProfile2,
     },
+    {
+      path: "/user-profile-3",
+      name: "user-profile-3",
+      component: UserProfile3,
+    },
+    {
+      path: "/user-profile-4",
+      name: "user-profile-4",
+      component: UserProfile4,
+    },
+
+
   ],
 });
 router.beforeEach((to, from, next) => {
