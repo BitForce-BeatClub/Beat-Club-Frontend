@@ -49,6 +49,7 @@
                       v-model="password"
                       :feedback="false"
                       required="true"
+                      toggleMask
                     >
                     </pv-password>
                     <label for="title">Password*</label>
