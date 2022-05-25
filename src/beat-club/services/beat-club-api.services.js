@@ -1,15 +1,20 @@
 import http from "../../core/services/http-common";
 
 export class BeatClubApiServices {
-  getAll() {
+  getSongs() {
     return http.get("/songs");
   }
   getUsers() {
     return http.get("/users");
   }
-
   create(data) {
     return http.post("/songs", data);
+  }
+  createUsers(data) {
+    return http.post("/users", data);
+  }
+  getUsersById(id) {
+    return http.get(`/users/${id}`);
   }
   update(id, data) {
     return http.put(`/songs/${id}`, data);

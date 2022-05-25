@@ -2,19 +2,32 @@
   <div class="card">
     <div class="flex flex-column card-container">
       <div class="flex align-items-center justify-content-center">
-        <img style="padding-top: 10rem"
-          src="https://github.com/BitForce-BeatClub/LandingPage/blob/main/img/logo.png?raw=true"
+        <img
+          style="padding-top: 10rem"
+          src="../../assets/logo.png"
           alt="beat-club-logo"
         />
       </div>
       <div class="flex align-items-center justify-content-center">
-        <h1 style="padding-top: 2rem" class="center">Sign in to continue</h1>
+        <h1
+          style="
+            padding-top: 2rem;
+            color: #f5cb5c;
+            font-size: 48px;
+            font-family: 'Bebas Neue', sans-serif;
+          "
+          class="center"
+        >
+          Sign in to continue
+        </h1>
       </div>
       <div class="flex align-items-center justify-content-center">
         <div class="form">
           <pv-dialog
             v-model:visible="showMessage"
             :closable="false"
+            :modal="true"
+            :draggable="false"
             :breakpoints="{ '960px': '80vw' }"
             :style="{ width: '30vw' }"
             position="top"
@@ -40,12 +53,16 @@
                   textIndent: '1rem',
                 }"
               >
-                Your account is registered under <b>{{ this.email }}</b>
+                Your account is registered under name
+                <b>{{ user.nickName }}</b> ; it'll be valid next 30 days without
+                activation. Please check <b>{{ this.email }}</b> for activation
+                instructions.
               </p>
             </div>
             <template #footer>
               <div class="flex justify-content-center">
                 <pv-button
+                  style="color: black !important"
                   label="OK"
                   @click="toggleDialog"
                   class="p-button-text"
@@ -56,25 +73,78 @@
           <div class="flex justify-content-center">
             <div class="card">
               <form @submit.prevent="registerWithEmail()" class="p-fluid">
+                <div class="flex gap-3 mb-4">
+                  <section>
+                    <div class="p-float-label p-input-icon-right">
+                      <pv-input-text
+                        type="text"
+                        v-model="firstName"
+                        placeholder=""
+                        id="firstName"
+                        required="true"
+                        autofocus
+                        autocomplete="off"
+                      ></pv-input-text>
+                      <label for="title">First Name*</label>
+                    </div>
+                  </section>
+                  <section>
+                    <div class="p-float-label p-input-icon-right">
+                      <pv-input-text
+                        type="text"
+                        v-model="lastName"
+                        placeholder=""
+                        id="lastName"
+                        required="true"
+                        autofocus
+                        autocomplete="off"
+                      ></pv-input-text>
+                      <label for="title">Last Name*</label>
+                    </div>
+                  </section>
+                </div>
+
+                <!--Nickname-->
+                <div class="field">
+                  <div class="p-float-label p-input-icon-right">
+                    <i class="pi pi-user" />
+                    <pv-input-text
+                      type="text"
+                      v-model="nickname"
+                      placeholder=""
+                      id="nickName"
+                      required="true"
+                      autofocus
+                      autocomplete="off"
+                    ></pv-input-text>
+                    <label for="title">Nickname*</label>
+                  </div>
+                  <span v-if="msg.nickname">{{ msg.nickname }}</span>
+                </div>
+                <!--Email-->
                 <div class="field">
                   <div class="p-float-label p-input-icon-right">
                     <i class="pi pi-envelope" />
                     <pv-input-text
                       type="text"
                       v-model="email"
-                      placeholder="Email*"
+                      placeholder=""
+                      required="true"
                       autocomplete="off"
                     ></pv-input-text>
+                    <label for="title">Email*</label>
                   </div>
+
                   <span v-if="msg.email">{{ msg.email }}</span>
                 </div>
+                <!--Password-->
                 <div class="field">
                   <div class="p-float-label">
                     <pv-password
                       id="password"
                       v-model="password"
                       toggleMask
-                      placeholder="Password*"
+                      required="true"
                     >
                       <template #header>
                         <h6>Pick a password</h6>
@@ -94,6 +164,7 @@
                         </ul>
                       </template>
                     </pv-password>
+                    <label for="title">Password*</label>
                   </div>
                   <div v-if="isError" style="color: #fd334a">
                     <span> {{ msg.password }} </span>
@@ -102,9 +173,25 @@
                     <span> {{ errorMessage.slice(9) }} </span>
                   </div>
                 </div>
-
-                <pv-button type="submit" label="Sign in" class="mt-2 btn-color" />
+                <!--ButtonSignIn-->
+                <pv-button
+                  type="submit"
+                  label="Sign in"
+                  class="mt-2 btn-color"
+                />
               </form>
+              <div
+                style="padding-top: 2rem"
+                class="flex justify-content-center"
+              >
+                <span>Already have an account?</span>
+                <router-link
+                  style="text-decoration: none; color: inherit"
+                  to="/sign-in"
+                >
+                  <span style="color: #f5cb5c; padding-left: 5px">Sign In</span>
+                </router-link>
+              </div>
             </div>
           </div>
         </div>
@@ -116,17 +203,30 @@
 <script>
 import { ref } from "vue";
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import { BeatClubApiServices } from "../services/beat-club-api.services";
 export default {
   name: "sing-up",
-
+  created() {
+    this.usersService = new BeatClubApiServices();
+    this.usersService.getUsers().then((response) => {
+      this.users = response.data;
+      this.users.forEach((user) => this.getDisplayableChallenge(user));
+    });
+  },
   data() {
     return {
+      firstName: "",
+      lastName: "",
+      nickname: "",
       email: "",
       password: "",
       error: false,
       errorMessage: "",
       isError: false,
       msg: [],
+      users: [],
+      user: {},
+      usersService: null,
     };
   },
   setup() {
@@ -136,6 +236,10 @@ export default {
     };
   },
   watch: {
+    nickname(value) {
+      this.nickname = value;
+      this.validateNickname(value);
+    },
     email(value) {
       // binding this to the data value in the email input
       this.email = value;
@@ -147,11 +251,44 @@ export default {
     },
   },
   methods: {
+    getDisplayableChallenge(challenge) {
+      return challenge;
+    },
+    getStorableUser(displayableUser) {
+      return {
+        id: displayableUser.id,
+        firstName: (displayableUser.nickName = this.firstName),
+        LastName: (displayableUser.nickName = this.lastName),
+        nickName: (displayableUser.nickName = this.nickname),
+        email: (displayableUser.email = this.email),
+      };
+    },
+    saveUser(uid) {
+      this.user.id = uid;
+      this.user = this.getStorableUser(this.user);
+      this.usersService.createUsers(this.user).then((response) => {
+        this.user = this.getDisplayableChallenge(response.data);
+        this.users.push(this.user);
+        console.log(response.data.nickName);
+        console.log("aca", this.user.nickName);
+      });
+
+      this.user = {};
+    },
     validateEmail(value) {
       if (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
         this.msg["email"] = "";
       } else {
         this.msg["email"] = "Invalid Email Address";
+      }
+    },
+    validateNickname(value) {
+      if (value.length > 0 && value.length < 5) {
+        this.isError = true;
+        this.msg["nickname"] = "Must be 5 characters! ";
+      } else {
+        this.isError = false;
+        this.msg["nickname"] = "";
       }
     },
     validatePassword(value) {
@@ -171,7 +308,9 @@ export default {
           .then((userCredential) => {
             // Signed in
             const user = userCredential.user;
-            console.log(user);
+            user.displayName = this.nickname;
+            this.saveUser(user.uid);
+            // console.log("este es el uid del usuario: ", this.user.uid);
             this.showMessage = true;
             // this.$router.replace({ name: "SignIn" });
             // ...
@@ -204,7 +343,7 @@ export default {
       margin-bottom: 1.5rem;
     }
     .p-inputtext {
-      background: white !important;
+      background: #ffffff !important;
     }
   }
   @media screen and (max-width: 960px) {
@@ -215,7 +354,6 @@ export default {
 }
 pv-button {
   //background: #005FF9;
-
 }
 .center {
   display: flex;

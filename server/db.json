@@ -71,8 +71,7 @@
       "nickName": "Bizarrap",
       "urlToImage": "https://yt3.ggpht.com/ytc/AKedOLTz2_RRKmPM69Ib8ZgXVM21L5eSnZCmw5QrhukbIg=s900-c-k-c0x00ffffff-no-rj",
       "userType": "Producer"
-    }
-  ,
+    },
     {
       "id": 10,
       "firstName": "Gonzalo",
@@ -80,6 +79,13 @@
       "nickName": "Bizarrap",
       "urlToImage": "https://yt3.ggpht.com/ytc/AKedOLTz2_RRKmPM69Ib8ZgXVM21L5eSnZCmw5QrhukbIg=s900-c-k-c0x00ffffff-no-rj",
       "userType": "Producer"
+    },
+    {
+      "id": "jE4o1Lqa9STM6ymnaQ2SnVKRbDo1",
+      "firstName": "Adrian",
+      "LastName": "Esqueiros",
+      "nickName": "Adrian98",
+      "email": "u201718169@upc.edu.pe"
     }
   ],
   "songs": [
