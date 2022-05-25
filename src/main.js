@@ -7,7 +7,7 @@ import DisableAutocomplete from "@aacassandra/vue-disable-autocomplete";
 import firebase from "firebase/compat";
 
 // PrimeVue Styles
-import "primevue/resources/themes/md-light-indigo/theme.css";
+import "primevue/resources/themes/mdc-light-indigo/theme.css";
 import "primevue/resources/primevue.min.css";
 import "primeicons/primeicons.css";
 // PrimeFlex Companion
@@ -44,14 +44,24 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 let app;
+
 firebase.auth().onAuthStateChanged(() => {
   // console.log("user", user);
   if (!app) {
     app = createApp(App);
+
+    // Routing Management
     app.use(router);
+
+    // PrimeVue configuration
     app.use(PrimeVue, { ripple: true });
+
+    // Toast Service
     app.use(ToastService);
+
+    // DisableAutocomplete
     app.use(DisableAutocomplete);
+
     // PrimeVue Components
     app.component("pv-data-table", DataTable);
     app.component("pv-column", Column);

@@ -24,7 +24,6 @@
         </div>
       </template>
     </pv-dialog>
-
     <div class="flex justify-content-center">
       <div class="card">
         <h5 class="text-center">Register</h5>
