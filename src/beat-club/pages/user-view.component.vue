@@ -1,9 +1,20 @@
 <template>
-  <div class="containers">
-    <h1 align="left">Spotlight</h1>
-    <song-card-list></song-card-list>
-    <h1 align="left">Top Producers</h1>
-    <producer-card-list></producer-card-list>
+  <div class="background">
+    <div>
+      
+    </div>
+    <div class="container">
+      <div class="box2"></div>
+      <div class="box">
+        <h1 align="left">Spotlight</h1>
+        <song-card-list></song-card-list>
+      </div>
+      <div class="box2"></div>
+      <div class="box">
+        <h1 align="left">Top Producer</h1>
+        <producer-card-list></producer-card-list>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -18,32 +29,33 @@ export default {
 
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-.containers {
-  width: 100%;
-  background: #0e1315;
-}
-.background {
-  background: #0e1315;
-}
-
-.slogan span {
-  font-family: "Bebas Neue", cursive;
-  font-size: 50px;
-}
-
-.slogan span:nth-child(1),
-.slogan span:nth-child(3) {
-  color: white;
-}
-.slogan span:nth-child(2) {
-  color: #e5383b;
-}
-
-.container {
-  height: auto;
-  /*background: url("../../assets/background.png");*/
-}
 img {
   width: 100%;
+}
+body{
+  height: 100%;
+  background-color: #000000;
+
+}
+.background{
+  background-color: #0e1315;
+}
+.container{
+  height: 100%;
+  width:100%;
+  grid-gap: 10px;
+  display:grid;
+  grid-template-columns: 2% 70% 2% 24% 2%;
+
+}
+
+.box2{
+
+}
+.box{
+  background-color: #161A1D;
+  padding:15px;
+  text-align: center;
+  border-radius: 10px;
 }
 </style>
