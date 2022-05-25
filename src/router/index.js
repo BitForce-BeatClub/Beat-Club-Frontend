@@ -62,6 +62,9 @@ router.beforeEach((to, from, next) => {
   const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
   // const isAuthenticated = user;
   // console.log("isAuthenticated", isAuthenticated);
+  if ((to.path === "/sign-in" && user) || (to.path === "/sign-up" && user)) {
+    next("/");
+  }
   if (requiresAuth && !user) {
     next("/sign-in");
   } else {

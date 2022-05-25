@@ -202,7 +202,12 @@
 
 <script>
 import { ref } from "vue";
-import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  sendEmailVerification,
+  updateProfile,
+} from "firebase/auth";
 import { BeatClubApiServices } from "../services/beat-club-api.services";
 export default {
   name: "sing-up",
@@ -300,11 +305,11 @@ export default {
         this.msg["password"] = "";
       }
     },
-    registerWithEmail() {
+    async registerWithEmail() {
       const auth = getAuth();
       this.error = false;
       if (this.isError === false) {
-        createUserWithEmailAndPassword(auth, this.email, this.password)
+        await createUserWithEmailAndPassword(auth, this.email, this.password)
           .then((userCredential) => {
             // Signed in
             const user = userCredential.user;
@@ -320,6 +325,12 @@ export default {
             this.errorMessage = error.message;
             // ..
           });
+        await sendEmailVerification(auth.currentUser).catch((err) =>
+          console.log(err)
+        );
+        await updateProfile(auth.currentUser, {
+          displayName: this.nickname,
+        }).catch((err) => console.log(err));
       }
     },
     toggleDialog() {

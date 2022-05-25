@@ -36,7 +36,7 @@ export default {
       this.isConnected = false;
       try {
         const uid = user.uid;
-        // console.log("usuario conectado", uid);
+        console.log("usuario conectado", uid);
         this.isConnected = true;
       } catch (err) {
         this.isConnected = false;

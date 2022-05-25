@@ -63,7 +63,7 @@
             <pv-button
               @click="logOut()"
               icon="pi pi-sign-out"
-              style="background: #E5383B"
+              style="background: #e5383b"
               class="p-button"
               type="submit"
               label="Logout"
@@ -78,11 +78,11 @@
 <script>
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { BeatClubApiServices } from "../services/beat-club-api.services";
-
 export default {
   name: "tool-bar",
   data() {
     return {
+      auth: getAuth(),
       userData: [],
       user: {},
       drawer: false,
@@ -117,7 +117,6 @@ export default {
         });
     },
   },
-
   created() {
     this.usersService = new BeatClubApiServices();
     const auth = getAuth();
@@ -128,8 +127,9 @@ export default {
           // console.log("user", this.userData);
         });
         this.isConnected = true;
+        this.userData.nickname = auth.currentUser.displayName;
         // console.log("usuario conectado", user.uid);
-        console.log("Info: ", user);
+        console.log("Info: ", this.userData.nickname);
       } catch (err) {
         this.isConnected = false;
         console.log("usuario no esta conectado", err);
@@ -137,6 +137,9 @@ export default {
     });
   },
   computed: {
+    now() {
+      return this.nickname;
+    },
     label() {
       return this.loggedIn ? this.access : this.items;
     },

@@ -72,7 +72,7 @@
         >
         </pv-column>
 
-        <pv-column :exportable="false" style="min-width: 8rem;">
+        <pv-column :exportable="false" style="min-width: 8rem">
           <template #body="slotProps">
             <pv-button
               icon="pi pi-pencil"
@@ -333,7 +333,7 @@ export default {
 </script>
 
 <style scoped>
-.{
+. {
   background: white !important;
 }
 </style>

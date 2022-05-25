@@ -110,6 +110,7 @@ export default {
       this.validatePassword(value);
     },
   },
+
   data() {
     return {
       email: "",
