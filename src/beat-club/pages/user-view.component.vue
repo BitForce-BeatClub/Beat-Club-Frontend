@@ -1,8 +1,5 @@
 <template>
   <div class="background">
-    <div>
-      
-    </div>
     <div class="container">
       <div class="box2"></div>
       <div class="box">
