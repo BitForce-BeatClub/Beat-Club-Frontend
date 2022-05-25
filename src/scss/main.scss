@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+body {
+  color: white;
+  //background: linear-gradient(to left, #0f2027, #203a43, #2c5364); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background-color: #161A1D;
+  //background-image: linear-gradient(to top, #29323c 0%, #485563 100%);
+  transition: color 0.5s, background-color 0.5s;
+  //line-height: 1.6;
+  font-family: "Poppins", sans-serif;
+  //font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+//.p-button {
+//  background-color: #005FF9!important;
+//  color: #ffffff!important;
+//}
+.p-button-text{
+  background-color: transparent !important;
+}
+:root{
+  margin: 0;
+  .p-button {
+    color: #ffffff;
+    background: #005FF9;
+}
+  .p-button:enabled:hover {
+    background: rgba(0, 95, 249, 0.92);
+    color: #ffffff;
+    border-color: transparent;
+  }
+  .p-button:enabled:active {
+    background: rgba(0, 95, 249, 0.68);
+    color: #ffffff;
+    border-color: transparent;
+  }
+
+  .p-card .p-card-body{
+    height: 7rem;
+  }
+}

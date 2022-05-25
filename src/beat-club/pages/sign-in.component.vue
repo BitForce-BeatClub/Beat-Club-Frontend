@@ -1,58 +1,101 @@
 <template>
-  <div class="grid">
-    <div class="col-12 md:col-6 lg:col-3">
-      <img
-        src="https://github.com/BitForce-BeatClub/LandingPage/blob/main/img/logo.png?raw=true"
-        alt="beat-club-logo"
-      />
-    </div>
-  </div>
-  <div class="field-grid">
-    <div class="col-fixed" style="width: 80%">
-      <div v-if="error" class="error">{{ error.message }}}</div>
-      <form @submit.prevent="loginWithEmail">
-        <div class="email">
-          <span class="p-input-icon-right">
-            <i class="pi pi-envelope"></i>
-            <pv-input-text
-              type="text"
-              v-model="email"
-              placeholder="Email"
-            ></pv-input-text
-            ><br />
-            <span v-if="msg.email">{{ msg.email }}</span>
-          </span>
+  <div class="card">
+    <div class="flex flex-column card-container">
+      <div class="flex align-items-center justify-content-center">
+        <img
+          style="padding-top: 10rem"
+          src="../../assets/logo.png"
+          alt="beat-club-logo"
+        />
+      </div>
+      <div class="flex align-items-center justify-content-center">
+        <h1
+          style="
+            padding-top: 2rem;
+            color: #f5cb5c;
+            font-size: 48px;
+            font-family: 'Bebas Neue', sans-serif;
+          "
+          class="center"
+        >
+          Sign in to continue
+        </h1>
+      </div>
+      <div class="flex align-items-center justify-content-center">
+        <div class="form">
+          <div class="flex justify-content-center">
+            <div class="card">
+              <form @submit.prevent="loginWithEmail()" class="p-fluid">
+                <!--Email-->
+                <div class="field">
+                  <div class="p-float-label p-input-icon-right">
+                    <i class="pi pi-envelope" />
+                    <pv-input-text
+                      type="text"
+                      v-model="email"
+                      placeholder=""
+                      required="true"
+                      autocomplete="off"
+                    ></pv-input-text>
+                    <label for="title">Email*</label>
+                  </div>
+                  <span v-if="msg.email">{{ msg.email }}</span>
+                </div>
+                <!--Password-->
+                <div class="field">
+                  <div class="p-float-label">
+                    <pv-password
+                      id="password"
+                      v-model="password"
+                      :feedback="false"
+                      required="true"
+                    >
+                    </pv-password>
+                    <label for="title">Password*</label>
+                  </div>
+                  <div v-if="error" style="padding-top: 1rem; color: #d3d3d3">
+                    <span> {{ error.slice(9) }} </span>
+                  </div>
+                </div>
+                <!--ButtonSignIn-->
+                <pv-button
+                  type="submit"
+                  label="Sign in"
+                  class="mt-2 btn-color"
+                />
+              </form>
+              <form @submit.prevent="loginWithGoogle()" class="p-fluid">
+                <!--ButtonSignIn-->
+                <pv-button
+                  style="background: white !important; color: black !important"
+                  icon="pi pi-google"
+                  type="submit"
+                  label="Sing in with Google"
+                  class="mt-2 btn-color"
+                />
+              </form>
+              <div
+                style="padding-top: 2rem"
+                class="flex justify-content-center"
+              >
+                <span>Don’t have an account?</span>
+                <router-link
+                  style="text-decoration: none; color: inherit"
+                  to="/sign-up"
+                >
+                  <span style="color: #f5cb5c; padding-left: 5px">Sign Up</span>
+                </router-link>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <div class="password">
-          <pv-password
-            v-model="password"
-            toggle-mask
-            placeholder="password"
-            :feedback="false"
-          ></pv-password
-          ><br />
-          <span v-if="msg.password">{{ msg.password }}</span>
-        </div>
-        <div class="col-fixed" style="width: 100%">
-          <pv-button class="btn-width" type="submit" label="Login" />
-        </div>
-      </form>
-      <form @submit.prevent="loginWithGoogle">
-        <div class="col-fixed" style="width: 100%">
-          <pv-button
-            class="btn-width"
-            type="submit"
-            label="Login With Google"
-          />
-        </div>
-      </form>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import { getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 export default {
   name: "sign-in",
@@ -66,6 +109,19 @@ export default {
       this.password = value;
       this.validatePassword(value);
     },
+  },
+
+  data() {
+    return {
+      email: "",
+      password: "",
+      error: "",
+      msg: [],
+      emailRules: [
+        (v) => !!v || "Email is required",
+        (v) => /.+@.+/.test(v) || "E-mail must be valid",
+      ],
+    };
   },
   methods: {
     validateEmail(value) {
@@ -82,19 +138,18 @@ export default {
         this.msg["password"] = "";
       }
     },
-
     loginWithEmail() {
       const auth = getAuth();
       signInWithEmailAndPassword(auth, this.email, this.password)
-        .then((userCredential) => {
+        .then(() => {
           // Signed in
-          const user = userCredential.user;
-
+          this.$router.replace({ name: "HomeView" });
           // ...
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
+          this.error = error.message;
         });
     },
     loginWithGoogle() {
@@ -102,48 +157,46 @@ export default {
       const provider = new GoogleAuthProvider();
       signInWithPopup(auth, provider)
         .then(() => {
-          this.$router.replace({ name: "SongList" });
+          this.$router.replace({ name: "HomeView" });
+          // this.$router.replace({ name: "SongList" });
         })
         .catch((error) => {
           const email = error.email;
           console.log(email);
         });
     },
-    logOut() {
-      const auth = getAuth();
-      signOut(auth)
-        .then(() => {
-          console.log(auth);
-          this.$router.replace({ name: "HomeView" });
-          // Sign-out successful.
-        })
-        .catch((error) => {
-          console.log(error);
-          // An error happened.
-        });
-    },
-  },
-  data() {
-    return {
-      email: "",
-      password: "",
-      error: "",
-      msg: [],
-      emailRules: [
-        (v) => !!v || "Email is required",
-        (v) => /.+@.+/.test(v) || "E-mail must be valid",
-      ],
-    };
   },
 };
 </script>
 
-<style>
-.error {
-  color: red;
-  font-size: 18px;
+<style lang="scss" scoped>
+.form {
+  .card {
+    min-width: 450px;
+
+    form {
+      margin-top: 2rem;
+    }
+
+    .field {
+      margin-bottom: 1.5rem;
+    }
+    .p-inputtext {
+      background: #ffffff !important;
+    }
+  }
+  @media screen and (max-width: 960px) {
+    .card {
+      width: 80%;
+    }
+  }
 }
-.btn-width {
-  min-width: 100% !important;
+pv-button {
+  //background: #005FF9;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
 }
 </style>

@@ -1,13 +1,16 @@
 <template>
+  <div v-if="!isConnected">
+    <tool-bar-component></tool-bar-component>
+  </div>
   <div class="background">
-    <div class="container slogan">
-      <span> the </span>
-      <span> world’s #1 </span>
-      <span>
+    <div class="container">
+      <img src="../../assets/background.png" alt="banner" />
+      <div class="slogan">
+        the
+        <span> world’s #1 </span>
         platform for <br />
         music production
-      </span>
-      <img src="../../assets/background.png" alt="banner" />
+      </div>
     </div>
     <song-card-list></song-card-list>
     <user-card-list></user-card-list>
@@ -15,11 +18,32 @@
 </template>
 
 <script>
+import ToolBarComponent from "../components/tool-bar.component.vue";
 import SongCardList from "../components/song-card/song-card-list.component.vue";
 import UserCardList from "../components/user-card/user-card-list.component.vue";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 export default {
   name: "home-view",
-  components: { UserCardList, SongCardList },
+  components: { UserCardList, SongCardList, ToolBarComponent },
+  data() {
+    return {
+      isConnected: false,
+    };
+  },
+  created() {
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+      this.isConnected = false;
+      try {
+        const uid = user.uid;
+        console.log("usuario conectado", uid);
+        this.isConnected = true;
+      } catch (err) {
+        this.isConnected = false;
+        console.log("usuario no esta conectado", err);
+      }
+    });
+  },
 };
 </script>
 
@@ -29,20 +53,28 @@ export default {
 /*  background: #0e1315;*/
 /*}*/
 
-.slogan span {
+.slogan {
+  position: absolute;
+  top: 28%;
+  left: 30%;
+  transform: translate(-40%, -20%);
   font-family: "Bebas Neue", cursive;
-  font-size: 50px;
+  font-size: 5vw;
 }
 
-.slogan span:nth-child(1),
-.slogan span:nth-child(3) {
-  color: white;
-}
-.slogan span:nth-child(2) {
+/*.slogan span:nth-child(1),*/
+/*.slogan span:nth-child(1) {*/
+/*  color: white;*/
+/*}*/
+.slogan span:nth-child(1) {
   color: #e5383b;
 }
 
 .container {
+  /*margin-top: 1rem;*/
+  position: relative;
+  display: inline-block;
+  text-align: center;
   height: auto;
   /*background: url("../../assets/background.png");*/
 }

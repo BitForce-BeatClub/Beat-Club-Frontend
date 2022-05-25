@@ -1,7 +1,8 @@
 <template>
   <div>
-    <div class="card">
-      <pv-toolbar class="mb-4">
+    <pv-toast></pv-toast>
+    <div style="background: white" class="mt-8 card">
+      <pv-toolbar>
         <template #start>
           <pv-button
             label="New"
@@ -196,6 +197,7 @@
 <script>
 import { FilterMatchMode } from "primevue/api";
 import { BeatClubApiServices } from "../services/beat-club-api.services.js";
+import { useToast } from "primevue/usetoast";
 
 export default {
   name: "song-list",
@@ -210,11 +212,14 @@ export default {
       filters: {},
       submitted: false,
       songsService: null,
+      toast: null,
     };
   },
+
   created() {
+    this.toast = useToast();
     this.songsService = new BeatClubApiServices();
-    this.songsService.getAll().then((response) => {
+    this.songsService.getSongs().then((response) => {
       this.songs = response.data;
       this.songs.forEach((challenge) =>
         this.getDisplayableChallenge(challenge)
@@ -223,6 +228,14 @@ export default {
     this.initFilters();
   },
   methods: {
+    showSuccess() {
+      this.toast.add({
+        severity: "success",
+        summary: "Success Message",
+        detail: "Message Content",
+        life: 3000,
+      });
+    },
     getDisplayableChallenge(challenge) {
       // challenge.status = challenge.challengeType
       //   ? this.statuses[0].value
@@ -263,12 +276,13 @@ export default {
           this.songsService.update(this.song.id, this.song).then((response) => {
             this.songs[this.findIndexById(response.data.id)] =
               this.getDisplayableChallenge(response.data);
-            this.$toast.add({
-              severity: "success",
-              summary: "Successful",
-              detail: "Challenge Updated",
-              life: 3000,
-            });
+            this.showSuccess();
+            // this.$toast.add({
+            //   severity: "success",
+            //   summary: "Successful",
+            //   detail: "Challenge Updated",
+            //   life: 3000,
+            // });
             console.log(response);
           });
         } else {
@@ -277,12 +291,14 @@ export default {
           this.songsService.create(this.song).then((response) => {
             this.song = this.getDisplayableChallenge(response.data);
             this.songs.push(this.song);
-            this.$toast.add({
-              severity: "success",
-              summary: "Successful",
-              detail: "Challenge Created",
-              life: 3000,
-            });
+            this.showSuccess();
+
+            // this.$toast.add({
+            //   severity: "success",
+            //   summary: "Successful",
+            //   detail: "Challenge Created",
+            //   life: 3000,
+            // });
             console.log(response);
           });
         }
@@ -316,4 +332,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+. {
+  background: white !important;
+}
+</style>

@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     getAllCards() {
-      this.challengesService.getAll().then((response) => {
+      this.challengesService.getSongs().then((response) => {
         this.songsData = response.data.filter((item) => item.userId);
       });
     },
