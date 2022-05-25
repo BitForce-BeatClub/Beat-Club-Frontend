@@ -6,6 +6,9 @@ import SignIn from "../beat-club/pages/sign-in.component.vue";
 import SingUp from "../beat-club/pages/sign-up.component.vue";
 import test from "../beat-club/pages/test.component.vue";
 import Test from "../beat-club/pages/test-sign-in.vue";
+import Trending from "../beat-club/pages/trending.component.vue";
+import Recommended from "../beat-club/pages/recommended.component.vue";
+
 import { getAuth } from "firebase/auth";
 
 const router = createRouter({
@@ -46,6 +49,16 @@ const router = createRouter({
       path: "/test-sign-in",
       name: "test-sign-in",
       component: Test,
+    },
+    {
+      path: "/trending",
+      name: "Trending",
+      component: Trending,
+    },
+    {
+      path: "/recommended",
+      name: "Recommended-component",
+      component: Recommended,
     },
   ],
 });

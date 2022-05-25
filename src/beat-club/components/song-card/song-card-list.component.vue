@@ -6,7 +6,7 @@
         v-for="songData in songsData"
         :key="songData.id"
         :songData="songData"
-        style="max-width: 300px"
+        style="max-width: 200px"
       ></songCard>
     </div>
   </div>

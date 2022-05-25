@@ -33,6 +33,16 @@
       </div>
     </template>
   </pv-toolbar>
+  <pv-toolbar style="background-color: #20252a; border-radius: 0">
+
+    <template #start>
+      <div class="flex-column">
+        <router-link v-for="item in items2" :to="item.to" custom v-slot="{ navigate, href }" :key="item.label">
+          <pv-button class="p-button-text  text-white" :href="href" @click="navigate">{{ item.label }}</pv-button>
+        </router-link>
+      </div>
+    </template>
+  </pv-toolbar>
 </template>
 
 <script>
@@ -48,11 +58,18 @@ export default {
         { label: "Sign Up", to: "/sign-up" },
         { label: "Start Collaborating", to: "/songs" },
       ],
+      items2: [
+        { label: "Recommended", to: "/recommended" },
+        { label: "Trending", to: "/trending" },
+        { label: "Following", to: "/trending" },
+      ],
+
       access: [
         { label: "Hi user", to: "/" },
         { label: "Message", to: "/profile" },
         { label: "Creator Hub", to: "/" },
         { label: "Upload", to: "/songs" },
+
       ],
       loggedIn: false,
     };
@@ -90,5 +107,12 @@ export default {
 }
 .font-poppins {
   font-family: "Poppins", sans-serif;
+
 }
+.font-poppins2{
+  font-family: "Poppins", sans-serif;
+
+  height:5px;
+}
+
 </style>

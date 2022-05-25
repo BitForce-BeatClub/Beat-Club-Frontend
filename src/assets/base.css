@@ -63,7 +63,7 @@
 body {
   min-height: 100vh;
   /*color: var(--color-text);*/
-  /*background:#161A1D;*/
+background:#161A1D;
   transition: color 0.5s, background-color 0.5s;
   line-height: 1.6;
   font-family: "Poppins", sans-serif;
