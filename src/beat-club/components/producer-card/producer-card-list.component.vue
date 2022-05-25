@@ -1,23 +1,26 @@
 <template>
   <div>
-    <h1>Top Producers</h1>
+
     <div class="flex flex-wrap justify-content-center card-container gap-3">
-      <userCard
+      <ProducerCard
         v-for="producerData in producersData"
         :key="producerData.id"
         :users="producerData"
         style="max-width: 300px"
-      ></userCard>
+      ></ProducerCard>
     </div>
   </div>
 </template>
 
 <script>
-import userCard from "/src/beat-club/components/user-card/user-card.component.vue";
+//import userCard from "/src/beat-club/components/user-card/user-card.component.vue";
 import { BeatClubApiServices } from "../../services/beat-club-api.services.js";
+import ProducerCard from "/src/beat-club/components/producer-card/producer-card.component.vue";
 export default {
   components: {
-    userCard,
+    ProducerCard,
+    //userCard,
+
   },
   name: "producer-card-list",
   data() {

@@ -2,13 +2,9 @@
   <div class="containers">
     <h1 align="left">Spotlight</h1>
     <song-card-list></song-card-list>
-
-  </div>
-
-  <div class="containers">
+    <h1 align="left">Top Producers</h1>
     <producer-card-list></producer-card-list>
   </div>
-
 </template>
 
 <script>

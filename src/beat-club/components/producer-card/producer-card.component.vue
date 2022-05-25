@@ -1,6 +1,15 @@
+<script>
+export default {
+  name: "producer-card",
+  props:{
+    users: Object,
+  }
+};
+</script>
+
 <template>
   <div>
-    <card class="card">
+    <pv-card class="card">
       <template #header>
         <div>
           <img alt="user header" :src="users.urlToImage" />
@@ -14,15 +23,11 @@
         <!--        <p>{{ userData }}</p>-->
         <!--        <p>{{ userData }}</p>-->
       </template>
-    </card>
+    </pv-card>
   </div>
 </template>
 
-<script>
-export default {
-  name: "producer-card"
-};
-</script>
+
 
 <style scoped>
 .card {
