@@ -16,6 +16,9 @@ export class BeatClubApiServices {
   getUsersById(id) {
     return http.get(`/users/${id}`);
   }
+  updateUser(id, data) {
+    return http.put(`users/${id}`, data);
+  }
   update(id, data) {
     return http.put(`/songs/${id}`, data);
   }

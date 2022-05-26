@@ -83,9 +83,11 @@
     {
       "id": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
       "firstName": "Adrian",
-      "LastName": "Esqueiros",
+      "lastName": "Esqueiros",
       "nickName": "Adrian98",
-      "email": "u201718169@upc.edu.pe"
+      "email": "u201718169@upc.edu.pe",
+      "location": "Peru, lima",
+      "description": "El dios de la versatilidad! Raaa!"
     }
   ],
   "songs": [

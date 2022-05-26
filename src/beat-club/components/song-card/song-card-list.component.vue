@@ -48,7 +48,7 @@ export default {
 }
 h1 {
   padding-top: 10px;
-  padding-left: 165px;
+  /*padding-left: 165px;*/
   margin-bottom: 20px;
 }
 h1,

@@ -263,7 +263,7 @@ export default {
       return {
         id: displayableUser.id,
         firstName: (displayableUser.nickName = this.firstName),
-        LastName: (displayableUser.nickName = this.lastName),
+        lastName: (displayableUser.nickName = this.lastName),
         nickName: (displayableUser.nickName = this.nickname),
         email: (displayableUser.email = this.email),
       };

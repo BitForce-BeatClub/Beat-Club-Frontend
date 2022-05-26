@@ -221,9 +221,7 @@ export default {
     this.songsService = new BeatClubApiServices();
     this.songsService.getSongs().then((response) => {
       this.songs = response.data;
-      this.songs.forEach((challenge) =>
-        this.getDisplayableChallenge(challenge)
-      );
+      this.songs.forEach((challenge) => this.getDisplayableSong(challenge));
     });
     this.initFilters();
   },
@@ -236,19 +234,19 @@ export default {
         life: 3000,
       });
     },
-    getDisplayableChallenge(challenge) {
+    getDisplayableSong(challenge) {
       // challenge.status = challenge.challengeType
       //   ? this.statuses[0].value
       //   : this.statuses[1].value;
       return challenge;
     },
-    getStorableChallenge(displayableChallenge) {
+    getStorableSong(displayableSongs) {
       return {
-        id: displayableChallenge.id,
-        title: displayableChallenge.title,
-        description: displayableChallenge.description,
-        urlToImage: displayableChallenge.urlToImage,
-        userId: displayableChallenge.userId,
+        id: displayableSongs.id,
+        title: displayableSongs.title,
+        description: displayableSongs.description,
+        urlToImage: displayableSongs.urlToImage,
+        userId: displayableSongs.userId,
       };
     },
     initFilters() {
@@ -272,10 +270,10 @@ export default {
       this.submitted = true;
       if (this.song.title.trim()) {
         if (this.song.id) {
-          this.song = this.getStorableChallenge(this.song);
+          this.song = this.getStorableSong(this.song);
           this.songsService.update(this.song.id, this.song).then((response) => {
             this.songs[this.findIndexById(response.data.id)] =
-              this.getDisplayableChallenge(response.data);
+              this.getDisplayableSong(response.data);
             this.showSuccess();
             // this.$toast.add({
             //   severity: "success",
@@ -287,9 +285,9 @@ export default {
           });
         } else {
           this.song.id = 0;
-          this.song = this.getStorableChallenge(this.song);
+          this.song = this.getStorableSong(this.song);
           this.songsService.create(this.song).then((response) => {
-            this.song = this.getDisplayableChallenge(response.data);
+            this.song = this.getDisplayableSong(response.data);
             this.songs.push(this.song);
             this.showSuccess();
 

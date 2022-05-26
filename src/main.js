@@ -30,6 +30,9 @@ import InputText from "primevue/inputtext";
 import Calendar from "primevue/calendar";
 import Checkbox from "primevue/checkbox";
 import Divider from "primevue/divider";
+import Textarea from "primevue/textarea";
+import FileUpload from "primevue/fileupload";
+import SplitButton from "primevue/splitbutton";
 
 const firebaseConfig = {
   apiKey: "AIzaSyB5_Hqojo_tJCludylcYIY16R7If-dfFAo",
@@ -68,6 +71,9 @@ firebase.auth().onAuthStateChanged(() => {
     app.component("pv-button", Button);
     app.component("pv-toolbar", Toolbar);
     app.component("pv-input-text", InputText);
+    app.component("pv-input-text-area", Textarea);
+    app.component("pv-file-upload", FileUpload);
+    app.component("pv-split-button", SplitButton);
     app.component("pv-sidebar", Sidebar);
     app.component("pv-row", Row);
     app.component("pv-dialog", Dialog);

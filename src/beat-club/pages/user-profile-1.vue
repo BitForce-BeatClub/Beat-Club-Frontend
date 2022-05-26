@@ -6,7 +6,7 @@
       </div>
       <div class="options-container">
         <div class="options">
-          <ul class="list" style="list-style: none;">
+          <ul class="list" style="list-style: none">
             <li class="item">
               <a href="http://localhost:3000/user-profile-1" class="link">
                 <span>Profile</span>
@@ -84,197 +84,192 @@
 export default {};
 </script>
 
-<style>
-body {
-  background-color: #0b090a;
-}
+<!--<style>-->
+<!--body {-->
+<!--  background-color: #0b090a;-->
+<!--}-->
 
-.container {
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-  grid-template-rows: 1fr;
-  gap: 0px 0px;
-  grid-template-areas: ". .";
-  top: 30px;
-}
+<!--.container {-->
+<!--  display: grid;-->
+<!--  grid-template-columns: 1fr 4fr;-->
+<!--  grid-template-rows: 1fr;-->
+<!--  gap: 0px 0px;-->
+<!--  grid-template-areas: ". .";-->
+<!--  top: 30px;-->
+<!--}-->
 
-h1,
-h2,
-h3,
-h4,
-h5,
-a,
-p,
-span {
-  color: white;
-}
+<!--h1,-->
+<!--h2,-->
+<!--h3,-->
+<!--h4,-->
+<!--h5,-->
+<!--a,-->
+<!--p,-->
+<!--span {-->
+<!--  color: white;-->
+<!--}-->
 
-.menu-options h2 {
-  text-align: center;
-  align-content: center;
-}
+<!--.menu-options h2 {-->
+<!--  text-align: center;-->
+<!--  align-content: center;-->
+<!--}-->
 
-.menu-options {
-  margin: auto;
-}
+<!--.menu-options {-->
+<!--  margin: auto;-->
+<!--}-->
 
-.edit-info {
-  margin-left: 10px;
-  width: 90%;
-  justify-content: center;
-}
+<!--.edit-info {-->
+<!--  margin-left: 10px;-->
+<!--  width: 90%;-->
+<!--  justify-content: center;-->
+<!--}-->
 
-.options {
-  background-color: #161a1d;
-  /* width: 70%; */
-  min-width: 50%;
-  height: 8rem;
-}
+<!--.options {-->
+<!--  background-color: #161a1d;-->
+<!--  /* width: 70%; */-->
+<!--  min-width: 50%;-->
+<!--  height: 8rem;-->
+<!--}-->
 
-.options-container {
-  align-items: center;
-}
+<!--.options-container {-->
+<!--  align-items: center;-->
+<!--}-->
 
-.item {
-  top: 15px;
-  margin-top: 10px;
-}
+<!--.item {-->
+<!--  top: 15px;-->
+<!--  margin-top: 10px;-->
+<!--}-->
 
-.settings h1 {
-  font-weight: 600;
-}
+<!--.settings h1 {-->
+<!--  font-weight: 600;-->
+<!--}-->
 
-/* Float four columns side by side */
-.column {
-  float: left;
-  width: 25%;
-  padding: 0 10px;
-}
+<!--/* Float four columns side by side */-->
+<!--.column {-->
+<!--  float: left;-->
+<!--  width: 25%;-->
+<!--  padding: 0 10px;-->
+<!--}-->
 
-/* Remove extra left and right margins, due to padding */
-.row {
-  margin: 0 0px;
-}
+<!--/* Remove extra left and right margins, due to padding */-->
+<!--.row {-->
+<!--  margin: 0 0px;-->
+<!--}-->
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+<!--/* Clear floats after the columns */-->
+<!--.row:after {-->
+<!--  content: "";-->
+<!--  display: table;-->
+<!--  clear: both;-->
+<!--}-->
 
-/* Responsive columns */
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-    display: block;
-    margin-bottom: 20px;
-  }
+<!--/* Responsive columns */-->
+<!--@media screen and (max-width: 600px) {-->
+<!--  .column {-->
+<!--    width: 100%;-->
+<!--    display: block;-->
+<!--    margin-bottom: 20px;-->
+<!--  }-->
 
-  .edit-info .profile-picture {
-    width: 4rem;
-  }
+<!--  .edit-info .profile-picture {-->
+<!--    width: 4rem;-->
+<!--  }-->
 
-  .container-profile-picture {
-    background-color: #005ff8;
-    border-radius: 4px;
-    color: white;
-    padding: 5px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 8px;
-    margin: 4px 2px;
-    cursor: pointer;
-    margin-left: 15px;
-    top: -1.6rem;
+<!--  .container-profile-picture {-->
+<!--    background-color: #005ff8;-->
+<!--    border-radius: 4px;-->
+<!--    color: white;-->
+<!--    padding: 5px 20px;-->
+<!--    text-align: center;-->
+<!--    text-decoration: none;-->
+<!--    display: inline-block;-->
+<!--    font-size: 8px;-->
+<!--    margin: 4px 2px;-->
+<!--    cursor: pointer;-->
+<!--    margin-left: 15px;-->
+<!--    top: -1.6rem;-->
+<!--  }-->
 
-  }
+<!--  .upload-image img {-->
+<!--    margin-bottom: 20px;-->
+<!--  }-->
+<!--}-->
 
-  .upload-image img{
-      margin-bottom: 20px;
-  }
-  
-}
+<!--/* Style the counter cards */-->
+<!--.card {-->
+<!--  box-shadow: 0 4px 8px 0 rgba(161, 156, 156, 0.2);-->
+<!--  padding: 16px;-->
+<!--  text-align: center;-->
+<!--  background-color: #242423;-->
+<!--}-->
 
-/* Style the counter cards */
-.card {
-  box-shadow: 0 4px 8px 0 rgba(161, 156, 156, 0.2);
-  padding: 16px;
-  text-align: center;
-  background-color: #242423;
-}
+<!--.upload-image {-->
+<!--  align-items: center;-->
+<!--  text-align: center;-->
+<!--}-->
 
-.upload-image{
-    align-items: center;
-    text-align: center;
-}
+<!--.upload-image img {-->
+<!--  align-items: center;-->
+<!--}-->
 
-.upload-image img {
-  align-items: center;
-}
+<!--.profile-picture {-->
+<!--  width: 4rem;-->
+<!--}-->
 
-.profile-picture {
-  width: 4rem;
-}
+<!--.container-profile-picture {-->
+<!--  background-color: #005ff8;-->
+<!--  border-radius: 4px;-->
+<!--  color: white;-->
+<!--  padding: 5px 10px;-->
+<!--  text-align: center;-->
+<!--  text-decoration: none;-->
+<!--  display: inline-block;-->
+<!--  font-size: 16px;-->
+<!--  margin: 4px 2px;-->
+<!--  cursor: pointer;-->
+<!--  margin-left: 15px;-->
+<!--  top: -1.6rem;-->
+<!--}-->
 
-.container-profile-picture {
-  background-color: #005ff8;
-  border-radius: 4px;
-  color: white;
-  padding: 5px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  margin-left: 15px;
-  top: -1.6rem;
-}
+<!--/* FOR */-->
 
-/* FOR */
+<!--input[type="text"],-->
+<!--select {-->
+<!--  width: 100%;-->
+<!--  padding: 12px 20px;-->
+<!--  margin: 8px 0;-->
+<!--  display: inline-block;-->
+<!--  border: 1px solid #424242;-->
+<!--  border-radius: 4px;-->
+<!--  box-sizing: border-box;-->
+<!--  background-color: #242423;-->
+<!--}-->
 
-input[type="text"],
-select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #424242;
-  border-radius: 4px;
-  box-sizing: border-box;
-  background-color: #242423;
-}
+<!--input[type="text"]::placeholder {-->
+<!--  color: white;-->
+<!--  opacity: 50%;-->
+<!--}-->
 
-input[type="text"]::placeholder {
-  color: white;
-  opacity: 50%;
-}
+<!--label {-->
+<!--  color: white;-->
+<!--}-->
 
-label {
-  color: white;
-}
+<!--input[type="submit"] {-->
+<!--  width: 100%;-->
+<!--  background-color: #005ff8;-->
+<!--  color: white;-->
+<!--  padding: 14px 20px;-->
+<!--  margin: 8px 0;-->
+<!--  border: none;-->
+<!--  border-radius: 4px;-->
+<!--  cursor: pointer;-->
+<!--}-->
 
-input[type="submit"] {
-  width: 100%;
-  background-color: #005ff8;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
+<!--input[type="submit"]:hover {-->
+<!--  background-color: #4089ff;-->
+<!--}-->
 
-input[type="submit"]:hover {
-  background-color: #4089ff;
-}
-
-
-ul {
-    padding: 0 20px;
-    
-}
-</style>
-
+<!--ul {-->
+<!--  padding: 0 20px;-->
+<!--}-->
+<!--</style>-->

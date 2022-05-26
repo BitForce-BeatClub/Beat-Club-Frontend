@@ -30,16 +30,17 @@
         </div>
       </div>
       <div class="card" v-else>
-        <div class="flex flex-row card-container">
+        <div class="mx-5 flex flex-row card-container">
           <div class="flex align-items-center justify-content-center">
-            <pv-button class="p-button-text">
-              <i class="pi pi-user mx-1" />
-              Hi
-              <span class="mx-1" style="color: #f5cb5c">
-                {{ this.userData.nickName }}
-              </span>
-              !
-            </pv-button>
+            <pv-split-button @click="logOut" class="p-button-text p-button-warning" :model="dropDown">
+              <div class="flex align-items-center justify-content-center">
+                Hi
+                <span class="mx-1" style="color: #f5cb5c">
+                  {{ this.userData.nickName }}
+                </span>
+                !
+              </div>
+            </pv-split-button>
           </div>
           <div class="flex align-items-center justify-content-center">
             <router-link
@@ -76,6 +77,7 @@
 </template>
 
 <script>
+import { ref } from "vue";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { BeatClubApiServices } from "../services/beat-club-api.services";
 export default {
@@ -84,8 +86,16 @@ export default {
     return {
       auth: getAuth(),
       userData: [],
-      user: {},
-      drawer: false,
+      dropDown: [
+        { label: "Profile", to: "/profile", icon: "pi pi-user" },
+        { label: "Credentials", to: "/credentials", icon: "pi pi-id-card" },
+        {
+          label: "Subscription",
+          to: "/subscription",
+          icon: "pi pi-credit-card",
+        },
+        // { label: "Log Out", , icon: "pi pi-sign-out" },
+      ],
       items: [
         { label: "Explore", to: "/sign-in", icon: "pi pi-users" },
         { label: "Creator", to: "/sign-in", icon: "pi pi-users" },
@@ -165,6 +175,18 @@ export default {
 .logo img {
   width: 100%;
   margin-left: 3rem;
+}
+
+.p-splitbutton {
+  font-family: "Comfortaa", cursive;
+  background: transparent;
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+}
+span.mx-1 {
+  display: flex;
+  align-items: center;
 }
 //.font-poppins {
 //  font-family: "Poppins", sans-serif;

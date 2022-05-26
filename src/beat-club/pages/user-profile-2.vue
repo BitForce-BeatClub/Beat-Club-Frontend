@@ -6,7 +6,7 @@
       </div>
       <div class="options-container">
         <div class="options">
-          <ul class="list" style="list-style: none;">
+          <ul class="list" style="list-style: none">
             <li class="item">
               <a href="profile" class="link">
                 <span>Profile</span>
@@ -28,23 +28,21 @@
     </div>
 
     <div class="edit-info">
-     
       <div class="edit-credential-information">
-       <div class="column credential-information">
-           <div class="email">
-               <span>E-mail</span> <br>
-               <div class="row">
-                   <div class="email-row">
-                       <span>U201718169@upc.edu.pe</span>
-                   </div>
-                   <div>
-                       U201718169@upc.edu.pe
-                        <a>change e-mail address</a>
-                   </div>
-                   
-               </div>
-           </div>
-       </div>
+        <div class="column credential-information">
+          <div class="email">
+            <span>E-mail</span> <br />
+            <div class="row">
+              <div class="email-row">
+                <span>U201718169@upc.edu.pe</span>
+              </div>
+              <div>
+                U201718169@upc.edu.pe
+                <a>change e-mail address</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -131,10 +129,8 @@ span {
   clear: both;
 }
 
-
-
-.edit-credential-information{
-    width: 100%;
+.edit-credential-information {
+  width: 100%;
 }
 
 /* Responsive columns */
@@ -144,18 +140,9 @@ span {
     display: block;
     margin-bottom: 20px;
   }
-
-
-  
 }
-
-
-
-
 
 ul {
-    padding: 0 20px;
-    
+  padding: 0 20px;
 }
 </style>
-
