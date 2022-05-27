@@ -1,6 +1,9 @@
 <template>
   <div class="grid justify-content-evenly">
-    <div class="flex flex-wrap justify-content-start" style="margin-top: 8%; height:40vh">
+    <div
+      class="flex flex-wrap justify-content-start"
+      style="margin-top: 8%; height: 40vh"
+    >
       <pv-card class="userCard shadow-8">
         <template #header>
           <div class="grid">
@@ -51,15 +54,15 @@
     </div>
     <div class="middle" style="width: 70%">
       <div class="grid mt-6">
-      <div class="circle">
-        <div class="circleIn"></div>
-      </div>
+        <div class="circle">
+          <div class="circleIn"></div>
+        </div>
       </div>
       <div class="grid mt-6">
         <h4>No Content Available</h4>
       </div>
       <div class="grid mt-1">
-      <h4>There is not yet enough content.</h4>
+        <h4>There is not yet enough content.</h4>
       </div>
     </div>
   </div>
