@@ -34,15 +34,15 @@
           <div class="flex align-items-center justify-content-center mx-2">
             <pv-split-button
               class="p-button-text p-button-secondary"
-              :model="dropDown"
+              :model="menuUser"
             >
-              <div class="flex align-items-center justify-content-center">
-                Hi
-                <span class="mx-1" style="color: #ff4081">
+              <pv-button @click="toUserProfile">
+                <div class="custom-font">
+                  <span class="">Hi</span>
                   {{ this.userData.nickName }}
-                </span>
-                !
-              </div>
+                  <span class="">!</span>
+                </div>
+              </pv-button>
             </pv-split-button>
           </div>
           <div class="flex align-items-center justify-content-center">
@@ -87,12 +87,12 @@ export default {
         { label: "Sign Up", to: "/sign-up", icon: "pi pi-users" },
       ],
       access: [
-        { label: "Message", to: "/profile", icon: "pi pi-comment" },
+        { label: "Message", to: "/", icon: "pi pi-comment" },
         { label: "Creator Hub", to: "/", icon: "pi pi-sliders-v" },
         { label: "Upload", to: "/songs", icon: "pi pi-cloud-upload" },
       ],
-      dropDown: [
-        { label: "Profile", to: "/profile", icon: "pi pi-user" },
+      menuUser: [
+        { label: "Profile", to: "/userInfo", icon: "pi pi-user" },
         { label: "Credentials", to: "/credentials", icon: "pi pi-id-card" },
         {
           label: "Subscription",
@@ -116,6 +116,9 @@ export default {
         this.$router.replace({ name: "HomeView" });
       });
     },
+    toUserProfile() {
+      this.$router.replace({ name: "UserProfile" });
+    },
   },
   created() {
     this.usersService = new BeatClubApiServices();
@@ -135,6 +138,11 @@ export default {
         console.log("usuario no esta conectado", err);
       }
     });
+  },
+  watch: {
+    userData() {
+      return this.userData.nickname;
+    },
   },
   computed: {
     now() {
@@ -164,7 +172,10 @@ export default {
   padding-right: 1vmax;
   //margin-left: 3rem;
 }
-
+.custom-font {
+  font-family: "Comfortaa", cursive;
+  font-size: 1em;
+}
 .p-splitbutton {
   font-family: "Comfortaa", cursive;
   background: transparent;
@@ -172,9 +183,9 @@ export default {
   position: relative;
   align-items: center;
 }
-span.mx-1 {
-  display: flex;
-  align-items: center;
+span {
+  font-family: "Comfortaa", cursive;
+  color: #e5e3e3 !important;
 }
 //.font-poppins {
 //  font-family: "Poppins", sans-serif;

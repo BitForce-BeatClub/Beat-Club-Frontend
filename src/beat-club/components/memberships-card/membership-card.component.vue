@@ -1,5 +1,5 @@
 <template>
-  <pv-card class="membershipCard">
+  <pv-card class="userCard">
     <template #header>
       <img
         alt="membership"
@@ -29,7 +29,6 @@
 
     <div class="btnPos">
         <pv-button
-          icon="pi pi-times"
           label="Subscribe"
           class="p-button-secondary"
         ></pv-button>
@@ -48,7 +47,7 @@ export default {
 </script>
 
 <style scoped>
-.membershipCard {
+.userCard {
   background-color: #212429;
   color: white;
 }

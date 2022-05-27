@@ -5,7 +5,6 @@ import PrimeVue from "primevue/config";
 import ToastService from "primevue/toastservice";
 import DisableAutocomplete from "@aacassandra/vue-disable-autocomplete";
 import firebase from "firebase/compat";
-
 // PrimeVue Styles
 import "primevue/resources/themes/mdc-light-indigo/theme.css";
 import "primevue/resources/primevue.min.css";

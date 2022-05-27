@@ -1,88 +1,86 @@
 <template>
   <pv-toast></pv-toast>
-  <div class="card">
-    <div class="flex flex-column card-container">
+  <div id="profileSettings">
+    <h1>Profile settings</h1>
+    <div class="grid">
+      <div style="display: flex; align-items: center" class="flex gap-3">
+        <section>
+          <img
+            class="roundedImage"
+            :src="userData.urlToImage"
+            alt="Profile Picture"
+          />
+        </section>
+        <section>
+          <div>
+            <h5>Profile Picture Link</h5>
+            <pv-input-text
+              type="text"
+              v-model="userData.urlToImage"
+              id="urlToImage"
+            />
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="form">
       <div class="flex align-items-center justify-content-center">
-        <div style="display: flex; align-items: center" class="flex gap-3">
-          <section>
-            <div class="roundedImage" />
-          </section>
-          <section>
-            <div>
-              <pv-file-upload
-                class=""
-                mode="basic"
-                name="demo[]"
-                url="./upload"
+        <div class="card" style="width: 50vw">
+          <form @submit.prevent="saveUser" class="p-fluid">
+            <div class="field">
+              <h5>First Name</h5>
+              <pv-input-text
+                type="text"
+                v-model="userData.firstName"
+                id="firstName"
+                required="true"
+                autocomplete="off"
               />
             </div>
-          </section>
-        </div>
-      </div>
-      <div class="form">
-        <div class="flex align-items-center justify-content-center">
-          <div class="card" style="width: 50vw">
-            <form @submit.prevent="saveUser" class="p-fluid">
-              <div class="field">
-                <h5>First Name</h5>
+            <div class="field">
+              <h5>Last Name</h5>
+              <pv-input-text
+                type="text"
+                v-model="userData.lastName"
+                id="lastName"
+                required="true"
+                autocomplete="off"
+              />
+            </div>
+            <!--Nickname-->
+            <div class="field">
+              <h5>Display name</h5>
+              <div class="p-float-label p-input-icon-right">
                 <pv-input-text
                   type="text"
-                  v-model="userData.firstName"
-                  id="firstName"
+                  v-model="userData.nickName"
+                  id="nickName"
                   required="true"
                   autocomplete="off"
                 />
               </div>
-              <div class="field">
-                <h5>Last Name</h5>
-                <pv-input-text
-                  type="text"
-                  v-model="userData.lastName"
-                  id="lastName"
-                  required="true"
-                  autocomplete="off"
-                />
+            </div>
+            <!--Location-->
+            <div class="field">
+              <h5>Location</h5>
+              <div class="p-float-label p-input-icon-right">
+                <pv-input-text type="text" v-model="userData.location" />
               </div>
-              <!--Nickname-->
-              <div class="field">
-                <h5>Display name</h5>
-                <div class="p-float-label p-input-icon-right">
-                  <pv-input-text
-                    type="text"
-                    v-model="userData.nickName"
-                    id="nickName"
-                    required="true"
-                    autocomplete="off"
-                  />
-                </div>
-              </div>
-              <!--Location-->
-              <div class="field">
-                <h5>Location</h5>
-                <div class="p-float-label p-input-icon-right">
-                  <pv-input-text
-                    type="text"
-                    v-model="userData.location"
-                    required="true"
-                    autocomplete="off"
-                  />
-                </div>
-              </div>
-              <div class="field">
-                <h5>Biography</h5>
-                <pv-input-text-area v-model="userData.description" />
-              </div>
-              <!--ButtonSignIn-->
-              <div class="flex">
-                <pv-button
-                  type="submit"
-                  label="Save changes"
-                  class="mt-2 p-button-secondary"
-                  style="width: 8vw"
-                />
-              </div>
-            </form>
-          </div>
+            </div>
+            <div class="field">
+              <h5>Biography</h5>
+              <pv-input-text-area v-model="userData.description" />
+            </div>
+            <!--ButtonSignIn-->
+            <div class="flex">
+              <pv-button
+                type="submit"
+                label="Save changes"
+                class="mt-2 p-button-secondary"
+                style="width: 8vw"
+              />
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -91,7 +89,7 @@
 
 <script>
 import { BeatClubApiServices } from "../../services/beat-club-api.services";
-import { getAuth } from "firebase/auth";
+import { getAuth, updateProfile } from "firebase/auth";
 import { useToast } from "primevue/usetoast";
 
 export default {
@@ -102,14 +100,14 @@ export default {
       userProfile: {},
       usersService: undefined,
       toast: null,
+      auth: getAuth(),
     };
   },
   created() {
     this.toast = useToast();
     this.usersService = new BeatClubApiServices();
-    const auth = getAuth();
-    console.log("Info current", auth.currentUser);
-    this.getUser(auth.currentUser.uid);
+    console.log("Info current", this.auth.currentUser);
+    this.getUser(this.auth.currentUser.uid);
   },
   // updated() {
   //   this.userProfile = this.user;
@@ -142,10 +140,25 @@ export default {
         email: (displayableUser.email = this.userData.email),
         location: (displayableUser.location = this.userData.location),
         description: (displayableUser.description = this.userData.description),
+        urlToImage: (displayableUser.urlToImage = this.userData.urlToImage),
       };
     },
     saveUser() {
+      const auth = getAuth();
       this.userProfile = this.getStorableUserProfile(this.userData);
+      updateProfile(auth.currentUser, {
+        displayName: this.userProfile.nickName,
+        photoURL: this.userProfile.urlToImage,
+      })
+        .then(() => {
+          console.log("// Profile updated!", auth.currentUser);
+          // ..."
+        })
+        .catch((error) => {
+          console.log("// Profile updated!", error);
+          // An error occurred
+          // ...
+        });
       this.usersService
         .updateUser(this.userProfile.id, this.userProfile)
         .then((response) => {
@@ -160,8 +173,7 @@ export default {
 
 <style scoped>
 .roundedImage {
-  background: url(https://scontent.flim16-1.fna.fbcdn.net/v/t1.18169-9/20031759_1600276453345492_7222173495713220820_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeH_TXdcrlZjWFze-WdX4SSPlOMPzaOan-SU4w_No5qf5DajStmVGYZkxk9jrcXXAJKPFFUKxg_i3iHJ_Pb9-Dxw&_nc_ohc=xHIRlF4FoKQAX_YZbpr&_nc_ht=scontent.flim16-1.fna&oh=00_AT85VfT8dkFV6gg5EminS6YIdn9EmNVOFhRUNJkEqTc4EA&oe=62B61A66)
-    no-repeat;
+  background: no-repeat;
   background-size: cover;
   overflow: hidden;
   -webkit-border-radius: 50px;
@@ -198,8 +210,6 @@ form {
 /*pv-button {*/
 /*  background: #005FF9;*/
 /*}*/
-.card {
-}
 .center {
   display: flex;
   justify-content: center;

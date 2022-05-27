@@ -87,7 +87,26 @@
       "nickName": "Adrian9804",
       "email": "u201718169@upc.edu.pe",
       "location": "Peru, lima",
-      "description": "El dios de la versatilidad! Raaa!"
+      "description": "El dios de la versatilidad! Raaa!",
+      "urlToImage": "https://i0.wp.com/urbanroosters.news/wp-content/uploads/2022/01/500x500.jpg?w=500&ssl=1"
+    },
+    {
+      "id": "DF6WC45BFjYpP23bAVifqNfhBTj1",
+      "firstName": "Admin",
+      "lastName": "Admin",
+      "nickName": "Admin",
+      "email": "admin@admin.com",
+      "location": "Lima",
+      "description": "Hola",
+      "urlToImage": "https://loveshayariimages.in/wp-content/uploads/2021/10/1080p-Latest-Whatsapp-Profile-Images-1.jpg"
+    },
+    {
+      "id": "7n9hUOzaU4S9WyhxCLB9K88f9mz1",
+      "firstName": "prueba45s23",
+      "lastName": "prueba",
+      "nickName": "prueba2ss",
+      "email": "prueba@gmail.com",
+      "urlToImage": "https://www.beatstars.com/assets/img/placeholders/default-avatar-circle.svg"
     }
   ],
   "songs": [
@@ -132,7 +151,7 @@
       "id": 1,
       "title": "Free",
       "price": "$0",
-      "feature" : "For sellers just starting their music business",
+      "feature": "For sellers just starting their music business",
       "description": "Up to 10 tracks\n Upload Track Stems\n Instant Payments\n Accept PayPal payments\n Accept Stripe payments",
       "urlToImage": "https://www.picng.com/upload/free/png_free_52922.png"
     },

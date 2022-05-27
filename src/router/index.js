@@ -5,6 +5,7 @@ import SignIn from "../beat-club/pages/sign-in.component.vue";
 import SingUp from "../beat-club/pages/sign-up.component.vue";
 import test from "../beat-club/pages/test.component.vue";
 import Settings from "../beat-club/pages/account-settings.component.vue";
+import UserProfile from "../beat-club/pages/user-profile-component.vue";
 
 import LogOut from "../beat-club/components/log-out.component.vue";
 
@@ -44,29 +45,34 @@ const router = createRouter({
       component: test,
     },
     {
+      path: "/profile",
+      name: "UserProfile",
+      component: UserProfile,
+    },
+    {
       path: "/log-out",
-      name: "log-out",
+      name: "LogOut",
       component: LogOut,
     },
 
     {
       path: "/settings",
-      name: "account-settings",
+      name: "Settings",
       component: Settings,
       children: [
         {
-          path: "/profile",
-          name: "profile",
+          path: "/userInfo",
+          name: "ProfileSettings",
           component: ProfileSettings,
         },
         {
           path: "/credentials",
-          name: "credentials",
+          name: "CredentialSettings",
           component: CredentialSettings,
         },
         {
           path: "/subscriptions",
-          name: "subscriptions",
+          name: "SubscriptionSettings",
           component: SubscriptionSettings,
         },
       ],

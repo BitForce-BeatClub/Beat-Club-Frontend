@@ -3,9 +3,9 @@
     <h1>Memberships</h1>
     <div class="flex flex-wrap justify-content-center card-container gap-3">
       <membership-card
-        v-for="songData in membershipData"
-        :key="songData.id"
-        :membershipData="songData"
+        v-for="membership in membershipData"
+        :key="membership.id"
+        :membershipData="membership"
         style="max-width: 24rem"
       ></membership-card>
     </div>
@@ -23,16 +23,16 @@ export default {
   data() {
     return {
       membershipData: [],
-      challengesService: undefined,
+      membershipServices: undefined,
     };
   },
   created() {
-    this.challengesService = new BeatClubApiServices();
-    this.getAllCards();
+    this.membershipServices = new BeatClubApiServices();
+    this.getMemberships();
   },
   methods: {
-    getAllCards() {
-      this.challengesService.getMemberships().then((response) => {
+    getMemberships() {
+      this.membershipServices.getMemberships().then((response) => {
         this.membershipData = response.data.filter((item) => item.id);
       });
     },

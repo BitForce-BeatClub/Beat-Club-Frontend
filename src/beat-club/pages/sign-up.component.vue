@@ -224,6 +224,8 @@ export default {
       lastName: "",
       nickname: "",
       email: "",
+      urlToImage:
+        "https://www.beatstars.com/assets/img/placeholders/default-avatar-circle.svg", //Default Image
       password: "",
       error: false,
       errorMessage: "",
@@ -266,6 +268,7 @@ export default {
         lastName: (displayableUser.nickName = this.lastName),
         nickName: (displayableUser.nickName = this.nickname),
         email: (displayableUser.email = this.email),
+        urlToImage: (displayableUser.urlToImage = this.urlToImage),
       };
     },
     saveUser(uid) {
@@ -330,6 +333,7 @@ export default {
         );
         await updateProfile(auth.currentUser, {
           displayName: this.nickname,
+          photoURL: this.urlToImage,
         }).catch((err) => console.log(err));
       }
     },
