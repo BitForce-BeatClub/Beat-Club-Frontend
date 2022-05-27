@@ -10,6 +10,7 @@ import Trending from "../beat-club/pages/trending.component.vue";
 import Recommended from "../beat-club/pages/recommended.component.vue";
 
 import { getAuth } from "firebase/auth";
+import userViewComponent from "../beat-club/pages/user-view.component.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -59,6 +60,11 @@ const router = createRouter({
       path: "/recommended",
       name: "Recommended-component",
       component: Recommended,
+    },
+    {
+      path: "/user-view",
+      name: "user-view",
+      component: userViewComponent,
     },
   ],
 });

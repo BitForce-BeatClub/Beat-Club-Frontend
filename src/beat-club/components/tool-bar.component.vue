@@ -79,7 +79,7 @@ export default {
       items2: [
         { label: "Recommended", to: "/recommended" },
         { label: "Trending", to: "/trending" },
-        { label: "Following", to: "/trending" },
+        { label: "Following", to: "/user-view" },
       ],
 
       access: [
