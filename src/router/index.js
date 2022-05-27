@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
+import creatorHub from "../beat-club/pages/creator-hub.component.vue";
 import HomeView from "../beat-club/pages/home-view.vue";
 import UserProfile from "../beat-club/components/song-card/song-card-list.component.vue";
 import SongList from "../beat-club/pages/song-list.component.vue";
@@ -52,6 +53,11 @@ const router = createRouter({
       path: "/register-user",
       name: "register-user",
       component: register,
+    },
+    {
+      path: "/creator-hub",
+      name: "creator-hub",
+      component: creatorHub,
     },
   ],
 });
