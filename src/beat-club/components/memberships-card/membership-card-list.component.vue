@@ -1,12 +1,12 @@
 <template>
   <div>
-    <h1>Trending Tracks</h1>
+    <h1>Memberships</h1>
     <div class="flex flex-wrap justify-content-center card-container gap-3">
       <membership-card
         v-for="songData in membershipData"
         :key="songData.id"
         :membershipData="songData"
-        style="max-width: 300px"
+        style="max-width: 24rem"
       ></membership-card>
     </div>
   </div>
@@ -41,22 +41,5 @@ export default {
 </script>
 
 <style>
-.grid {
-  display: flex;
-  justify-content: center;
-  font-family: "Poppins", sans-serif;
-}
-h1 {
-  padding-top: 10px;
-  /*padding-left: 165px;*/
-  margin-bottom: 20px;
-}
-h1,
-p {
-  font-family: "Poppins", sans-serif;
-}
 
-p {
-  text-align: center;
-}
 </style>

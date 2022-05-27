@@ -154,7 +154,6 @@ export default {
   background: #212429;
   display: flex;
   justify-content: center;
-
 }
 .p-button-text {
   font-family: "Comfortaa", cursive;

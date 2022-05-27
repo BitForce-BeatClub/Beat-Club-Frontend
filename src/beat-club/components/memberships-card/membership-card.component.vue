@@ -1,16 +1,41 @@
 <template>
-  <div>
-    <pv-card class="songCard">
-      <template #header>
-        <img alt="user header" :src="membershipData.urlToImage" />
-      </template>
-      <template #content>
-        {{ membershipData.title }}
-        <p>{{ membershipData.description }}</p>
-        <p>{{ membershipData.userId }}</p>
-      </template>
-    </pv-card>
-  </div>
+  <pv-card class="membershipCard">
+    <template #header>
+      <img
+        alt="membership"
+        :src="membershipData.urlToImage"
+        style="height: 18rem"
+      />
+    </template>
+    <template #title>
+      <div class="flex justify-content-between">
+        <section>
+          {{ membershipData.title }}
+        </section>
+        {{ membershipData.price }}
+      </div>
+    </template>
+    <template #subtitle>
+      <div style="color: white !important">
+        {{ membershipData.feature }}
+      </div>
+    </template>
+    <template #content>
+      <p>
+        {{ membershipData.description }}
+      </p>
+    </template>
+    <template #footer>
+
+    <div class="btnPos">
+        <pv-button
+          icon="pi pi-times"
+          label="Subscribe"
+          class="p-button-secondary"
+        ></pv-button>
+      </div>
+    </template>
+  </pv-card>
 </template>
 
 <script>
@@ -23,8 +48,17 @@ export default {
 </script>
 
 <style scoped>
-.songCard {
-  background-color: #161d21;
+.membershipCard {
+  background-color: #212429;
   color: white;
+}
+.btnPos {
+  display: flex;
+  justify-content: center;
+}
+p {
+  white-space: pre-line;
+  display: flex;
+  justify-content: center;
 }
 </style>

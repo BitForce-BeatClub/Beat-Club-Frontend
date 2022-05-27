@@ -9,7 +9,12 @@
           </section>
           <section>
             <div>
-              <pv-file-upload class="" mode="basic" name="demo[]" url="./upload" />
+              <pv-file-upload
+                class=""
+                mode="basic"
+                name="demo[]"
+                url="./upload"
+              />
             </div>
           </section>
         </div>

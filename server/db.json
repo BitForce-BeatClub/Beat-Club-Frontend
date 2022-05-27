@@ -132,21 +132,24 @@
       "id": 1,
       "title": "Free",
       "price": "$0",
-      "description": "For everyone registered",
-      "urlToImage": "https://maxst.icons8.com/vue-static/landings/lunacy-new/free.svg"
+      "feature" : "For sellers just starting their music business",
+      "description": "Up to 10 tracks\n Upload Track Stems\n Instant Payments\n Accept PayPal payments\n Accept Stripe payments",
+      "urlToImage": "https://www.picng.com/upload/free/png_free_52922.png"
     },
     {
       "id": 2,
       "title": "Musician",
       "price": "$10",
-      "description": "Subir tracks ilimitados \n Distribucion de los tracks publicados \n Vender la licencia de tus tracks \n Poder conectarte con productores\n Ads (publicita dentro de la plataforma) ",
-      "urlToImage": "https://musicindustryhowtoimages.s3.amazonaws.com/wp-content/uploads/2021/02/20000852/types-of-musicians.jpg"
+      "feature": "For sellers who want to grow their business and have access to selected features.",
+      "description": " All free feature plus: \n Unlimited tracks\n      20 Monthly Private Messages\n      Sell Sound Kits\n      Sell Custom Services",
+      "urlToImage": "https://cdn.sanity.io/images/7g6d2cj1/production/6b5ebabcc318c675c2e30a4c63895249f391f3e4-1000x604.jpg?h=604&q=70&auto=format"
     },
     {
       "id": 3,
       "title": "Producer Pro",
       "price": "$20",
-      "description": "Subir tracks ilimitados \n Conectarte con artistas y colaborar \n Vender la licencia de tus beats \n Utilizar pistas de nuestros productores \n Ads (publicita dentro de la plataforma) \nDistribuir tus tracks ",
+      "feature": "For sellers who want to scale their business quickly, have a customized storefront, and complete features.",
+      "description": "All marketplace features plus:\n Unlimited tracks\n      20 Monthly Private Messages\n      Sell Sound Kits\n      Sell Custom Services",
       "urlToImage": "https://www.careersinmusic.com/wp-content/uploads/2019/11/what-does-a-music-producer-do.jpg"
     }
   ]
