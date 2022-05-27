@@ -10,11 +10,17 @@ export class BeatClubApiServices {
   create(data) {
     return http.post("/songs", data);
   }
+  createTrack(data) {
+    return http.post("/tracks", data);
+  }
   createUsers(data) {
     return http.post("/users", data);
   }
   getUsersById(id) {
     return http.get(`/users/${id}`);
+  }
+  updateTrack(id, data) {
+    return http.put(`/tracks/${id}`, data);
   }
   update(id, data) {
     return http.put(`/songs/${id}`, data);

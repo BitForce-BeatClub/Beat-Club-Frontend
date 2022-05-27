@@ -323,12 +323,12 @@ export default {
       value2: null,
       value3: null,
       containsMusicOptions: [
-        { name: "Yes", key: "1" },
-        { name: "No", key: "0" },
+        { name: "Yes"},
+        { name: "No"},
       ],
       containsExplicitContent: [
-        { name: "Yes", key: "1" },
-        { name: "No", key: "0" },
+        { name: "Yes"},
+        { name: "No"},
       ],
       typeslicence: [
         { name: "All rights reserved", key: "1" },

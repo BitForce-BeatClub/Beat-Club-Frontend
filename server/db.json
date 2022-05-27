@@ -124,5 +124,62 @@
       "urlToImage": "https://i.ytimg.com/vi/RHUKLQ6nWpc/maxresdefault.jpg",
       "userId": 2
     }
+  ],
+  "tracks": [
+    {
+      "id": 1,
+      "title": "Title1|",
+      "gender": "Title1|gender",
+      "tags": "Title1|",
+      "description": "Title1| des",
+      "caption": "Title1|c",
+      "privacy": "Public",
+      "containsMusic": {
+        "name": "Yes",
+        "key": "1"
+      },
+      "artist": "Title1| a",
+      "publisher": "Title1| p",
+      "ISRC": "Title1| isr",
+      "commposer": "Title1| co",
+      "releaseTitle": "Title1| ti",
+      "buyLink": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
+      "albumTitle": "Title1| al",
+      "recordLabel": "Title1| lab",
+      "recordLabelDate": "2022-05-11T05:00:00.000Z",
+      "barcode": "Title1| bar",
+      "ISWS": "Title1| isw",
+      "pLine": "Title1| line",
+      "containsExplicitContent": "All rights reserved",
+      "license": true
+    },
+    {
+      "id": 2,
+      "title": "123213",
+      "gender": {
+        "name": "Reggae"
+      },
+      "tags": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
+      "description": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
+      "caption": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
+      "privacy": "Public",
+      "containsMusic": {
+        "name": "Yes"
+      },
+      "artist": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
+      "publisher": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
+      "ISRC": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
+      "commposer": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
+      "releaseTitle": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
+      "buyLink": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
+      "albumTitle": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
+      "recordLabel": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
+      "recordLabelDate": "2022-05-10T05:00:00.000Z",
+      "barcode": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
+      "ISWS": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
+      "pLine": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
+      "containsExplicitContent": "All rights reserved",
+      "license": true
+    }
   ]
 }
