@@ -82,9 +82,9 @@
     },
     {
       "id": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
-      "firstName": "Adrian",
-      "lastName": "Esqueiros",
-      "nickName": "Adrian98",
+      "firstName": "Adrian Manuel",
+      "lastName": "Esqueiros Cabrera",
+      "nickName": "Adrian9804",
       "email": "u201718169@upc.edu.pe",
       "location": "Peru, lima",
       "description": "El dios de la versatilidad! Raaa!"
@@ -125,6 +125,29 @@
       "description": "feat Trueno",
       "urlToImage": "https://i.ytimg.com/vi/RHUKLQ6nWpc/maxresdefault.jpg",
       "userId": 2
+    }
+  ],
+  "memberships": [
+    {
+      "id": 1,
+      "title": "Free",
+      "price": "$0",
+      "description": "For everyone registered",
+      "urlToImage": "https://maxst.icons8.com/vue-static/landings/lunacy-new/free.svg"
+    },
+    {
+      "id": 2,
+      "title": "Musician",
+      "price": "$10",
+      "description": "Subir tracks ilimitados \n Distribucion de los tracks publicados \n Vender la licencia de tus tracks \n Poder conectarte con productores\n Ads (publicita dentro de la plataforma) ",
+      "urlToImage": "https://musicindustryhowtoimages.s3.amazonaws.com/wp-content/uploads/2021/02/20000852/types-of-musicians.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Producer Pro",
+      "price": "$20",
+      "description": "Subir tracks ilimitados \n Conectarte con artistas y colaborar \n Vender la licencia de tus beats \n Utilizar pistas de nuestros productores \n Ads (publicita dentro de la plataforma) \nDistribuir tus tracks ",
+      "urlToImage": "https://www.careersinmusic.com/wp-content/uploads/2019/11/what-does-a-music-producer-do.jpg"
     }
   ]
 }
