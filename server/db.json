@@ -1,4 +1,5 @@
 {
+
   "users": [
     {
       "id": 1,
@@ -6,7 +7,9 @@
       "lastName": "Julián Conde",
       "nickName": "Bizarrap",
       "urlToImage": "https://yt3.ggpht.com/ytc/AKedOLTz2_RRKmPM69Ib8ZgXVM21L5eSnZCmw5QrhukbIg=s900-c-k-c0x00ffffff-no-rj",
-      "userType": "Producer"
+      "userType": "Producer",
+      "trends": "#LunyTunes",
+      "result":"Sponsored"
     },
     {
       "id": 2,
@@ -14,7 +17,9 @@
       "lastName": "Navaja",
       "nickName": "Elpepe",
       "urlToImage": "https://i.ytimg.com/vi/0OkiUUU3Odw/maxresdefault.jpg",
-      "userType": "Artist"
+      "userType": "Artist",
+      "trends": "#Tainy",
+      "result":"Sponsored"
     },
     {
       "id": 3,
@@ -22,7 +27,9 @@
       "lastName": "Navaja",
       "nickName": "Elpepe",
       "urlToImage": "https://i.ytimg.com/vi/0OkiUUU3Odw/maxresdefault.jpg",
-      "userType": "Artist"
+      "userType": "Artist",
+      "trends": "#Rock",
+      "result":"30.2k results"
     },
     {
       "id": 4,
@@ -30,7 +37,9 @@
       "lastName": "Julián Conde",
       "nickName": "Bizarrap",
       "urlToImage": "https://yt3.ggpht.com/ytc/AKedOLTz2_RRKmPM69Ib8ZgXVM21L5eSnZCmw5QrhukbIg=s900-c-k-c0x00ffffff-no-rj",
-      "userType": "Producer"
+      "userType": "Producer",
+      "trends": "#Trap",
+      "result":"2M results"
     },
     {
       "id": 5,
@@ -38,7 +47,9 @@
       "lastName": "Navaja",
       "nickName": "Elpepe",
       "urlToImage": "https://i.ytimg.com/vi/0OkiUUU3Odw/maxresdefault.jpg",
-      "userType": "Artist"
+      "userType": "Artist",
+      "trends": "#Urban",
+      "result":"22K results"
     },
     {
       "id": 6,
@@ -46,7 +57,9 @@
       "lastName": "Julián Conde",
       "nickName": "Bizarrap",
       "urlToImage": "https://yt3.ggpht.com/ytc/AKedOLTz2_RRKmPM69Ib8ZgXVM21L5eSnZCmw5QrhukbIg=s900-c-k-c0x00ffffff-no-rj",
-      "userType": "Producer"
+      "userType": "Producer",
+      "trends": "#lo-fi beat",
+      "result":"30k results"
     },
     {
       "id": 7,
@@ -54,7 +67,9 @@
       "lastName": "Navaja",
       "nickName": "Elpepe",
       "urlToImage": "https://i.ytimg.com/vi/0OkiUUU3Odw/maxresdefault.jpg",
-      "userType": "Artist"
+      "userType": "Artist",
+      "trends": "#skere",
+      "result":"10k results"
     },
     {
       "id": 8,
@@ -62,7 +77,9 @@
       "lastName": "Navaja",
       "nickName": "Elpepe",
       "urlToImage": "https://i.ytimg.com/vi/0OkiUUU3Odw/maxresdefault.jpg",
-      "userType": "Artist"
+      "userType": "Artist",
+      "trends": "#asap",
+      "result":"3k results"
     },
     {
       "id": 9,
@@ -125,4 +142,5 @@
       "userId": 2
     }
   ]
+
 }

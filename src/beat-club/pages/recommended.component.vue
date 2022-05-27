@@ -7,40 +7,16 @@
     <div class="container2">
       <div class="box2"></div>
       <div class="box2"><p>YOUR FEED</p></div>
-
     </div>
   <br>
     <div class="container">
       <div class="box2"></div>
       <div class="box">
-        <h2>Trending Searches</h2>
-        <br>
-        <p>#LunyTunes </p>
-        <p>Sponsored</p>
-        <br>
-        <p>#Tainy </p>
-        <p>Sponsored</p>
-        <br>
-        <p>#Rock </p>
-        <p>30.2k results</p>
-        <br>
-        <p>#Trap </p>
-        <p>2M results</p>
-        <br>
-        <p>#Urban </p>
-        <p>22K results</p>
-        <br>
-        <p>#lo-fi beat </p>
-        <p>30k results</p>
-        <br>
-        <p>#skere </p>
-        <p>10k results</p>
-        <br>
-        <p>#asap </p>
-        <p>3k results</p>
+        <user-trend></user-trend>
       </div>
       <div class="box2"></div>
-      <div class="box">     <song-card-list></song-card-list>
+      <div class="box">
+        <song-card-list></song-card-list>
       </div>
       <div class="box2"></div>
       <div class="box">
@@ -121,13 +97,13 @@
 
 <script>
 
-import UserCardProducer from "../components/user-card/user-card-producer.component.vue";
-import SongCardList from "../components/song-card/song-card-list.component.vue";
 
+import SongCardList from "../components/song-card/song-card-list.component.vue";
+import userTrend from "../components/user-card/user-trend.component.vue";
 export default {
 
   name: "Recommended-component",
-  components: { UserCardProducer, SongCardList},
+  components: { SongCardList,userTrend},
   data(){
     return{}
   }
