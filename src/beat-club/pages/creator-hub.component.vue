@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="">
     <div class="mx-8 pb-4 pl-2 text-black-alpha-90">
       <div class="bg-white p-3 text-red-500">
         <h2>Creator Hub</h2>
@@ -262,25 +262,28 @@
                 }}</label>
               </div>
             </div>
-            <div class="flex align-items-around">
-              <div class="flex flex-wrap align-items-left justify-content-left">
-                <h4 class="mt-7 pt-7 left-0 w-9rem h-9rem mx-3 my-3 md:my-0">
-                  * Required fields
-                </h4>
+            <div class="grid">
+              <div class="col-6">
+                <div class="justify-content-start">
+                  <h4>* Required fields</h4>
+                </div>
               </div>
-              <pv-button
-                class="ml-8 my-6 w-7rem h-2rem justify-content-left align-items-left"
-                id="btn-cancel"
-                icon="pi pi-times"
-                label="cancel"
-              />
-              <pv-button
-                class="my-6 w-5rem h-2rem justify-content-right align-items-right"
-                id="btn-save"
-                icon="pi pi-save"
-                label="save"
-                @click="saveTrack"
-              />
+              <div class="col-6">
+                <div class="flex flex-row-reverse">
+                  <pv-button
+                    id="btn-cancel"
+                    icon="pi pi-times"
+                    label="cancel"
+                  />
+
+                  <pv-button
+                    id="btn-save"
+                    icon="pi pi-save"
+                    label="save"
+                    @click="saveTrack"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </pv-tab-panel>
@@ -288,15 +291,140 @@
           <template #header>
             <span>Permissions</span>
           </template>
-          <p class="tabs-content">
-            At vero eos et accusamus et iusto odio dignissimos ducimus qui
-            blanditiis praesentium voluptatum deleniti atque corrupti quos
-            dolores et quas molestias excepturi sint occaecati cupiditate non
-            provident, similique sunt in culpa qui officia deserunt mollitia
-            animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis
-            est et expedita distinctio. Nam libero tempore, cum soluta nobis est
-            eligendi optio cumque nihil impedit quo minus.
-          </p>
+          <div
+            class="flex align-items-start flex-column lg:justify-content-between lg:flex-row"
+          >
+            <div class="mr-5 flex align-items-center mt-3">
+              <i class="pi pi-ban mr-1 pb-0 mb-0" style="font-weight: bold"></i>
+              <h3 class="mt-0 pt-0">Active Users</h3>
+            </div>
+          </div>
+          <div class="grid mt-3">
+            <div class="col-12 md:col-4 mb-4 px-5">
+              <div class="text-900 mb-3 font-medium">
+                <div class="field-checkbox">
+                  <pv-checkbox
+                    class="bg-primary"
+                    v-model="checked"
+                    :binary="true"
+                  />
+                  <label>Enable direct download</label>
+                </div>
+              </div>
+              <div v-if="checked === true">
+                <span class="text-700 text-sm line-height-3"
+                  >This track will be available for direct download in the
+                  original format it was updated</span
+                >
+              </div>
+              <div v-else>
+                <span class="text-700 text-sm line-height-3"
+                  >This track will not be available for direct download in the
+                  original format it was updated</span
+                >
+              </div>
+            </div>
+            <div class="col-12 md:col-4 mb-4 px-5">
+              <div class="field-checkbox">
+                <pv-checkbox
+                  class="checkboxes"
+                  v-model="checked2"
+                  :binary="true"
+                />
+                <label>Enable app playback</label>
+              </div>
+              <div v-if="checked2 === true">
+                <span class="text-700 text-sm line-height-3"
+                  >This track will be playable outside of BeatClub and its
+                  apps.</span
+                >
+              </div>
+              <div v-else>
+                <span class="text-700 text-sm line-height-3"
+                  >This track will not be playable outside of BeatClub and its
+                  apps</span
+                >
+              </div>
+            </div>
+            <div class="col-12 md:col-4 mb-4 px-5">
+              <div class="field-checkbox">
+                <pv-checkbox
+                  class="checkboxes"
+                  v-model="checked3"
+                  :binary="true"
+                />
+                <label> Include in RSS feed</label>
+              </div>
+              <div v-if="checked3 === true">
+                <span class="text-700 text-sm line-height-3"
+                  >This track will be include your RSS feed.</span
+                >
+              </div>
+              <div v-else>
+                <span class="text-700 text-sm line-height-3"
+                  >This track will not be include your RSS feed.</span
+                >
+              </div>
+            </div>
+            <div class="col-4 px-5">
+              <div class="field-checkbox">
+                <pv-checkbox
+                  class="checkboxes bg-white"
+                  v-model="checked4"
+                  :binary="true"
+                />
+                <label> Display embed code</label>
+              </div>
+              <div v-if="checked4 === true">
+                <span class="text-700 text-sm line-height-3"
+                  >This track's embedded-player code will be displayed
+                  public.</span
+                >
+              </div>
+              <div v-else>
+                <span class="text-700 text-sm line-height-3"
+                  >This track's embedded-player code will not be displayed
+                  public</span
+                >
+              </div>
+            </div>
+            <div class="col-8 px-5">
+              <div class="field-checkbox">
+                <pv-checkbox
+                  class="checkboxes"
+                  style=""
+                  v-model="checked5"
+                  :binary="true"
+                />
+                <label> Offline listening</label>
+              </div>
+              <div v-if="checked5 === true">
+                <span class="text-700 text-sm line-height-3"
+                  >This track can be played on devices without an internet
+                  connection.</span
+                >
+              </div>
+              <div v-else>
+                <span class="text-700 text-sm line-height-3"
+                  >This track can't be played on devices without an internet
+                  connection.</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-row-reverse">
+            <div class="flex align-items-center justify-content-center">
+              <pv-button id="btn-cancel" icon="pi pi-times" label="cancel" />
+              <div class="flex align-items-center justify-content-center">
+                <pv-button
+                  id="btn-save"
+                  icon="pi pi-save"
+                  label="save"
+                  @click="saveTrack"
+                />
+              </div>
+            </div>
+          </div>
         </pv-tab-panel>
       </pv-tab-view>
     </div>
@@ -318,18 +446,16 @@ export default {
       tracksService: null,
       selectedGender: null,
       checked: false,
+      checked2: false,
+      checked3: false,
+      checked4: false,
+      checked5: false,
       loading: false,
       value1: null,
       value2: null,
       value3: null,
-      containsMusicOptions: [
-        { name: "Yes"},
-        { name: "No"},
-      ],
-      containsExplicitContent: [
-        { name: "Yes"},
-        { name: "No"},
-      ],
+      containsMusicOptions: [{ name: "Yes" }, { name: "No" }],
+      containsExplicitContent: [{ name: "Yes" }, { name: "No" }],
       typeslicence: [
         { name: "All rights reserved", key: "1" },
         { name: "Creative commons", key: "0" },
