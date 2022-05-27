@@ -30,6 +30,11 @@ import InputText from "primevue/inputtext";
 import Calendar from "primevue/calendar";
 import Checkbox from "primevue/checkbox";
 import Divider from "primevue/divider";
+import Textarea from "primevue/textarea";
+import RadioButton from "primevue/radiobutton";
+import TabView from "primevue/tabview";
+import TabPanel from "primevue/tabpanel";
+import FileUpload from "primevue/fileupload";
 
 const firebaseConfig = {
   apiKey: "AIzaSyB5_Hqojo_tJCludylcYIY16R7If-dfFAo",
@@ -80,6 +85,13 @@ firebase.auth().onAuthStateChanged(() => {
     app.component("pv-calendar", Calendar);
     app.component("pv-checkbox", Checkbox);
     app.component("pv-divider", Divider);
+    app.component("pv-text-area", Textarea);
+    app.component("pv-radio-button", RadioButton);
+    app.component("pv-tab-view", TabView);
+    app.component("pv-tab-panel", TabPanel);
+    app.component("pv-calendar", Calendar);
+    app.component("pv-file-upload", FileUpload);
+
     app.mount("#app");
   }
 });

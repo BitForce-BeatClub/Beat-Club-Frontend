@@ -94,7 +94,7 @@ export default {
       ],
       access: [
         { label: "Message", to: "/profile", icon: "pi pi-comment" },
-        { label: "Creator Hub", to: "/", icon: "pi pi-sliders-v" },
+        { label: "Creator Hub", to: "/creator-hub", icon: "pi pi-sliders-v" },
         { label: "Upload", to: "/songs", icon: "pi pi-cloud-upload" },
       ],
       loggedIn: false,
