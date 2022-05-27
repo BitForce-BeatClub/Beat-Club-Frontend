@@ -47,11 +47,12 @@
                     <pv-password
                       id="password"
                       v-model="password"
+                      toggleMask
                       :feedback="false"
                       required="true"
                     >
                     </pv-password>
-                    <label for="title">Password*</label>
+                    <label for="password">Password*</label>
                   </div>
                   <div v-if="error" style="padding-top: 1rem; color: #d3d3d3">
                     <span> {{ error.slice(9) }} </span>
@@ -61,7 +62,7 @@
                 <pv-button
                   type="submit"
                   label="Sign in"
-                  class="mt-2 btn-color"
+                  class="p-button p-button-secondary"
                 />
               </form>
               <form @submit.prevent="loginWithGoogle()" class="p-fluid">
@@ -109,18 +110,6 @@ export default {
       this.password = value;
       this.validatePassword(value);
     },
-  },
-  data() {
-    return {
-      email: "",
-      password: "",
-      error: "",
-      msg: [],
-      emailRules: [
-        (v) => !!v || "Email is required",
-        (v) => /.+@.+/.test(v) || "E-mail must be valid",
-      ],
-    };
   },
   methods: {
     validateEmail(value) {
@@ -190,8 +179,8 @@ export default {
     }
   }
 }
-pv-button {
-  //background: #005FF9;
+.btn-width {
+  min-width: 100% !important;
 }
 .center {
   display: flex;

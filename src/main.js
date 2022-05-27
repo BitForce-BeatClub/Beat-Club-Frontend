@@ -3,8 +3,8 @@ import App from "./App.vue";
 import router from "./router";
 import PrimeVue from "primevue/config";
 import ToastService from "primevue/toastservice";
-import DisableAutocomplete from "@aacassandra/vue-disable-autocomplete";
 import firebase from "firebase/compat";
+import DisableAutocomplete from "@aacassandra/vue-disable-autocomplete";
 
 // PrimeVue Styles
 import "primevue/resources/themes/mdc-light-indigo/theme.css";
@@ -30,6 +30,12 @@ import InputText from "primevue/inputtext";
 import Calendar from "primevue/calendar";
 import Checkbox from "primevue/checkbox";
 import Divider from "primevue/divider";
+
+import Divider from "primevue/divider";
+import Textarea from "primevue/textarea";
+import FileUpload from "primevue/fileupload";
+import SplitButton from "primevue/splitbutton";
+import Inputmask from "primevue/inputmask";
 
 const firebaseConfig = {
   apiKey: "AIzaSyB5_Hqojo_tJCludylcYIY16R7If-dfFAo",
@@ -68,6 +74,9 @@ firebase.auth().onAuthStateChanged(() => {
     app.component("pv-button", Button);
     app.component("pv-toolbar", Toolbar);
     app.component("pv-input-text", InputText);
+    app.component("pv-input-text-area", Textarea);
+    app.component("pv-file-upload", FileUpload);
+    app.component("pv-split-button", SplitButton);
     app.component("pv-sidebar", Sidebar);
     app.component("pv-row", Row);
     app.component("pv-dialog", Dialog);
@@ -80,6 +89,7 @@ firebase.auth().onAuthStateChanged(() => {
     app.component("pv-calendar", Calendar);
     app.component("pv-checkbox", Checkbox);
     app.component("pv-divider", Divider);
+    app.component("pv-input-mask", Inputmask);
     app.mount("#app");
   }
 });

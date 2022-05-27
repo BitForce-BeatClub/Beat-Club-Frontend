@@ -8,6 +8,62 @@
       </div>
     </template>
     <template #end>
+      <div class="card" v-if="!isConnected">
+        <div class="flex flex-row card-container">
+          <div class="flex align-items-center justify-content-center">
+            <router-link
+              v-for="item in items"
+              :to="item.to"
+              custom
+              v-slot="{ navigate, href }"
+              :key="item.label"
+            >
+              <pv-button
+                class="p-button-text mx-3"
+                :href="href"
+                @click="navigate"
+              >
+                {{ item.label }}
+              </pv-button>
+            </router-link>
+          </div>
+        </div>
+      </div>
+      <div class="card" v-else>
+        <div class="flex flex-row card-container">
+          <div class="flex align-items-center justify-content-center mx-2">
+            <pv-split-button
+              class="p-button-text p-button-secondary"
+              :model="menuUser"
+            >
+              <pv-button @click="toUserProfile">
+                <div class="custom-font">
+                  <span class="">Hi</span>
+                  {{ this.userData.nickName }}
+                  <span class="">!</span>
+                </div>
+              </pv-button>
+            </pv-split-button>
+          </div>
+          <div class="flex align-items-center justify-content-center">
+            <router-link
+              v-for="item in access"
+              :to="item.to"
+              custom
+              v-slot="{ navigate, href }"
+              :key="item.label"
+            >
+              <pv-button
+                type="button"
+                class="p-button-text mx-2"
+                :icon="item.icon"
+                :href="href"
+                :label="item.label"
+                @click="navigate"
+              />
+            </router-link>
+          </div>
+        </div>
       <div v-if="!isConnected">
         <div class="flex-column">
           <router-link
@@ -65,16 +121,20 @@
 
 <script>
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
-
+import { BeatClubApiServices } from "../services/beat-club-api.services";
 export default {
   name: "tool-bar",
   data() {
     return {
-      drawer: false,
+      auth: getAuth(),
+      userData: [],
+      loggedIn: false,
+      isConnected: false,
       items: [
-        { label: "Sign In", to: "/sign-in" },
-        { label: "Sign Up", to: "/sign-up" },
-        { label: "Start Collaborating", to: "/songs" },
+        { label: "Explore", to: "/sign-in", icon: "pi pi-users" },
+        { label: "Creator", to: "/sign-in", icon: "pi pi-users" },
+        { label: "Sign In", to: "/sign-in", icon: "pi pi-sign-in" },
+        { label: "Sign Up", to: "/sign-up", icon: "pi pi-users" },
       ],
       items2: [
         { label: "Recommended", to: "/recommended" },
@@ -83,11 +143,24 @@ export default {
       ],
 
       access: [
-        { label: "Hi user", to: "/" },
-        { label: "Message", to: "/profile" },
-        { label: "Creator Hub", to: "/" },
-        { label: "Upload", to: "/songs" },
-
+        { label: "Message", to: "/", icon: "pi pi-comment" },
+        { label: "Creator Hub", to: "/", icon: "pi pi-sliders-v" },
+        { label: "Upload", to: "/songs", icon: "pi pi-cloud-upload" },
+      ],
+      menuUser: [
+        { label: "Profile", to: "/userInfo", icon: "pi pi-user" },
+        { label: "Credentials", to: "/credentials", icon: "pi pi-id-card" },
+        {
+          label: "Subscription",
+          to: "/subscriptions",
+          icon: "pi pi-credit-card",
+        },
+        {
+          label: "Log Out",
+          to: "/log-out",
+          icon: "pi pi-sign-out",
+        },
+        // { label: "Log Out", , icon: "pi pi-sign-out" },
       ],
       loggedIn: false,
       isConnected: false,
@@ -96,34 +169,43 @@ export default {
   methods: {
     logOut() {
       const auth = getAuth();
-      signOut(auth)
-        .then(() => {
-          this.isConnected = false;
-          console.log(auth);
-          this.$router.replace({ name: "HomeView" });
-          // Sign-out successful.
-        })
-        .catch((error) => {
-          console.log(error);
-          // An error happened.
-        });
+      signOut(auth).then(() => {
+        this.isConnected = false;
+        this.$router.replace({ name: "HomeView" });
+      });
+    },
+    toUserProfile() {
+      this.$router.replace({ name: "UserProfile" });
     },
   },
-
   created() {
+    this.usersService = new BeatClubApiServices();
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
-      this.isConnected = false;
       try {
-        const uid = user.uid;
-        console.log("usuario conectado", uid);
+        this.usersService.getUsersById(user.uid).then((response) => {
+          this.userData = response.data;
+          // console.log("user", this.userData);
+        });
         this.isConnected = true;
+        this.userData.nickname = auth.currentUser.displayName;
+        // console.log("usuario conectado", user.uid);
+        console.log("Info: ", this.userData.nickname);
       } catch (err) {
+        this.isConnected = false;
         console.log("usuario no esta conectado", err);
       }
     });
   },
+  watch: {
+    userData() {
+      return this.userData.nickname;
+    },
+  },
   computed: {
+    now() {
+      return this.nickname;
+    },
     label() {
       return this.loggedIn ? this.access : this.items;
     },
@@ -132,21 +214,38 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap");
 .p-toolbar {
-  background-color: #0d1b29;
-  border-radius: 0;
+  border-radius: 40rem;
+  background: #212429;
+  display: flex;
+  justify-content: center;
+}
+.p-button-text {
+  font-family: "Comfortaa", cursive;
+  font-size: 1em;
+  color: #e5e3e3 !important;
 }
 .logo img {
-  width: 100%;
+  padding-right: 1vmax;
+  //margin-left: 3rem;
 }
-.font-poppins {
-  font-family: "Poppins", sans-serif;
-
+.custom-font {
+  font-family: "Comfortaa", cursive;
+  font-size: 1em;
 }
-.font-poppins2{
-  font-family: "Poppins", sans-serif;
-
-  height:5px;
+.p-splitbutton {
+  font-family: "Comfortaa", cursive;
+  background: transparent;
+  display: inline-flex;
+  position: relative;
+  align-items: center;
 }
-
+span {
+  font-family: "Comfortaa", cursive;
+  color: #e5e3e3 !important;
+}
+//.font-poppins {
+//  font-family: "Poppins", sans-serif;
+//}
 </style>

@@ -1,5 +1,4 @@
 {
-
   "users": [
     {
       "id": 1,
@@ -163,6 +162,34 @@
       "LastName": "Esqueiros",
       "nickName": "Adrian98",
       "email": "u201718169@upc.edu.pe"
+    },
+    {
+      "id": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
+      "firstName": "Adrian Manuel",
+      "lastName": "Esqueiros Cabrera",
+      "nickName": "Adrian9804",
+      "email": "u201718169@upc.edu.pe",
+      "location": "Peru, lima",
+      "description": "El dios de la versatilidad! Raaa!",
+      "urlToImage": "https://i0.wp.com/urbanroosters.news/wp-content/uploads/2022/01/500x500.jpg?w=500&ssl=1"
+    },
+    {
+      "id": "DF6WC45BFjYpP23bAVifqNfhBTj1",
+      "firstName": "Admin",
+      "lastName": "Admin",
+      "nickName": "Admin",
+      "email": "admin@admin.com",
+      "location": "Lima",
+      "description": "Hola",
+      "urlToImage": "https://loveshayariimages.in/wp-content/uploads/2021/10/1080p-Latest-Whatsapp-Profile-Images-1.jpg"
+    },
+    {
+      "id": "7n9hUOzaU4S9WyhxCLB9K88f9mz1",
+      "firstName": "prueba45s23",
+      "lastName": "prueba",
+      "nickName": "prueba2ss",
+      "email": "prueba@gmail.com",
+      "urlToImage": "https://www.beatstars.com/assets/img/placeholders/default-avatar-circle.svg"
     }
   ],
   "songs": [
@@ -200,6 +227,32 @@
       "description": "feat Trueno",
       "urlToImage": "https://i.ytimg.com/vi/RHUKLQ6nWpc/maxresdefault.jpg",
       "userId": 2
+    }
+  ],
+  "memberships": [
+    {
+      "id": 1,
+      "title": "Free",
+      "price": "$0",
+      "feature": "For sellers just starting their music business",
+      "description": "Up to 10 tracks\n Upload Track Stems\n Instant Payments\n Accept PayPal payments\n Accept Stripe payments",
+      "urlToImage": "https://www.picng.com/upload/free/png_free_52922.png"
+    },
+    {
+      "id": 2,
+      "title": "Musician",
+      "price": "$10",
+      "feature": "For sellers who want to grow their business and have access to selected features.",
+      "description": " All free feature plus: \n Unlimited tracks\n      20 Monthly Private Messages\n      Sell Sound Kits\n      Sell Custom Services",
+      "urlToImage": "https://cdn.sanity.io/images/7g6d2cj1/production/6b5ebabcc318c675c2e30a4c63895249f391f3e4-1000x604.jpg?h=604&q=70&auto=format"
+    },
+    {
+      "id": 3,
+      "title": "Producer Pro",
+      "price": "$20",
+      "feature": "For sellers who want to scale their business quickly, have a customized storefront, and complete features.",
+      "description": "All marketplace features plus:\n Unlimited tracks\n      20 Monthly Private Messages\n      Sell Sound Kits\n      Sell Custom Services",
+      "urlToImage": "https://www.careersinmusic.com/wp-content/uploads/2019/11/what-does-a-music-producer-do.jpg"
     }
   ]
 
