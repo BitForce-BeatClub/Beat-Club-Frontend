@@ -42,7 +42,7 @@
           field="id"
           header="Id"
           :sortable="true"
-          style="min-width: 12rem"
+          style="min-width: 12rem; background: transparent !important"
         ></pv-column>
         <pv-column
           field="title"
@@ -221,7 +221,7 @@ export default {
     this.songsService = new BeatClubApiServices();
     this.songsService.getSongs().then((response) => {
       this.songs = response.data;
-      this.songs.forEach((challenge) => this.getDisplayableSong(challenge));
+      this.songs.forEach((song) => this.getDisplayableSong(song));
     });
     this.initFilters();
   },
@@ -234,11 +234,8 @@ export default {
         life: 3000,
       });
     },
-    getDisplayableSong(challenge) {
-      // challenge.status = challenge.challengeType
-      //   ? this.statuses[0].value
-      //   : this.statuses[1].value;
-      return challenge;
+    getDisplayableSong(song) {
+      return song;
     },
     getStorableSong(displayableSongs) {
       return {
@@ -330,8 +327,4 @@ export default {
 };
 </script>
 
-<style scoped>
-. {
-  background: white !important;
-}
-</style>
+<style scoped></style>

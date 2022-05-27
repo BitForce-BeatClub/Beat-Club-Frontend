@@ -19,7 +19,7 @@
               :key="item.label"
             >
               <pv-button
-                class="p-button-text text-white font-poppins"
+                class="p-button-text mx-3"
                 :href="href"
                 @click="navigate"
               >
@@ -30,12 +30,15 @@
         </div>
       </div>
       <div class="card" v-else>
-        <div class="mx-5 flex flex-row card-container">
-          <div class="flex align-items-center justify-content-center">
-            <pv-split-button @click="logOut" class="p-button-text p-button-warning" :model="dropDown">
+        <div class="flex flex-row card-container">
+          <div class="flex align-items-center justify-content-center mx-2">
+            <pv-split-button
+              class="p-button-text p-button-secondary"
+              :model="dropDown"
+            >
               <div class="flex align-items-center justify-content-center">
                 Hi
-                <span class="mx-1" style="color: #f5cb5c">
+                <span class="mx-1" style="color: #ff4081">
                   {{ this.userData.nickName }}
                 </span>
                 !
@@ -52,23 +55,13 @@
             >
               <pv-button
                 type="button"
-                class="p-button-text"
+                class="p-button-text mx-2"
                 :icon="item.icon"
                 :href="href"
                 :label="item.label"
                 @click="navigate"
               />
             </router-link>
-          </div>
-          <div class="flex align-items-center justify-content-center">
-            <pv-button
-              @click="logOut()"
-              icon="pi pi-sign-out"
-              style="background: #e5383b"
-              class="p-button"
-              type="submit"
-              label="Logout"
-            />
           </div>
         </div>
       </div>
@@ -77,7 +70,6 @@
 </template>
 
 <script>
-import { ref } from "vue";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { BeatClubApiServices } from "../services/beat-club-api.services";
 export default {
@@ -86,16 +78,8 @@ export default {
     return {
       auth: getAuth(),
       userData: [],
-      dropDown: [
-        { label: "Profile", to: "/profile", icon: "pi pi-user" },
-        { label: "Credentials", to: "/credentials", icon: "pi pi-id-card" },
-        {
-          label: "Subscription",
-          to: "/subscription",
-          icon: "pi pi-credit-card",
-        },
-        // { label: "Log Out", , icon: "pi pi-sign-out" },
-      ],
+      loggedIn: false,
+      isConnected: false,
       items: [
         { label: "Explore", to: "/sign-in", icon: "pi pi-users" },
         { label: "Creator", to: "/sign-in", icon: "pi pi-users" },
@@ -107,24 +91,30 @@ export default {
         { label: "Creator Hub", to: "/", icon: "pi pi-sliders-v" },
         { label: "Upload", to: "/songs", icon: "pi pi-cloud-upload" },
       ],
-      loggedIn: false,
-      isConnected: false,
+      dropDown: [
+        { label: "Profile", to: "/profile", icon: "pi pi-user" },
+        { label: "Credentials", to: "/credentials", icon: "pi pi-id-card" },
+        {
+          label: "Subscription",
+          to: "/subscriptions",
+          icon: "pi pi-credit-card",
+        },
+        {
+          label: "Log Out",
+          to: "/log-out",
+          icon: "pi pi-sign-out",
+        },
+        // { label: "Log Out", , icon: "pi pi-sign-out" },
+      ],
     };
   },
   methods: {
     logOut() {
       const auth = getAuth();
-      signOut(auth)
-        .then(() => {
-          this.isConnected = false;
-          // console.log(auth);
-          this.$router.replace({ name: "HomeView" });
-          // Sign-out successful.
-        })
-        .catch((error) => {
-          // console.log(error);
-          // An error happened.
-        });
+      signOut(auth).then(() => {
+        this.isConnected = false;
+        this.$router.replace({ name: "HomeView" });
+      });
     },
   },
   created() {
@@ -160,21 +150,20 @@ export default {
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap");
 .p-toolbar {
-  border-radius: 0.4rem;
-  background: #0d1b29;
-  //background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
-  //background-blend-mode: multiply;
-  //background-image: linear-gradient(to left, #2b5876 0%, #4e4376 100%);
-  //background-image: linear-gradient(to bottom, #29323c 0%, #485563 100%);
+  border-radius: 40rem;
+  background: #212429;
+  display: flex;
+  justify-content: center;
+
 }
 .p-button-text {
   font-family: "Comfortaa", cursive;
   font-size: 1em;
-  color: white !important;
+  color: #e5e3e3 !important;
 }
 .logo img {
-  width: 100%;
-  margin-left: 3rem;
+  padding-right: 1vmax;
+  //margin-left: 3rem;
 }
 
 .p-splitbutton {

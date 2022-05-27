@@ -53,7 +53,6 @@ h1 {
 }
 h1,
 p {
-  color: white;
   font-family: "Poppins", sans-serif;
 }
 

@@ -33,6 +33,7 @@ import Divider from "primevue/divider";
 import Textarea from "primevue/textarea";
 import FileUpload from "primevue/fileupload";
 import SplitButton from "primevue/splitbutton";
+import Inputmask from "primevue/inputmask";
 
 const firebaseConfig = {
   apiKey: "AIzaSyB5_Hqojo_tJCludylcYIY16R7If-dfFAo",
@@ -86,6 +87,7 @@ firebase.auth().onAuthStateChanged(() => {
     app.component("pv-calendar", Calendar);
     app.component("pv-checkbox", Checkbox);
     app.component("pv-divider", Divider);
+    app.component("pv-input-mask", Inputmask);
     app.mount("#app");
   }
 });
