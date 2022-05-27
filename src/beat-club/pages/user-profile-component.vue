@@ -30,6 +30,7 @@
         <template #content>
           <div class="grid">
             <pv-button
+              @click="editProfile"
               icon="pi pi-user-edit"
               label="Edit profile"
               class="p-button-secondary"
@@ -92,6 +93,9 @@ export default {
         this.userData = response.data;
         console.log("UserPo", this.userData);
       });
+    },
+    editProfile() {
+      this.$router.push("/userInfo");
     },
   },
 };

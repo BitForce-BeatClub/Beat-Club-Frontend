@@ -26,12 +26,8 @@
       </p>
     </template>
     <template #footer>
-
-    <div class="btnPos">
-        <pv-button
-          label="Subscribe"
-          class="p-button-secondary"
-        ></pv-button>
+      <div class="btnPos">
+        <pv-button label="Subscribe" class="p-button-secondary"></pv-button>
       </div>
     </template>
   </pv-card>
