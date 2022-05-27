@@ -180,6 +180,37 @@
       "pLine": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
       "containsExplicitContent": "All rights reserved",
       "license": true
+    },
+    {
+      "id": 3,
+      "title": "gatazo",
+      "gender": "gatazo",
+      "tags": "gatazo",
+      "description": "gatazo",
+      "caption": "gatazo",
+      "privacy": "Public",
+      "containsMusic": {
+        "name": "Yes"
+      },
+      "artist": "gatazo",
+      "publisher": "gatazo",
+      "ISRC": "gatazo",
+      "commposer": "gatazo",
+      "releaseTitle": "gatazo",
+      "buyLink": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
+      "albumTitle": "gatazo",
+      "recordLabel": "gatazo",
+      "recordLabelDate": "2022-05-09T05:00:00.000Z",
+      "barcode": "gatazo",
+      "ISWS": "gatazo",
+      "pLine": "gatazo",
+      "containsExplicitContent": "All rights reserved",
+      "license": true,
+      "enableDirectDownload": true,
+      "enableAppPlayback": true,
+      "includeRSSFeed": true,
+      "displayEmbedCode": true,
+      "offlineListening": true
     }
   ]
 }

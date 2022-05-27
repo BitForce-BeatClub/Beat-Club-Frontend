@@ -305,13 +305,13 @@
                 <div class="field-checkbox">
                   <pv-checkbox
                     class="bg-primary"
-                    v-model="checked"
+                    v-model="track.enableDirectDownload"
                     :binary="true"
                   />
                   <label>Enable direct download</label>
                 </div>
               </div>
-              <div v-if="checked === true">
+              <div v-if="track.enableDirectDownload === true">
                 <span class="text-700 text-sm line-height-3"
                   >This track will be available for direct download in the
                   original format it was updated</span
@@ -328,12 +328,12 @@
               <div class="field-checkbox">
                 <pv-checkbox
                   class="checkboxes"
-                  v-model="checked2"
+                  v-model="track.enableAppPlayback"
                   :binary="true"
                 />
                 <label>Enable app playback</label>
               </div>
-              <div v-if="checked2 === true">
+              <div v-if="track.enableAppPlayback === true">
                 <span class="text-700 text-sm line-height-3"
                   >This track will be playable outside of BeatClub and its
                   apps.</span
@@ -350,12 +350,12 @@
               <div class="field-checkbox">
                 <pv-checkbox
                   class="checkboxes"
-                  v-model="checked3"
+                  v-model="track.includeRSSFeed"
                   :binary="true"
                 />
                 <label> Include in RSS feed</label>
               </div>
-              <div v-if="checked3 === true">
+              <div v-if="track.includeRSSFeed === true">
                 <span class="text-700 text-sm line-height-3"
                   >This track will be include your RSS feed.</span
                 >
@@ -370,12 +370,12 @@
               <div class="field-checkbox">
                 <pv-checkbox
                   class="checkboxes bg-white"
-                  v-model="checked4"
+                  v-model="track.displayEmbedCode"
                   :binary="true"
                 />
                 <label> Display embed code</label>
               </div>
-              <div v-if="checked4 === true">
+              <div v-if="track.displayEmbedCode === true">
                 <span class="text-700 text-sm line-height-3"
                   >This track's embedded-player code will be displayed
                   public.</span
@@ -393,12 +393,12 @@
                 <pv-checkbox
                   class="checkboxes"
                   style=""
-                  v-model="checked5"
+                  v-model="track.offlineListening"
                   :binary="true"
                 />
                 <label> Offline listening</label>
               </div>
-              <div v-if="checked5 === true">
+              <div v-if="track.offlineListening === true">
                 <span class="text-700 text-sm line-height-3"
                   >This track can be played on devices without an internet
                   connection.</span
@@ -526,6 +526,11 @@ export default {
         containsExplicitContent: displayableTrack.containsExplicitContent,
         license: displayableTrack.license,
         typeLicense: displayableTrack.typeLicense,
+        enableDirectDownload: displayableTrack.enableDirectDownload,
+        enableAppPlayback: displayableTrack.enableAppPlayback,
+        includeRSSFeed: displayableTrack.includeRSSFeed,
+        displayEmbedCode: displayableTrack.displayEmbedCode,
+        offlineListening: displayableTrack.offlineListening,
       };
     },
     findIndexById(id) {
