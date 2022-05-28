@@ -239,33 +239,5 @@
       "description": "All marketplace features plus:\n Unlimited tracks\n      20 Monthly Private Messages\n      Sell Sound Kits\n      Sell Custom Services",
       "urlToImage": "https://www.careersinmusic.com/wp-content/uploads/2019/11/what-does-a-music-producer-do.jpg"
     }
-  ],
-  "tracks": [
-    {
-      "id": 1,
-      "title": "Title1|",
-      "gender": "Title1|gender",
-      "tags": "Title1|",
-      "description": "Title1| des",
-      "caption": "Title1|c",
-      "privacy": "Public",
-      "containsMusic": {
-        "name": "Yes",
-        "key": "1"
-      },
-      "artist": "Title1| a",
-      "publisher": "Title1| p",
-      "ISRC": "Title1| isr",
-      "commposer": "Title1| co",
-      "releaseTitle": "Title1| ti",
-      "buyLink": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
-      "albumTitle": "Title1| al",
-      "recordLabel": "Title1| lab",
-      "recordLabelDate": "2022-05-11T05:00:00.000Z",
-      "barcode": "Title1| bar",
-      "ISWS": "Title1| isw",
-      "pLine": "Title1| line",
-      "containsExplicitContent": "All rights reserved",
-      "license": true
-    }
+  ]
 }
