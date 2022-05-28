@@ -26,7 +26,7 @@ export default {
 <style scoped>
 .title {
   font-size: 16px !important;
-  font-family: Poppins,sans-serif;
+  font-family: Poppins, sans-serif;
 }
 .songCard {
   background-color: #161d21;

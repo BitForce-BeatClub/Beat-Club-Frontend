@@ -14,9 +14,11 @@ import "primeicons/primeicons.css";
 // PrimeFlex Companion
 import "primeflex/primeflex.css";
 //
+
 import Dialog from "primevue/dialog";
 import DataTable from "primevue/datatable";
 import Column from "primevue/column";
+import Chip from "primevue/chip";
 import Button from "primevue/button";
 import Toolbar from "primevue/toolbar";
 import Sidebar from "primevue/sidebar";
@@ -97,9 +99,7 @@ getAuth().onAuthStateChanged(() => {
     app.component("pv-radio-button", RadioButton);
     app.component("pv-tab-view", TabView);
     app.component("pv-tab-panel", TabPanel);
-    app.component("pv-calendar", Calendar);
-    app.component("pv-file-upload", FileUpload);
-
+    app.component("pv-chip", Chip);
     app.mount("#app");
   }
 });

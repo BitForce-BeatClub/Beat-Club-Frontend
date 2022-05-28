@@ -1,7 +1,7 @@
 <template>
   <pv-toolbar>
     <template #start>
-      <div class="logo flex align-items-center">
+      <div style="margin-inline: 1rem" class="logo flex align-items-center">
         <router-link to="/">
           <img src="../../assets/logo.svg" alt="logo" />
         </router-link>
@@ -21,7 +21,7 @@
       </div>
     </template>
     <template #end>
-      <div class="card" v-if="!isConnected">
+      <div class="card" v-if="!isConnected" style="margin-right: 10rem">
         <div class="flex flex-row card-container">
           <div class="flex align-items-center justify-content-center">
             <router-link
@@ -202,7 +202,7 @@ export default {
 .p-toolbar {
   background: #212429;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .p-button-text {
   font-family: "Comfortaa", cursive;

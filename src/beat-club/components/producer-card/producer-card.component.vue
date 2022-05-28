@@ -1,9 +1,9 @@
 <script>
 export default {
   name: "producer-card",
-  props:{
+  props: {
     users: Object,
-  }
+  },
 };
 </script>
 
@@ -26,8 +26,6 @@ export default {
     </pv-card>
   </div>
 </template>
-
-
 
 <style scoped>
 .card {

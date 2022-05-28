@@ -1,9 +1,6 @@
 <template>
   <div class="grid justify-content-evenly">
-    <div
-      class="flex flex-wrap justify-content-start"
-      style="margin-top: 6rem"
-    >
+    <div class="flex flex-wrap justify-content-start" style="margin-top: 6rem">
       <pv-card class="userCard shadow-8">
         <template #header>
           <div class="grid">
@@ -147,10 +144,7 @@ export default {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
 }
-.btnPos {
-  display: flex;
-  justify-content: center;
-}
+
 h4 {
   margin-top: 3px;
 }

@@ -1,43 +1,69 @@
 <template>
-  <div>
-    <pv-card class="card">
+  <div class="flex flex-wrap justify-content-start" style="margin-top: 3rem">
+    <pv-card class="userCard shadow-8">
       <template #header>
-        <img class="circle-1" alt="user header" :src="users.urlToImage" />
+        <div class="grid">
+          <img class="roundedImage" alt="UserImage" :src="users.urlToImage" />
+        </div>
       </template>
-
-      <br />
-      <br />
       <template #title>
-        Bizarrap
-        <br />
-        <p>
-          <pv-button
-            class="btn-width"
-            type="submit"
-            icon="pi pi-plus"
-            label="Follow"
-          />
-          <pv-button class="btn-width" type="submit" label="Message" />
-          <pv-button class="btn-width" type="submit" label="..." />
-        </p>
+        <div class="grid mt-1">
+          {{ users.nickName }}
+        </div>
+      </template>
+      <template #subtitle>
+        <div
+          class="grid mt-2"
+          style="color: white !important; font-family: Poppins, sans-serif"
+        >
+          {{ users.description }}
+        </div>
       </template>
       <template #content>
-        <p>Stats</p>
-        <p>Followers:{{ users.follow }}</p>
-        <p>Plays:{{ users.plays }}</p>
-        <p>Tracks:{{ users.tracks }}</p>
-        <br />
-        <div class="divider"></div>
-        <p>ABOUT ME:</p>
-        <p>{{ users.aboutme }}</p>
-        <br />
-        <div class="divider"></div>
-        <p>FIND ME ON:</p>
-        <p><i class="pi pi-youtube" style="font-size: 1rem">Youtube</i></p>
-        <p><i class="pi pi-instagram" style="font-size: 1rem">Instagram</i></p>
-        <p><i class="pi pi-facebook" style="font-size: 1rem">Facebook</i></p>
-        <p><i class="pi pi-spotify" style="font-size: 1rem">Spotify</i></p>
-        <p><i class="pi pi-tiktok" style="font-size: 1rem">Tiktok</i></p>
+        <div class="grid">
+          <pv-button
+            icon="pi pi-heart-fill"
+            label="Follow"
+            class="p-button-secondary"
+          />
+        </div>
+        <h3 style="color: #f5cb5c">Stats</h3>
+        <div class="flex justify-content-between mt-1">
+          <h4>Followers</h4>
+          <h4>{{ users.follow }}</h4>
+        </div>
+        <div class="flex justify-content-between">
+          <h4>Plays</h4>
+          <h4>{{ users.plays }}</h4>
+        </div>
+        <div class="flex justify-content-between">
+          <h4>Tracks</h4>
+          <h4>{{ users.tracks }}</h4>
+        </div>
+        <div class="flex justify-content-start my-1" style="color: #f5cb5c">
+          <h3>About me</h3>
+        </div>
+        <div class="flex justify-content-center">
+          <h4>{{ users.aboutme }}</h4>
+        </div>
+        <div class="flex justify-content-start my-1" style="color: #f5cb5c">
+          <h3>Find me on</h3>
+        </div>
+        <pv-chip
+          label="Youtube"
+          icon="pi pi-youtube"
+          class="mr-2 mb-2 custom-chip"
+        ></pv-chip>
+        <pv-chip
+          label="Instagram"
+          icon="pi pi-instagram"
+          class="mr-2 mb-2 custom-chip"
+        ></pv-chip>
+        <pv-chip
+          label="Facebook"
+          icon="pi pi-facebook"
+          class="mr-2 mb-2 custom-chip"
+        ></pv-chip>
       </template>
     </pv-card>
   </div>
@@ -53,72 +79,29 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  height: 100%;
-  width: 100%;
-  grid-gap: 10px;
-  display: grid;
-  grid-template-columns: 2% 30% 2% 60% 6%;
-}
-.content {
-  align-items: center;
-}
-brother {
-  width: 400px;
-}
-.divider {
-  background-color: #ffffff;
-  height: 1px;
-  width: 400px;
-}
-body {
-  height: 100%;
-  background-color: #000000;
-}
-.box {
-  background-color: #161a1d;
-  padding: 10px;
-  text-align: center;
-  border-radius: 10px;
-}
-.box2 {
-  background-color: #000000;
-  padding: 10px;
-  text-align: center;
-  border-radius: 10px;
-}
-p {
-  color: white;
-  text-align: left;
-}
-small {
-  color: white;
-  text-align: right;
-}
-h2 {
-  color: white;
-}
-.card-horizontal {
-  display: flex;
-  flex: 1 1 auto;
-}
-img {
-  width: 10px;
-  height: 200px;
-}
-.card {
-  background-color: #161d21;
-  color: white;
-  width: 257px;
-}
-.btn-width {
-  width: 100px;
-  align-items: center;
-}
-.circle-1 {
+.roundedImage {
+  margin-top: 3rem;
+  background: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50%;
   width: 200px;
   height: 200px;
-  border-radius: 50%;
-  float: center;
+}
+.userCard {
+  background-color: #212429;
+  color: white;
+  width: 20vw;
+  /*height: 100%;*/
+}
+.p-chip.custom-chip {
+  background: #4e99e1;
+  color: #ffffff;
+}
+.p-chip.custom-chip-blue {
+  background: #161d21;
+  color: white;
 }
 </style>

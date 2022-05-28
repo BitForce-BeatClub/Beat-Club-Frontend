@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <div class="flex flex-wrap justify-content-center card-container gap-3">
       <ProducerCard
         v-for="producerData in producersData"
@@ -20,7 +19,6 @@ export default {
   components: {
     ProducerCard,
     //userCard,
-
   },
   name: "producer-card-list",
   data() {
@@ -45,40 +43,8 @@ export default {
             ))
         );
     },
-    getStorableChallenge(displayableChallenge) {
-      return {
-        id: displayableChallenge.id,
-        firstName: displayableChallenge.firstName,
-        lastName: displayableChallenge.lastName,
-        nickName: displayableChallenge.nickName,
-        urlToImage: displayableChallenge.urlToImage,
-        userType: displayableChallenge.userType,
-      };
-    },
-    getDisplayableChallenge(challenge) {
-      return challenge;
-    },
   },
 };
 </script>
 
-<style>
-.grid {
-  display: flex;
-  justify-content: center;
-}
-h1 {
-  padding-top: 10px;
-  padding-left: 165px;
-  margin-bottom: 20px;
-}
-h1,
-p {
-  color: white;
-  font-family: "Poppins", sans-serif;
-}
-
-p {
-  text-align: center;
-}
-</style>
+<style></style>

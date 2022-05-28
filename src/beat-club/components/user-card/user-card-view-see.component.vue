@@ -5,7 +5,7 @@
         v-for="producerData in producersData"
         :key="producerData.id"
         :users="producerData"
-        style="max-width: 60px"
+        style=""
       >
       </UserView>
     </div>
@@ -43,26 +43,6 @@ export default {
                 item.userType === "Follow" && item.nickName === "Bizarrap"
             ))
         );
-    },
-
-    getStorableChallenge(displayableChallenge) {
-      return {
-        id: displayableChallenge.id,
-        firstName: displayableChallenge.firstName,
-        lastName: displayableChallenge.lastName,
-        nickName: displayableChallenge.nickName,
-        urlToImage: displayableChallenge.urlToImage,
-        userType: displayableChallenge.userType,
-        trends: displayableChallenge.trends,
-        result: displayableChallenge.result,
-        follow: displayableChallenge.follow,
-        plays: displayableChallenge.plays,
-        tracks: displayableChallenge.tracks,
-        aboutme: displayableChallenge.aboutme,
-      };
-    },
-    getDisplayableChallenge(challenge) {
-      return challenge;
     },
   },
 };
