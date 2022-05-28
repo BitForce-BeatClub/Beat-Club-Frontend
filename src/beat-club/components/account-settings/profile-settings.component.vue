@@ -176,9 +176,9 @@ export default {
   background: no-repeat;
   background-size: cover;
   overflow: hidden;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  border-radius: 50px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
   width: 90px;
   height: 90px;
 }

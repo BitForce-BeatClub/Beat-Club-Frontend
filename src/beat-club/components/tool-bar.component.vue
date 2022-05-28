@@ -133,8 +133,8 @@ export default {
       ],
 
       access: [
-        { label: "Message", to: "/", icon: "pi pi-comment" },
-        { label: "Creator Hub", to: "/", icon: "pi pi-sliders-v" },
+        { label: "Message", to: "/message", icon: "pi pi-comment" },
+        { label: "Creator Hub", to: "/creator-hub", icon: "pi pi-sliders-v" },
         { label: "Upload", to: "/songs", icon: "pi pi-cloud-upload" },
       ],
       menuUser: [

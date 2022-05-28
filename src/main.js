@@ -6,8 +6,8 @@ import ToastService from "primevue/toastservice";
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import DisableAutocomplete from "@aacassandra/vue-disable-autocomplete";
-
 // PrimeVue Styles
+
 import "primevue/resources/themes/mdc-light-indigo/theme.css";
 import "primevue/resources/primevue.min.css";
 import "primeicons/primeicons.css";
@@ -77,6 +77,7 @@ getAuth().onAuthStateChanged(() => {
     app.component("pv-button", Button);
     app.component("pv-toolbar", Toolbar);
     app.component("pv-input-text", InputText);
+    app.component("pv-input-text-area", Textarea);
     app.component("pv-file-upload", FileUpload);
     app.component("pv-split-button", SplitButton);
     app.component("pv-sidebar", Sidebar);

@@ -1,12 +1,11 @@
 <template>
   <div>
-    <h2>Who to follow?</h2>
+    <h2 class="mb-3">Who to follow?</h2>
     <div>
       <UserFollows
         v-for="producerData in producersData"
         :key="producerData.id"
         :users="producerData"
-        style="max-width: 60px"
       >
       </UserFollows>
     </div>
@@ -44,53 +43,9 @@ export default {
             ))
         );
     },
-
-    getStorableChallenge(displayableChallenge) {
-      return {
-        id: displayableChallenge.id,
-        firstName: displayableChallenge.firstName,
-        lastName: displayableChallenge.lastName,
-        nickName: displayableChallenge.nickName,
-        urlToImage: displayableChallenge.urlToImage,
-        userType: displayableChallenge.userType,
-        trends: displayableChallenge.trends,
-        result: displayableChallenge.result,
-        follow: displayableChallenge.follow,
-      };
-    },
-    getDisplayableChallenge(challenge) {
-      return challenge;
-    },
   },
 };
 </script>
 
 <style scoped>
-.grid {
-  display: flex;
-  justify-content: center;
-}
-h1 {
-  padding-top: 10px;
-  padding-right: 300px;
-  margin-bottom: 20px;
-}
-
-p {
-  color: white;
-  font-family: "Poppins", sans-serif;
-}
-
-p {
-  text-align: center;
-}
-.containerdiv {
-  float: left;
-  position: relative;
-}
-.cornerimage {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
 </style>

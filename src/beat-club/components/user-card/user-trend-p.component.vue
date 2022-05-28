@@ -8,12 +8,12 @@ export default {
 </script>
 
 <template>
-  <div class="flex justify-content-start gap-3">
-    <div class="grid">
+  <div class="cardBg">
+    <div class="flex my-1">
       {{ users.trends }}
     </div>
-    <div class="grid">
-      {{ users.result }}
+    <div style="color: #f5cb5c !important">
+      <h5>{{ users.result }}</h5>
     </div>
   </div>
 </template>

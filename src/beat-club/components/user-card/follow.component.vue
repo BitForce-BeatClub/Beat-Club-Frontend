@@ -1,21 +1,23 @@
 <template>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-12 mt-3">
-        <div class="card">
-          <div class="card-horizontal">
-            <div class="img-square-wrapper">
-              <img alt="user header" :src="users.urlToImage" />
-            </div>
-            <div class="card-body">
-              <p class="card-text">{{ users.nickName }}</p>
-              <p class="card-text">{{ users.follow }}</p>
-            </div>
-          </div>
+  <pv-card class="songCard" style="width: 20rem">
+    <template #header>
+      <div class="grid flex justify-content-between">
+        <img
+          alt="user header"
+          class="roundedImage mt-2 ml-4"
+          :src="users.urlToImage"
+        />
+        <div class="title flex align-items-center mr-4">
+          {{ users.nickName }}
         </div>
       </div>
-    </div>
-  </div>
+    </template>
+    <template #content>
+      <div class="title flex justify-content-start" style="color: #f5cb5c">
+        {{ users.follow }}
+      </div>
+    </template>
+  </pv-card>
 </template>
 
 <script>
@@ -28,52 +30,21 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  height: 100%;
-  width: 100%;
-  grid-gap: 10px;
-  display: grid;
-  grid-template-columns: 2% 20% 2% 50% 2% 20% 2%;
+.title {
+  font-size: 16px !important;
+  font-family: Poppins, sans-serif;
 }
-.container2 {
-  height: 100%;
-  width: 100%;
-  grid-gap: 10px;
-  display: grid;
-  grid-template-columns: 2% 98%;
-}
-body {
-  height: 100%;
-  background-color: #000000;
-}
-.box {
-  background-color: #161a1d;
-  padding: 10px;
-  text-align: center;
-  border-radius: 10px;
-}
-.box2 {
-  background-color: #000000;
-  padding: 10px;
-  text-align: center;
-  border-radius: 10px;
-}
-p {
-  color: white;
-  text-align: left;
-}
-small {
-  color: white;
-  text-align: right;
-}
-h2 {
+.songCard {
+  background-color: #161d21;
   color: white;
 }
-.card-horizontal {
-  display: flex;
-  flex: 1 1 auto;
-}
-img {
+.roundedImage {
+  background: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
   width: 100px;
   height: 100px;
 }

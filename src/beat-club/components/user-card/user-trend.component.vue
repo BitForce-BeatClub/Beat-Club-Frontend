@@ -1,11 +1,12 @@
 <template>
-  <div>
+  <div class="cardBg">
     <h2>Trending Searches</h2>
     <div>
       <UserTrends
         v-for="producerData in producersData"
         :key="producerData.id"
-        :users="producerData">
+        :users="producerData"
+      >
       </UserTrends>
       <div></div>
     </div>
@@ -65,14 +66,5 @@ p {
 
 p {
   text-align: center;
-}
-.containerdiv {
-  float: left;
-  position: relative;
-}
-.cornerimage {
-  position: absolute;
-  top: 0;
-  right: 0;
 }
 </style>

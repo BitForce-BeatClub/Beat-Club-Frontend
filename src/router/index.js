@@ -16,9 +16,9 @@ import LogOut from "../beat-club/components/log-out.component.vue";
 import ProfileSettings from "../beat-club/components/account-settings/profile-settings.component.vue";
 import CredentialSettings from "../beat-club/components/account-settings/credential-settings.component.vue";
 import SubscriptionSettings from "../beat-club/components/account-settings/subscription-settings.component.vue";
+import userViewComponent from "../beat-club/pages/user-view.component.vue";
 
 import { getAuth } from "firebase/auth";
-import userViewComponent from "../beat-club/pages/user-view.component.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

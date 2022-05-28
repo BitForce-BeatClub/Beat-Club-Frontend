@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 style="margin-left: 10rem">Trending Tracks</h1>
+    <h1 class="my-2">Trending Tracks</h1>
     <div class="flex flex-wrap justify-content-center card-container gap-3">
       <songCard
         v-for="songData in songsData"

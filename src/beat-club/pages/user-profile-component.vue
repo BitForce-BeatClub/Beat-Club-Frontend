@@ -2,7 +2,7 @@
   <div class="grid justify-content-evenly">
     <div
       class="flex flex-wrap justify-content-start"
-      style="margin-top: 8%; height: 40vh"
+      style="margin-top: 6rem"
     >
       <pv-card class="userCard shadow-8">
         <template #header>
@@ -15,7 +15,7 @@
           </div>
         </template>
         <template #title>
-          <div class="grid mt-2">
+          <div class="grid mt-1">
             {{ userData.nickName }}
           </div>
         </template>
@@ -112,15 +112,15 @@ export default {
   overflow: hidden;
   -webkit-border-radius: 50px;
   -moz-border-radius: 50px;
-  border-radius: 50px;
-  width: 90px;
-  height: 90px;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
 }
 .userCard {
   background-color: #212429;
   color: white;
   width: 20vw;
-  height: 100%;
+  /*height: 100%;*/
 }
 
 .line {

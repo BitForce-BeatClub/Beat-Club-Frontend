@@ -1,16 +1,17 @@
 <template>
-  <div>
-    <pv-card class="songCard">
-      <template #header>
-        <img alt="user header" :src="songData.urlToImage" />
-      </template>
-      <template #content>
+  <pv-card class="songCard">
+    <template #header>
+      <img alt="user header" :src="songData.urlToImage" />
+    </template>
+    <template #title>
+      <div class="title">
         {{ songData.title }}
-        <p>{{ songData.description }}</p>
-        <p>{{ songData.userId }}</p>
-      </template>
-    </pv-card>
-  </div>
+      </div>
+    </template>
+    <template #content>
+      <p>{{ songData.description }}</p>
+    </template>
+  </pv-card>
 </template>
 
 <script>
@@ -23,6 +24,10 @@ export default {
 </script>
 
 <style scoped>
+.title {
+  font-size: 16px !important;
+  font-family: Poppins,sans-serif;
+}
 .songCard {
   background-color: #161d21;
   color: white;

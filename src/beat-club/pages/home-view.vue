@@ -12,7 +12,9 @@
         music production
       </div>
     </div>
+    <div class="grid">
     <song-card-list></song-card-list>
+    </div>
     <user-card-list></user-card-list>
   </div>
 </template>
