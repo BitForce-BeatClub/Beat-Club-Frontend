@@ -8,7 +8,7 @@
       "urlToImage": "https://yt3.ggpht.com/ytc/AKedOLTz2_RRKmPM69Ib8ZgXVM21L5eSnZCmw5QrhukbIg=s900-c-k-c0x00ffffff-no-rj",
       "userType": "Producer",
       "trends": "#LunyTunes",
-      "result":"Sponsored"
+      "result": "Sponsored"
     },
     {
       "id": 2,
@@ -18,7 +18,7 @@
       "urlToImage": "https://www.elpais.com.co/files/article_main/files/crop/uploads/2020/04/26/5ea65f3784607.r_1588074173641.0-0-1079-650.jpeg",
       "userType": "Artist",
       "trends": "#Tainy",
-      "result":"Sponsored"
+      "result": "Sponsored"
     },
     {
       "id": 3,
@@ -28,7 +28,7 @@
       "urlToImage": "https://i.ytimg.com/vi/0OkiUUU3Odw/maxresdefault.jpg",
       "userType": "Artist",
       "trends": "#Rock",
-      "result":"30.2k results"
+      "result": "30.2k results"
     },
     {
       "id": 4,
@@ -38,7 +38,7 @@
       "urlToImage": "https://yt3.ggpht.com/ytc/AKedOLTz2_RRKmPM69Ib8ZgXVM21L5eSnZCmw5QrhukbIg=s900-c-k-c0x00ffffff-no-rj",
       "userType": "Producer",
       "trends": "#Trap",
-      "result":"2M results"
+      "result": "2M results"
     },
     {
       "id": 5,
@@ -48,7 +48,7 @@
       "urlToImage": "https://i.ytimg.com/vi/0OkiUUU3Odw/maxresdefault.jpg",
       "userType": "Artist",
       "trends": "#Urban",
-      "result":"22K results"
+      "result": "22K results"
     },
     {
       "id": 6,
@@ -58,7 +58,7 @@
       "urlToImage": "https://yt3.ggpht.com/ytc/AKedOLTz2_RRKmPM69Ib8ZgXVM21L5eSnZCmw5QrhukbIg=s900-c-k-c0x00ffffff-no-rj",
       "userType": "Producer",
       "trends": "#lo-fi beat",
-      "result":"30k results"
+      "result": "30k results"
     },
     {
       "id": 7,
@@ -68,7 +68,7 @@
       "urlToImage": "https://i.ytimg.com/vi/0OkiUUU3Odw/maxresdefault.jpg",
       "userType": "Artist",
       "trends": "#skere",
-      "result":"10k results"
+      "result": "10k results"
     },
     {
       "id": 8,
@@ -78,7 +78,7 @@
       "urlToImage": "https://i.ytimg.com/vi/0OkiUUU3Odw/maxresdefault.jpg",
       "userType": "Artist",
       "trends": "#asap",
-      "result":"3k results"
+      "result": "3k results"
     },
     {
       "id": 9,
@@ -247,6 +247,158 @@
       "description": "All marketplace features plus:\n Unlimited tracks\n      20 Monthly Private Messages\n      Sell Sound Kits\n      Sell Custom Services",
       "urlToImage": "https://www.careersinmusic.com/wp-content/uploads/2019/11/what-does-a-music-producer-do.jpg"
     }
+  ],
+  "tracks": [
+    {
+      "id": 1,
+      "title": "Title1|",
+      "gender": "Title1|gender",
+      "tags": "Title1|",
+      "description": "Title1| des",
+      "caption": "Title1|c",
+      "privacy": "Public",
+      "containsMusic": {
+        "name": "Yes",
+        "key": "1"
+      },
+      "artist": "Title1| a",
+      "publisher": "Title1| p",
+      "ISRC": "Title1| isr",
+      "commposer": "Title1| co",
+      "releaseTitle": "Title1| ti",
+      "buyLink": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
+      "albumTitle": "Title1| al",
+      "recordLabel": "Title1| lab",
+      "recordLabelDate": "2022-05-11T05:00:00.000Z",
+      "barcode": "Title1| bar",
+      "ISWS": "Title1| isw",
+      "pLine": "Title1| line",
+      "containsExplicitContent": "All rights reserved",
+      "license": true
+    },
+    {
+      "id": 2,
+      "title": "123213",
+      "gender": {
+        "name": "Reggae"
+      },
+      "tags": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
+      "description": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
+      "caption": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
+      "privacy": "Public",
+      "containsMusic": {
+        "name": "Yes"
+      },
+      "artist": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
+      "publisher": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
+      "ISRC": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
+      "commposer": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
+      "releaseTitle": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
+      "buyLink": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
+      "albumTitle": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
+      "recordLabel": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
+      "recordLabelDate": "2022-05-10T05:00:00.000Z",
+      "barcode": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
+      "ISWS": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
+      "pLine": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
+      "containsExplicitContent": "All rights reserved",
+      "license": true
+    },
+    {
+      "id": 3,
+      "title": "gatazo",
+      "gender": "gatazo",
+      "tags": "gatazo",
+      "description": "gatazo",
+      "caption": "gatazo",
+      "privacy": "Public",
+      "containsMusic": {
+        "name": "Yes"
+      },
+      "artist": "gatazo",
+      "publisher": "gatazo",
+      "ISRC": "gatazo",
+      "commposer": "gatazo",
+      "releaseTitle": "gatazo",
+      "buyLink": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
+      "albumTitle": "gatazo",
+      "recordLabel": "gatazo",
+      "recordLabelDate": "2022-05-09T05:00:00.000Z",
+      "barcode": "gatazo",
+      "ISWS": "gatazo",
+      "pLine": "gatazo",
+      "containsExplicitContent": "All rights reserved",
+      "license": true,
+      "enableDirectDownload": true,
+      "enableAppPlayback": true,
+      "includeRSSFeed": true,
+      "displayEmbedCode": true,
+      "offlineListening": true
+    },
+    {
+      "id": 4,
+      "title": "1",
+      "gender": {
+        "name": "Rock"
+      },
+      "tags": "1",
+      "description": "1",
+      "caption": "1",
+      "privacy": "Public",
+      "containsMusic": {
+        "name": "Yes"
+      },
+      "artist": "1",
+      "publisher": "1",
+      "ISRC": "1",
+      "commposer": "1",
+      "releaseTitle": "1",
+      "buyLink": "1",
+      "albumTitle": "1",
+      "recordLabel": "1",
+      "recordLabelDate": "2022-05-22T05:00:00.000Z",
+      "barcode": "1",
+      "ISWS": "1",
+      "pLine": "1",
+      "containsExplicitContent": {
+        "name": "Yes"
+      },
+      "license": true
+    },
+    {
+      "id": 5,
+      "title": "1",
+      "gender": {
+        "name": "Pop"
+      },
+      "tags": "1",
+      "description": "1",
+      "caption": "1",
+      "privacy": "Public",
+      "containsMusic": {
+        "name": "No"
+      },
+      "artist": "1",
+      "publisher": "1",
+      "ISRC": "1",
+      "commposer": "1",
+      "releaseTitle": "1",
+      "buyLink": "1",
+      "albumTitle": "1",
+      "recordLabel": "1",
+      "recordLabelDate": "2022-05-29T05:00:00.000Z",
+      "barcode": "1",
+      "ISWS": "1",
+      "pLine": "1",
+      "containsExplicitContent": {
+        "name": "No"
+      },
+      "license": true,
+      "enableDirectDownload": true,
+      "enableAppPlayback": true,
+      "includeRSSFeed": true,
+      "displayEmbedCode": true,
+      "offlineListening": true
+    }
   ]
-
 }

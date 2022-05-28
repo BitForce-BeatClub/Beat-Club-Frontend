@@ -147,8 +147,6 @@ export default {
           // ...
         })
         .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
           this.error = error.message;
         });
     },
@@ -158,7 +156,6 @@ export default {
       signInWithPopup(auth, provider)
         .then(() => {
           this.$router.replace({ name: "HomeView" });
-          // this.$router.replace({ name: "SongList" });
         })
         .catch((error) => {
           const email = error.email;

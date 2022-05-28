@@ -272,12 +272,6 @@ export default {
             this.songs[this.findIndexById(response.data.id)] =
               this.getDisplayableSong(response.data);
             this.showSuccess();
-            // this.$toast.add({
-            //   severity: "success",
-            //   summary: "Successful",
-            //   detail: "Challenge Updated",
-            //   life: 3000,
-            // });
             console.log(response);
           });
         } else {

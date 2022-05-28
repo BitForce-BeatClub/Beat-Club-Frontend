@@ -1,11 +1,12 @@
 <template>
+  <pv-toast></pv-toast>
   <div class="">
     <div class="mx-8 pb-4 pl-2 text-black-alpha-90">
       <div class="bg-white p-3 text-red-500">
         <h2>Creator Hub</h2>
       </div>
 
-      <pv-tab-view class="tabview-custom" ref="tabview4">
+      <pv-tab-view class="tabview-custom">
         <pv-tab-panel>
           <template #header>
             <span @click="openNew">Basic info</span>
@@ -17,7 +18,7 @@
 
             <div>
               <div>
-                <h3 class="sub-titles">Title <em class="astersc">*</em></h3>
+                <h3 class="sub-titles">Title <em class="asterisk">*</em></h3>
                 <span class="p-float-label">
                   <pv-input-text
                     id="title-input"
@@ -35,7 +36,7 @@
               <div>
                 <div>
                   <h3 class="sub-titles">
-                    Permalink <em class="astersc">*</em>
+                    Permalink <em class="asterisk">*</em>
                   </h3>
                 </div>
                 <div class="pt-0">
@@ -495,9 +496,6 @@ export default {
       });
     },
     getDisplayableTrack(track) {
-      // challenge.status = challenge.challengeType
-      //   ? this.statuses[0].value
-      //   : this.statuses[1].value;
       return track;
     },
     getStorableTrack(displayableTrack) {
@@ -540,31 +538,30 @@ export default {
       this.track = {};
       this.submitted = false;
     },
-    saveTrack() {
+    async saveTrack() {
       this.submitted = true;
       if (this.track.title.trim()) {
         if (this.track.id) {
           this.track = this.getStorableTrack(this.track);
-          this.tracksService
+          await this.tracksService
             .updateTrack(this.track.id, this.track)
             .then((response) => {
               this.tracks[this.findIndexById(response.data.id)] =
                 this.getDisplayableTrack(response.data);
               this.showSuccess();
-              console.log(response);
             });
         } else {
           this.track.id = 0;
           this.track = this.getStorableTrack(this.track);
-          this.tracksService.createTrack(this.track).then((response) => {
+          await this.tracksService.createTrack(this.track).then((response) => {
             this.track = this.getDisplayableTrack(response.data);
             this.tracks.push(this.track);
             this.showSuccess();
-            this.console.log(response);
+            console.log(this.track);
+
           });
         }
       }
-
       this.track = {};
     },
   },
@@ -586,7 +583,7 @@ export default {
   color: #000000;
   padding-bottom: 0.5rem;
 }
-.astersc {
+.asterisk {
   color: red;
 }
 h3 {

@@ -18,6 +18,9 @@ export class BeatClubApiServices {
   createUsers(data) {
     return http.post("/users", data);
   }
+  createTrack(data) {
+    return http.post("/tracks", data);
+  }
   //GET BY ID
   getUsersById(id) {
     return http.get(`/users/${id}`);
@@ -26,7 +29,9 @@ export class BeatClubApiServices {
   updateUser(id, data) {
     return http.put(`users/${id}`, data);
   }
-
+  updateTrack(id, data) {
+    return http.put(`/tracks/${id}`, data);
+  }
   update(id, data) {
     return http.put(`/songs/${id}`, data);
   }
