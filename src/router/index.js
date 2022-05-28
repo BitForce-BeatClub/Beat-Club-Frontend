@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
+import creatorHub from "../beat-club/pages/creator-hub.component.vue";
 import HomeView from "../beat-club/pages/home-view.vue";
 import SongList from "../beat-club/pages/song-list.component.vue";
 import SignIn from "../beat-club/pages/sign-in.component.vue";
@@ -80,6 +81,11 @@ const router = createRouter({
           component: SubscriptionSettings,
         },
       ],
+    },
+    {
+      path: "/creator-hub",
+      name: "creator-hub",
+      component: creatorHub,
     },
     {
       path: "/trending",
