@@ -1,6 +1,4 @@
 <template>
-  {{ isConnected }}
-<!--<ToolBar></ToolBar>-->
   <div v-if="isConnected">
     <ToolBar></ToolBar>
   </div>

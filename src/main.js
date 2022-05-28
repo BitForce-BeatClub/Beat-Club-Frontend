@@ -32,7 +32,6 @@ import Calendar from "primevue/calendar";
 import Checkbox from "primevue/checkbox";
 
 import Divider from "primevue/divider";
-import Textarea from "primevue/textarea";
 import FileUpload from "primevue/fileupload";
 import SplitButton from "primevue/splitbutton";
 import Inputmask from "primevue/inputmask";
@@ -74,7 +73,6 @@ getAuth().onAuthStateChanged(() => {
     app.component("pv-button", Button);
     app.component("pv-toolbar", Toolbar);
     app.component("pv-input-text", InputText);
-    app.component("pv-input-text-area", Textarea);
     app.component("pv-file-upload", FileUpload);
     app.component("pv-split-button", SplitButton);
     app.component("pv-sidebar", Sidebar);
