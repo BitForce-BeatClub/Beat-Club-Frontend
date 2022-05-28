@@ -18,6 +18,7 @@ import CredentialSettings from "../beat-club/components/account-settings/credent
 import SubscriptionSettings from "../beat-club/components/account-settings/subscription-settings.component.vue";
 import userViewComponent from "../beat-club/pages/user-view.component.vue";
 
+import PathNotFound from "../beat-club/pages/page-404.vue";
 import { getAuth } from "firebase/auth";
 
 const router = createRouter({
@@ -53,6 +54,7 @@ const router = createRouter({
       path: "/profile",
       name: "UserProfile",
       component: UserProfile,
+      meta: { requiresAuth: true },
     },
     {
       path: "/log-out",
@@ -81,11 +83,13 @@ const router = createRouter({
           component: SubscriptionSettings,
         },
       ],
+      meta: { requiresAuth: true },
     },
     {
       path: "/creator-hub",
       name: "creator-hub",
       component: creatorHub,
+      meta: { requiresAuth: true },
     },
     {
       path: "/trending",
@@ -102,6 +106,7 @@ const router = createRouter({
       name: "user-view",
       component: userViewComponent,
     },
+    { path: "/:pathMatch(.*)*", component: PathNotFound },
   ],
 });
 router.beforeEach((to, from, next) => {
