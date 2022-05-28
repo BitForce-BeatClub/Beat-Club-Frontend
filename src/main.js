@@ -3,7 +3,8 @@ import App from "./App.vue";
 import router from "./router";
 import PrimeVue from "primevue/config";
 import ToastService from "primevue/toastservice";
-import firebase from "firebase/compat";
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 import DisableAutocomplete from "@aacassandra/vue-disable-autocomplete";
 
 // PrimeVue Styles
@@ -29,7 +30,6 @@ import Password from "primevue/password";
 import InputText from "primevue/inputtext";
 import Calendar from "primevue/calendar";
 import Checkbox from "primevue/checkbox";
-import Divider from "primevue/divider";
 
 import Divider from "primevue/divider";
 import Textarea from "primevue/textarea";
@@ -47,11 +47,11 @@ const firebaseConfig = {
   measurementId: "G-BHPMKHHCZQ",
 };
 
-firebase.initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 
 let app;
 
-firebase.auth().onAuthStateChanged(() => {
+getAuth().onAuthStateChanged(() => {
   // console.log("user", user);
   if (!app) {
     app = createApp(App);

@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <div class="flex flex-column card-container">
+    <div class="flex flex-column">
       <div class="flex align-items-center justify-content-center">
         <img
           style="padding-top: 10rem"
@@ -100,6 +100,18 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 export default {
   name: "sign-in",
+  data() {
+    return {
+      email: "",
+      password: "",
+      error: "",
+      msg: [],
+      emailRules: [
+        (v) => !!v || "Email is required",
+        (v) => /.+@.+/.test(v) || "E-mail must be valid",
+      ],
+    };
+  },
   watch: {
     email(value) {
       // binding this to the data value in the email input
@@ -171,6 +183,7 @@ export default {
     }
     .p-inputtext {
       background: #ffffff !important;
+      font-family: Poppins, sans-serif;
     }
   }
   @media screen and (max-width: 960px) {

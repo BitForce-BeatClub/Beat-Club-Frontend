@@ -1,12 +1,12 @@
 <template>
   <div>
-    <h1>Trending Tracks</h1>
+    <h1 style="margin-left: 10rem">Trending Tracks</h1>
     <div class="flex flex-wrap justify-content-center card-container gap-3">
       <songCard
         v-for="songData in songsData"
         :key="songData.id"
         :songData="songData"
-        style="max-width: 200px"
+        style="max-width: 300px"
       ></songCard>
     </div>
   </div>
@@ -45,11 +45,6 @@ export default {
   display: flex;
   justify-content: center;
   font-family: "Poppins", sans-serif;
-}
-h1 {
-  padding-top: 10px;
-  /*padding-left: 165px;*/
-  margin-bottom: 20px;
 }
 h1,
 p {

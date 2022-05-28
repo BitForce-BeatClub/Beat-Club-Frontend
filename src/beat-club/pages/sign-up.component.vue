@@ -176,8 +176,8 @@
                 <!--ButtonSignIn-->
                 <pv-button
                   type="submit"
-                  label="Sign in"
-                  class="mt-2 btn-color"
+                  label="Sign up"
+                  class="mt-2 p-button-secondary"
                 />
               </form>
               <div
@@ -359,6 +359,7 @@ export default {
     }
     .p-inputtext {
       background: #ffffff !important;
+      font-family: Poppins, sans-serif;
     }
   }
   @media screen and (max-width: 960px) {

@@ -3,7 +3,6 @@ import http from "../../core/services/http-common";
 export class BeatClubApiServices {
   //GET
   getSongs() {
-  getSongs() {
     return http.get("/songs");
   }
   getUsers() {
@@ -27,12 +26,7 @@ export class BeatClubApiServices {
   updateUser(id, data) {
     return http.put(`users/${id}`, data);
   }
-  createUsers(data) {
-    return http.post("/users", data);
-  }
-  getUsersById(id) {
-    return http.get(`/users/${id}`);
-  }
+
   update(id, data) {
     return http.put(`/songs/${id}`, data);
   }

@@ -73,7 +73,7 @@
     {
       "id": 8,
       "firstName": "Pedro",
-      "lastName": "Navaja",
+      "lastName ": "Navaja",
       "nickName": "Elpepe",
       "urlToImage": "https://i.ytimg.com/vi/0OkiUUU3Odw/maxresdefault.jpg",
       "userType": "Artist",
@@ -155,13 +155,6 @@
       "plays": "322",
       "tracks": "14",
       "aboutme": "A person who love music"
-    },
-    {
-      "id": "jE4o1Lqa9STM6ymnaQ2SnVKRbDo1",
-      "firstName": "Adrian",
-      "LastName": "Esqueiros",
-      "nickName": "Adrian98",
-      "email": "u201718169@upc.edu.pe"
     },
     {
       "id": "ycv0MbjK3DW7s1PzynTTxADxDuA3",

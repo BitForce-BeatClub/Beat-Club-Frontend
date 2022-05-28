@@ -1,4 +1,6 @@
 <template>
+  {{ isConnected }}
+<!--<ToolBar></ToolBar>-->
   <div v-if="isConnected">
     <ToolBar></ToolBar>
   </div>
@@ -18,15 +20,21 @@ export default {
       isConnected: false,
     };
   },
+  computed: {
+    label() {
+      return this.isConnected ? this.isConnected : !this.isConnected;
+    },
+  },
   created() {
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
-      this.isConnected = false;
       try {
         const uid = user.uid;
         console.log("usuario conectado", uid);
         this.isConnected = true;
       } catch (err) {
+        this.isConnected = false;
+
         console.log("usuario no esta conectado", err);
       }
     });

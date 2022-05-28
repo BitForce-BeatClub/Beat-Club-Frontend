@@ -30,17 +30,15 @@ export default {
       isConnected: false,
     };
   },
+
   created() {
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
-      this.isConnected = false;
       try {
-        const uid = user.uid;
-        console.log("usuario conectado", uid);
+        user.uid;
         this.isConnected = true;
       } catch (err) {
         this.isConnected = false;
-        console.log("usuario no esta conectado", err);
       }
     });
   },

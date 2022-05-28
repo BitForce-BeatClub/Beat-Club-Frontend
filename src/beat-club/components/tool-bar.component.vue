@@ -1,10 +1,23 @@
 <template>
   <pv-toolbar>
     <template #start>
-      <div class="logo">
+      <div class="logo flex align-items-center">
         <router-link to="/">
           <img src="../../assets/logo.svg" alt="logo" />
         </router-link>
+        <div class="card">
+          <div class="p-fluid">
+            <div class="p-float-label p-input-icon-right">
+              <i class="pi pi-search" style="color: white" />
+              <pv-input-text
+                type="text"
+                placeholder=""
+                required="true"
+                autocomplete="off"
+              ></pv-input-text>
+            </div>
+          </div>
+        </div>
       </div>
     </template>
     <template #end>
@@ -64,59 +77,36 @@
             </router-link>
           </div>
         </div>
-      <div v-if="!isConnected">
+      </div>
+    </template>
+  </pv-toolbar>
+  <div>
+    <pv-toolbar
+      style="
+        background-color: #161a1d !important;
+        justify-content: start !important;
+      "
+    >
+      <template #start>
         <div class="flex-column">
           <router-link
-            v-for="item in items"
+            v-for="item in items2"
             :to="item.to"
             custom
             v-slot="{ navigate, href }"
             :key="item.label"
           >
             <pv-button
-              class="p-button-text text-white font-poppins"
+              class="p-button-text text-white"
               :href="href"
               @click="navigate"
+              >{{ item.label }}</pv-button
             >
-              {{ item.label }}
-            </pv-button>
           </router-link>
         </div>
-      </div>
-      <div v-else>
-        <div class="grid">
-          <router-link
-            v-for="item in access"
-            :to="item.to"
-            custom
-            v-slot="{ navigate, href }"
-            :key="item.label"
-          >
-            <pv-button
-              class="p-button-text text-white font-poppins"
-              :href="href"
-              @click="navigate"
-            >
-              {{ item.label }}
-            </pv-button>
-          </router-link>
-          <form @submit.prevent="logOut">
-            <pv-button class="btn-width" type="submit" label="Logout" />
-          </form>
-        </div>
-      </div>
-    </template>
-  </pv-toolbar>
-  <pv-toolbar style="background-color: #20252a; border-radius: 0">
-
-    <template #start>
-      <div class="flex-column">
-        <router-link v-for="item in items2" :to="item.to" custom v-slot="{ navigate, href }" :key="item.label">
-          <pv-button class="p-button-text  text-white" :href="href" @click="navigate">{{ item.label }}</pv-button>
-        </router-link>
-      </div>
-    </template>
-  </pv-toolbar>
+      </template>
+    </pv-toolbar>
+  </div>
 </template>
 
 <script>
@@ -162,8 +152,6 @@ export default {
         },
         // { label: "Log Out", , icon: "pi pi-sign-out" },
       ],
-      loggedIn: false,
-      isConnected: false,
     };
   },
   methods: {
@@ -185,15 +173,11 @@ export default {
       try {
         this.usersService.getUsersById(user.uid).then((response) => {
           this.userData = response.data;
-          // console.log("user", this.userData);
         });
         this.isConnected = true;
         this.userData.nickname = auth.currentUser.displayName;
-        // console.log("usuario conectado", user.uid);
-        console.log("Info: ", this.userData.nickname);
       } catch (err) {
         this.isConnected = false;
-        console.log("usuario no esta conectado", err);
       }
     });
   },
@@ -216,10 +200,9 @@ export default {
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap");
 .p-toolbar {
-  border-radius: 40rem;
   background: #212429;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 .p-button-text {
   font-family: "Comfortaa", cursive;
@@ -248,4 +231,14 @@ span {
 //.font-poppins {
 //  font-family: "Poppins", sans-serif;
 //}
+
+.card {
+  margin-left: 1rem;
+  min-width: 450px;
+  .p-inputtext {
+    background: #343843 !important;
+    color: white;
+    font-family: "Comfortaa", cursive;
+  }
+}
 </style>

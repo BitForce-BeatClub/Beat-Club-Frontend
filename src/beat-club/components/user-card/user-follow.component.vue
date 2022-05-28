@@ -1,11 +1,13 @@
 <template>
   <div>
-    <h2>Who to follow? </h2>
-    <div >
-      <UserFollows v-for="producerData in producersData"
-                   :key="producerData.id"
-                   :users="producerData"
-                   style="max-width: 60px">
+    <h2>Who to follow?</h2>
+    <div>
+      <UserFollows
+        v-for="producerData in producersData"
+        :key="producerData.id"
+        :users="producerData"
+        style="max-width: 60px"
+      >
       </UserFollows>
     </div>
   </div>
@@ -51,9 +53,9 @@ export default {
         nickName: displayableChallenge.nickName,
         urlToImage: displayableChallenge.urlToImage,
         userType: displayableChallenge.userType,
-        trends:displayableChallenge.trends,
-        result:displayableChallenge.result,
-        follow:displayableChallenge.follow,
+        trends: displayableChallenge.trends,
+        result: displayableChallenge.result,
+        follow: displayableChallenge.follow,
       };
     },
     getDisplayableChallenge(challenge) {
@@ -82,7 +84,13 @@ p {
 p {
   text-align: center;
 }
-.containerdiv { float: left; position: relative; }
-.cornerimage { position: absolute; top: 0; right: 0; }
-
+.containerdiv {
+  float: left;
+  position: relative;
+}
+.cornerimage {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 </style>

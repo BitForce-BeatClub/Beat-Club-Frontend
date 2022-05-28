@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Top Producers </h1>
+    <h1>Top Producers</h1>
 
     <div class="flex flex-wrap justify-content-center card-container gap-3">
       <userCard
@@ -81,7 +81,13 @@ p {
 p {
   text-align: center;
 }
-.containerdiv { float: left; position: relative; }
-.cornerimage { position: absolute; top: 0; right: 0; }
-
+.containerdiv {
+  float: left;
+  position: relative;
+}
+.cornerimage {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 </style>

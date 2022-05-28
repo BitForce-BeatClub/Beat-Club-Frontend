@@ -2,7 +2,6 @@
   <pv-button @click="synth"> synth </pv-button>
 </template>
 
-
 <script>
 import * as Tone from "tone";
 
