@@ -1,129 +1,19 @@
 {
-  "users": [
+  "posts": [
     {
       "id": 1,
-      "firstName": "Gonzalo",
-      "lastName": "Julián Conde",
-      "nickName": "Bizarrap",
-      "urlToImage": "https://yt3.ggpht.com/ytc/AKedOLTz2_RRKmPM69Ib8ZgXVM21L5eSnZCmw5QrhukbIg=s900-c-k-c0x00ffffff-no-rj",
-      "userType": "Producer"
-    },
-    {
-      "id": 2,
-      "firstName": "Pedro",
-      "lastName": "Navaja",
-      "nickName": "Elpepe",
-      "urlToImage": "https://i.ytimg.com/vi/0OkiUUU3Odw/maxresdefault.jpg",
-      "userType": "Artist"
-    },
-    {
-      "id": 3,
-      "firstName": "Pedro",
-      "lastName": "Navaja",
-      "nickName": "Elpepe",
-      "urlToImage": "https://i.ytimg.com/vi/0OkiUUU3Odw/maxresdefault.jpg",
-      "userType": "Artist"
-    },
-    {
-      "id": 4,
-      "firstName": "Gonzalo",
-      "lastName": "Julián Conde",
-      "nickName": "Bizarrap",
-      "urlToImage": "https://yt3.ggpht.com/ytc/AKedOLTz2_RRKmPM69Ib8ZgXVM21L5eSnZCmw5QrhukbIg=s900-c-k-c0x00ffffff-no-rj",
-      "userType": "Producer"
-    },
-    {
-      "id": 5,
-      "firstName": "Pedro",
-      "lastName": "Navaja",
-      "nickName": "Elpepe",
-      "urlToImage": "https://i.ytimg.com/vi/0OkiUUU3Odw/maxresdefault.jpg",
-      "userType": "Artist"
-    },
-    {
-      "id": 6,
-      "firstName": "Gonzalo",
-      "lastName": "Julián Conde",
-      "nickName": "Bizarrap",
-      "urlToImage": "https://yt3.ggpht.com/ytc/AKedOLTz2_RRKmPM69Ib8ZgXVM21L5eSnZCmw5QrhukbIg=s900-c-k-c0x00ffffff-no-rj",
-      "userType": "Producer"
-    },
-    {
-      "id": 7,
-      "firstName": "Pedro",
-      "lastName": "Navaja",
-      "nickName": "Elpepe",
-      "urlToImage": "https://i.ytimg.com/vi/0OkiUUU3Odw/maxresdefault.jpg",
-      "userType": "Artist"
-    },
-    {
-      "id": 8,
-      "firstName": "Pedro",
-      "lastName": "Navaja",
-      "nickName": "Elpepe",
-      "urlToImage": "https://i.ytimg.com/vi/0OkiUUU3Odw/maxresdefault.jpg",
-      "userType": "Artist"
-    },
-    {
-      "id": 9,
-      "firstName": "Gonzalo",
-      "lastName": "Julián Conde",
-      "nickName": "Bizarrap",
-      "urlToImage": "https://yt3.ggpht.com/ytc/AKedOLTz2_RRKmPM69Ib8ZgXVM21L5eSnZCmw5QrhukbIg=s900-c-k-c0x00ffffff-no-rj",
-      "userType": "Producer"
-    }
-  ,
-    {
-      "id": 10,
-      "firstName": "Gonzalo",
-      "lastName": "Julián Conde",
-      "nickName": "Bizarrap",
-      "urlToImage": "https://yt3.ggpht.com/ytc/AKedOLTz2_RRKmPM69Ib8ZgXVM21L5eSnZCmw5QrhukbIg=s900-c-k-c0x00ffffff-no-rj",
-      "userType": "Producer"
-    },
-    {
-      "id": "jE4o1Lqa9STM6ymnaQ2SnVKRbDo1",
-      "firstName": "Adrian",
-      "LastName": "Esqueiros",
-      "nickName": "Adrian98",
-      "email": "u201718169@upc.edu.pe"
+      "title": "json-server",
+      "author": "typicode"
     }
   ],
-  "songs": [
+  "comments": [
     {
       "id": 1,
-      "title": "NATHY PELUSO || BZRP Music Sessions #36",
-      "description": "Feat Nathy Peluso",
-      "urlToImage": "https://i.ytimg.com/vi/0OkiUUU3Odw/maxresdefault.jpg",
-      "userId": 1
-    },
-    {
-      "id": 2,
-      "title": "RESIDENTE || BZRP Music Sessions #49",
-      "description": "Feat Residente",
-      "urlToImage": "https://images.genius.com/288a06dae079018720116a6f689dcd83.1000x563x1.jpg",
-      "userId": 1
-    },
-    {
-      "id": 3,
-      "title": "TRUENO || BZRP Freestyle Sessions #6",
-      "description": "feat Trueno",
-      "urlToImage": "https://i.ytimg.com/vi/RHUKLQ6nWpc/maxresdefault.jpg",
-      "userId": 2
-    },
-    {
-      "id": 4,
-      "title": "ANUEL AA || BZRP Music Sessions #46",
-      "description": "feat Anuel",
-      "urlToImage": "https://i.ytimg.com/vi/O5Vd-I1gd7Y/maxresdefault.jpg",
-      "userId": 2
-    },
-    {
-      "id": 5,
-      "title": "TRUENO || BZRP Freestyle Sessions #6",
-      "description": "feat Trueno",
-      "urlToImage": "https://i.ytimg.com/vi/RHUKLQ6nWpc/maxresdefault.jpg",
-      "userId": 2
+      "body": "some comment",
+      "postId": 1
     }
-  ]
+  ],
+  "profile": {
+    "name": "typicode"
+  }
 }
