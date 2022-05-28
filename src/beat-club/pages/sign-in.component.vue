@@ -47,11 +47,12 @@
                     <pv-password
                       id="password"
                       v-model="password"
+                      toggleMask
                       :feedback="false"
                       required="true"
                     >
                     </pv-password>
-                    <label for="title">Password*</label>
+                    <label for="password">Password*</label>
                   </div>
                   <div v-if="error" style="padding-top: 1rem; color: #d3d3d3">
                     <span> {{ error.slice(9) }} </span>
@@ -61,7 +62,7 @@
                 <pv-button
                   type="submit"
                   label="Sign in"
-                  class="mt-2 btn-color"
+                  class="p-button p-button-secondary"
                 />
               </form>
               <form @submit.prevent="loginWithGoogle()" class="p-fluid">

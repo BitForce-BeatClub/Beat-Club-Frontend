@@ -1,13 +1,19 @@
 import { createRouter, createWebHistory } from "vue-router";
 import creatorHub from "../beat-club/pages/creator-hub.component.vue";
 import HomeView from "../beat-club/pages/home-view.vue";
-import UserProfile from "../beat-club/components/song-card/song-card-list.component.vue";
 import SongList from "../beat-club/pages/song-list.component.vue";
 import SignIn from "../beat-club/pages/sign-in.component.vue";
 import SingUp from "../beat-club/pages/sign-up.component.vue";
 import test from "../beat-club/pages/test.component.vue";
-import Test from "../beat-club/pages/test-sign-in.vue";
-import register from "../beat-club/pages/register-user.component.vue";
+import Settings from "../beat-club/pages/account-settings.component.vue";
+import UserProfile from "../beat-club/pages/user-profile-component.vue";
+
+import LogOut from "../beat-club/components/log-out.component.vue";
+
+import ProfileSettings from "../beat-club/components/account-settings/profile-settings.component.vue";
+import CredentialSettings from "../beat-club/components/account-settings/credential-settings.component.vue";
+import SubscriptionSettings from "../beat-club/components/account-settings/subscription-settings.component.vue";
+
 import { getAuth } from "firebase/auth";
 
 const router = createRouter({
@@ -17,11 +23,6 @@ const router = createRouter({
       path: "/",
       name: "HomeView",
       component: HomeView,
-    },
-    {
-      path: "/profile",
-      name: "UserProfile",
-      component: UserProfile,
     },
     {
       path: "/songs",
@@ -45,14 +46,37 @@ const router = createRouter({
       component: test,
     },
     {
-      path: "/test-sign-in",
-      name: "test-sign-in",
-      component: Test,
+      path: "/profile",
+      name: "UserProfile",
+      component: UserProfile,
     },
     {
-      path: "/register-user",
-      name: "register-user",
-      component: register,
+      path: "/log-out",
+      name: "LogOut",
+      component: LogOut,
+    },
+
+    {
+      path: "/settings",
+      name: "Settings",
+      component: Settings,
+      children: [
+        {
+          path: "/userInfo",
+          name: "ProfileSettings",
+          component: ProfileSettings,
+        },
+        {
+          path: "/credentials",
+          name: "CredentialSettings",
+          component: CredentialSettings,
+        },
+        {
+          path: "/subscriptions",
+          name: "SubscriptionSettings",
+          component: SubscriptionSettings,
+        },
+      ],
     },
     {
       path: "/creator-hub",

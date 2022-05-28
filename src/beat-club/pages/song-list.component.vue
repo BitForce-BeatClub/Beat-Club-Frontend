@@ -42,7 +42,7 @@
           field="id"
           header="Id"
           :sortable="true"
-          style="min-width: 12rem"
+          style="min-width: 12rem; background: transparent !important"
         ></pv-column>
         <pv-column
           field="title"
@@ -221,9 +221,7 @@ export default {
     this.songsService = new BeatClubApiServices();
     this.songsService.getSongs().then((response) => {
       this.songs = response.data;
-      this.songs.forEach((challenge) =>
-        this.getDisplayableChallenge(challenge)
-      );
+      this.songs.forEach((song) => this.getDisplayableSong(song));
     });
     this.initFilters();
   },
@@ -236,19 +234,16 @@ export default {
         life: 3000,
       });
     },
-    getDisplayableChallenge(challenge) {
-      // challenge.status = challenge.challengeType
-      //   ? this.statuses[0].value
-      //   : this.statuses[1].value;
-      return challenge;
+    getDisplayableSong(song) {
+      return song;
     },
-    getStorableChallenge(displayableChallenge) {
+    getStorableSong(displayableSongs) {
       return {
-        id: displayableChallenge.id,
-        title: displayableChallenge.title,
-        description: displayableChallenge.description,
-        urlToImage: displayableChallenge.urlToImage,
-        userId: displayableChallenge.userId,
+        id: displayableSongs.id,
+        title: displayableSongs.title,
+        description: displayableSongs.description,
+        urlToImage: displayableSongs.urlToImage,
+        userId: displayableSongs.userId,
       };
     },
     initFilters() {
@@ -272,10 +267,10 @@ export default {
       this.submitted = true;
       if (this.song.title.trim()) {
         if (this.song.id) {
-          this.song = this.getStorableChallenge(this.song);
+          this.song = this.getStorableSong(this.song);
           this.songsService.update(this.song.id, this.song).then((response) => {
             this.songs[this.findIndexById(response.data.id)] =
-              this.getDisplayableChallenge(response.data);
+              this.getDisplayableSong(response.data);
             this.showSuccess();
             // this.$toast.add({
             //   severity: "success",
@@ -287,9 +282,9 @@ export default {
           });
         } else {
           this.song.id = 0;
-          this.song = this.getStorableChallenge(this.song);
+          this.song = this.getStorableSong(this.song);
           this.songsService.create(this.song).then((response) => {
-            this.song = this.getDisplayableChallenge(response.data);
+            this.song = this.getDisplayableSong(response.data);
             this.songs.push(this.song);
             this.showSuccess();
 
@@ -332,8 +327,4 @@ export default {
 };
 </script>
 
-<style scoped>
-. {
-  background: white !important;
-}
-</style>
+<style scoped></style>

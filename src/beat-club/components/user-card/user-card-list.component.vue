@@ -60,31 +60,11 @@ export default {
             ))
         );
     },
-
-    getAllUsers() {
-      this.usersService.getUsers().then((response) => {
-        this.artistsData = response.data;
-        this.user = this.getStorableChallenge(this.user);
-      });
-    },
-    getStorableChallenge(displayableChallenge) {
-      return {
-        id: displayableChallenge.id,
-        firstName: displayableChallenge.firstName,
-        lastName: displayableChallenge.lastName,
-        nickName: displayableChallenge.nickName,
-        urlToImage: displayableChallenge.urlToImage,
-        userType: displayableChallenge.userType,
-      };
-    },
-    getDisplayableChallenge(challenge) {
-      return challenge;
-    },
   },
 };
 </script>
 
-<style>
+<style scoped>
 .grid {
   display: flex;
   justify-content: center;
