@@ -213,10 +213,6 @@ export default {
   name: "sing-up",
   created() {
     this.usersService = new BeatClubApiServices();
-    this.usersService.getUsers().then((response) => {
-      this.users = response.data;
-      this.users.forEach((user) => this.getDisplayableChallenge(user));
-    });
   },
   data() {
     return {
@@ -258,7 +254,7 @@ export default {
     },
   },
   methods: {
-    getDisplayableChallenge(challenge) {
+    getDisplayableUser(challenge) {
       return challenge;
     },
     getStorableUser(displayableUser) {
@@ -275,7 +271,7 @@ export default {
       this.user.id = uid;
       this.user = this.getStorableUser(this.user);
       this.usersService.createUsers(this.user).then((response) => {
-        this.user = this.getDisplayableChallenge(response.data);
+        this.user = this.getDisplayableUser(response.data);
         this.users.push(this.user);
         console.log(response.data.nickName);
         console.log("aca", this.user.nickName);

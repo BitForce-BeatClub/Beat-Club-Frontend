@@ -98,10 +98,15 @@
 <script>
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { BeatClubApiServices } from "../services/beat-club-api.services";
 export default {
   name: "sign-in",
+  created() {
+    this.usersService = new BeatClubApiServices();
+  },
   data() {
     return {
+      user: {},
       email: "",
       password: "",
       error: "",
@@ -124,6 +129,32 @@ export default {
     },
   },
   methods: {
+    getDisplayableUser(user) {
+      return user;
+    },
+    getStorableUser(displayableUser, uid, email, displayName, urlToImage) {
+      return {
+        id: (displayableUser.id = uid),
+        nickName: (displayableUser.nickName = displayName),
+        email: (displayableUser.email = email),
+        urlToImage: (displayableUser.urlToImage = urlToImage),
+      };
+    },
+    saveUser(uid, email, displayName, urlToImage) {
+      this.user = this.getStorableUser(
+        this.user,
+        uid,
+        email,
+        displayName,
+        urlToImage
+      );
+      this.usersService.createUsers(this.user).then((response) => {
+        this.user = this.getDisplayableUser(response.data);
+        this.users.push(this.user);
+      });
+
+      this.user = {};
+    },
     validateEmail(value) {
       if (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
         this.msg["email"] = "";
@@ -154,7 +185,9 @@ export default {
       const auth = getAuth();
       const provider = new GoogleAuthProvider();
       signInWithPopup(auth, provider)
-        .then(() => {
+        .then((userCredential) => {
+          const user = userCredential.user;
+          this.saveUser(user.uid, user.email, user.displayName, user.photoURL);
           this.$router.replace({ name: "HomeView" });
         })
         .catch((error) => {
