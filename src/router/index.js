@@ -18,6 +18,7 @@ import CredentialSettings from "../beat-club/components/account-settings/credent
 import SubscriptionSettings from "../beat-club/components/account-settings/subscription-settings.component.vue";
 import userViewComponent from "../beat-club/pages/user-view.component.vue";
 
+import songt from "../beat-club/components/audio-player/audio-player.component.vue";
 // import User from "../beat-club/pages/Users.vue";
 
 import { getAuth } from "firebase/auth";
@@ -108,6 +109,11 @@ const router = createRouter({
       path: "/user/:userId",
       name: "user-view",
       component: userViewComponent,
+    },
+    {
+      path: "/songt/",
+      name: "songt",
+      component: songt,
     },
   ],
 });

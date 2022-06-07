@@ -2,15 +2,22 @@
   <div v-if="isConnected">
     <ToolBar></ToolBar>
   </div>
+  <div style="justify-content: center">
+    <div id="footer">
+      <audio-player></audio-player>
+    </div>
+  </div>
   <RouterView></RouterView>
 </template>
 
 <script>
 import ToolBar from "./beat-club/components/tool-bar.component.vue";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import AudioPlayer from "./beat-club/components/audio-player/audio-player.component.vue";
 
 export default {
   components: {
+    AudioPlayer,
     ToolBar,
   },
   data() {
@@ -43,6 +50,11 @@ export default {
 @import "../src/scss/main.scss";
 * {
   margin: 0;
+}
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: -webkit-fill-available;
 }
 /*.background {*/
 /*  background: #0d1b29;*/

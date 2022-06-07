@@ -72,7 +72,7 @@ export default {
 
 .container {
   /*margin-top: 1rem;*/
-  position: relative;
+  /*position: relative;*/
   display: inline-block;
   text-align: center;
   height: auto;
