@@ -2,12 +2,15 @@
   <div v-if="!isConnected">
     <tool-bar-component></tool-bar-component>
   </div>
-  <div class="grid">
-    <div class="">
-      <user-card-view-see></user-card-view-see>
-    </div>
-    <div class="grid" style="width: 70%">
-      <song-card-list></song-card-list>
+  <div class="card">
+    <div class="grid">
+      <div class="mx-auto my-auto">
+        <user-card-view-see></user-card-view-see>
+      </div>
+      <div class="listSongs">
+        <h1 class="ml-6">Tracks</h1>
+        <song-card-list></song-card-list>
+      </div>
     </div>
   </div>
 </template>
@@ -38,4 +41,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.listSongs {
+  margin-top: 6rem;
+  max-width: 70%;
+}
+</style>
