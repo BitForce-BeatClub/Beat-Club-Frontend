@@ -16,9 +16,12 @@ import LogOut from "../beat-club/components/log-out.component.vue";
 import ProfileSettings from "../beat-club/components/account-settings/profile-settings.component.vue";
 import CredentialSettings from "../beat-club/components/account-settings/credential-settings.component.vue";
 import SubscriptionSettings from "../beat-club/components/account-settings/subscription-settings.component.vue";
+import test1 from "../beat-club/pages/test.vue";
+import test2 from "../beat-club/pages/test12.vue";
+
 import userViewComponent from "../beat-club/pages/user-view.component.vue";
 
-// import User from "../beat-club/pages/Users.vue";
+// import User from "../beat-club/pages/test.vue";
 
 import { getAuth } from "firebase/auth";
 
@@ -108,6 +111,16 @@ const router = createRouter({
       path: "/user/:userId",
       name: "user-view",
       component: userViewComponent,
+    },
+    {
+      path: "/test1",
+      name: "test",
+      component: test1,
+    },
+    {
+      path: "/test2",
+      name: "test1",
+      component: test2,
     },
   ],
 });
