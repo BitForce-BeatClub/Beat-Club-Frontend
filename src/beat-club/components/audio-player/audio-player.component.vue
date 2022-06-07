@@ -3,40 +3,44 @@
   <div class="player">
     <div class="player__top">
       <div class="player-controls">
-        <div class="flex">
-          <div class="flex align-items-center">
-            <div class="player-controls__item" @click="prevTrack">
-              <svg class="icon">
-                <use xlink:href="#icon-prev"></use>
-              </svg>
-            </div>
-            <div class="player-controls__item -xl js-play mx-2" @click="play">
-              <svg class="icon">
-                <use xlink:href="#icon-pause" v-if="isTimerPlaying"></use>
-                <use xlink:href="#icon-play" v-else></use>
-              </svg>
-            </div>
-
-            <div class="player-controls__item" @click="nextTrack">
-              <svg class="icon">
-                <use xlink:href="#icon-next"></use>
-              </svg>
-            </div>
+        <div class="card flex align-items-center justify-content-evenly">
+          <div v-if="currentTrack">
+            <div class="album-info__name">{{ currentTrack.artist }}</div>
+            <div class="album-info__track">{{ currentTrack.name }}</div>
           </div>
           <div class="progress" ref="progress">
-            <div class="progress__top">
-              <div class="album-info" v-if="currentTrack">
-                <div class="album-info__name">{{ currentTrack.artist }}</div>
-                <div class="album-info__track">{{ currentTrack.name }}</div>
+            <div class="grid">
+              <div class="player-controls__item" @click="prevTrack">
+                <svg class="icon">
+                  <use xlink:href="#icon-prev"></use>
+                </svg>
               </div>
+              <div class="player-controls__item -xl js-play mx-2" @click="play">
+                <svg class="icon">
+                  <use xlink:href="#icon-pause" v-if="isTimerPlaying"></use>
+                  <use xlink:href="#icon-play" v-else></use>
+                </svg>
+              </div>
+
+              <div class="player-controls__item" @click="nextTrack">
+                <svg class="icon">
+                  <use xlink:href="#icon-next"></use>
+                </svg>
+              </div>
+
+
+              <div class="progress__bar" @click="clickProgress">
+                <div
+                  class="progress__current"
+                  :style="{ width: barWidth }"
+                ></div>
+              </div>
+            </div>
+            <div class="flex justify-content-between">
+              <div class="progress__time">{{ currentTime }}</div>
               <div class="progress__duration">{{ duration }}</div>
             </div>
-            <div class="progress__bar" @click="clickProgress">
-              <div class="progress__current" :style="{ width: barWidth }"></div>
-            </div>
-            <div class="progress__time">{{ currentTime }}</div>
           </div>
-          <div v-cloak></div>
         </div>
       </div>
     </div>
@@ -356,15 +360,14 @@ body {
   //min-height: 480px;
   // box-shadow: 0px 55px 75px -10px rgba(76, 70, 124, 0.5);
   // box-shadow: 0px 55px 105px 10px rgba(76, 70, 124, 0.35);
-  box-shadow: 0px 15px 35px -5px rgba(50, 88, 130, 0.32);
+  box-shadow: 15px 35px -5px rgba(50, 88, 130, 0.32);
   border-radius: 15px;
-  padding: 25px;
+  //padding: 25px;
   @media screen and (max-width: 576px), (max-height: 500px) {
     width: 100%;
     padding: 20px;
     margin-top: 75px;
     min-height: initial;
-    padding-bottom: 30px;
     max-width: 400px;
   }
   &__top {
@@ -387,15 +390,12 @@ body {
     border-radius: 15px;
     // transform: perspective(512px) translate3d(0, 0, 0);
     // transition: all .4s cubic-bezier(.125, .625, .125, .875);
-    z-index: 1;
 
     @media screen and (max-width: 576px), (max-height: 500px) {
       margin-top: -70px;
       margin-bottom: 25px;
       width: 290px;
       height: 230px;
-      margin-left: auto;
-      margin-right: auto;
     }
 
     &__item {
@@ -414,7 +414,7 @@ body {
         background: inherit;
         width: 100%;
         height: 100%;
-        box-shadow: 0px 10px 40px 0px rgba(76, 70, 124, 0.5);
+        box-shadow: 10px 40px 0px rgba(76, 70, 124, 0.5);
         display: block;
         z-index: 1;
         position: absolute;
@@ -464,7 +464,7 @@ body {
 
     &__item {
       display: inline-flex;
-      font-size: 30px;
+      font-size: 20px;
       padding: 5px;
       margin-bottom: 10px;
       color: #acb8cc;
@@ -497,13 +497,13 @@ body {
         transform: scale(0.5);
         opacity: 0;
         box-shadow: 0px 5px 10px 0px rgba(76, 70, 124, 0.2);
-        transition: all 0.3s ease-in-out;
+        //transition: all 0.3s ease-in-out;
         transition: all 0.4s cubic-bezier(0.35, 0.57, 0.13, 0.88);
       }
 
       @media screen and (min-width: 500px) {
         &:hover {
-          color: #532ab9;
+          color: #ff4081;
 
           &::before {
             opacity: 1;
@@ -514,7 +514,7 @@ body {
 
       @media screen and (max-width: 576px), (max-height: 500px) {
         &:active {
-          color: #532ab9;
+          color: #ff4081;
 
           &::before {
             opacity: 1;
@@ -530,11 +530,11 @@ body {
 
       &.-xl {
         margin-bottom: 0;
-        font-size: 95px;
+        font-size: 40px;
         // filter: drop-shadow(0 2px 8px rgba(172, 184, 204, 0.3));
         // filter: drop-shadow(0 9px 6px rgba(172, 184, 204, 0.35));
         filter: drop-shadow(0 11px 6px rgba(172, 184, 204, 0.45));
-        color: #fff;
+        color: #ffffff;
         width: auto;
         height: auto;
         display: inline-flex;
@@ -547,29 +547,23 @@ body {
           display: none;
         }
       }
-
-      &.-favorite {
-        &.active {
-          color: red;
-        }
-      }
     }
   }
 }
 .progress {
-  width: 100%;
-  margin-top: -15px;
+  width: 60%;
+  //margin-top: -15px;
   user-select: none;
   &__top {
     display: flex;
     align-items: flex-end;
-    justify-content: space-between;
+    justify-content: flex-end;
   }
 
   &__duration {
     color: #71829e;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 16px;
     opacity: 0.5;
   }
   &__time {
@@ -590,7 +584,7 @@ body {
 }
 .progress__current {
   height: inherit;
-  width: 0%;
+  width: 0;
   background-color: #a3b3ce;
   border-radius: 10px;
 }
@@ -598,7 +592,7 @@ body {
 .album-info {
   color: #71829e;
   flex: 1;
-  padding-right: 60px;
+  //padding-right: 30px;
   user-select: none;
 
   @media screen and (max-width: 576px), (max-height: 500px) {
@@ -606,18 +600,20 @@ body {
   }
 
   &__name {
+    color: #71829e;
     font-size: 20px;
     font-weight: bold;
-    margin-bottom: 12px;
+    margin-top: 12px;
     line-height: 1.3em;
     @media screen and (max-width: 576px), (max-height: 500px) {
       font-size: 18px;
-      margin-bottom: 9px;
+      //margin-bottom: 9px;
     }
   }
   &__track {
+    color: #71829e;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 16px;
     opacity: 0.7;
     line-height: 1.3em;
     min-height: 52px;
