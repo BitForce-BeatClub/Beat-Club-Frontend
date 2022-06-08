@@ -5,6 +5,9 @@ export class SongsApiServices {
   getSongs() {
     return http.get("/songs");
   }
+  getTracks() {
+    return http.get("/tracks");
+  }
   //POST
   create(data) {
     return http.post("/songs", data);

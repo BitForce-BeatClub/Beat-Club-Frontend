@@ -5,36 +5,40 @@
       <div class="player-controls">
         <div class="card flex align-items-center justify-content-evenly">
           <div v-if="currentTrack">
-            <div class="album-info__name">{{ currentTrack.artist }}</div>
-            <div class="album-info__track">{{ currentTrack.name }}</div>
+            <div class="flex align-items-center">
+              <div>
+                <div class="album-info__name">{{ currentTrack.title }}</div>
+                <div class="album-info__track">{{ currentTrack.artist }}</div>
+              </div>
+              <img
+                class="coverImage"
+                alt="CoverImage"
+                :src="currentTrack.cover"
+              />
+            </div>
+          </div>
+          <div class="flex">
+            <div class="player-controls__item" @click="prevTrack">
+              <svg class="icon">
+                <use xlink:href="#icon-prev"></use>
+              </svg>
+            </div>
+            <div class="player-controls__item -xl js-play mx-2" @click="play">
+              <svg class="icon">
+                <use xlink:href="#icon-pause" v-if="isTimerPlaying"></use>
+                <use xlink:href="#icon-play" v-else></use>
+              </svg>
+            </div>
+
+            <div class="player-controls__item" @click="nextTrack">
+              <svg class="icon">
+                <use xlink:href="#icon-next"></use>
+              </svg>
+            </div>
           </div>
           <div class="progress" ref="progress">
-            <div class="grid">
-              <div class="player-controls__item" @click="prevTrack">
-                <svg class="icon">
-                  <use xlink:href="#icon-prev"></use>
-                </svg>
-              </div>
-              <div class="player-controls__item -xl js-play mx-2" @click="play">
-                <svg class="icon">
-                  <use xlink:href="#icon-pause" v-if="isTimerPlaying"></use>
-                  <use xlink:href="#icon-play" v-else></use>
-                </svg>
-              </div>
-
-              <div class="player-controls__item" @click="nextTrack">
-                <svg class="icon">
-                  <use xlink:href="#icon-next"></use>
-                </svg>
-              </div>
-
-
-              <div class="progress__bar" @click="clickProgress">
-                <div
-                  class="progress__current"
-                  :style="{ width: barWidth }"
-                ></div>
-              </div>
+            <div class="progress__bar" @click="clickProgress">
+              <div class="progress__current" :style="{ width: barWidth }"></div>
             </div>
             <div class="flex justify-content-between">
               <div class="progress__time">{{ currentTime }}</div>
@@ -46,6 +50,9 @@
     </div>
   </div>
   <!--  </div>-->
+  <!--TODO-->
+  <!--  falta arreglar el css y la aparicion del audio player-->
+  <!--  Falta reproducir la cancion cuando se toca la imagen-->
 
   <svg style="display: none">
     <defs>
@@ -102,109 +109,22 @@
 </template>
 
 <script>
+import { SongsApiServices } from "../../services/songs/songs-api.services";
+
 export default {
   name: "audio-player.component",
 
   data() {
     return {
+      tracksService: null,
       audio: null,
       circleLeft: null,
       barWidth: null,
       duration: null,
       currentTime: null,
       isTimerPlaying: false,
-      tracks: [
-        {
-          name: "Mekanın Sahibi",
-          artist: "Norm Ender",
-          cover:
-            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/1.jpg",
-          source:
-            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/mp3/1.mp3",
-          url: "https://www.youtube.com/watch?v=z3wAjJXbYzA",
-          favorited: false,
-        },
-        {
-          name: "Everybody Knows",
-          artist: "Leonard Cohen",
-          cover:
-            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/2.jpg",
-          source:
-            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/mp3/2.mp3",
-          url: "https://www.youtube.com/watch?v=Lin-a2lTelg",
-          favorited: true,
-        },
-        {
-          name: "Extreme Ways",
-          artist: "Moby",
-          cover:
-            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/3.jpg",
-          source:
-            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/mp3/3.mp3",
-          url: "https://www.youtube.com/watch?v=ICjyAe9S54c",
-          favorited: false,
-        },
-        {
-          name: "Butterflies",
-          artist: "Sia",
-          cover:
-            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/4.jpg",
-          source:
-            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/mp3/4.mp3",
-          url: "https://www.youtube.com/watch?v=kYgGwWYOd9Y",
-          favorited: false,
-        },
-        {
-          name: "The Final Victory",
-          artist: "Haggard",
-          cover:
-            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/5.jpg",
-          source:
-            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/mp3/5.mp3",
-          url: "https://www.youtube.com/watch?v=0WlpALnQdN8",
-          favorited: true,
-        },
-        {
-          name: "Genius ft. Sia, Diplo, Labrinth",
-          artist: "LSD",
-          cover:
-            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/6.jpg",
-          source:
-            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/mp3/6.mp3",
-          url: "https://www.youtube.com/watch?v=HhoATZ1Imtw",
-          favorited: false,
-        },
-        {
-          name: "The Comeback Kid",
-          artist: "Lindi Ortega",
-          cover:
-            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/7.jpg",
-          source:
-            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/mp3/7.mp3",
-          url: "https://www.youtube.com/watch?v=me6aoX0wCV8",
-          favorited: true,
-        },
-        {
-          name: "Overdose",
-          artist: "Grandson",
-          cover:
-            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/8.jpg",
-          source:
-            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/mp3/8.mp3",
-          url: "https://www.youtube.com/watch?v=00-Rl3Jlx-o",
-          favorited: false,
-        },
-        {
-          name: "Rag'n'Bone Man",
-          artist: "Human",
-          cover:
-            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/9.jpg",
-          source:
-            "https://raw.githubusercontent.com/muhammederdem/mini-player/master/mp3/9.mp3",
-          url: "https://www.youtube.com/watch?v=L3wKzyIN1yk",
-          favorited: false,
-        },
-      ],
+      tracks: [],
+      isShowCover: null,
       currentTrack: null,
       currentTrackIndex: 0,
       transitionName: null,
@@ -303,34 +223,42 @@ export default {
       this.tracks[this.currentTrackIndex].favorited =
         !this.tracks[this.currentTrackIndex].favorited;
     },
+    getTracks() {
+      this.tracksService.getTracks().then((response) => {
+        this.tracks = response.data;
+      });
+    },
   },
   created() {
-    let vm = this;
-    this.currentTrack = this.tracks[0];
-    this.audio = new Audio();
-    this.audio.src = this.currentTrack.source;
-    this.audio.ontimeupdate = function () {
-      vm.generateTime();
-    };
-    this.audio.onloadedmetadata = function () {
-      vm.generateTime();
-    };
-    this.audio.onended = function () {
-      vm.nextTrack();
-      this.isTimerPlaying = true;
-    };
+    this.tracksService = new SongsApiServices();
+    this.tracksService.getTracks().then((response) => {
+      this.tracks = response.data;
+      let vm = this;
+      this.currentTrack = this.tracks.at(0);
+      this.audio = new Audio();
+      this.audio.src = this.currentTrack.source;
+      this.audio.ontimeupdate = function () {
+        vm.generateTime();
+      };
+      this.audio.onloadedmetadata = function () {
+        vm.generateTime();
+      };
+      this.audio.onended = function () {
+        vm.nextTrack();
+        this.isTimerPlaying = true;
+      };
 
-    // this is optional (for preload covers)
-    for (let index = 0; index < this.tracks.length; index++) {
-      const element = this.tracks[index];
-      let link = document.createElement("link");
-      link.rel = "prefetch";
-      link.href = element.cover;
-      link.as = "image";
-      document.head.appendChild(link);
-    }
+      // this is optional (for preload covers)
+      for (let index = 0; index < this.tracks.length; index++) {
+        const element = this.tracks[index];
+        let link = document.createElement("link");
+        link.rel = "prefetch";
+        link.href = element.cover;
+        link.as = "image";
+        document.head.appendChild(link);
+      }
+    });
   },
-  computed() {},
 };
 </script>
 
@@ -466,7 +394,7 @@ body {
       display: inline-flex;
       font-size: 20px;
       padding: 5px;
-      margin-bottom: 10px;
+      //margin-bottom: 10px;
       color: #acb8cc;
       cursor: pointer;
       width: 50px;
@@ -616,7 +544,6 @@ body {
     font-size: 16px;
     opacity: 0.7;
     line-height: 1.3em;
-    min-height: 52px;
     @media screen and (max-width: 576px), (max-height: 500px) {
       font-size: 18px;
       min-height: 50px;
@@ -640,6 +567,17 @@ body {
   transform: scale(1.2);
   pointer-events: none;
   opacity: 0;
+}
+
+.coverImage {
+  margin-left: 1rem;
+  background: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50%;
+  width: 70px;
 }
 
 //scale in

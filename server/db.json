@@ -266,15 +266,28 @@
   ],
   "tracks": [
     {
-      "id": 1,
       "userId": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
-      "title": "prueba",
-      "gender": "Pop",
-      "description": "prueba",
-      "caption": "prueba",
-      "privacy": "Public",
+      "title": "Tema 1",
+      "genre": "Pop",
+      "description": "123",
+      "caption": "123",
+      "artist": "Adrian9804",
       "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWcT0gfUfQFnyI5p8HCnWSbLHQhmy_cO80TxudY7E4ZtfoqI93Ky2Dx6FDvjoICrsBAj8&usqp=CAU",
-      "source": "https://mdstrm.com/audio/5fab0687bcd6c2389ee9480c/live.m3u8"
+      "source": "https://raw.githubusercontent.com/muhammederdem/mini-player/master/mp3/1.mp3",
+      "date": "2022-6-8 14:14:37",
+      "id": 1
+    },
+    {
+      "userId": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
+      "title": "Tema 2",
+      "genre": "Pop",
+      "description": "123",
+      "caption": "123",
+      "artist": "Adrian9804",
+      "cover": "https://www.picng.com/upload/free/png_free_52922.png",
+      "source": "https://raw.githubusercontent.com/muhammederdem/mini-player/master/mp3/1.mp3",
+      "date": "2022-6-8 14:14:37",
+      "id": 2
     }
   ]
 }

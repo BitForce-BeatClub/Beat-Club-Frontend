@@ -273,8 +273,8 @@ export default {
       this.usersService.createUsers(this.user).then((response) => {
         this.user = this.getDisplayableUser(response.data);
         this.users.push(this.user);
-        console.log(response.data.nickName);
-        console.log("aca", this.user.nickName);
+        // console.log(response.data.nickName);
+        // console.log("aca", this.user.nickName);
       });
 
       this.user = {};

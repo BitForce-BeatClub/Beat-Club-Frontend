@@ -1,5 +1,6 @@
 <template>
   <pv-toast></pv-toast>
+<!--  {{ dateTime() }}-->
   <div class="grid">
     <div class="card mt-3" style="width: 70%">
       <div class="bg-white text-red-500">
@@ -64,6 +65,22 @@
                   </span>
                 </div>
                 <div>
+                  <h4 class="sub-titles">Artist <em class="asterisk">*</em></h4>
+                  <span class="p-float-label">
+                    <pv-input-text
+                      style="width: 100%"
+                      id="title-input"
+                      type="text"
+                      v-model.trim="this.artist"
+                      :class="{ 'p-invalid': submitted && !this.artist }"
+                    />
+                    <small class="p-error" v-if="submitted && !this.artist"
+                      >Artist is required.</small
+                    >
+                  </span>
+                </div>
+
+                <div>
                   <div>
                     <h4 class="sub-titles">
                       Genre <em class="asterisk">*</em>
@@ -72,18 +89,21 @@
                   <div class="pt-0">
                     <pv-dropdown
                       style="width: 100%"
-                      v-model="track.gender"
+                      v-model="track.genre"
                       :options="genders"
                       optionLabel="name"
                       placeholder="Select a gender"
+                      :class="{ 'p-invalid': submitted && !track.genre }"
                     />
+                    <small class="p-error" v-if="submitted && !track.genre"
+                      >Gender is required.</small
+                    >
                   </div>
                 </div>
                 <div>
                   <div>
                     <h4 class="sub-titles">Description</h4>
                   </div>
-
                   <div>
                     <pv-text-area
                       style="width: 100%"
@@ -174,16 +194,8 @@ export default {
       submitted: false,
       toast: null,
       tracksService: null,
+      artist: null,
       selectedGender: null,
-      checked: false,
-      checked2: false,
-      checked3: false,
-      checked4: false,
-      checked5: false,
-      loading: false,
-      value1: null,
-      value2: null,
-      value3: null,
       categories: [{ name: "Public" }, { name: "Private" }],
       selectedCategory: null,
       genders: [
@@ -193,8 +205,6 @@ export default {
         { name: "Reggae" },
         { name: "Salsa" },
       ],
-      active1: false,
-      active2: false,
     };
   },
   created() {
@@ -204,6 +214,22 @@ export default {
     this.getCurrentUser();
   },
   methods: {
+    dateTime() {
+      const current = new Date();
+      const date =
+        current.getFullYear() +
+        "-" +
+        (current.getMonth() + 1) +
+        "-" +
+        current.getDate();
+      const time =
+        current.getHours() +
+        ":" +
+        current.getMinutes() +
+        ":" +
+        current.getSeconds();
+      return date + " " + time;
+    },
     showSuccess() {
       this.toast.add({
         severity: "success",
@@ -220,14 +246,15 @@ export default {
         id: displayableTrack.id,
         userId: (displayableTrack.userId = this.userId),
         title: displayableTrack.title,
-        gender: displayableTrack.gender.name,
+        genre: displayableTrack.genre.name,
         tags: displayableTrack.tags,
         description: displayableTrack.description,
         caption: displayableTrack.caption,
         privacy: displayableTrack.privacy,
-        artist: displayableTrack.artist,
+        artist: (displayableTrack.artist = this.artist),
         cover: (displayableTrack.cover = this.coverUrl),
         source: displayableTrack.source,
+        date: (displayableTrack.date = this.dateTime()),
       };
     },
     findIndexById(id) {
@@ -237,31 +264,27 @@ export default {
       this.track = {};
       this.submitted = false;
     },
-    async saveTrack() {
+    saveTrack() {
       this.submitted = true;
-      if (this.track.title.trim()) {
-        if (this.track.id) {
-          this.track = this.getStorableTrack(this.track);
-          await this.tracksService
-            .updateTrack(this.track.id, this.track)
-            .then((response) => {
-              this.tracks[this.findIndexById(response.data.id)] =
-                this.getDisplayableTrack(response.data);
-              this.showSuccess();
-            });
-        } else {
-          this.track.id = 0;
-          this.track = this.getStorableTrack(this.track);
-          await this.tracksService.createTrack(this.track).then((response) => {
-            this.track = this.getDisplayableTrack(response.data);
-            this.tracks.push(this.track);
-            this.showSuccess();
-            console.log(this.track);
-          });
-        }
+      if (this.track.title.trim() && this.track.source) {
+        this.track = this.getStorableTrack(this.track);
+        this.tracksService.createTrack(this.track).then((response) => {
+          this.track = this.getDisplayableTrack(response.data);
+          this.tracks.push(this.track);
+          this.showSuccess();
+          console.log(this.track);
+        });
+      } else {
+        this.toast.add({
+          severity: "error",
+          summary: "Can't save",
+          detail: "Required fields must complete filled in",
+          life: 3000,
+        });
       }
-      this.track = {};
+      // }
       this.submitted = false;
+      this.track = {};
       this.coverUrl =
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWcT0gfUfQFnyI5p8HCnWSbLHQhmy_cO80TxudY7E4ZtfoqI93Ky2Dx6FDvjoICrsBAj8&usqp=CAU";
     },
@@ -272,6 +295,8 @@ export default {
         {
           this.usersService.getUsersById(user.uid).then((response) => {
             this.userId = response.data.id;
+            this.artist = response.data.nickName;
+            console.log(this.artist);
           });
         }
       });
@@ -326,7 +351,7 @@ h4 {
   overflow: hidden;
   -webkit-border-radius: 50px;
   -moz-border-radius: 50px;
-  border-radius: 10%;
+  border-radius: 50%;
   width: 200px;
   height: 200px;
 }
