@@ -1,7 +1,7 @@
 <template>
   <div>
     <pv-toast></pv-toast>
-    <div style="background: white" class="mt-8 card">
+    <div style="background: white" class="card">
       <pv-toolbar>
         <template #start>
           <pv-button
@@ -197,10 +197,10 @@
 <script>
 import { FilterMatchMode } from "primevue/api";
 import { useToast } from "primevue/usetoast";
-import { SongsApiServices } from "../services/songs/songs-api.services";
+import { SongsApiServices } from "../../services/songs/songs-api.services";
 
 export default {
-  name: "song-list",
+  name: "manage-tracks",
   data() {
     return {
       songs: [],

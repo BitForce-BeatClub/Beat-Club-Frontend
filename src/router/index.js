@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import creatorHub from "../beat-club/pages/creator-hub.component.vue";
 import HomeView from "../beat-club/pages/home-view.vue";
-import SongList from "../beat-club/pages/song-list.component.vue";
+import SongList from "../beat-club/components/creator-hub/manage-tracks.component.vue";
 import SignIn from "../beat-club/pages/sign-in.component.vue";
 import SingUp from "../beat-club/pages/sign-up.component.vue";
 import test from "../beat-club/pages/test.component.vue";
