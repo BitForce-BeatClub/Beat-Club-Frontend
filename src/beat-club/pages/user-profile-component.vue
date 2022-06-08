@@ -67,8 +67,8 @@
 </template>
 
 <script>
-import { BeatClubApiServices } from "../services/beat-club-api.services";
 import { getAuth } from "firebase/auth";
+import { UsersApiServices } from "../services/users/users-api.services";
 
 export default {
   name: "user-profile",
@@ -79,7 +79,7 @@ export default {
     };
   },
   created() {
-    this.usersService = new BeatClubApiServices();
+    this.usersService = new UsersApiServices();
     const auth = getAuth();
     console.log("Info current", auth.currentUser);
     this.getUser(auth.currentUser.uid);

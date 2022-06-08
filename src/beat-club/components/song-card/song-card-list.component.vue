@@ -13,7 +13,7 @@
 
 <script>
 import songCard from "/src/beat-club/components/song-card/song-card.component.vue";
-import { BeatClubApiServices } from "../../services/beat-club-api.services.js";
+import { SongsApiServices } from "../../services/songs/songs-api.services";
 export default {
   components: {
     songCard,
@@ -22,16 +22,16 @@ export default {
   data() {
     return {
       songsData: [],
-      challengesService: undefined,
+      songService: undefined,
     };
   },
   created() {
-    this.challengesService = new BeatClubApiServices();
+    this.songService = new SongsApiServices();
     this.getAllCards();
   },
   methods: {
     getAllCards() {
-      this.challengesService.getSongs().then((response) => {
+      this.songService.getSongs().then((response) => {
         this.songsData = response.data.filter((item) => item.userId);
       });
     },

@@ -98,11 +98,11 @@
 <script>
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import { BeatClubApiServices } from "../services/beat-club-api.services";
+import { UsersApiServices } from "../services/users/users-api.services";
 export default {
   name: "sign-in",
   created() {
-    this.usersService = new BeatClubApiServices();
+    this.usersService = new UsersApiServices();
   },
   data() {
     return {

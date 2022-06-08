@@ -196,8 +196,8 @@
 
 <script>
 import { FilterMatchMode } from "primevue/api";
-import { BeatClubApiServices } from "../services/beat-club-api.services.js";
 import { useToast } from "primevue/usetoast";
+import { SongsApiServices } from "../services/songs/songs-api.services";
 
 export default {
   name: "song-list",
@@ -218,7 +218,7 @@ export default {
 
   created() {
     this.toast = useToast();
-    this.songsService = new BeatClubApiServices();
+    this.songsService = new SongsApiServices();
     this.songsService.getSongs().then((response) => {
       this.songs = response.data;
       this.songs.forEach((song) => this.getDisplayableSong(song));

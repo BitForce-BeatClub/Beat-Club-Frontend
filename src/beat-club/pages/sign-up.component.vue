@@ -208,11 +208,11 @@ import {
   sendEmailVerification,
   updateProfile,
 } from "firebase/auth";
-import { BeatClubApiServices } from "../services/beat-club-api.services";
+import { UsersApiServices } from "../services/users/users-api.services";
 export default {
   name: "sing-up",
   created() {
-    this.usersService = new BeatClubApiServices();
+    this.usersService = new UsersApiServices();
   },
   data() {
     return {

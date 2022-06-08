@@ -434,7 +434,7 @@
 
 <script>
 import { useToast } from "primevue/usetoast";
-import { BeatClubApiServices } from "../services/beat-club-api.services";
+import { SongsApiServices } from "../services/songs/songs-api.services";
 
 export default {
   name: "creator-hub",
@@ -484,7 +484,7 @@ export default {
   },
   created() {
     this.toast = useToast();
-    this.tracksService = new BeatClubApiServices();
+    this.tracksService = new SongsApiServices();
   },
   methods: {
     showSuccess() {
@@ -558,7 +558,6 @@ export default {
             this.tracks.push(this.track);
             this.showSuccess();
             console.log(this.track);
-
           });
         }
       }

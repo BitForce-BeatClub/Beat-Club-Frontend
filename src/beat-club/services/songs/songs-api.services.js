@@ -1,22 +1,13 @@
-import http from "../../core/services/http-common";
+import http from "../../../core/services/http-common";
 
-export class BeatClubApiServices {
+export class SongsApiServices {
   //GET
   getSongs() {
     return http.get("/songs");
   }
-  getUsers() {
-    return http.get("/users");
-  }
-  getMemberships() {
-    return http.get("/memberships");
-  }
   //POST
   create(data) {
     return http.post("/songs", data);
-  }
-  createUsers(data) {
-    return http.post("/users", data);
   }
   createTrack(data) {
     return http.post("/tracks", data);
@@ -26,9 +17,6 @@ export class BeatClubApiServices {
     return http.get(`/users/${id}`);
   }
   //UPDATE
-  updateUser(id, data) {
-    return http.put(`users/${id}`, data);
-  }
   updateTrack(id, data) {
     return http.put(`/tracks/${id}`, data);
   }

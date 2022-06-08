@@ -23,7 +23,7 @@
 
 <script>
 import userCard from "/src/beat-club/components/user-card/user-card.component.vue";
-import { BeatClubApiServices } from "../../services/beat-club-api.services.js";
+import { UsersApiServices } from "../../services/users/users-api.services";
 export default {
   components: {
     userCard,
@@ -38,11 +38,11 @@ export default {
     };
   },
   created() {
-    this.usersService = new BeatClubApiServices();
-    this.divideAndConquer();
+    this.usersService = new UsersApiServices();
+    this.filterUserByType();
   },
   methods: {
-    divideAndConquer() {
+    filterUserByType() {
       this.usersService
         .getUsers()
         .then(

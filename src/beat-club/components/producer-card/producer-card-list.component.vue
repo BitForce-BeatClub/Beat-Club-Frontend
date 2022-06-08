@@ -13,8 +13,8 @@
 
 <script>
 //import userCard from "/src/beat-club/components/user-card/user-card.component.vue";
-import { BeatClubApiServices } from "../../services/beat-club-api.services.js";
 import ProducerCard from "/src/beat-club/components/producer-card/producer-card.component.vue";
+import { UsersApiServices } from "../../services/users/users-api.services";
 export default {
   components: {
     ProducerCard,
@@ -29,7 +29,7 @@ export default {
     };
   },
   created() {
-    this.usersService = new BeatClubApiServices();
+    this.usersService = new UsersApiServices();
     this.divideAndConquer();
   },
   methods: {
