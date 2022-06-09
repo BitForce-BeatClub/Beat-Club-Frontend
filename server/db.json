@@ -1,162 +1,6 @@
 {
   "users": [
     {
-      "id": 1,
-      "firstName": "Gonzalo",
-      "lastName": "Julián Conde",
-      "nickName": "Bizarrap",
-      "urlToImage": "https://yt3.ggpht.com/ytc/AKedOLTz2_RRKmPM69Ib8ZgXVM21L5eSnZCmw5QrhukbIg=s900-c-k-c0x00ffffff-no-rj",
-      "userType": "Producer",
-      "trends": "#LunyTunes",
-      "result": "Sponsored"
-    },
-    {
-      "id": 2,
-      "firstName": "Pedro",
-      "lastName": "Navaja",
-      "nickName": "Elpepe",
-      "urlToImage": "https://www.elpais.com.co/files/article_main/files/crop/uploads/2020/04/26/5ea65f3784607.r_1588074173641.0-0-1079-650.jpeg",
-      "userType": "Artist",
-      "trends": "#Tainy",
-      "result": "Sponsored"
-    },
-    {
-      "id": 3,
-      "firstName": "Pedro",
-      "lastName": "Navaja",
-      "nickName": "Elpepe",
-      "urlToImage": "https://i.ytimg.com/vi/0OkiUUU3Odw/maxresdefault.jpg",
-      "userType": "Artist",
-      "trends": "#Rock",
-      "result": "30.2k results"
-    },
-    {
-      "id": 4,
-      "firstName": "Gonzalo",
-      "lastName": "Julián Conde",
-      "nickName": "Bizarrap",
-      "urlToImage": "https://yt3.ggpht.com/ytc/AKedOLTz2_RRKmPM69Ib8ZgXVM21L5eSnZCmw5QrhukbIg=s900-c-k-c0x00ffffff-no-rj",
-      "userType": "Producer",
-      "trends": "#Trap",
-      "result": "2M results"
-    },
-    {
-      "id": 5,
-      "firstName": "Pedro",
-      "lastName": "Navaja",
-      "nickName": "Elpepe",
-      "urlToImage": "https://i.ytimg.com/vi/0OkiUUU3Odw/maxresdefault.jpg",
-      "userType": "Artist",
-      "trends": "#Urban",
-      "result": "22K results"
-    },
-    {
-      "id": 6,
-      "firstName": "Gonzalo",
-      "lastName": "Julián Conde",
-      "nickName": "Bizarrap",
-      "urlToImage": "https://yt3.ggpht.com/ytc/AKedOLTz2_RRKmPM69Ib8ZgXVM21L5eSnZCmw5QrhukbIg=s900-c-k-c0x00ffffff-no-rj",
-      "userType": "Producer",
-      "trends": "#lo-fi beat",
-      "result": "30k results"
-    },
-    {
-      "id": 7,
-      "firstName": "Pedro",
-      "lastName": "Navaja",
-      "nickName": "Elpepe",
-      "urlToImage": "https://i.ytimg.com/vi/0OkiUUU3Odw/maxresdefault.jpg",
-      "userType": "Artist",
-      "trends": "#skere",
-      "result": "10k results"
-    },
-    {
-      "id": 8,
-      "firstName": "Pedro",
-      "lastName ": "Navaja",
-      "nickName": "Elpepe",
-      "urlToImage": "https://i.ytimg.com/vi/0OkiUUU3Odw/maxresdefault.jpg",
-      "userType": "Artist",
-      "trends": "#asap",
-      "result": "3k results"
-    },
-    {
-      "id": 9,
-      "firstName": "Gonzalo",
-      "lastName": "Julián Conde",
-      "nickName": "Bizarrap",
-      "urlToImage": "https://yt3.ggpht.com/ytc/AKedOLTz2_RRKmPM69Ib8ZgXVM21L5eSnZCmw5QrhukbIg=s900-c-k-c0x00ffffff-no-rj",
-      "userType": "Producer"
-    },
-    {
-      "id": 10,
-      "firstName": "Gonzalo",
-      "lastName": "Julián Conde",
-      "nickName": "Bizarrap",
-      "urlToImage": "https://yt3.ggpht.com/ytc/AKedOLTz2_RRKmPM69Ib8ZgXVM21L5eSnZCmw5QrhukbIg=s900-c-k-c0x00ffffff-no-rj",
-      "userType": "Producer"
-    },
-    {
-      "id": 11,
-      "firstName": "Gonzalo",
-      "lastName": "Julián Conde",
-      "nickName": "LunyTunes",
-      "urlToImage": "https://i.ibb.co/z2PS52n/hqdefault.jpg",
-      "userType": "Follow",
-      "follow": "8.4k followers",
-      "plays": "322",
-      "tracks": "14",
-      "aboutme": "A person who love music"
-    },
-    {
-      "id": 12,
-      "firstName": "Gonzalo",
-      "lastName": "Julián Conde",
-      "nickName": "Tainy",
-      "urlToImage": "https://www.elpais.com.co/files/article_main/files/crop/uploads/2020/04/26/5ea65f3784607.r_1588074173641.0-0-1079-650.jpeg",
-      "userType": "Follow",
-      "follow": "5k followers",
-      "plays": "322",
-      "tracks": "14",
-      "aboutme": "A person who love music"
-    },
-    {
-      "id": 13,
-      "firstName": "Gonzalo",
-      "lastName": "Julián Conde",
-      "nickName": "Bizarrap",
-      "urlToImage": "https://yt3.ggpht.com/ytc/AKedOLTz2_RRKmPM69Ib8ZgXVM21L5eSnZCmw5QrhukbIg=s900-c-k-c0x00ffffff-no-rj",
-      "userType": "Follow",
-      "follow": "3M followers",
-      "plays": "322",
-      "tracks": "14",
-      "aboutme": "A person who love music"
-    },
-    {
-      "id": 14,
-      "firstName": "Gonzalo",
-      "lastName": "Julián Conde",
-      "nickName": "Ovy On The Drums",
-      "urlToImage": "https://i.ibb.co/LzM0FXQ/descarga-1.jpg",
-      "userType": "Follow",
-      "follow": "3M followers",
-      "plays": "322",
-      "tracks": "14",
-      "aboutme": "A person who love music"
-    },
-    {
-      "id": 15,
-      "firstName": "Gonzalo",
-      "lastName": "Julián Conde",
-      "nickName": "El Chombo",
-      "urlToImage": "https://i.ibb.co/Yt6jDxQ/descarga-2.jpg",
-      "userType": "Follow",
-      "follow": "6M followers",
-      "plays": "322",
-      "tracks": "14",
-      "aboutme": "A person who love music"
-    },
-    {
       "id": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
       "firstName": "Adrian Manuel",
       "lastName": "Esqueiros Cabrera",
@@ -164,33 +8,8 @@
       "email": "u201718169@upc.edu.pe",
       "location": "Peru, lima",
       "description": "El dios de la versatilidad! Raaa!",
-      "urlToImage": "https://i0.wp.com/urbanroosters.news/wp-content/uploads/2022/01/500x500.jpg?w=500&ssl=1"
-    },
-    {
-      "id": "DF6WC45BFjYpP23bAVifqNfhBTj1",
-      "firstName": "Admin",
-      "lastName": "Admin",
-      "nickName": "Admin",
-      "email": "admin@admin.com",
-      "location": "Lima",
-      "description": "Hola",
-      "urlToImage": "https://loveshayariimages.in/wp-content/uploads/2021/10/1080p-Latest-Whatsapp-Profile-Images-1.jpg"
-    },
-    {
-      "id": "7n9hUOzaU4S9WyhxCLB9K88f9mz1",
-      "firstName": "prueba45s23",
-      "lastName": "prueba",
-      "nickName": "prueba2ss",
-      "email": "prueba@gmail.com",
-      "urlToImage": "https://www.beatstars.com/assets/img/placeholders/default-avatar-circle.svg"
-    },
-    {
-      "id": "qnVi3LuKgaa0QaXxTrubQdjPGJw2",
-      "firstName": "prueba",
-      "lastName": "esta",
-      "nickName": "probando",
-      "email": "pro@pro.com",
-      "urlToImage": "https://www.beatstars.com/assets/img/placeholders/default-avatar-circle.svg"
+      "urlToImage": "https://i0.wp.com/urbanroosters.news/wp-content/uploads/2022/01/500x500.jpg?w=500&ssl=1",
+      "userType": "Producer"
     },
     {
       "id": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
@@ -198,7 +17,8 @@
       "lastName": "esqueiros",
       "nickName": "Adrian Esqueiros",
       "email": "jhonlennon1998@gmail.com",
-      "urlToImage": "https://lh3.googleusercontent.com/a-/AOh14GjLllwhLI_hG2qz4t645ydYcWFEVEHAjaUEbkwcQg=s288-p-rw-no"
+      "urlToImage": "https://lh3.googleusercontent.com/a-/AOh14GjLllwhLI_hG2qz4t645ydYcWFEVEHAjaUEbkwcQg=s288-p-rw-no",
+      "userType": "Artist"
     }
   ],
   "songs": [
