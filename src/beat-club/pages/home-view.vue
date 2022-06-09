@@ -12,6 +12,9 @@
         music production
       </div>
     </div>
+    <div style="padding-top: 10px; padding-left: 165px; margin-bottom: 20px">
+      <h1>Trending Tracks</h1>
+    </div>
     <div class="grid">
       <song-card-list></song-card-list>
     </div>

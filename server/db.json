@@ -277,6 +277,18 @@
       "cover": "https://i1.sndcdn.com/artworks-ZwVI0gRkdV5y0vRv-2kYTfA-t500x500.jpg",
       "source": "https://github.com/BitForce-BeatClub/Files/blob/main/Daft%20Punk%20-%20Harder,%20Better,%20Faster,%20Stronger%20(Official%20Audio)%20(DISCOSMP3.ONLINE).mp3?raw=true",
       "publishDate": "2022-6-8 23:25:39"
+    },
+    {
+      "userId": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
+      "title": "Back in Black",
+      "genre": "Rock",
+      "description": "Back in Black",
+      "caption": "Back in Black",
+      "artist": "AC/DC",
+      "cover": "https://lastfm.freetls.fastly.net/i/u/770x0/09f382f5e102456caf308c2251690a96.jpg",
+      "source": "https://github.com/BitForce-BeatClub/Files/blob/main/Back%20In%20Black.mp3?raw=true",
+      "publishDate": "2022-6-8 23:45:27",
+      "id": 3
     }
   ]
 }

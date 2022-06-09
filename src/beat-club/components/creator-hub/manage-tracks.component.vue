@@ -46,38 +46,38 @@
           field="title"
           header="Title"
           :sortable="true"
-          style="min-width: 16rem"
+          style="min-width: 8rem"
         />
         <pv-column
           field="artist"
           header="Artist"
           :sortable="true"
-          style="min-width: 16rem"
+          style="min-width: 8rem"
         />
         <pv-column
           field="description"
           header="Description"
           :sortable="true"
-          style="min-width: 12rem"
+          style="min-width: 8rem"
         />
         <pv-column
           field="genre"
           header="Genre"
           :sortable="true"
-          style="min-width: 12rem"
+          style="min-width: 8rem"
         />
 
         <pv-column
           field="caption"
           header="Caption"
           :sortable="true"
-          style="min-width: 12rem"
+          style="min-width: 8rem"
         />
         <pv-column
           field="privacy"
           header="Privacy"
           :sortable="true"
-          style="min-width: 12rem"
+          style="min-width: 8rem"
         />
         <pv-column field="cover" header="Cover" :sortable="true" />
       </pv-data-table>

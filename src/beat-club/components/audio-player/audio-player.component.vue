@@ -4,36 +4,38 @@
     <div class="player__top">
       <div class="player-controls">
         <div class="card flex align-items-center justify-content-evenly">
-          <div v-if="currentTrack">
-            <div class="flex align-items-center">
-              <div>
-                <div class="album-info__name">{{ currentTrack.title }}</div>
-                <div class="album-info__track">{{ currentTrack.artist }}</div>
-              </div>
-              <img
-                class="coverImage"
-                alt="CoverImage"
-                :src="currentTrack.cover"
-              />
-            </div>
-          </div>
           <div class="flex">
-            <div class="player-controls__item" @click="prevTrack">
-              <svg class="icon">
-                <use xlink:href="#icon-prev"></use>
-              </svg>
+            <div v-if="currentTrack">
+              <div class="flex align-items-center">
+                <div>
+                  <div class="album-info__name">{{ currentTrack.title }}</div>
+                  <div class="album-info__track">{{ currentTrack.artist }}</div>
+                </div>
+                <img
+                    class="coverImage"
+                    alt="CoverImage"
+                    :src="currentTrack.cover"
+                />
+              </div>
             </div>
-            <div class="player-controls__item -xl js-play mx-2" @click="play">
-              <svg class="icon">
-                <use xlink:href="#icon-pause" v-if="isTimerPlaying"></use>
-                <use xlink:href="#icon-play" v-else></use>
-              </svg>
-            </div>
+            <div class="flex align-items-center">
+              <div class="player-controls__item" @click="prevTrack">
+                <svg class="icon">
+                  <use xlink:href="#icon-prev"></use>
+                </svg>
+              </div>
+              <div class="player-controls__item -xl js-play mx-2" @click="play">
+                <svg class="icon">
+                  <use xlink:href="#icon-pause" v-if="isTimerPlaying"></use>
+                  <use xlink:href="#icon-play" v-else></use>
+                </svg>
+              </div>
 
-            <div class="player-controls__item" @click="nextTrack">
-              <svg class="icon">
-                <use xlink:href="#icon-next"></use>
-              </svg>
+              <div class="player-controls__item" @click="nextTrack">
+                <svg class="icon">
+                  <use xlink:href="#icon-next"></use>
+                </svg>
+              </div>
             </div>
           </div>
           <div class="progress" ref="progress">

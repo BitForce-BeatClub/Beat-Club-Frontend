@@ -1,5 +1,5 @@
 <template>
-  <div class="grid">
+  <div class="flex justify-content-center">
     <div class="card mt-3" style="width: 80%">
       <div class="bg-white text-red-500">
         <h2 class="ml-3">Creator Hub</h2>
