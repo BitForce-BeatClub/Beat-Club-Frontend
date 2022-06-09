@@ -2,16 +2,6 @@
   <div>
     <pv-toast></pv-toast>
     <div style="background: white" class="card">
-      <pv-toolbar>
-        <template #start>
-          <pv-button
-            label="New"
-            icon="pi pi-plus"
-            class="p-button-success mr-2"
-            @click="openNew"
-          />
-        </template>
-      </pv-toolbar>
       <pv-data-table
         ref="dt"
         :value="songs"
@@ -38,40 +28,6 @@
             </span>
           </div>
         </template>
-        <pv-column
-          field="id"
-          header="Id"
-          :sortable="true"
-          style="min-width: 12rem; background: transparent !important"
-        ></pv-column>
-        <pv-column
-          field="title"
-          header="Title"
-          :sortable="true"
-          style="min-width: 16rem"
-        ></pv-column>
-        <pv-column
-          field="description"
-          header="Description"
-          :sortable="true"
-          style="min-width: 12rem"
-        >
-        </pv-column>
-        <pv-column
-          field="urlToImage"
-          header="Url To Image"
-          :sortable="true"
-          style="min-width: 12rem"
-        >
-        </pv-column>
-        <pv-column
-          field="userId"
-          header="User Id"
-          :sortable="true"
-          style="min-width: 12rem"
-        >
-        </pv-column>
-
         <pv-column :exportable="false" style="min-width: 8rem">
           <template #body="slotProps">
             <pv-button
@@ -86,6 +42,45 @@
             />
           </template>
         </pv-column>
+
+        <pv-column
+          field="title"
+          header="Title"
+          :sortable="true"
+          style="min-width: 16rem"
+        />
+        <pv-column
+          field="artist"
+          header="Artist"
+          :sortable="true"
+          style="min-width: 16rem"
+        />
+        <pv-column
+          field="description"
+          header="Description"
+          :sortable="true"
+          style="min-width: 12rem"
+        />
+        <pv-column
+          field="genre"
+          header="Genre"
+          :sortable="true"
+          style="min-width: 12rem"
+        />
+
+        <pv-column
+          field="caption"
+          header="Caption"
+          :sortable="true"
+          style="min-width: 12rem"
+        />
+        <pv-column
+          field="privacy"
+          header="Privacy"
+          :sortable="true"
+          style="min-width: 12rem"
+        />
+        <pv-column field="cover" header="Cover" :sortable="true" />
       </pv-data-table>
     </div>
     <pv-dialog
@@ -115,6 +110,22 @@
       <div class="field">
         <span class="p-float-label">
           <pv-input-text
+            type="text"
+            id="title"
+            v-model.trim="song.artist"
+            required="true"
+            autofocus
+            :class="{ 'p-invalid': submitted && !song.artist }"
+          />
+          <label for="artist">Artist</label>
+          <small class="p-error" v-if="submitted && !song.artist"
+            >Artist is required.</small
+          >
+        </span>
+      </div>
+      <div class="field">
+        <span class="p-float-label">
+          <pv-input-text
             id="description"
             v-model="song.description"
             required="false"
@@ -126,26 +137,54 @@
       </div>
       <div class="field">
         <span class="p-float-label">
+          <pv-dropdown
+            style="width: 100%"
+            v-model="song.genre"
+            :options="genres"
+            optionLabel="name"
+            :placeholder="song.genre"
+          />
+          <label for="genre">Genre</label>
+        </span>
+      </div>
+
+      <div class="field">
+        <span class="p-float-label">
           <pv-input-text
             id="urlToImage"
-            v-model="song.urlToImage"
+            v-model="song.cover"
             required="false"
             rows="2"
             cols="2"
           />
-          <label for="description">Url To Image</label>
+          <label for="cover">Cover Url</label>
         </span>
       </div>
       <div class="field">
         <span class="p-float-label">
-          <pv-input-text
-            id="userId"
-            v-model="song.userId"
-            required="false"
-            rows="2"
-            cols="2"
-          />
-          <label for="description">User Id</label>
+          <pv-input-text id="userId" v-model="song.caption" required="true" />
+          <label for="description">Caption</label>
+        </span>
+      </div>
+      <div class="field">
+        <span class="p-float-label">
+          <div class="flex justify-content-evenly">
+            <div
+              v-for="category of categories"
+              :key="category.key"
+              class="field-radiobutton"
+            >
+              <pv-radio-button
+                name="category"
+                :value="category.name"
+                v-model="song.privacy"
+              />
+              <label class="mt-1 mx-auto" :for="category.key">{{
+                category.name
+              }}</label>
+            </div>
+          </div>
+          <label for="description">Privacy</label>
         </span>
       </div>
 
@@ -198,11 +237,22 @@
 import { FilterMatchMode } from "primevue/api";
 import { useToast } from "primevue/usetoast";
 import { SongsApiServices } from "../../services/songs/songs-api.services";
+import { UsersApiServices } from "../../services/users/users-api.services";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export default {
   name: "manage-tracks",
   data() {
     return {
+      genres: [
+        { name: "Rock" },
+        { name: "Pop" },
+        { name: "Metal" },
+        { name: "Reggae" },
+        { name: "Salsa" },
+      ],
+      categories: [{ name: "Public" }, { name: "Private" }],
+
       songs: [],
       songDialog: false,
       deleteSongDialog: false,
@@ -213,19 +263,35 @@ export default {
       submitted: false,
       songsService: null,
       toast: null,
+      userId: null,
     };
   },
 
   created() {
     this.toast = useToast();
     this.songsService = new SongsApiServices();
-    this.songsService.getSongs().then((response) => {
-      this.songs = response.data;
-      this.songs.forEach((song) => this.getDisplayableSong(song));
-    });
+    this.getCurrentUser();
     this.initFilters();
   },
   methods: {
+    getCurrentUser() {
+      this.usersService = new UsersApiServices();
+      const auth = getAuth();
+      onAuthStateChanged(auth, (user) => {
+        this.usersService.getUsersById(user.uid).then((uid) => {
+          this.userId = uid.data.id;
+          this.songsService.getTracks().then((response) => {
+            this.songs = response.data.filter(
+              (item) => item.userId === this.userId
+            );
+            this.songs.forEach((song) => {
+              this.getDisplayableSong(song);
+            });
+          });
+        });
+      });
+    },
+
     showSuccess() {
       this.toast.add({
         severity: "success",
@@ -240,10 +306,16 @@ export default {
     getStorableSong(displayableSongs) {
       return {
         id: displayableSongs.id,
+        userId: (displayableSongs.userId = this.userId),
         title: displayableSongs.title,
+        genre: displayableSongs.genre.name,
+        tags: displayableSongs.tags,
         description: displayableSongs.description,
-        urlToImage: displayableSongs.urlToImage,
-        userId: displayableSongs.userId,
+        caption: displayableSongs.caption,
+        privacy: displayableSongs.privacy,
+        artist: displayableSongs.artist,
+        cover: displayableSongs.cover,
+        source: displayableSongs.source,
       };
     },
     initFilters() {
@@ -268,12 +340,14 @@ export default {
       if (this.song.title.trim()) {
         if (this.song.id) {
           this.song = this.getStorableSong(this.song);
-          this.songsService.update(this.song.id, this.song).then((response) => {
-            this.songs[this.findIndexById(response.data.id)] =
-              this.getDisplayableSong(response.data);
-            this.showSuccess();
-            console.log(response);
-          });
+          this.songsService
+            .updateTrack(this.song.id, this.song)
+            .then((response) => {
+              this.songs[this.findIndexById(response.data.id)] =
+                this.getDisplayableSong(response.data);
+              this.showSuccess();
+              console.log(response);
+            });
         } else {
           this.song.id = 0;
           this.song = this.getStorableSong(this.song);
@@ -281,13 +355,6 @@ export default {
             this.song = this.getDisplayableSong(response.data);
             this.songs.push(this.song);
             this.showSuccess();
-
-            // this.$toast.add({
-            //   severity: "success",
-            //   summary: "Successful",
-            //   detail: "Challenge Created",
-            //   life: 3000,
-            // });
             console.log(response);
           });
         }
@@ -304,7 +371,7 @@ export default {
       this.deleteSongDialog = true;
     },
     deleteChallenge() {
-      this.songsService.delete(this.song.id).then((response) => {
+      this.songsService.deleteTracks(this.song.id).then((response) => {
         this.songs = this.songs.filter((t) => t.id !== this.song.id);
         this.deleteSongDialog = false;
         this.song = {};

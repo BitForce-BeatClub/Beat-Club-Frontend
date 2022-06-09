@@ -210,13 +210,6 @@
       "userId": 1
     },
     {
-      "id": 2,
-      "title": "RESIDENTE || BZRP Music Sessions #49",
-      "description": "Feat Residente",
-      "urlToImage": "https://images.genius.com/288a06dae079018720116a6f689dcd83.1000x563x1.jpg",
-      "userId": 1
-    },
-    {
       "id": 3,
       "title": "TRUENO || BZRP Freestyle Sessions #6",
       "description": "feat Trueno",
@@ -269,12 +262,34 @@
       "id": 1,
       "userId": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
       "title": "prueba",
-      "gender": "Pop",
+      "genre": "Pop",
       "description": "prueba",
       "caption": "prueba",
       "privacy": "Public",
       "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWcT0gfUfQFnyI5p8HCnWSbLHQhmy_cO80TxudY7E4ZtfoqI93Ky2Dx6FDvjoICrsBAj8&usqp=CAU",
       "source": "https://mdstrm.com/audio/5fab0687bcd6c2389ee9480c/live.m3u8"
+    },
+    {
+      "id": 4,
+      "userId": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
+      "title": "prueba5",
+      "description": "",
+      "caption": "prueba5",
+      "privacy": "Public",
+      "artist": "este",
+      "cover": "3",
+      "source": "prueba3"
+    },
+    {
+      "id": 5,
+      "userId": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
+      "title": "prueba33",
+      "genre": "Rock",
+      "description": "prueba33",
+      "caption": "prueba33",
+      "privacy": "Private",
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWcT0gfUfQFnyI5p8HCnWSbLHQhmy_cO80TxudY7E4ZtfoqI93Ky2Dx6FDvjoICrsBAj8&usqp=CAU",
+      "source": "muhammederdem/mini-player/master/mp3/1.mp3"
     }
   ]
 }

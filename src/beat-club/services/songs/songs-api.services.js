@@ -16,6 +16,9 @@ export class SongsApiServices {
   getUsersById(id) {
     return http.get(`/users/${id}`);
   }
+  getTracks() {
+    return http.get("/tracks");
+  }
   //UPDATE
   updateTrack(id, data) {
     return http.put(`/tracks/${id}`, data);
@@ -25,6 +28,9 @@ export class SongsApiServices {
   }
   delete(id) {
     return http.delete(`/songs/${id}`);
+  }
+  deleteTracks(id) {
+    return http.delete(`/tracks/${id}`);
   }
   findByName(name) {
     return http.get(`/songs=${name}`);

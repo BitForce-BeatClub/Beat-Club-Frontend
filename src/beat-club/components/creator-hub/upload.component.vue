@@ -52,10 +52,10 @@
           <div class="pt-0">
             <pv-dropdown
               style="width: 100%"
-              v-model="track.gender"
-              :options="genders"
+              v-model="track.genre"
+              :options="genres"
               optionLabel="name"
-              placeholder="Select a gender"
+              placeholder="Select a genre"
             />
           </div>
         </div>
@@ -148,7 +148,7 @@ export default {
       submitted: false,
       toast: null,
       categories: [{ name: "Public" }, { name: "Private" }],
-      genders: [
+      genres: [
         { name: "Rock" },
         { name: "Pop" },
         { name: "Metal" },
@@ -182,7 +182,7 @@ export default {
         id: displayableTrack.id,
         userId: (displayableTrack.userId = this.userId),
         title: displayableTrack.title,
-        gender: displayableTrack.gender.name,
+        genre: displayableTrack.genre.name,
         tags: displayableTrack.tags,
         description: displayableTrack.description,
         caption: displayableTrack.caption,

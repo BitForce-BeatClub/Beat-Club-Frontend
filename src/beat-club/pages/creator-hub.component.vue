@@ -1,6 +1,6 @@
 <template>
   <div class="grid">
-    <div class="card mt-3" style="width: 70%">
+    <div class="card mt-3" style="width: 80%">
       <div class="bg-white text-red-500">
         <h2 class="ml-3">Creator Hub</h2>
       </div>
@@ -30,6 +30,9 @@ export default {
   components: {
     ManageTracks,
     Upload,
+  },
+  methods: {
+
   },
 };
 </script>
