@@ -266,28 +266,17 @@
   ],
   "tracks": [
     {
-      "userId": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
-      "title": "Tema 1",
-      "genre": "Pop",
-      "description": "123",
-      "caption": "123",
-      "artist": "Adrian9804",
-      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWcT0gfUfQFnyI5p8HCnWSbLHQhmy_cO80TxudY7E4ZtfoqI93Ky2Dx6FDvjoICrsBAj8&usqp=CAU",
-      "source": "https://raw.githubusercontent.com/muhammederdem/mini-player/master/mp3/1.mp3",
-      "date": "2022-6-8 14:14:37",
-      "id": 1
-    },
-    {
-      "userId": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
-      "title": "Tema 2",
-      "genre": "Pop",
-      "description": "123",
-      "caption": "123",
-      "artist": "Adrian9804",
-      "cover": "https://www.picng.com/upload/free/png_free_52922.png",
-      "source": "https://raw.githubusercontent.com/muhammederdem/mini-player/master/mp3/1.mp3",
-      "date": "2022-6-8 14:14:37",
-      "id": 2
+      "id": 2,
+      "userId": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
+      "title": "Harder Better Faster Stronger",
+      "genre": "Rock",
+      "description": "Harder Better Faster Stronger",
+      "caption": "Harder Better Faster Stronger",
+      "privacy": "Public",
+      "artist": "Daft Punk",
+      "cover": "https://i1.sndcdn.com/artworks-ZwVI0gRkdV5y0vRv-2kYTfA-t500x500.jpg",
+      "source": "https://github.com/BitForce-BeatClub/Files/blob/main/Daft%20Punk%20-%20Harder,%20Better,%20Faster,%20Stronger%20(Official%20Audio)%20(DISCOSMP3.ONLINE).mp3?raw=true",
+      "publishDate": "2022-6-8 23:25:39"
     }
   ]
 }

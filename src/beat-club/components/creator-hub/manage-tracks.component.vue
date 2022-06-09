@@ -19,7 +19,6 @@
           <div
             class="table-header flex flex-column md:flex-row md:justify-content-between"
           >
-            <h5 class="mb-2 md:m-0 p-as-md-center text-xl">Manage Songs</h5>
             <span class="p-input-icon-left"
               ><i class="pi pi-search" /><pv-input-text
                 v-model="filters['global'].value"
@@ -114,7 +113,6 @@
             id="title"
             v-model.trim="song.artist"
             required="true"
-            autofocus
             :class="{ 'p-invalid': submitted && !song.artist }"
           />
           <label for="artist">Artist</label>
@@ -252,7 +250,6 @@ export default {
         { name: "Salsa" },
       ],
       categories: [{ name: "Public" }, { name: "Private" }],
-
       songs: [],
       songDialog: false,
       deleteSongDialog: false,
@@ -295,8 +292,8 @@ export default {
     showSuccess() {
       this.toast.add({
         severity: "success",
-        summary: "Success Message",
-        detail: "Message Content",
+        summary: "Success",
+        detail: "Track has been changed successfully!",
         life: 3000,
       });
     },
@@ -316,6 +313,7 @@ export default {
         artist: displayableSongs.artist,
         cover: displayableSongs.cover,
         source: displayableSongs.source,
+        publishDate: displayableSongs.publishDate,
       };
     },
     initFilters() {
@@ -346,18 +344,15 @@ export default {
               this.songs[this.findIndexById(response.data.id)] =
                 this.getDisplayableSong(response.data);
               this.showSuccess();
-              console.log(response);
             });
-        } else {
-          this.song.id = 0;
-          this.song = this.getStorableSong(this.song);
-          this.songsService.create(this.song).then((response) => {
-            this.song = this.getDisplayableSong(response.data);
-            this.songs.push(this.song);
-            this.showSuccess();
-            console.log(response);
-          });
         }
+      } else {
+        this.toast.add({
+          severity: "error",
+          summary: "Can't save",
+          detail: "Required fields must complete filled in",
+          life: 3000,
+        });
       }
       this.songDialog = false;
       this.song = {};
@@ -378,7 +373,7 @@ export default {
         this.$toast.add({
           severity: "success",
           summary: "Successful",
-          detail: "Challenge Deleted",
+          detail: "Track Deleted",
           life: 3000,
         });
         console.log(response);
