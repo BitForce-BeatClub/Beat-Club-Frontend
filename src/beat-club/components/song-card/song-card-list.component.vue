@@ -31,7 +31,7 @@ export default {
   },
   methods: {
     getAllCards() {
-      this.songService.getSongs().then((response) => {
+      this.songService.getTracks().then((response) => {
         this.songsData = response.data.filter((item) => item.userId);
       });
     },

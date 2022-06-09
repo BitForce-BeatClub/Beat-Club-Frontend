@@ -1,7 +1,7 @@
 <template>
   <pv-card class="songCard">
     <template #header>
-      <img alt="user header" :src="songData.urlToImage" />
+      <img alt="user header" :src="songData.cover" />
     </template>
     <template #title>
       <div class="title">
@@ -9,7 +9,7 @@
       </div>
     </template>
     <template #content>
-      <p>{{ songData.description }}</p>
+      <p>{{ songData.artist }}</p>
     </template>
   </pv-card>
 </template>
