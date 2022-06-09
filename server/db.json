@@ -19,6 +19,26 @@
       "email": "jhonlennon1998@gmail.com",
       "urlToImage": "https://lh3.googleusercontent.com/a-/AOh14GjLllwhLI_hG2qz4t645ydYcWFEVEHAjaUEbkwcQg=s288-p-rw-no",
       "userType": "Artist"
+    },
+    {
+      "id": "N8dStM3l85SV5NOPIco6cVxttQt2",
+      "firstName": "Enrique",
+      "lastName": "Postigo",
+      "nickName": "Anuel",
+      "email": "epostigo1999@gmail.com",
+      "urlToImage": "https://i.scdn.co/image/ab6761610000e5ebc5c589b667f600c299552ee5",
+      "userType": "Producer"
+    },
+    {
+      "id": "elZ7Y1TmObUUyd1swgleelRO9jf2",
+      "firstName": "Enrique",
+      "lastName": "Postigo",
+      "nickName": "Versatil",
+      "email": "eldes345xd.ep@gmail.com",
+      "location": "arabia",
+      "description": "me gusta el aji de gallina",
+      "urlToImage": "https://yt3.ggpht.com/N7khFcO3mqI8qld0yzksTNBqWHWfmBbRdqgiVL_CcFuu8gfbIbdvt_ZhjzJ3CPgJD6Rl2VGqLzM=s900-c-k-c0x00ffffff-no-rj",
+      "userType": "Artist"
     }
   ],
   "songs": [
@@ -109,6 +129,28 @@
       "source": "https://github.com/BitForce-BeatClub/Files/blob/main/Back%20In%20Black.mp3?raw=true",
       "publishDate": "2022-6-8 23:45:27",
       "id": 3
+    },
+    {
+      "userId": "elZ7Y1TmObUUyd1swgleelRO9jf2",
+      "title": "Back on Saratoga",
+      "genre": "Reggae",
+      "privacy": "Public",
+      "artist": "Versatil",
+      "cover": "https://is5-ssl.mzstatic.com/image/thumb/Music115/v4/15/20/af/1520afbe-1774-b43c-c601-bef35b3a9a5f/812814029920.jpg/600x600bf-60.jpg",
+      "source": "https://github.com/BitForce-BeatClub/Files/blob/main/Stro%20-%20Uninspired%20(DISCOSMP3.ONLINE).mp3?raw=true",
+      "publishDate": "2022-6-9 0:57:38",
+      "id": 4
+    },
+    {
+      "userId": "N8dStM3l85SV5NOPIco6cVxttQt2",
+      "title": "Ella Quiere Beber",
+      "genre": "Salsa",
+      "privacy": "Public",
+      "artist": "Anuel",
+      "cover": "https://cdn.themedizine.com/2018/07/Anuel-AA-Real-Hasta-La-Muerte-Album.jpg",
+      "source": "https://github.com/BitForce-BeatClub/Files/blob/main/Anuel%20AA%20-%20Ella%20Quiere%20Beber%20(Remix)%20ft.%20Romeo%20Santos%20(DISCOSMP3.ONLINE).mp3?raw=true",
+      "publishDate": "2022-6-9 1:1:50",
+      "id": 5
     }
   ]
 }
