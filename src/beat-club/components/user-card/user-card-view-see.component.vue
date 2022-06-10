@@ -175,7 +175,7 @@ export default {
 
 <style scoped>
 .user-img {
-  background: no-repeat;
+  object-fit: cover;
   background-size: cover;
   overflow: hidden;
   -webkit-border-radius: 50px;

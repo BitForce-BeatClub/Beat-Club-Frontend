@@ -5,7 +5,7 @@
         <div class="icon">
           <pv-card class="card" style="border-radius: 4% 25% 0 0">
             <template #header>
-              <img alt="user header"  style="border-radius: 4% 25% 0 0;" :src="users.urlToImage" />
+              <img class="user-img-0" alt="user header"  style="border-radius: 4% 25% 0 0;" :src="users.urlToImage" />
             </template>
             <template #content>
               <p>
@@ -25,9 +25,6 @@ export default {
   props: {
     users: Object,
   },
-  methods: {
-
-  },
 };
 </script>
 
@@ -41,6 +38,11 @@ export default {
 .users {
   display: flex;
   text-align: center;
+}
+.p-card-header img {
+  object-fit: cover;
+  height: 300px;
+  width: 300px;
 }
 
 .icon {
