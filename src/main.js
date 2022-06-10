@@ -41,6 +41,7 @@ import Textarea from "primevue/textarea";
 import FileUpload from "primevue/fileupload";
 import SplitButton from "primevue/splitbutton";
 import Inputmask from "primevue/inputmask";
+import Slider from "primevue/slider";
 
 const firebaseConfig = {
   apiKey: "AIzaSyB5_Hqojo_tJCludylcYIY16R7If-dfFAo",
@@ -74,6 +75,7 @@ getAuth().onAuthStateChanged(() => {
     app.use(DisableAutocomplete);
 
     // PrimeVue Components
+    app.component("pv-slider", Slider);
     app.component("pv-data-table", DataTable);
     app.component("pv-column", Column);
     app.component("pv-button", Button);

@@ -53,7 +53,7 @@ export default {
 .icon {
   width: 100%;
   height: 100%;
-  position: relative;
+  position: sticky;
   cursor: pointer;
   transition: transform ease-in-out 150ms;
 }
@@ -108,7 +108,7 @@ export default {
 @keyframes pulse {
   0% {
     transform: scale(0.95);
-    opacity: 0.80;
+    opacity: 0.8;
   }
   100% {
     transform: scale(1.35);

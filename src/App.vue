@@ -2,12 +2,10 @@
   <div v-if="isConnected">
     <ToolBar></ToolBar>
   </div>
-  <div style="justify-content: center">
-    <div id="footer">
-      <audio-player></audio-player>
-    </div>
-  </div>
   <RouterView></RouterView>
+  <div id="footer">
+    <audio-player></audio-player>
+  </div>
 </template>
 
 <script>
@@ -54,7 +52,8 @@ export default {
 #footer {
   position: fixed;
   bottom: 0;
-  width: -webkit-fill-available;
+  width: 100%;
+  /* Height of the footer*/
 }
 /*.background {*/
 /*  background: #0d1b29;*/

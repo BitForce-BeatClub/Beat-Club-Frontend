@@ -6,7 +6,10 @@
         <div class="card flex align-items-center justify-content-evenly">
           <div class="flex">
             <div v-if="currentTrack">
-              <div class="flex align-items-center mx-2">
+              <div
+                class="flex align-items-center"
+                style="width: 300px; height: 60px"
+              >
                 <img
                   class="coverImage mr-2"
                   alt="CoverImage"
@@ -18,26 +21,26 @@
                 </div>
               </div>
             </div>
-            <div class="flex align-items-center">
-              <div class="player-controls__item" @click="prevTrack">
-                <svg class="icon">
-                  <use xlink:href="#icon-prev"></use>
-                </svg>
-              </div>
-              <div class="player-controls__item -xl js-play mx-2" @click="play">
-                <svg class="icon">
-                  <use xlink:href="#icon-pause" v-if="isTimerPlaying"></use>
-                  <use xlink:href="#icon-play" v-else></use>
-                </svg>
-              </div>
-
-              <div class="player-controls__item" @click="nextTrack">
-                <svg class="icon">
-                  <use xlink:href="#icon-next"></use>
-                </svg>
-              </div>
+          </div>
+          <div class="flex align-items-center">
+            <div class="player-controls__item" @click="prevTrack">
+              <svg class="icon">
+                <use xlink:href="#icon-prev"></use>
+              </svg>
+            </div>
+            <div class="player-controls__item -xl js-play mx-2" @click="play">
+              <svg class="icon">
+                <use xlink:href="#icon-pause" v-if="isTimerPlaying"></use>
+                <use xlink:href="#icon-play" v-else></use>
+              </svg>
+            </div>
+            <div class="player-controls__item" @click="nextTrack">
+              <svg class="icon">
+                <use xlink:href="#icon-next"></use>
+              </svg>
             </div>
           </div>
+
           <div class="progress" ref="progress">
             <div class="progress__bar" @click="clickProgress">
               <div class="progress__current" :style="{ width: barWidth }"></div>
@@ -47,6 +50,9 @@
               <div class="progress__duration">{{ duration }}</div>
             </div>
           </div>
+<!--          <pv-slider-->
+<!--            v-model="this.volume"-->
+<!--          ></pv-slider>-->
         </div>
       </div>
     </div>
@@ -115,9 +121,9 @@ import { SongsApiServices } from "../../services/songs/songs-api.services";
 
 export default {
   name: "audio-player.component",
-
   data() {
     return {
+      volume: 0,
       tracksService: null,
       audio: null,
       circleLeft: null,
@@ -133,6 +139,9 @@ export default {
     };
   },
   methods: {
+    updateVolume() {
+      this.volume.volume();
+    },
     play() {
       if (this.audio.paused) {
         this.audio.play();
@@ -249,7 +258,6 @@ export default {
         vm.nextTrack();
         this.isTimerPlaying = true;
       };
-
       // this is optional (for preload covers)
       for (let index = 0; index < this.tracks.length; index++) {
         const element = this.tracks[index];
@@ -370,7 +378,7 @@ export default {
       height: 100%;
       object-fit: cover;
       border-radius: 15px;
-      box-shadow: 0px 10px 40px 0px rgba(76, 70, 124, 0.5);
+      box-shadow: 0 10px 40px 0 rgba(76, 70, 124, 0.5);
       user-select: none;
       pointer-events: none;
     }
@@ -423,7 +431,7 @@ export default {
         background: #fff;
         transform: scale(0.5);
         opacity: 0;
-        box-shadow: 0px 5px 10px 0px rgba(76, 70, 124, 0.2);
+        box-shadow: 0 5px 10px 0 rgba(76, 70, 124, 0.2);
         //transition: all 0.3s ease-in-out;
         transition: all 0.4s cubic-bezier(0.35, 0.57, 0.13, 0.88);
       }
@@ -512,7 +520,7 @@ export default {
 .progress__current {
   height: inherit;
   width: 0;
-  background-color: #ffffff;
+  background-color: rgba(172, 184, 204, 0.75);
   border-radius: 10px;
 }
 
@@ -569,15 +577,12 @@ export default {
 }
 
 .coverImage {
-  margin-left: 1rem;
-  background: no-repeat;
-  background-size: cover;
-  overflow: hidden;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
+  object-fit: cover;
   border-radius: 50%;
   width: 70px;
+  height: 100%;
 }
+//volume
 
 //scale in
 
@@ -596,5 +601,10 @@ export default {
   transform: scale(0.55);
   pointer-events: none;
   opacity: 0;
+}
+
+.p-slider-horizontal,
+.p-inputtext {
+  width: 14rem;
 }
 </style>
