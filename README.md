@@ -22,6 +22,11 @@ npm install
 npm run dev
 ```
 
+## Server: $ cd server
+```sh
+ json-server --watch db.json --routes routes.json --port 8080
+```
+
 ### Compile and Minify for Production
 
 ```sh
