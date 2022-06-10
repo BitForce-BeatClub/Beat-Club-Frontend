@@ -6,7 +6,8 @@
         v-for="artistData in artistsData"
         :key="artistData.id"
         :users="artistData"
-        style="max-width: 300px"
+        @click="goUserProfile(artistData.id)"
+        style="max-width: 300px; cursor: pointer"
       ></userCard>
     </div>
     <h1>Top Producers</h1>
@@ -15,7 +16,8 @@
         v-for="producerData in producersData"
         :key="producerData.id"
         :users="producerData"
-        style="max-width: 300px"
+        style="max-width: 300px; cursor: pointer"
+        @click="goUserProfile(producerData.id)"
       ></userCard>
     </div>
   </div>
@@ -23,7 +25,7 @@
 
 <script>
 import userCard from "/src/beat-club/components/user-card/user-card.component.vue";
-import { BeatClubApiServices } from "../../services/beat-club-api.services.js";
+import { UsersApiServices } from "../../services/users/users-api.services";
 export default {
   components: {
     userCard,
@@ -38,11 +40,14 @@ export default {
     };
   },
   created() {
-    this.usersService = new BeatClubApiServices();
-    this.divideAndConquer();
+    this.usersService = new UsersApiServices();
+    this.filterUserByType();
   },
   methods: {
-    divideAndConquer() {
+    goUserProfile(userId) {
+      this.$router.push("/user/" + userId);
+    },
+    filterUserByType() {
       this.usersService
         .getUsers()
         .then(

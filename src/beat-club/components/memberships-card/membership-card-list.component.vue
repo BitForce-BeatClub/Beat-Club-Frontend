@@ -14,7 +14,7 @@
 
 <script>
 import membershipCard from "/src/beat-club/components/memberships-card/membership-card.component.vue";
-import { BeatClubApiServices } from "../../services/beat-club-api.services.js";
+import { MembershipsApiServices } from "../../services/memberships/memberships-api.services";
 export default {
   components: {
     membershipCard,
@@ -27,7 +27,7 @@ export default {
     };
   },
   created() {
-    this.membershipServices = new BeatClubApiServices();
+    this.membershipServices = new MembershipsApiServices();
     this.getMemberships();
   },
   methods: {

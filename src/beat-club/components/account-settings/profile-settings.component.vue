@@ -2,25 +2,15 @@
   <pv-toast></pv-toast>
   <div id="profileSettings">
     <h1>Profile settings</h1>
-    <div class="grid">
-      <div style="display: flex; align-items: center" class="flex gap-3">
-        <section>
-          <img
-            class="roundedImage"
-            :src="userData.urlToImage"
-            alt="Profile Picture"
-          />
-        </section>
-        <section>
-          <div>
-            <h5>Profile Picture Link</h5>
-            <pv-input-text
-              type="text"
-              v-model="userData.urlToImage"
-              id="urlToImage"
-            />
-          </div>
-        </section>
+    <div class="flex justify-content-center align-items-center">
+      <img class="user-img mx-3" :src="userData.urlToImage" alt="Profile Picture" />
+      <div>
+        <h5>Profile Picture Link</h5>
+        <pv-input-text
+          type="text"
+          v-model="userData.urlToImage"
+          id="urlToImage"
+        />
       </div>
     </div>
     <div class="form">
@@ -88,9 +78,9 @@
 </template>
 
 <script>
-import { BeatClubApiServices } from "../../services/beat-club-api.services";
 import { getAuth, updateProfile } from "firebase/auth";
 import { useToast } from "primevue/usetoast";
+import { UsersApiServices } from "../../services/users/users-api.services";
 
 export default {
   name: "profile-settings",
@@ -105,7 +95,7 @@ export default {
   },
   created() {
     this.toast = useToast();
-    this.usersService = new BeatClubApiServices();
+    this.usersService = new UsersApiServices();
     console.log("Info current", this.auth.currentUser);
     this.getUser(this.auth.currentUser.uid);
   },
@@ -172,15 +162,18 @@ export default {
 </script>
 
 <style scoped>
-.roundedImage {
-  background: no-repeat;
-  background-size: cover;
-  overflow: hidden;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  width: 90px;
-  height: 90px;
+.user-img {
+  object-fit: cover;
+  width: 20%;
+  height: 200px;
+  /*background: no-repeat;*/
+  /*background-size: cover;*/
+  /*overflow: hidden;*/
+  /*-webkit-border-radius: 50%;*/
+  /*-moz-border-radius: 50%;*/
+  /*border-radius: 50%;*/
+  /*width: 90px;*/
+  /*height: 90px;*/
 }
 .form .card {
   min-width: 450px;

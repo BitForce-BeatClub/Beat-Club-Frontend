@@ -1,227 +1,47 @@
 {
   "users": [
     {
-      "id": 1,
-      "firstName": "Gonzalo",
-      "lastName": "Julián Conde",
-      "nickName": "Bizarrap",
-      "urlToImage": "https://yt3.ggpht.com/ytc/AKedOLTz2_RRKmPM69Ib8ZgXVM21L5eSnZCmw5QrhukbIg=s900-c-k-c0x00ffffff-no-rj",
-      "userType": "Producer",
-      "trends": "#LunyTunes",
-      "result": "Sponsored"
-    },
-    {
-      "id": 2,
-      "firstName": "Pedro",
-      "lastName": "Navaja",
-      "nickName": "Elpepe",
-      "urlToImage": "https://www.elpais.com.co/files/article_main/files/crop/uploads/2020/04/26/5ea65f3784607.r_1588074173641.0-0-1079-650.jpeg",
-      "userType": "Artist",
-      "trends": "#Tainy",
-      "result": "Sponsored"
-    },
-    {
-      "id": 3,
-      "firstName": "Pedro",
-      "lastName": "Navaja",
-      "nickName": "Elpepe",
-      "urlToImage": "https://i.ytimg.com/vi/0OkiUUU3Odw/maxresdefault.jpg",
-      "userType": "Artist",
-      "trends": "#Rock",
-      "result": "30.2k results"
-    },
-    {
-      "id": 4,
-      "firstName": "Gonzalo",
-      "lastName": "Julián Conde",
-      "nickName": "Bizarrap",
-      "urlToImage": "https://yt3.ggpht.com/ytc/AKedOLTz2_RRKmPM69Ib8ZgXVM21L5eSnZCmw5QrhukbIg=s900-c-k-c0x00ffffff-no-rj",
-      "userType": "Producer",
-      "trends": "#Trap",
-      "result": "2M results"
-    },
-    {
-      "id": 5,
-      "firstName": "Pedro",
-      "lastName": "Navaja",
-      "nickName": "Elpepe",
-      "urlToImage": "https://i.ytimg.com/vi/0OkiUUU3Odw/maxresdefault.jpg",
-      "userType": "Artist",
-      "trends": "#Urban",
-      "result": "22K results"
-    },
-    {
-      "id": 6,
-      "firstName": "Gonzalo",
-      "lastName": "Julián Conde",
-      "nickName": "Bizarrap",
-      "urlToImage": "https://yt3.ggpht.com/ytc/AKedOLTz2_RRKmPM69Ib8ZgXVM21L5eSnZCmw5QrhukbIg=s900-c-k-c0x00ffffff-no-rj",
-      "userType": "Producer",
-      "trends": "#lo-fi beat",
-      "result": "30k results"
-    },
-    {
-      "id": 7,
-      "firstName": "Pedro",
-      "lastName": "Navaja",
-      "nickName": "Elpepe",
-      "urlToImage": "https://i.ytimg.com/vi/0OkiUUU3Odw/maxresdefault.jpg",
-      "userType": "Artist",
-      "trends": "#skere",
-      "result": "10k results"
-    },
-    {
-      "id": 8,
-      "firstName": "Pedro",
-      "lastName ": "Navaja",
-      "nickName": "Elpepe",
-      "urlToImage": "https://i.ytimg.com/vi/0OkiUUU3Odw/maxresdefault.jpg",
-      "userType": "Artist",
-      "trends": "#asap",
-      "result": "3k results"
-    },
-    {
-      "id": 9,
-      "firstName": "Gonzalo",
-      "lastName": "Julián Conde",
-      "nickName": "Bizarrap",
-      "urlToImage": "https://yt3.ggpht.com/ytc/AKedOLTz2_RRKmPM69Ib8ZgXVM21L5eSnZCmw5QrhukbIg=s900-c-k-c0x00ffffff-no-rj",
-      "userType": "Producer"
-    },
-    {
-      "id": 10,
-      "firstName": "Gonzalo",
-      "lastName": "Julián Conde",
-      "nickName": "Bizarrap",
-      "urlToImage": "https://yt3.ggpht.com/ytc/AKedOLTz2_RRKmPM69Ib8ZgXVM21L5eSnZCmw5QrhukbIg=s900-c-k-c0x00ffffff-no-rj",
-      "userType": "Producer"
-    },
-    {
-      "id": 11,
-      "firstName": "Gonzalo",
-      "lastName": "Julián Conde",
-      "nickName": "LunyTunes",
-      "urlToImage": "https://i.ibb.co/z2PS52n/hqdefault.jpg",
-      "userType": "Follow",
-      "follow": "8.4k followers",
-      "plays": "322",
-      "tracks": "14",
-      "aboutme": "A person who love music"
-    },
-    {
-      "id": 12,
-      "firstName": "Gonzalo",
-      "lastName": "Julián Conde",
-      "nickName": "Tainy",
-      "urlToImage": "https://www.elpais.com.co/files/article_main/files/crop/uploads/2020/04/26/5ea65f3784607.r_1588074173641.0-0-1079-650.jpeg",
-      "userType": "Follow",
-      "follow": "5k followers",
-      "plays": "322",
-      "tracks": "14",
-      "aboutme": "A person who love music"
-    },
-    {
-      "id": 13,
-      "firstName": "Gonzalo",
-      "lastName": "Julián Conde",
-      "nickName": "Bizarrap",
-      "urlToImage": "https://yt3.ggpht.com/ytc/AKedOLTz2_RRKmPM69Ib8ZgXVM21L5eSnZCmw5QrhukbIg=s900-c-k-c0x00ffffff-no-rj",
-      "userType": "Follow",
-      "follow": "3M followers",
-      "plays": "322",
-      "tracks": "14",
-      "aboutme": "A person who love music"
-    },
-    {
-      "id": 14,
-      "firstName": "Gonzalo",
-      "lastName": "Julián Conde",
-      "nickName": "Ovy On The Drums",
-      "urlToImage": "https://i.ibb.co/LzM0FXQ/descarga-1.jpg",
-      "userType": "Follow",
-      "follow": "3M followers",
-      "plays": "322",
-      "tracks": "14",
-      "aboutme": "A person who love music"
-    },
-    {
-      "id": 15,
-      "firstName": "Gonzalo",
-      "lastName": "Julián Conde",
-      "nickName": "El Chombo",
-      "urlToImage": "https://i.ibb.co/Yt6jDxQ/descarga-2.jpg",
-      "userType": "Follow",
-      "follow": "6M followers",
-      "plays": "322",
-      "tracks": "14",
-      "aboutme": "A person who love music"
-    },
-    {
       "id": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
       "firstName": "Adrian Manuel",
       "lastName": "Esqueiros Cabrera",
-      "nickName": "Adrian9804",
+      "nickName": "Eminem",
       "email": "u201718169@upc.edu.pe",
       "location": "Peru, lima",
-      "description": "El dios de la versatilidad! Raaa!",
-      "urlToImage": "https://i0.wp.com/urbanroosters.news/wp-content/uploads/2022/01/500x500.jpg?w=500&ssl=1"
+      "description": "Slim shady",
+      "urlToImage": "https://i0.wp.com/urbanroosters.news/wp-content/uploads/2022/01/500x500.jpg?w=500&ssl=1",
+      "userType": "Producer"
     },
     {
-      "id": "DF6WC45BFjYpP23bAVifqNfhBTj1",
-      "firstName": "Admin",
-      "lastName": "Admin",
-      "nickName": "Admin",
-      "email": "admin@admin.com",
-      "location": "Lima",
-      "description": "Hola",
-      "urlToImage": "https://loveshayariimages.in/wp-content/uploads/2021/10/1080p-Latest-Whatsapp-Profile-Images-1.jpg"
+      "id": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
+      "firstName": "adrian",
+      "lastName": "esqueiros",
+      "nickName": "Post Malone",
+      "email": "jhonlennon1998@gmail.com",
+      "urlToImage": "https://i0.wp.com/plus.cusica.com/wp-content/uploads/2021/07/post-malone.jpg?fit=1638%2C2048&ssl=1",
+      "userType": "Artist"
     },
     {
-      "id": "7n9hUOzaU4S9WyhxCLB9K88f9mz1",
-      "firstName": "prueba45s23",
-      "lastName": "prueba",
-      "nickName": "prueba2ss",
-      "email": "prueba@gmail.com",
-      "urlToImage": "https://www.beatstars.com/assets/img/placeholders/default-avatar-circle.svg"
+      "id": "N8dStM3l85SV5NOPIco6cVxttQt2",
+      "firstName": "Enrique",
+      "lastName": "Postigo",
+      "nickName": "Anuel",
+      "email": "epostigo1999@gmail.com",
+      "urlToImage": "https://i.scdn.co/image/ab6761610000e5ebc5c589b667f600c299552ee5",
+      "userType": "Producer"
+    },
+    {
+      "id": "elZ7Y1TmObUUyd1swgleelRO9jf2",
+      "firstName": "Enrique",
+      "lastName": "Postigo",
+      "nickName": "Versatil",
+      "email": "eldes345xd.ep@gmail.com",
+      "location": "arabia",
+      "description": "me gusta el aji de gallina",
+      "urlToImage": "https://yt3.ggpht.com/N7khFcO3mqI8qld0yzksTNBqWHWfmBbRdqgiVL_CcFuu8gfbIbdvt_ZhjzJ3CPgJD6Rl2VGqLzM=s900-c-k-c0x00ffffff-no-rj",
+      "userType": "Artist"
     }
   ],
-  "songs": [
-    {
-      "id": 1,
-      "title": "NATHY PELUSO || BZRP Music Sessions #36",
-      "description": "Feat Nathy Peluso",
-      "urlToImage": "https://i.ytimg.com/vi/0OkiUUU3Odw/maxresdefault.jpg",
-      "userId": 1
-    },
-    {
-      "id": 2,
-      "title": "RESIDENTE || BZRP Music Sessions #49",
-      "description": "Feat Residente",
-      "urlToImage": "https://images.genius.com/288a06dae079018720116a6f689dcd83.1000x563x1.jpg",
-      "userId": 1
-    },
-    {
-      "id": 3,
-      "title": "TRUENO || BZRP Freestyle Sessions #6",
-      "description": "feat Trueno",
-      "urlToImage": "https://i.ytimg.com/vi/RHUKLQ6nWpc/maxresdefault.jpg",
-      "userId": 2
-    },
-    {
-      "id": 4,
-      "title": "ANUEL AA || BZRP Music Sessions #46",
-      "description": "feat Anuel",
-      "urlToImage": "https://i.ytimg.com/vi/O5Vd-I1gd7Y/maxresdefault.jpg",
-      "userId": 2
-    },
-    {
-      "id": 5,
-      "title": "TRUENO || BZRP Freestyle Sessions #6",
-      "description": "feat Trueno",
-      "urlToImage": "https://i.ytimg.com/vi/RHUKLQ6nWpc/maxresdefault.jpg",
-      "userId": 2
-    }
-  ],
+  "songs": [],
   "memberships": [
     {
       "id": 1,
@@ -250,155 +70,66 @@
   ],
   "tracks": [
     {
-      "id": 1,
-      "title": "Title1|",
-      "gender": "Title1|gender",
-      "tags": "Title1|",
-      "description": "Title1| des",
-      "caption": "Title1|c",
+      "userId": "elZ7Y1TmObUUyd1swgleelRO9jf2",
+      "title": "Back on Saratoga",
+      "genre": "Reggae",
       "privacy": "Public",
-      "containsMusic": {
-        "name": "Yes",
-        "key": "1"
-      },
-      "artist": "Title1| a",
-      "publisher": "Title1| p",
-      "ISRC": "Title1| isr",
-      "commposer": "Title1| co",
-      "releaseTitle": "Title1| ti",
-      "buyLink": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
-      "albumTitle": "Title1| al",
-      "recordLabel": "Title1| lab",
-      "recordLabelDate": "2022-05-11T05:00:00.000Z",
-      "barcode": "Title1| bar",
-      "ISWS": "Title1| isw",
-      "pLine": "Title1| line",
-      "containsExplicitContent": "All rights reserved",
-      "license": true
+      "artist": "Versatil",
+      "cover": "https://is5-ssl.mzstatic.com/image/thumb/Music115/v4/15/20/af/1520afbe-1774-b43c-c601-bef35b3a9a5f/812814029920.jpg/600x600bf-60.jpg",
+      "source": "https://github.com/BitForce-BeatClub/Files/blob/main/Stro%20-%20Uninspired%20(DISCOSMP3.ONLINE).mp3?raw=true",
+      "publishDate": "2022-6-9 0:57:38",
+      "id": 4
     },
     {
-      "id": 2,
-      "title": "123213",
-      "gender": {
-        "name": "Reggae"
-      },
-      "tags": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
-      "description": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
-      "caption": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
+      "userId": "N8dStM3l85SV5NOPIco6cVxttQt2",
+      "title": "Ella Quiere Beber",
+      "genre": "Salsa",
       "privacy": "Public",
-      "containsMusic": {
-        "name": "Yes"
-      },
-      "artist": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
-      "publisher": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
-      "ISRC": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
-      "commposer": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
-      "releaseTitle": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
-      "buyLink": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
-      "albumTitle": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
-      "recordLabel": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
-      "recordLabelDate": "2022-05-10T05:00:00.000Z",
-      "barcode": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
-      "ISWS": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
-      "pLine": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
-      "containsExplicitContent": "All rights reserved",
-      "license": true
+      "artist": "Anuel",
+      "cover": "https://cdn.themedizine.com/2018/07/Anuel-AA-Real-Hasta-La-Muerte-Album.jpg",
+      "source": "https://github.com/BitForce-BeatClub/Files/blob/main/Anuel%20AA%20-%20Ella%20Quiere%20Beber%20(Remix)%20ft.%20Romeo%20Santos%20(DISCOSMP3.ONLINE).mp3?raw=true",
+      "publishDate": "2022-6-9 1:1:50",
+      "id": 5
     },
     {
-      "id": 3,
-      "title": "gatazo",
-      "gender": "gatazo",
-      "tags": "gatazo",
-      "description": "gatazo",
-      "caption": "gatazo",
+      "id": 6,
+      "userId": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
+      "title": "Shake that",
       "privacy": "Public",
-      "containsMusic": {
-        "name": "Yes"
-      },
-      "artist": "gatazo",
-      "publisher": "gatazo",
-      "ISRC": "gatazo",
-      "commposer": "gatazo",
-      "releaseTitle": "gatazo",
-      "buyLink": "https://github.com/BitForce-BeatClub/Beat-Club-Frontend/pulse",
-      "albumTitle": "gatazo",
-      "recordLabel": "gatazo",
-      "recordLabelDate": "2022-05-09T05:00:00.000Z",
-      "barcode": "gatazo",
-      "ISWS": "gatazo",
-      "pLine": "gatazo",
-      "containsExplicitContent": "All rights reserved",
-      "license": true,
-      "enableDirectDownload": true,
-      "enableAppPlayback": true,
-      "includeRSSFeed": true,
-      "displayEmbedCode": true,
-      "offlineListening": true
+      "artist": "Eminem ft. Nate Dogg",
+      "cover": "https://i1.sndcdn.com/artworks-000245882375-d78v4p-t500x500.jpg",
+      "source": "https://github.com/BitForce-BeatClub/Files/blob/main/Eminem%20-%20Shake%20That%20(Official%20Music%20Video)%20ft.%20Nate%20Dogg%20(DISCOSMP3.ONLINE).mp3?raw=true",
+      "publishDate": "2022-6-9 18:50:41"
     },
     {
-      "id": 4,
-      "title": "1",
-      "gender": {
-        "name": "Rock"
-      },
-      "tags": "1",
-      "description": "1",
-      "caption": "1",
+      "id": 7,
+      "userId": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
+      "title": "Venom",
       "privacy": "Public",
-      "containsMusic": {
-        "name": "Yes"
-      },
-      "artist": "1",
-      "publisher": "1",
-      "ISRC": "1",
-      "commposer": "1",
-      "releaseTitle": "1",
-      "buyLink": "1",
-      "albumTitle": "1",
-      "recordLabel": "1",
-      "recordLabelDate": "2022-05-22T05:00:00.000Z",
-      "barcode": "1",
-      "ISWS": "1",
-      "pLine": "1",
-      "containsExplicitContent": {
-        "name": "Yes"
-      },
-      "license": true
+      "artist": "Eminem",
+      "cover": "https://www.lahiguera.net/musicalia/artistas/eminem/disco/9341/tema/19471/eminem_venom-portada.jpg",
+      "source": "https://github.com/BitForce-BeatClub/Files/blob/main/Eminem%20-%20Venom%20(DISCOSMP3.ONLINE).mp3?raw=true",
+      "publishDate": "2022-6-9 18:51:53"
     },
     {
-      "id": 5,
-      "title": "1",
-      "gender": {
-        "name": "Pop"
-      },
-      "tags": "1",
-      "description": "1",
-      "caption": "1",
-      "privacy": "Public",
-      "containsMusic": {
-        "name": "No"
-      },
-      "artist": "1",
-      "publisher": "1",
-      "ISRC": "1",
-      "commposer": "1",
-      "releaseTitle": "1",
-      "buyLink": "1",
-      "albumTitle": "1",
-      "recordLabel": "1",
-      "recordLabelDate": "2022-05-29T05:00:00.000Z",
-      "barcode": "1",
-      "ISWS": "1",
-      "pLine": "1",
-      "containsExplicitContent": {
-        "name": "No"
-      },
-      "license": true,
-      "enableDirectDownload": true,
-      "enableAppPlayback": true,
-      "includeRSSFeed": true,
-      "displayEmbedCode": true,
-      "offlineListening": true
+      "userId": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
+      "title": "Congratulations",
+      "genre": "Pop",
+      "artist": "Post Malone ft. Quavo",
+      "cover": "http://www.discosmp3.online/img/album/stoney-deluxe_m.jpg",
+      "source": "https://github.com/BitForce-BeatClub/Files/blob/main/Post%20Malone%20-%20Congratulations%20ft.%20Quavo%20(DISCOSMP3.ONLINE).mp3?raw=true",
+      "publishDate": "2022-6-9 18:59:57",
+      "id": 8
+    },
+    {
+      "userId": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
+      "title": "Deja Vu",
+      "genre": "Pop",
+      "artist": "Post Malone ft Justin Bieber",
+      "cover": "http://www.discosmp3.online/img/album/stoney-deluxe_m.jpg",
+      "source": "https://github.com/BitForce-BeatClub/Files/blob/main/Deja%20Vu-%20Post%20Malone%20ft.%20Justin%20Bieber%20(official%20audio)%20(DISCOSMP3.ONLINE).mp3?raw=true",
+      "publishDate": "2022-6-9 19:4:21",
+      "id": 9
     }
   ]
 }

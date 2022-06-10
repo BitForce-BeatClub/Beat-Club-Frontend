@@ -4,7 +4,7 @@
       <div class="grid flex justify-content-between">
         <img
           alt="user header"
-          class="roundedImage mt-2 ml-4"
+          class="user-img mt-2 ml-4"
           :src="users.urlToImage"
         />
         <div class="title flex align-items-center mr-4">
@@ -38,14 +38,9 @@ export default {
   background-color: #161d21;
   color: white;
 }
-.roundedImage {
-  background: no-repeat;
-  background-size: cover;
-  overflow: hidden;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  border-radius: 50px;
-  width: 100px;
-  height: 100px;
+.user-img {
+  object-fit: cover;
+  width: 50%;
+  height: 200px;
 }
 </style>

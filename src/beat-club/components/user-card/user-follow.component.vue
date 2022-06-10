@@ -14,7 +14,7 @@
 
 <script>
 import UserFollows from "/src/beat-club/components/user-card/follow.component.vue";
-import { BeatClubApiServices } from "../../services/beat-club-api.services";
+import { UsersApiServices } from "../../services/users/users-api.services";
 
 export default {
   components: {
@@ -29,7 +29,7 @@ export default {
     };
   },
   created() {
-    this.usersService = new BeatClubApiServices();
+    this.usersService = new UsersApiServices();
     this.divideAndConquer();
   },
   methods: {

@@ -2,21 +2,22 @@
   <div v-if="!isConnected">
     <tool-bar-component></tool-bar-component>
   </div>
-  <div class="background">
-    <div class="container">
-      <img src="../../assets/background.png" alt="banner" />
-      <div class="slogan">
-        the
-        <span> world’s #1 </span>
-        platform for <br />
-        music production
-      </div>
+  <div class="container">
+    <img src="../../assets/background.png" alt="banner" />
+    <div class="slogan">
+      the
+      <span> world’s #1 </span>
+      platform for <br />
+      music production
     </div>
-    <div class="grid">
-      <song-card-list></song-card-list>
-    </div>
-    <user-card-list></user-card-list>
   </div>
+  <div style="padding-top: 10px; padding-left: 165px; margin-bottom: 20px">
+    <h1>Trending Tracks</h1>
+  </div>
+  <div class="grid">
+    <song-card-list></song-card-list>
+  </div>
+  <user-card-list></user-card-list>
 </template>
 
 <script>
@@ -59,7 +60,7 @@ export default {
   left: 30%;
   transform: translate(-40%, -20%);
   font-family: "Bebas Neue", cursive;
-  font-size: 5vw;
+  font-size: 4vw;
 }
 
 /*.slogan span:nth-child(1),*/
@@ -72,13 +73,15 @@ export default {
 
 .container {
   /*margin-top: 1rem;*/
-  position: relative;
+  /*position: relative;*/
   display: inline-block;
   text-align: center;
   height: auto;
   /*background: url("../../assets/background.png");*/
 }
 img {
-  width: 100%;
+  object-fit: none;
+  width: 100vw;
+  height: 500px;
 }
 </style>

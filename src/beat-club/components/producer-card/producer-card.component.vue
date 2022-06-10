@@ -19,9 +19,6 @@ export default {
         <p>
           {{ users.nickName }}
         </p>
-
-        <!--        <p>{{ userData }}</p>-->
-        <!--        <p>{{ userData }}</p>-->
       </template>
     </pv-card>
   </div>

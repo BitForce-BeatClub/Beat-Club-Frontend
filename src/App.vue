@@ -3,14 +3,19 @@
     <ToolBar></ToolBar>
   </div>
   <RouterView></RouterView>
+  <div id="footer">
+    <audio-player></audio-player>
+  </div>
 </template>
 
 <script>
 import ToolBar from "./beat-club/components/tool-bar.component.vue";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import AudioPlayer from "./beat-club/components/audio-player/audio-player.component.vue";
 
 export default {
   components: {
+    AudioPlayer,
     ToolBar,
   },
   data() {
@@ -43,6 +48,12 @@ export default {
 @import "../src/scss/main.scss";
 * {
   margin: 0;
+}
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /* Height of the footer*/
 }
 /*.background {*/
 /*  background: #0d1b29;*/

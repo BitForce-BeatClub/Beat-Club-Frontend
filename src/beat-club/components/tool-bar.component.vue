@@ -111,7 +111,7 @@
 
 <script>
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
-import { BeatClubApiServices } from "../services/beat-club-api.services";
+import { UsersApiServices } from "../services/users/users-api.services";
 export default {
   name: "tool-bar",
   data() {
@@ -135,7 +135,6 @@ export default {
       access: [
         { label: "Message", to: "/message", icon: "pi pi-comment" },
         { label: "Creator Hub", to: "/creator-hub", icon: "pi pi-sliders-v" },
-        { label: "Upload", to: "/songs", icon: "pi pi-cloud-upload" },
       ],
       menuUser: [
         { label: "Profile", to: "/userInfo", icon: "pi pi-user" },
@@ -167,7 +166,7 @@ export default {
     },
   },
   created() {
-    this.usersService = new BeatClubApiServices();
+    this.usersService = new UsersApiServices();
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
       try {

@@ -1,12 +1,11 @@
 <template>
-  <div>
-    <h1 class="my-2">Trending Tracks</h1>
+  <div class="card">
     <div class="flex flex-wrap justify-content-center card-container gap-3">
       <songCard
         v-for="songData in songsData"
         :key="songData.id"
         :songData="songData"
-        style="max-width: 300px"
+        style="max-width: 250px"
       ></songCard>
     </div>
   </div>
@@ -14,7 +13,7 @@
 
 <script>
 import songCard from "/src/beat-club/components/song-card/song-card.component.vue";
-import { BeatClubApiServices } from "../../services/beat-club-api.services.js";
+import { SongsApiServices } from "../../services/songs/songs-api.services";
 export default {
   components: {
     songCard,
@@ -23,16 +22,16 @@ export default {
   data() {
     return {
       songsData: [],
-      challengesService: undefined,
+      songService: undefined,
     };
   },
   created() {
-    this.challengesService = new BeatClubApiServices();
+    this.songService = new SongsApiServices();
     this.getAllCards();
   },
   methods: {
     getAllCards() {
-      this.challengesService.getSongs().then((response) => {
+      this.songService.getTracks().then((response) => {
         this.songsData = response.data.filter((item) => item.userId);
       });
     },

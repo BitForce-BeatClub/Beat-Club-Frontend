@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import creatorHub from "../beat-club/pages/creator-hub.component.vue";
 import HomeView from "../beat-club/pages/home-view.vue";
-import SongList from "../beat-club/pages/song-list.component.vue";
+import SongList from "../beat-club/components/creator-hub/manage-tracks.component.vue";
 import SignIn from "../beat-club/pages/sign-in.component.vue";
 import SingUp from "../beat-club/pages/sign-up.component.vue";
 import test from "../beat-club/pages/test.component.vue";
@@ -19,6 +19,8 @@ import SubscriptionSettings from "../beat-club/components/account-settings/subsc
 import userViewComponent from "../beat-club/pages/user-view.component.vue";
 
 import PathNotFound from "../beat-club/pages/page-404.vue";
+import songt from "../beat-club/components/audio-player/audio-player.component.vue";
+
 import { getAuth } from "firebase/auth";
 
 const router = createRouter({
@@ -56,6 +58,11 @@ const router = createRouter({
       component: UserProfile,
       meta: { requiresAuth: true },
     },
+    // {
+    //   path: "/user/:userId",
+    //   name: "User",
+    //   component: User,
+    // },
     {
       path: "/log-out",
       name: "LogOut",
@@ -102,9 +109,14 @@ const router = createRouter({
       component: Recommended,
     },
     {
-      path: "/user-view",
+      path: "/user/:userId",
       name: "user-view",
       component: userViewComponent,
+    },
+    {
+      path: "/songt/",
+      name: "songt",
+      component: songt,
     },
     { path: "/:pathMatch(.*)*", component: PathNotFound },
   ],
