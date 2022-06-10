@@ -3,7 +3,7 @@
     <pv-card class="userCard shadow-8">
       <template #header>
         <div class="grid">
-          <img class="roundedImage" alt="UserImage" :src="users.urlToImage" />
+          <img class="user-img" alt="UserImage" :src="users.urlToImage" />
         </div>
       </template>
       <template #title>
@@ -79,8 +79,7 @@ export default {
 </script>
 
 <style scoped>
-.roundedImage {
-  margin-top: 3rem;
+.user-img {
   background: no-repeat;
   background-size: cover;
   overflow: hidden;

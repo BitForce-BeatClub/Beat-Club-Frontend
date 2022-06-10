@@ -5,7 +5,7 @@
         <template #header>
           <div class="grid">
             <img
-              class="roundedImage"
+              class="user-img"
               alt="UserImage"
               :src="userData.urlToImage"
             />
@@ -81,14 +81,12 @@ export default {
   created() {
     this.usersService = new UsersApiServices();
     const auth = getAuth();
-    console.log("Info current", auth.currentUser);
     this.getUser(auth.currentUser.uid);
   },
   methods: {
     getUser(id) {
       this.usersService.getUsersById(id).then((response) => {
         this.userData = response.data;
-        console.log("UserPo", this.userData);
       });
     },
     editProfile() {
@@ -102,16 +100,19 @@ export default {
 .middle {
   margin-top: 10%;
 }
-.roundedImage {
-  margin-top: 3rem;
-  background: no-repeat;
-  background-size: cover;
-  overflow: hidden;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  border-radius: 50%;
-  width: 200px;
+.user-img {
+  object-fit: cover;
+  width: 50%;
   height: 200px;
+  /*margin-top: 3rem;*/
+  /*background: no-repeat;*/
+  /*background-size: cover;*/
+  /*overflow: hidden;*/
+  /*-webkit-border-radius: 50px;*/
+  /*-moz-border-radius: 50px;*/
+  /*border-radius: 50%;*/
+  /*width: 200px;*/
+  /*height: 200px;*/
 }
 .userCard {
   background-color: #212429;

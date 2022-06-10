@@ -6,7 +6,8 @@
         v-for="artistData in artistsData"
         :key="artistData.id"
         :users="artistData"
-        style="max-width: 300px"
+        @click="goUserProfile(artistData.id)"
+        style="max-width: 300px; cursor: pointer"
       ></userCard>
     </div>
     <h1>Top Producers</h1>
@@ -15,7 +16,8 @@
         v-for="producerData in producersData"
         :key="producerData.id"
         :users="producerData"
-        style="max-width: 300px"
+        style="max-width: 300px; cursor: pointer"
+        @click="goUserProfile(producerData.id)"
       ></userCard>
     </div>
   </div>
@@ -42,6 +44,9 @@ export default {
     this.filterUserByType();
   },
   methods: {
+    goUserProfile(userId) {
+      this.$router.push("/user/" + userId);
+    },
     filterUserByType() {
       this.usersService
         .getUsers()

@@ -4,7 +4,7 @@
     <div class="flex justify-content-around">
       <div class="card">
         <div class="flex justify-content-center">
-          <img class="roundedImage" alt="CoverImage" :src="this.coverUrl" />
+          <img class="user-img" alt="CoverImage" :src="this.coverUrl" />
         </div>
         <div class="">
           <h4>Cover Link</h4>
@@ -315,7 +315,7 @@ h4 {
   color: black;
   background: #f2f2f2;
 }
-.roundedImage {
+.user-img {
   margin-top: 3rem;
   background: no-repeat;
   background-size: cover;

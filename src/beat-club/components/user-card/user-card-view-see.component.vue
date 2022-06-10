@@ -71,7 +71,7 @@
       <template #header>
         <div class="grid">
           <img
-            class="roundedImage"
+            class="user-img"
             alt="UserImage"
             :src="userData.urlToImage"
           />
@@ -96,6 +96,7 @@
             icon="pi pi-heart-fill"
             label="Follow"
             class="p-button-secondary"
+            @click="editProfile"
           />
         </div>
         <h3 style="color: #f5cb5c">Stats</h3>
@@ -141,7 +142,6 @@
 </template>
 
 <script>
-import { getAuth } from "firebase/auth";
 import { UsersApiServices } from "../../services/users/users-api.services";
 
 export default {
@@ -154,27 +154,27 @@ export default {
   },
   created() {
     this.usersService = new UsersApiServices();
-    const auth = getAuth();
-    console.log("Info current", auth.currentUser);
+    // const auth = getAuth();
+    // console.log("Info current", auth.currentUser);
     this.getUser(this.$route.params.userId);
   },
   methods: {
     getUser(id) {
       this.usersService.getUsersById(id).then((response) => {
         this.userData = response.data;
-        console.log("UserPo", this.userData);
+        // console.log("UserPo", this.userData);
       });
     },
     editProfile() {
-      this.$router.push("/userInfo");
+      console.log(this.$route.params.userId);
+      this.$router.push("/user/" + this.$route.params.userId);
     },
   },
 };
 </script>
 
 <style scoped>
-.roundedImage {
-  margin-top: 3rem;
+.user-img {
   background: no-repeat;
   background-size: cover;
   overflow: hidden;

@@ -4,10 +4,10 @@
       "id": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
       "firstName": "Adrian Manuel",
       "lastName": "Esqueiros Cabrera",
-      "nickName": "Adrian9804",
+      "nickName": "Eminem",
       "email": "u201718169@upc.edu.pe",
       "location": "Peru, lima",
-      "description": "El dios de la versatilidad! Raaa!",
+      "description": "Slim shady",
       "urlToImage": "https://i0.wp.com/urbanroosters.news/wp-content/uploads/2022/01/500x500.jpg?w=500&ssl=1",
       "userType": "Producer"
     },
@@ -15,9 +15,9 @@
       "id": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
       "firstName": "adrian",
       "lastName": "esqueiros",
-      "nickName": "Adrian Esqueiros",
+      "nickName": "Post Malone",
       "email": "jhonlennon1998@gmail.com",
-      "urlToImage": "https://lh3.googleusercontent.com/a-/AOh14GjLllwhLI_hG2qz4t645ydYcWFEVEHAjaUEbkwcQg=s288-p-rw-no",
+      "urlToImage": "https://i0.wp.com/plus.cusica.com/wp-content/uploads/2021/07/post-malone.jpg?fit=1638%2C2048&ssl=1",
       "userType": "Artist"
     },
     {
@@ -41,43 +41,7 @@
       "userType": "Artist"
     }
   ],
-  "songs": [
-    {
-      "id": 1,
-      "title": "NATHY PELUSO || BZRP Music Sessions #36",
-      "description": "Feat Nathy Peluso",
-      "urlToImage": "https://i.ytimg.com/vi/0OkiUUU3Odw/maxresdefault.jpg",
-      "userId": 1
-    },
-    {
-      "id": 2,
-      "title": "RESIDENTE || BZRP Music Sessions #49",
-      "description": "Feat Residente",
-      "urlToImage": "https://images.genius.com/288a06dae079018720116a6f689dcd83.1000x563x1.jpg",
-      "userId": 1
-    },
-    {
-      "id": 3,
-      "title": "TRUENO || BZRP Freestyle Sessions #6",
-      "description": "feat Trueno",
-      "urlToImage": "https://i.ytimg.com/vi/RHUKLQ6nWpc/maxresdefault.jpg",
-      "userId": 2
-    },
-    {
-      "id": 4,
-      "title": "ANUEL AA || BZRP Music Sessions #46",
-      "description": "feat Anuel",
-      "urlToImage": "https://i.ytimg.com/vi/O5Vd-I1gd7Y/maxresdefault.jpg",
-      "userId": 2
-    },
-    {
-      "id": 5,
-      "title": "TRUENO || BZRP Freestyle Sessions #6",
-      "description": "feat Trueno",
-      "urlToImage": "https://i.ytimg.com/vi/RHUKLQ6nWpc/maxresdefault.jpg",
-      "userId": 2
-    }
-  ],
+  "songs": [],
   "memberships": [
     {
       "id": 1,
@@ -106,31 +70,6 @@
   ],
   "tracks": [
     {
-      "id": 2,
-      "userId": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
-      "title": "Harder Better Faster Stronger",
-      "genre": "Rock",
-      "description": "Harder Better Faster Stronger",
-      "caption": "Harder Better Faster Stronger",
-      "privacy": "Public",
-      "artist": "Daft Punk",
-      "cover": "https://i1.sndcdn.com/artworks-ZwVI0gRkdV5y0vRv-2kYTfA-t500x500.jpg",
-      "source": "https://github.com/BitForce-BeatClub/Files/blob/main/Daft%20Punk%20-%20Harder,%20Better,%20Faster,%20Stronger%20(Official%20Audio)%20(DISCOSMP3.ONLINE).mp3?raw=true",
-      "publishDate": "2022-6-8 23:25:39"
-    },
-    {
-      "userId": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
-      "title": "Back in Black",
-      "genre": "Rock",
-      "description": "Back in Black",
-      "caption": "Back in Black",
-      "artist": "AC/DC",
-      "cover": "https://lastfm.freetls.fastly.net/i/u/770x0/09f382f5e102456caf308c2251690a96.jpg",
-      "source": "https://github.com/BitForce-BeatClub/Files/blob/main/Back%20In%20Black.mp3?raw=true",
-      "publishDate": "2022-6-8 23:45:27",
-      "id": 3
-    },
-    {
       "userId": "elZ7Y1TmObUUyd1swgleelRO9jf2",
       "title": "Back on Saratoga",
       "genre": "Reggae",
@@ -151,6 +90,46 @@
       "source": "https://github.com/BitForce-BeatClub/Files/blob/main/Anuel%20AA%20-%20Ella%20Quiere%20Beber%20(Remix)%20ft.%20Romeo%20Santos%20(DISCOSMP3.ONLINE).mp3?raw=true",
       "publishDate": "2022-6-9 1:1:50",
       "id": 5
+    },
+    {
+      "id": 6,
+      "userId": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
+      "title": "Shake that",
+      "privacy": "Public",
+      "artist": "Eminem ft. Nate Dogg",
+      "cover": "https://i1.sndcdn.com/artworks-000245882375-d78v4p-t500x500.jpg",
+      "source": "https://github.com/BitForce-BeatClub/Files/blob/main/Eminem%20-%20Shake%20That%20(Official%20Music%20Video)%20ft.%20Nate%20Dogg%20(DISCOSMP3.ONLINE).mp3?raw=true",
+      "publishDate": "2022-6-9 18:50:41"
+    },
+    {
+      "id": 7,
+      "userId": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
+      "title": "Venom",
+      "privacy": "Public",
+      "artist": "Eminem",
+      "cover": "https://www.lahiguera.net/musicalia/artistas/eminem/disco/9341/tema/19471/eminem_venom-portada.jpg",
+      "source": "https://github.com/BitForce-BeatClub/Files/blob/main/Eminem%20-%20Venom%20(DISCOSMP3.ONLINE).mp3?raw=true",
+      "publishDate": "2022-6-9 18:51:53"
+    },
+    {
+      "userId": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
+      "title": "Congratulations",
+      "genre": "Pop",
+      "artist": "Post Malone ft. Quavo",
+      "cover": "http://www.discosmp3.online/img/album/stoney-deluxe_m.jpg",
+      "source": "https://github.com/BitForce-BeatClub/Files/blob/main/Post%20Malone%20-%20Congratulations%20ft.%20Quavo%20(DISCOSMP3.ONLINE).mp3?raw=true",
+      "publishDate": "2022-6-9 18:59:57",
+      "id": 8
+    },
+    {
+      "userId": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
+      "title": "Deja Vu",
+      "genre": "Pop",
+      "artist": "Post Malone ft Justin Bieber",
+      "cover": "http://www.discosmp3.online/img/album/stoney-deluxe_m.jpg",
+      "source": "https://github.com/BitForce-BeatClub/Files/blob/main/Deja%20Vu-%20Post%20Malone%20ft.%20Justin%20Bieber%20(official%20audio)%20(DISCOSMP3.ONLINE).mp3?raw=true",
+      "publishDate": "2022-6-9 19:4:21",
+      "id": 9
     }
   ]
 }

@@ -6,16 +6,16 @@
         <div class="card flex align-items-center justify-content-evenly">
           <div class="flex">
             <div v-if="currentTrack">
-              <div class="flex align-items-center">
+              <div class="flex align-items-center mx-2">
+                <img
+                  class="coverImage mr-2"
+                  alt="CoverImage"
+                  :src="currentTrack.cover"
+                />
                 <div>
                   <div class="album-info__name">{{ currentTrack.title }}</div>
                   <div class="album-info__track">{{ currentTrack.artist }}</div>
                 </div>
-                <img
-                    class="coverImage"
-                    alt="CoverImage"
-                    :src="currentTrack.cover"
-                />
               </div>
             </div>
             <div class="flex align-items-center">
@@ -265,16 +265,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-body {
-  // background: #e1e7ec;
-  background: #dfe7ef;
-  font-family: "Bitter", serif;
-}
-
-* {
-  box-sizing: border-box;
-}
-
 .icon {
   display: inline-block;
   width: 1em;
@@ -285,12 +275,19 @@ body {
 }
 
 .player {
-  background: #eef3f7;
+  box-sizing: border-box;
+  //background: linear-gradient(to top, #0f2027, #203a43, #2c5364); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   width: 100%;
+  background: linear-gradient(
+    to top,
+    #eb3349,
+    #f45c43
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   //min-height: 480px;
   // box-shadow: 0px 55px 75px -10px rgba(76, 70, 124, 0.5);
   // box-shadow: 0px 55px 105px 10px rgba(76, 70, 124, 0.35);
-  box-shadow: 15px 35px -5px rgba(50, 88, 130, 0.32);
+  box-shadow: 15px 35px -5px rgba(101, 142, 187, 0.32);
   border-radius: 15px;
   //padding: 25px;
   @media screen and (max-width: 576px), (max-height: 500px) {
@@ -344,7 +341,7 @@ body {
         background: inherit;
         width: 100%;
         height: 100%;
-        box-shadow: 10px 40px 0px rgba(76, 70, 124, 0.5);
+        //box-shadow: 10px 40px 0px rgba(76, 70, 124, 0.5);
         display: block;
         z-index: 1;
         position: absolute;
@@ -360,7 +357,7 @@ body {
         background: inherit;
         width: 100%;
         height: 100%;
-        box-shadow: 0px 10px 40px 0px rgba(76, 70, 124, 0.5);
+        //box-shadow: 0px 10px 40px 0px rgba(76, 70, 124, 0.5);
         display: block;
         z-index: 2;
         position: absolute;
@@ -397,7 +394,7 @@ body {
       font-size: 20px;
       padding: 5px;
       //margin-bottom: 10px;
-      color: #acb8cc;
+      color: #ffffff;
       cursor: pointer;
       width: 50px;
       height: 50px;
@@ -410,7 +407,7 @@ body {
         font-size: 26px;
         padding: 5px;
         margin-right: 10px;
-        color: #acb8cc;
+        color: #ffffff;
         cursor: pointer;
         width: 40px;
         height: 40px;
@@ -491,36 +488,36 @@ body {
   }
 
   &__duration {
-    color: #71829e;
+    color: #ffffff;
     font-weight: 700;
     font-size: 16px;
-    opacity: 0.5;
+    //opacity: 0.5;
   }
   &__time {
     margin-top: 2px;
-    color: #71829e;
+    color: #ffffff;
     font-weight: 700;
     font-size: 16px;
-    opacity: 0.7;
+    //opacity: 0.7;
   }
 }
 .progress__bar {
   height: 6px;
   width: 100%;
   cursor: pointer;
-  background-color: #d0d8e6;
+  background-color: #ffffff;
   display: inline-block;
   border-radius: 10px;
 }
 .progress__current {
   height: inherit;
   width: 0;
-  background-color: #a3b3ce;
+  background-color: #ffffff;
   border-radius: 10px;
 }
 
 .album-info {
-  color: #71829e;
+  color: #ffffff;
   flex: 1;
   //padding-right: 30px;
   user-select: none;
@@ -530,7 +527,7 @@ body {
   }
 
   &__name {
-    color: #71829e;
+    color: #ffffff;
     font-size: 20px;
     font-weight: bold;
     margin-top: 12px;
@@ -541,10 +538,10 @@ body {
     }
   }
   &__track {
-    color: #71829e;
+    color: #ffffff;
     font-weight: 400;
     font-size: 16px;
-    opacity: 0.7;
+    //opacity: 0.7;
     line-height: 1.3em;
     @media screen and (max-width: 576px), (max-height: 500px) {
       font-size: 18px;
