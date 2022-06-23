@@ -2,28 +2,28 @@
   <div v-if="!isConnected">
     <tool-bar-component></tool-bar-component>
   </div>
-  <div class="card">
-    <div class="grid">
-      <div class="mx-auto my-auto">
-        <user-card-view-see></user-card-view-see>
-      </div>
-      <div class="listSongs">
-        <h1 class="ml-6">Tracks</h1>
-        <song-card-list></song-card-list>
+  <div class="grid justify-content-evenly">
+    <div class="flex flex-wrap justify-content-start" >
+      <user-card-view-see></user-card-view-see>
+    </div>
+    <div class="top" style="width: 70%">
+      <h1 class="mt-4">Tracks</h1>
+      <div class="flex flex-wrap card-container gap-3">
+        <song-card-list-user></song-card-list-user>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import SongCardList from "../components/song-card/song-card-list.component.vue";
 import UserCardViewSee from "../components/user-card/user-card-view-see.component.vue";
 import ToolBarComponent from "../components/tool-bar.component.vue";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import SongCardListUser from "../components/song-card/song-card-list-user.vue";
 
 export default {
   name: "user-view",
-  components: { UserCardViewSee, SongCardList, ToolBarComponent },
+  components: { UserCardViewSee, SongCardListUser, ToolBarComponent },
   data() {
     return { isConnected: false };
   },

@@ -2,8 +2,10 @@
   <div v-if="isConnected">
     <ToolBar></ToolBar>
   </div>
-  <RouterView></RouterView>
-  <div id="footer">
+  <div style="margin-bottom: 4rem">
+    <RouterView></RouterView>
+  </div>
+  <div class="audio">
     <audio-player></audio-player>
   </div>
 </template>
@@ -48,6 +50,14 @@ export default {
 @import "../src/scss/main.scss";
 * {
   margin: 0;
+}
+.audio {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  z-index: 5000;
+  width: 100%;
 }
 #footer {
   position: fixed;

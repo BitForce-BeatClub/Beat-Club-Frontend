@@ -10,6 +10,7 @@
       "description": "Slim shady",
       "urlToImage": "https://i0.wp.com/urbanroosters.news/wp-content/uploads/2022/01/500x500.jpg?w=500&ssl=1",
       "userType": "Producer"
+
     },
     {
       "id": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
@@ -41,7 +42,6 @@
       "userType": "Artist"
     }
   ],
-  "songs": [],
   "memberships": [
     {
       "id": 1,
@@ -69,6 +69,36 @@
     }
   ],
   "tracks": [
+    {
+      "id": 1,
+      "userId": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
+      "title": "Venom",
+      "privacy": "Public",
+      "artist": "Eminem",
+      "cover": "https://www.lahiguera.net/musicalia/artistas/eminem/disco/9341/tema/19471/eminem_venom-portada.jpg",
+      "source": "https://github.com/BitForce-BeatClub/Files/blob/main/Eminem%20-%20Venom%20(DISCOSMP3.ONLINE).mp3?raw=true",
+      "publishDate": "2022-6-9 18:51:53"
+    },
+    {
+      "userId": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
+      "title": "Congratulations",
+      "genre": "Pop",
+      "artist": "Post Malone ft. Quavo",
+      "cover": "https://m.media-amazon.com/images/I/91VAjJ6YxrL._SL1500_.jpg",
+      "source": "https://github.com/BitForce-BeatClub/Files/blob/main/Post%20Malone%20-%20Congratulations%20ft.%20Quavo%20(DISCOSMP3.ONLINE).mp3?raw=true",
+      "publishDate": "2022-6-9 18:59:57",
+      "id": 2
+    },
+    {
+      "userId": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
+      "title": "Deja Vu",
+      "genre": "Pop",
+      "artist": "Post Malone ft Justin Bieber",
+      "cover": "https://m.media-amazon.com/images/I/91VAjJ6YxrL._SL1500_.jpg",
+      "source": "https://github.com/BitForce-BeatClub/Files/blob/main/Deja%20Vu-%20Post%20Malone%20ft.%20Justin%20Bieber%20(official%20audio)%20(DISCOSMP3.ONLINE).mp3?raw=true",
+      "publishDate": "2022-6-9 19:4:21",
+      "id": 3
+    },
     {
       "userId": "elZ7Y1TmObUUyd1swgleelRO9jf2",
       "title": "Back on Saratoga",
@@ -100,36 +130,6 @@
       "cover": "https://i1.sndcdn.com/artworks-000245882375-d78v4p-t500x500.jpg",
       "source": "https://github.com/BitForce-BeatClub/Files/blob/main/Eminem%20-%20Shake%20That%20(Official%20Music%20Video)%20ft.%20Nate%20Dogg%20(DISCOSMP3.ONLINE).mp3?raw=true",
       "publishDate": "2022-6-9 18:50:41"
-    },
-    {
-      "id": 7,
-      "userId": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
-      "title": "Venom",
-      "privacy": "Public",
-      "artist": "Eminem",
-      "cover": "https://www.lahiguera.net/musicalia/artistas/eminem/disco/9341/tema/19471/eminem_venom-portada.jpg",
-      "source": "https://github.com/BitForce-BeatClub/Files/blob/main/Eminem%20-%20Venom%20(DISCOSMP3.ONLINE).mp3?raw=true",
-      "publishDate": "2022-6-9 18:51:53"
-    },
-    {
-      "userId": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
-      "title": "Congratulations",
-      "genre": "Pop",
-      "artist": "Post Malone ft. Quavo",
-      "cover": "https://m.media-amazon.com/images/I/91VAjJ6YxrL._SL1500_.jpg",
-      "source": "https://github.com/BitForce-BeatClub/Files/blob/main/Post%20Malone%20-%20Congratulations%20ft.%20Quavo%20(DISCOSMP3.ONLINE).mp3?raw=true",
-      "publishDate": "2022-6-9 18:59:57",
-      "id": 8
-    },
-    {
-      "userId": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
-      "title": "Deja Vu",
-      "genre": "Pop",
-      "artist": "Post Malone ft Justin Bieber",
-      "cover": "https://m.media-amazon.com/images/I/91VAjJ6YxrL._SL1500_.jpg",
-      "source": "https://github.com/BitForce-BeatClub/Files/blob/main/Deja%20Vu-%20Post%20Malone%20ft.%20Justin%20Bieber%20(official%20audio)%20(DISCOSMP3.ONLINE).mp3?raw=true",
-      "publishDate": "2022-6-9 19:4:21",
-      "id": 9
     }
   ]
 }

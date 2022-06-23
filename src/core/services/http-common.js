@@ -1,7 +1,6 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL:
-    "https://my-json-server.typicode.com/BitForce-BeatClub/Beat-Club-Frontend",
+  baseURL: "http://localhost:8080/api/v1",
   headers: { "Content-type": "application/json" },
 });

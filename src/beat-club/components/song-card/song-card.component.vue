@@ -37,8 +37,9 @@ export default {
   font-family: Poppins, sans-serif;
 }
 .songCard {
-  background-color: white;
-  color: #202125;
+  background-color: transparent;
+  color: white;
+  box-shadow: none!important;
 }
 
 .track-flex {
@@ -88,19 +89,30 @@ export default {
   font-weight: 900;
   font-size: 2em;
   color: white;
-  background: rgba(255, 0, 0, 1);
-  display: grid;
+  background: linear-gradient(
+      to bottom,
+      #eb3349,
+      #f45c43
+  );  display: grid;
   place-items: center;
   z-index: 10;
   transition: opacity 75ms linear, background-color 100ms linear;
 }
 
 .icon:hover::before {
-  background: rgba(204, 2, 2, 0.8);
+  background: linear-gradient(
+      to right,
+      #eb3349,
+      #f45c43
+  );
 }
 
 .icon:hover::after {
-  background: rgba(255, 0, 0, 0.8);
+  background: linear-gradient(
+      to left ,
+      #eb3349,
+      #f45c43
+  );
   z-index: 1;
   animation: pulse 1250ms infinite;
 }

@@ -174,6 +174,7 @@ export default {
           this.userData = response.data;
         });
         this.isConnected = true;
+
         this.userData.nickname = auth.currentUser.displayName;
       } catch (err) {
         this.isConnected = false;

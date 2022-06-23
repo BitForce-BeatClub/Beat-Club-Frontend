@@ -11,13 +11,15 @@
       music production
     </div>
   </div>
-  <div style="padding-top: 10px; padding-left: 165px; margin-bottom: 20px">
+  <div style="margin: 1rem 3rem">
+    <!--    <div style="padding-top: 10px; padding-left: 165px; margin-bottom: 20px">-->
     <h1>Trending Tracks</h1>
-  </div>
-  <div class="grid">
+    <!--    </div>-->
+    <!--    <div class="grid">-->
     <song-card-list></song-card-list>
+    <!--    </div>-->
+    <user-card-list></user-card-list>
   </div>
-  <user-card-list></user-card-list>
 </template>
 
 <script>
@@ -81,7 +83,7 @@ export default {
 }
 img {
   object-fit: none;
-  width: 100vw;
+  width: 99vw;
   height: 500px;
 }
 </style>

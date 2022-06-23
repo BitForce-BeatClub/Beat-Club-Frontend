@@ -1,36 +1,31 @@
 <template>
-  <div style="justify-content: start">
-    <h1>Recommended Artists</h1>
-    <div class="flex flex-wrap card-container gap-3">
-      <userCard
+  <div>
+    <div
+      style="display: flex; align-items: center; flex-direction: column"
+      class="flex flex-wrap justify-content-center card-container gap-3"
+    >
+      <user-card-chat
         v-for="artistData in artistsData"
         :key="artistData.id"
         :users="artistData"
         @click="goUserProfile(artistData.id)"
-        style="max-width: 300px; cursor: pointer"
-      ></userCard>
-    </div>
-    <h1>Top Producers</h1>
-    <div class="flex flex-wrap card-container gap-3">
-      <userCard
-        v-for="producerData in producersData"
-        :key="producerData.id"
-        :users="producerData"
-        style="max-width: 300px; cursor: pointer"
-        @click="goUserProfile(producerData.id)"
-      ></userCard>
+        style="cursor: pointer"
+      >
+      </user-card-chat>
     </div>
   </div>
+  <!--TODO-->
+  <!-- En un arreglo meter a los amigos del artista followers y en ese arreglo recien porder enviar mensaje-->
 </template>
 
 <script>
-import userCard from "/src/beat-club/components/user-card/user-card.component.vue";
 import { UsersApiServices } from "../../services/users/users-api.services";
+import UserCardChat from "./cards-for-chat/user-card-chat.vue";
 export default {
   components: {
-    userCard,
+    UserCardChat,
   },
-  name: "user-card-list",
+  name: "chat-list",
   data() {
     return {
       artistsData: [],
@@ -68,13 +63,19 @@ export default {
   },
 };
 </script>
-
 <style scoped>
-/*h1 {*/
-/*  padding-top: 10px;*/
-/*  padding-left: 165px;*/
-/*  margin-bottom: 20px;*/
-/*}*/
+.card-container {
+  gap: 3rem;
+}
+.grid {
+  display: flex;
+  justify-content: center;
+}
+h1 {
+  padding-top: 10px;
+  padding-left: 165px;
+  margin-bottom: 20px;
+}
 h1,
 p {
   color: white;

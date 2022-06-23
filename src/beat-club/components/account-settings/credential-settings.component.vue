@@ -2,89 +2,37 @@
   <h1>Credentials</h1>
   <div class="p-fluid">
     <h5>Email</h5>
-    <div class="grid my-2">
-      <section>
-        <pv-input-text
-          style="width: 25vw"
-          type="text"
-          id="email"
-          v-model="userData.email"
-          disabled
-        />
-      </section>
-      <section>
-        <pv-button class="p-button-text p-button-green"
-          >change e-mail address</pv-button
-        >
-      </section>
+    <div class="my-2">
+      <pv-input-text
+        style="width: 25vw"
+        type="text"
+        id="email"
+        v-model="userData.email"
+        disabled
+      />
     </div>
 
     <h5>Display name</h5>
-    <div class="grid my-2">
-      <section>
-        <pv-input-text
-          style="width: 25vw"
-          type="text"
-          id="nickName"
-          v-model="userData.nickName"
-          disabled
-        />
-      </section>
-      <section>
-        <pv-button class="p-button-text p-button-green"
-          >change display name</pv-button
-        >
-      </section>
+    <div class="my-2">
+      <pv-input-text
+        style="width: 25vw"
+        type="text"
+        id="nickName"
+        v-model="userData.nickName"
+        disabled
+      />
     </div>
-
     <h5>Password</h5>
-    <div class="grid my-2">
-      <section>
-        <pv-input-text
-          style="width: 24vw"
-          type="password"
-          id="password"
-          v-model="userData.nickName"
-          disabled
-        />
-      </section>
-      <section>
-        <pv-button class="p-button-text p-button-green"
-          >change password</pv-button
-        >
-      </section>
-    </div>
-
-    <h5>Phone number</h5>
-    <div class="grid my-2">
-      <section>
-        <pv-input-mask
-          mask="99-999 999 999"
-          placeholder="51-987 654 321"
-          style="
-            background-color: white !important;
-            color: #343843;
-            width: 25vw;
-          "
-        />
-      </section>
-      <section>
-        <pv-button class="p-button-text p-button-green"
-          >change phone number</pv-button
-        >
-      </section>
-    </div>
-
-    <h5>2-factor Authentication</h5>
-    <div class="grid my-2">
-      <section>
-        <pv-input-text style="width: 25vw" type="text" id="2-Auth" disabled />
-      </section>
-      <section>
-        <pv-button class="p-button-text p-button-green"
-          >change security method</pv-button
-        >
-      </section>
+    <div class="my-2" style="display: flex">
+      <pv-input-text
+        type="password"
+        id="password"
+        v-model="userData.nickName"
+        disabled
+      />
+      <pv-button class="p-button-text p-button-green"
+        >change password</pv-button
+      >
     </div>
   </div>
 </template>
@@ -108,13 +56,8 @@ export default {
     this.toast = useToast();
     this.usersService = new UsersApiServices();
     const auth = getAuth();
-    console.log("Info current", auth.currentUser);
     this.getUser(auth.currentUser.uid);
   },
-  // updated() {
-  //   this.userProfile = this.user;
-  //   // console.log(this.userProfile);
-  // },
   methods: {
     showSuccess() {
       this.toast.add({
@@ -129,30 +72,6 @@ export default {
         this.userData = response.data;
         console.log("esta es ", this.userData);
       });
-    },
-    getDisplayableUserProfile(user) {
-      return user;
-    },
-    getStorableUserProfile(displayableUser) {
-      return {
-        id: (displayableUser.id = this.userData.id),
-        firstName: (displayableUser.firstName = this.userData.firstName),
-        lastName: (displayableUser.lastName = this.userData.lastName),
-        nickName: (displayableUser.nickName = this.userData.nickName),
-        email: (displayableUser.email = this.userData.email),
-        location: (displayableUser.location = this.userData.location),
-        description: (displayableUser.description = this.userData.description),
-      };
-    },
-    saveUser() {
-      this.userProfile = this.getStorableUserProfile(this.userData);
-      this.usersService
-        .updateUser(this.userProfile.id, this.userProfile)
-        .then((response) => {
-          this.getDisplayableUserProfile(response.data);
-          console.log("UserProfile ", response.data);
-        });
-      this.showSuccess();
     },
   },
 };

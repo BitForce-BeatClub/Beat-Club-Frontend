@@ -2,13 +2,14 @@
   <div v-if="!isConnected">
     <tool-bar-component></tool-bar-component>
   </div>
-  <div class="grid" style="margin-top: 3rem">
+  <div class="" style="margin-top: 2rem">
     <div class="flex justify-content-evenly">
       <user-trend></user-trend>
-      <div class="flex" style="width: 50%">
+      <div class="" style="display: flex;flex-direction: column;width: 50%">
+        <h2>Songs</h2>
         <song-card-list></song-card-list>
       </div>
-      <div class="card">
+      <div class="card" style="display: flex; justify-content: center">
         <user-follow></user-follow>
       </div>
     </div>

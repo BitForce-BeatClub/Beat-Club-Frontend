@@ -1,13 +1,13 @@
 <template>
-  <div>
+  <div style="margin: 0">
     <h1>Top Producers</h1>
-
-    <div class="flex flex-wrap justify-content-center card-container gap-3">
+    <div class="flex flex-wrap card-container mt-3 gap-3">
       <userCard
         v-for="producerData in producersData"
         :key="producerData.id"
         :users="producerData"
-        style="max-width: 150px"
+        style="max-width: 200px; cursor: pointer"
+        @click="goUserProfile(producerData.id)"
       ></userCard>
     </div>
   </div>
@@ -31,10 +31,13 @@ export default {
   },
   created() {
     this.usersService = new UsersApiServices();
-    this.divideAndConquer();
+    this.getProducer();
   },
   methods: {
-    divideAndConquer() {
+    goUserProfile(userId) {
+      this.$router.push("/user/" + userId);
+    },
+    getProducer() {
       this.usersService
         .getUsers()
         .then(
@@ -44,35 +47,13 @@ export default {
             ))
         );
     },
-
-    getStorableChallenge(displayableChallenge) {
-      return {
-        id: displayableChallenge.id,
-        firstName: displayableChallenge.firstName,
-        lastName: displayableChallenge.lastName,
-        nickName: displayableChallenge.nickName,
-        urlToImage: displayableChallenge.urlToImage,
-        userType: displayableChallenge.userType,
-      };
-    },
-    getDisplayableChallenge(challenge) {
-      return challenge;
-    },
   },
 };
 </script>
 
 <style scoped>
-.grid {
-  display: flex;
-  justify-content: center;
-}
-h1 {
-  padding-top: 10px;
-  padding-right: 300px;
-  margin-bottom: 20px;
-}
 
+h1,
 p {
   color: white;
   font-family: "Poppins", sans-serif;
@@ -80,14 +61,5 @@ p {
 
 p {
   text-align: center;
-}
-.containerdiv {
-  float: left;
-  position: relative;
-}
-.cornerimage {
-  position: absolute;
-  top: 0;
-  right: 0;
 }
 </style>

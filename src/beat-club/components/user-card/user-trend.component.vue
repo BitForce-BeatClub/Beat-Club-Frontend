@@ -37,12 +37,7 @@ export default {
     filterUserType() {
       this.usersService
         .getUsers()
-        .then(
-          (response) =>
-            (this.producersData = response.data.filter(
-              (item) => item.userType === "Artist" || "Producer"
-            ))
-        );
+        .then((response) => (this.producersData = response.data));
     },
   },
 };

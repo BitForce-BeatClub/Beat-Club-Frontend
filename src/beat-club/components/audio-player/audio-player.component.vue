@@ -50,17 +50,10 @@
               <div class="progress__duration">{{ duration }}</div>
             </div>
           </div>
-<!--          <pv-slider-->
-<!--            v-model="this.volume"-->
-<!--          ></pv-slider>-->
         </div>
       </div>
     </div>
   </div>
-  <!--  </div>-->
-  <!--TODO-->
-  <!--  falta arreglar el css y la aparicion del audio player-->
-  <!--  Falta reproducir la cancion cuando se toca la imagen-->
 
   <svg style="display: none">
     <defs>
@@ -123,7 +116,7 @@ export default {
   name: "audio-player.component",
   data() {
     return {
-      volume: 0,
+      value1: null,
       tracksService: null,
       audio: null,
       circleLeft: null,
@@ -139,9 +132,6 @@ export default {
     };
   },
   methods: {
-    updateVolume() {
-      this.volume.volume();
-    },
     play() {
       if (this.audio.paused) {
         this.audio.play();
@@ -284,8 +274,14 @@ export default {
 
 .player {
   box-sizing: border-box;
-  //background: linear-gradient(to top, #0f2027, #203a43, #2c5364); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  //background: linear-gradient(
+  //  to bottom,
+  //  #0f2027,
+  //  #203a43,
+  //  #2c5364
+  //); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   width: 100%;
+  //background: transparent;
   background: linear-gradient(
     to top,
     #eb3349,
@@ -295,8 +291,8 @@ export default {
   //min-height: 480px;
   // box-shadow: 0px 55px 75px -10px rgba(76, 70, 124, 0.5);
   // box-shadow: 0px 55px 105px 10px rgba(76, 70, 124, 0.35);
-  box-shadow: 15px 35px -5px rgba(101, 142, 187, 0.32);
-  border-radius: 15px;
+  //box-shadow: 15px 35px -5px rgba(101, 142, 187, 0.32);
+  border-radius: 8px;
   //padding: 25px;
   @media screen and (max-width: 576px), (max-height: 500px) {
     width: 100%;
@@ -386,7 +382,6 @@ export default {
 
   &-controls {
     flex: 1;
-    padding-left: 20px;
     display: flex;
     flex-direction: column;
 
@@ -520,7 +515,7 @@ export default {
 .progress__current {
   height: inherit;
   width: 0;
-  background-color: rgba(172, 184, 204, 0.75);
+  background-color: rgba(13, 26, 39, 0.48);
   border-radius: 10px;
 }
 
@@ -538,7 +533,6 @@ export default {
     color: #ffffff;
     font-size: 20px;
     font-weight: bold;
-    margin-top: 12px;
     line-height: 1.3em;
     @media screen and (max-width: 576px), (max-height: 500px) {
       font-size: 18px;
@@ -579,8 +573,8 @@ export default {
 .coverImage {
   object-fit: cover;
   border-radius: 50%;
-  width: 70px;
-  height: 100%;
+  width: 56px;
+  height: 56px;
 }
 //volume
 
@@ -606,5 +600,8 @@ export default {
 .p-slider-horizontal,
 .p-inputtext {
   width: 14rem;
+}
+.p-slider-vertical {
+  height: 14rem;
 }
 </style>

@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: "follow-component",
+  name: "user-card-chat",
   props: {
     users: Object,
   },
@@ -31,12 +31,11 @@ export default {
 .users {
   display: flex;
   text-align: center;
-  justify-content: center;
 }
 .user-img-0 {
   object-fit: cover;
-  height: 110px;
-  width: 110px;
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
 }
 </style>

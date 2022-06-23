@@ -22,6 +22,7 @@ import PathNotFound from "../beat-club/pages/page-404.vue";
 import songt from "../beat-club/components/audio-player/audio-player.component.vue";
 
 import { getAuth } from "firebase/auth";
+import MessagesView from "../beat-club/pages/messages-view.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -67,6 +68,11 @@ const router = createRouter({
       path: "/log-out",
       name: "LogOut",
       component: LogOut,
+    },
+    {
+      path: "/messages",
+      name: "Messages",
+      component: MessagesView,
     },
 
     {

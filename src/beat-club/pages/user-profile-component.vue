@@ -1,14 +1,10 @@
 <template>
   <div class="grid justify-content-evenly">
-    <div class="flex flex-wrap justify-content-start" style="margin-top: 6rem">
+    <div class="flex flex-wrap justify-content-start" style="margin-top: 3rem">
       <pv-card class="userCard shadow-8">
         <template #header>
           <div class="grid">
-            <img
-              class="user-img"
-              alt="UserImage"
-              :src="userData.urlToImage"
-            />
+            <img class="user-img" alt="UserImage" :src="userData.urlToImage" />
           </div>
         </template>
         <template #title>
@@ -47,20 +43,52 @@
             <h4>0</h4>
           </div>
         </template>
-        <template #footer> </template>
+        <template #footer>
+          <div class="flex justify-content-start my-1" style="color: #f5cb5c">
+            <h3>Find me on</h3>
+          </div>
+          <pv-chip
+            label="Youtube"
+            icon="pi pi-youtube"
+            class="mr-2 mb-2 custom-chip"
+          ></pv-chip>
+          <pv-chip
+            label="Instagram"
+            icon="pi pi-instagram"
+            class="mr-2 mb-2 custom-chip"
+          ></pv-chip>
+          <pv-chip
+            label="Facebook"
+            icon="pi pi-facebook"
+            class="mr-2 mb-2 custom-chip"
+          ></pv-chip>
+        </template>
       </pv-card>
     </div>
-    <div class="middle" style="width: 70%">
-      <div class="grid mt-6">
-        <div class="circle">
-          <div class="circleIn"></div>
+    <div class="" style="width: 70%">
+      <h1 class="mt-4">Tracks</h1>
+
+      <div v-if="songsData === 0">
+        <div class="grid mt-6">
+          <div class="circle">
+            <div class="circleIn"></div>
+          </div>
+        </div>
+        <div class="grid mt-6">
+          <h4>No Content Available</h4>
+        </div>
+        <div class="grid mt-1">
+          <h4>There is not yet enough content.</h4>
         </div>
       </div>
-      <div class="grid mt-6">
-        <h4>No Content Available</h4>
-      </div>
-      <div class="grid mt-1">
-        <h4>There is not yet enough content.</h4>
+
+      <div v-else class="flex flex-wrap card-container gap-3">
+        <songCard
+          v-for="songData in songsData"
+          :key="songData.id"
+          :songData="songData"
+          style="max-width: 250px"
+        ></songCard>
       </div>
     </div>
   </div>
@@ -69,21 +97,37 @@
 <script>
 import { getAuth } from "firebase/auth";
 import { UsersApiServices } from "../services/users/users-api.services";
+import SongCard from "../components/song-card/song-card.component.vue";
+import { SongsApiServices } from "../services/songs/songs-api.services";
 
 export default {
   name: "user-profile",
+  components: { SongCard },
   data() {
     return {
       userData: [],
       userServices: undefined,
+      songsData: [],
+      songService: undefined,
+      auth: getAuth(),
     };
   },
   created() {
     this.usersService = new UsersApiServices();
     const auth = getAuth();
     this.getUser(auth.currentUser.uid);
+    this.songService = new SongsApiServices();
+    this.getAllCards();
+    console.log(this.songsData === 0);
   },
   methods: {
+    getAllCards() {
+      this.songService.getTracks().then((response) => {
+        this.songsData = response.data.filter(
+          (item) => item.userId === this.auth.currentUser.uid
+        );
+      });
+    },
     getUser(id) {
       this.usersService.getUsersById(id).then((response) => {
         this.userData = response.data;
@@ -97,7 +141,7 @@ export default {
 </script>
 
 <style scoped>
-.middle {
+.top {
   margin-top: 10%;
 }
 .user-img {
@@ -153,5 +197,9 @@ p {
   white-space: pre-line;
   display: flex;
   justify-content: center;
+}
+.p-chip.custom-chip {
+  background: white;
+  color: black;
 }
 </style>

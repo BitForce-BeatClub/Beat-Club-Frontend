@@ -36,12 +36,7 @@ export default {
     divideAndConquer() {
       this.usersService
         .getUsers()
-        .then(
-          (response) =>
-            (this.producersData = response.data.filter(
-              (item) => item.userType === "Follow"
-            ))
-        );
+        .then((response) => (this.producersData = response.data));
     },
   },
 };

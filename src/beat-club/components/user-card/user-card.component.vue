@@ -3,9 +3,14 @@
     <div class="users">
       <div class="user-animation">
         <div class="icon">
-          <pv-card class="card" style="border-radius: 4% 25% 0 0">
+          <pv-card class="card">
             <template #header>
-              <img class="user-img-0" alt="user header"  style="border-radius: 4% 25% 0 0;" :src="users.urlToImage" />
+              <img
+                class="user-img-0"
+                alt="user header"
+                style="border-radius: 3%"
+                :src="users.urlToImage"
+              />
             </template>
             <template #content>
               <p>
@@ -30,25 +35,24 @@ export default {
 
 <style lang="scss" scoped>
 @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css";
-.card {
-  background-color: #161d21;
+.p-card {
   color: white;
+  background-color: transparent;
+  box-shadow: none;
 }
 
 .users {
   display: flex;
   text-align: center;
+  justify-content: center;
 }
 .p-card-header img {
   object-fit: cover;
-  height: 300px;
-  width: 300px;
+  height: 220px;
+  width: 220px;
 }
 
 .icon {
-  //width: 10em;
-  //height: 10em;
-  //position: relative;
   margin-inline: 1rem;
   transition: transform ease-in-out 150ms;
 }

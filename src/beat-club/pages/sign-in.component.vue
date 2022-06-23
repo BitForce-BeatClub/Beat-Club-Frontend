@@ -172,8 +172,9 @@ export default {
     loginWithEmail() {
       const auth = getAuth();
       signInWithEmailAndPassword(auth, this.email, this.password)
-        .then(() => {
+        .then((response) => {
           // Signed in
+          console.log(response);
           this.$router.replace({ name: "HomeView" });
           // ...
         })

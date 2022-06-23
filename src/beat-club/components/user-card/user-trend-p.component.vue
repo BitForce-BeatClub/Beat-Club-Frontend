@@ -9,11 +9,8 @@ export default {
 
 <template>
   <div class="cardBg">
-    <div class="flex my-1">
-      {{ users.trends }}
-    </div>
     <div style="color: #f5cb5c !important">
-      <h5>{{ users.result }}</h5>
+      {{ users.nickName }}
     </div>
   </div>
 </template>
