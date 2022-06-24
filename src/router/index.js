@@ -22,6 +22,7 @@ import songt from "../beat-club/components/audio-player/audio-player.component.v
 
 import { getAuth } from "firebase/auth";
 
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -114,6 +115,7 @@ const router = createRouter({
       name: "songt",
       component: songt,
     },
+
   ],
 });
 router.beforeEach((to, from, next) => {

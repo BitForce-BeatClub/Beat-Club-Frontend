@@ -9,7 +9,8 @@
       "location": "Peru, lima",
       "description": "Slim shady",
       "urlToImage": "https://i0.wp.com/urbanroosters.news/wp-content/uploads/2022/01/500x500.jpg?w=500&ssl=1",
-      "userType": "Producer"
+      "userType": "Producer",
+      "membership": "Free"
     },
     {
       "id": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
@@ -18,27 +19,27 @@
       "nickName": "Post Malone",
       "email": "jhonlennon1998@gmail.com",
       "urlToImage": "https://i0.wp.com/plus.cusica.com/wp-content/uploads/2021/07/post-malone.jpg?fit=1638%2C2048&ssl=1",
-      "userType": "Artist"
+      "userType": "Artist",
+      "membership": "Free"
     },
     {
       "id": "N8dStM3l85SV5NOPIco6cVxttQt2",
-      "firstName": "Enrique",
+      "firstName": "julio",
       "lastName": "Postigo",
       "nickName": "Anuel",
       "email": "epostigo1999@gmail.com",
       "urlToImage": "https://i.scdn.co/image/ab6761610000e5ebc5c589b667f600c299552ee5",
-      "userType": "Producer"
+      "membership": "Free"
     },
     {
       "id": "elZ7Y1TmObUUyd1swgleelRO9jf2",
-      "firstName": "Enrique",
+      "firstName": "Enriques",
       "lastName": "Postigo",
       "nickName": "Versatil",
       "email": "eldes345xd.ep@gmail.com",
       "location": "arabia",
       "description": "me gusta el aji de gallina",
-      "urlToImage": "https://yt3.ggpht.com/N7khFcO3mqI8qld0yzksTNBqWHWfmBbRdqgiVL_CcFuu8gfbIbdvt_ZhjzJ3CPgJD6Rl2VGqLzM=s900-c-k-c0x00ffffff-no-rj",
-      "userType": "Artist"
+      "urlToImage": "https://i.scdn.co/image/ab6761610000e5ebc5c589b667f600c299552ee5"
     }
   ],
   "songs": [],
@@ -68,6 +69,40 @@
       "urlToImage": "https://www.careersinmusic.com/wp-content/uploads/2019/11/what-does-a-music-producer-do.jpg"
     }
   ],
+  "payments": [
+    {
+      "userId": "elZ7Y1TmObUUyd1swgleelRO9jf2",
+      "id": {
+        "isTrusted": true
+      },
+      "date": "2022-6-24 13:50:40",
+      "plan": "Producer Pro"
+    },
+    {
+      "userId": "elZ7Y1TmObUUyd1swgleelRO9jf2",
+      "date": "2022-6-24 13:52:21",
+      "plan": "Musician",
+      "id": "-oXZfAi"
+    },
+    {
+      "userId": "elZ7Y1TmObUUyd1swgleelRO9jf2",
+      "date": "2022-6-24 13:54:18",
+      "plan": "Producer Pro",
+      "id": "ixmgM7i"
+    },
+    {
+      "userId": "elZ7Y1TmObUUyd1swgleelRO9jf2",
+      "date": "2022-6-24 14:59:0",
+      "plan": "Musician",
+      "id": "AMhNKGg"
+    },
+    {
+      "userId": "elZ7Y1TmObUUyd1swgleelRO9jf2",
+      "date": "2022-6-24 15:1:52",
+      "plan": "Producer Pro",
+      "id": "M0CRjD6"
+    }
+  ],
   "tracks": [
     {
       "userId": "elZ7Y1TmObUUyd1swgleelRO9jf2",
@@ -81,15 +116,15 @@
       "id": 4
     },
     {
+      "id": 5,
       "userId": "N8dStM3l85SV5NOPIco6cVxttQt2",
       "title": "Ella Quiere Beber",
-      "genre": "Salsa",
+      "genre": "Reggae",
       "privacy": "Public",
       "artist": "Anuel",
       "cover": "https://cdn.themedizine.com/2018/07/Anuel-AA-Real-Hasta-La-Muerte-Album.jpg",
       "source": "https://github.com/BitForce-BeatClub/Files/blob/main/Anuel%20AA%20-%20Ella%20Quiere%20Beber%20(Remix)%20ft.%20Romeo%20Santos%20(DISCOSMP3.ONLINE).mp3?raw=true",
-      "publishDate": "2022-6-9 1:1:50",
-      "id": 5
+      "publishDate": "2022-6-9 1:1:50"
     },
     {
       "id": 6,

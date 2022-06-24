@@ -4,8 +4,8 @@
   </div>
   <RouterView></RouterView>
   <div id="footer">
-    <audio-player></audio-player>
-  </div>
+   <audio-player></audio-player>
+ </div>
 </template>
 
 <script>
