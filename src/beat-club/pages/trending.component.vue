@@ -2,13 +2,12 @@
   <div v-if="!isConnected">
     <tool-bar-component></tool-bar-component>
   </div>
-  <h1 class="my-4" style="margin-left: 2em"></h1>
-  <div class="grid">
-    <div class="" style="width: 70%">
+  <div class="flex justify-content-center mt-2">
+    <div class="" style="width: 70%; margin-left: 2em">
       <h1>Spotlight</h1>
       <song-card-list></song-card-list>
     </div>
-    <div class="grid" style="width: 17rem">
+    <div class="flex" style="width: 17rem">
       <user-card-producer></user-card-producer>
     </div>
   </div>

@@ -5,7 +5,7 @@
   <div class="" style="margin-top: 2rem">
     <div class="flex justify-content-evenly">
       <user-trend></user-trend>
-      <div class="" style="display: flex;flex-direction: column;width: 50%">
+      <div class="" style="display: flex; flex-direction: column; width: 50%">
         <h2>Songs</h2>
         <song-card-list></song-card-list>
       </div>
@@ -19,7 +19,7 @@
 <script>
 import SongCardList from "../components/song-card/song-card-list.component.vue";
 import userTrend from "../components/user-card/user-trend.component.vue";
-import UserFollow from "../components/user-card/user-follow.component.vue";
+import UserFollow from "../components/user-card/user-chat-with.component.vue";
 import ToolBarComponent from "../components/tool-bar.component.vue";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 export default {

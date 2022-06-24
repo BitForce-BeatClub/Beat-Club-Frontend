@@ -1,26 +1,21 @@
 <template>
-  <div>
-    <div
-      style="display: flex; align-items: center; flex-direction: column"
-      class="flex flex-wrap justify-content-center card-container gap-3"
+  <div class="cardBg shadow-8">
+    <user-card-chat
+      @click="goUserProfile(user.id)"
+      style="cursor: pointer; margin: 1rem 0 1rem"
+      v-for="user in usersData"
+      :key="user.id"
+      :users="user"
     >
-      <user-card-chat
-        v-for="artistData in artistsData"
-        :key="artistData.id"
-        :users="artistData"
-        @click="goUserProfile(artistData.id)"
-        style="cursor: pointer"
-      >
-      </user-card-chat>
-    </div>
+    </user-card-chat>
   </div>
-  <!--TODO-->
-  <!-- En un arreglo meter a los amigos del artista followers y en ese arreglo recien porder enviar mensaje-->
 </template>
 
 <script>
+import { MessagesApiServices } from "../../services/chat/chat-api.services";
 import { UsersApiServices } from "../../services/users/users-api.services";
 import UserCardChat from "./cards-for-chat/user-card-chat.vue";
+import { getAuth } from "firebase/auth";
 export default {
   components: {
     UserCardChat,
@@ -28,49 +23,50 @@ export default {
   name: "chat-list",
   data() {
     return {
-      artistsData: [],
-      producersData: [],
-      user: {},
+      usersData: [],
+      auth: getAuth(),
+      messagesService: undefined,
       usersService: undefined,
     };
   },
   created() {
+    this.messagesService = new MessagesApiServices();
     this.usersService = new UsersApiServices();
-    this.filterUserByType();
+    this.getUsers();
   },
   methods: {
-    goUserProfile(userId) {
-      this.$router.push("/user/" + userId);
+    getUsers() {
+      this.usersService
+        .getUsers()
+        .then(
+          (response) =>
+            (this.usersData = response.data.filter(
+              (item) => item.id !== this.auth.currentUser.uid
+            ))
+        );
     },
-    filterUserByType() {
-      this.usersService
-        .getUsers()
-        .then(
-          (response) =>
-            (this.artistsData = response.data.filter(
-              (item) => item.userType === "Artist"
-            ))
-        );
-      this.usersService
-        .getUsers()
-        .then(
-          (response) =>
-            (this.producersData = response.data.filter(
-              (item) => item.userType === "Producer"
-            ))
-        );
+    goUserProfile(userId) {
+      this.$router.push("/messages/" + userId);
     },
   },
 };
 </script>
 <style scoped>
-.card-container {
-  gap: 3rem;
-}
-.grid {
+.cardBg {
+  overflow: hidden;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, .2);
+  background: rgba(26, 25, 25, 0.5);
+  font-family: "Comfortaa", cursive;
+  font-size: 18px;
+  width: 18rem;
+  height: 75vh;
+  margin: 1em;
+  border-radius: 12px;
+  padding-left: 10%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 }
+
 h1 {
   padding-top: 10px;
   padding-left: 165px;

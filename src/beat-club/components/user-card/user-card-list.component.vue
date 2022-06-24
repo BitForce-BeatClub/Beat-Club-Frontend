@@ -26,6 +26,7 @@
 <script>
 import userCard from "/src/beat-club/components/user-card/user-card.component.vue";
 import { UsersApiServices } from "../../services/users/users-api.services";
+import { getAuth } from "firebase/auth";
 export default {
   components: {
     userCard,
@@ -37,6 +38,7 @@ export default {
       producersData: [],
       user: {},
       usersService: undefined,
+      auth: getAuth(),
     };
   },
   created() {
@@ -45,7 +47,11 @@ export default {
   },
   methods: {
     goUserProfile(userId) {
-      this.$router.push("/user/" + userId);
+      if (this.auth.currentUser.uid === userId) {
+        this.$router.push("/profile");
+      } else {
+        this.$router.push("/user/" + userId);
+      }
     },
     filterUserByType() {
       this.usersService

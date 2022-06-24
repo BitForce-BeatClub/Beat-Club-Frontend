@@ -1,12 +1,10 @@
 <template>
-  <div class="card" style="padding-top: 5vh">
-    <div class="flex flex-row gap-8">
-      <div class="flex flex-justify-content-center" style="">
-        <menu-card></menu-card>
-      </div>
-      <div>
-        <router-view></router-view>
-      </div>
+  <div class="flex" style="padding-top: 5vh">
+    <div style="margin-left: 3rem">
+      <menu-card></menu-card>
+    </div>
+    <div style="margin-left: 10vw">
+      <router-view></router-view>
     </div>
   </div>
 </template>
@@ -21,8 +19,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.flex {
-  justify-content: center;
-}
-</style>
+<style scoped></style>

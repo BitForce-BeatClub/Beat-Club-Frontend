@@ -31,8 +31,6 @@ export default {
     ManageTracks,
     Upload,
   },
-  methods: {
-
-  },
+  methods: {},
 };
 </script>

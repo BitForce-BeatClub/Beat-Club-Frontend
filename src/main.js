@@ -61,7 +61,6 @@ getAuth().onAuthStateChanged(() => {
   // console.log("user", user);
   if (!app) {
     app = createApp(App);
-
     // Routing Management
     app.use(router);
 

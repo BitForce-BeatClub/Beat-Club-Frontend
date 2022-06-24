@@ -1,13 +1,14 @@
 <template>
+  <div style="margin-bottom: 4rem">
   <div v-if="isConnected">
     <ToolBar></ToolBar>
+    <div class="audio">
+      <audio-player></audio-player>
+    </div>
   </div>
-  <div style="margin-bottom: 4rem">
     <RouterView></RouterView>
   </div>
-  <div class="audio">
-    <audio-player></audio-player>
-  </div>
+
 </template>
 
 <script>
@@ -27,7 +28,7 @@ export default {
   },
   computed: {
     label() {
-      return this.isConnected ? this.isConnected : !this.isConnected;
+      return this.isConnected ;
     },
   },
   created() {
@@ -51,6 +52,31 @@ export default {
 * {
   margin: 0;
 }
+*::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+*::-webkit-scrollbar:vertical {
+  width:7px;
+}
+
+*::-webkit-scrollbar-button:increment,*::-webkit-scrollbar-button {
+  display: none;
+}
+
+*::-webkit-scrollbar:horizontal {
+  height: 7px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 20px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
 .audio {
   position: fixed;
   display: flex;

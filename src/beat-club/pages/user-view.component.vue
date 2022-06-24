@@ -2,8 +2,8 @@
   <div v-if="!isConnected">
     <tool-bar-component></tool-bar-component>
   </div>
-  <div class="grid justify-content-evenly">
-    <div class="flex flex-wrap justify-content-start" >
+  <div class="flex justify-content-evenly">
+    <div class="flex flex-wrap justify-content-start">
       <user-card-view-see></user-card-view-see>
     </div>
     <div class="top" style="width: 70%">

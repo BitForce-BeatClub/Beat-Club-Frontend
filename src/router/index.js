@@ -23,6 +23,7 @@ import songt from "../beat-club/components/audio-player/audio-player.component.v
 
 import { getAuth } from "firebase/auth";
 import MessagesView from "../beat-club/pages/messages-view.vue";
+import MessagesComponent from "../beat-club/components/chat/send-messages-component.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -70,11 +71,17 @@ const router = createRouter({
       component: LogOut,
     },
     {
-      path: "/messages",
+      path: "/messages/",
       name: "Messages",
       component: MessagesView,
+      children: [
+        {
+          path: "/messages/:userId",
+          name: "MessagesComponent",
+          component: MessagesComponent,
+        },
+      ],
     },
-
     {
       path: "/settings",
       name: "Settings",
@@ -113,6 +120,7 @@ const router = createRouter({
       path: "/recommended",
       name: "Recommended-component",
       component: Recommended,
+      meta: { requiresAuth: true },
     },
     {
       path: "/user/:userId",

@@ -6,7 +6,7 @@
         v-for="producerData in producersData"
         :key="producerData.id"
         :users="producerData"
-        style="max-width: 200px; cursor: pointer"
+        style="cursor: pointer"
         @click="goUserProfile(producerData.id)"
       ></userCard>
     </div>
@@ -52,7 +52,6 @@ export default {
 </script>
 
 <style scoped>
-
 h1,
 p {
   color: white;

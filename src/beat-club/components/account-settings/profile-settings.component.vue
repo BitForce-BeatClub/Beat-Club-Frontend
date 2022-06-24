@@ -2,75 +2,86 @@
   <pv-toast></pv-toast>
   <div id="profileSettings">
     <h1>Profile settings</h1>
-    <div class="flex justify-content-center align-items-center">
-      <img class="user-img mx-3" :src="userData.urlToImage" alt="Profile Picture" />
-      <div>
-        <h5>Profile Picture Link</h5>
-        <pv-input-text
-          type="text"
-          v-model="userData.urlToImage"
-          id="urlToImage"
+    <div class="flex">
+      <div class="flex flex-column">
+        <img
+          class="user-img mx-3"
+          :src="userData.urlToImage"
+          alt="Profile Picture"
         />
+        <div class="mt-3">
+          <h5>Profile Picture Link</h5>
+          <pv-input-text
+            type="text"
+            v-model="userData.urlToImage"
+            id="urlToImage"
+          />
+        </div>
       </div>
-    </div>
-    <div class="form">
-      <div class="flex align-items-center justify-content-center">
-        <div class="card" style="width: 50vw">
-          <form @submit.prevent="saveUser" class="p-fluid">
-            <div class="field">
-              <h5>First Name</h5>
-              <pv-input-text
-                type="text"
-                v-model="userData.firstName"
-                id="firstName"
-                required="true"
-                autocomplete="off"
-              />
-            </div>
-            <div class="field">
-              <h5>Last Name</h5>
-              <pv-input-text
-                type="text"
-                v-model="userData.lastName"
-                id="lastName"
-                required="true"
-                autocomplete="off"
-              />
-            </div>
-            <!--Nickname-->
-            <div class="field">
-              <h5>Display name</h5>
-              <div class="p-float-label p-input-icon-right">
-                <pv-input-text
-                  type="text"
-                  v-model="userData.nickName"
-                  id="nickName"
-                  required="true"
-                  autocomplete="off"
+      <div class="form lg:ml-6">
+        <div class="flex">
+          <div class="card" style="min-width: 35vw">
+            <form @submit.prevent="saveUser" class="p-fluid">
+              <div class="flex justify-content-between">
+                <!--Firstname-->
+                <div class="field">
+                  <h5>First Name</h5>
+                  <pv-input-text
+                    type="text"
+                    v-model="userData.firstName"
+                    id="firstName"
+                    required="true"
+                    autocomplete="off"
+                  />
+                </div>
+                <!--Lastname-->
+                <div class="field">
+                  <h5>Last Name</h5>
+                  <pv-input-text
+                    type="text"
+                    v-model="userData.lastName"
+                    id="lastName"
+                    required="true"
+                    autocomplete="off"
+                  />
+                </div>
+              </div>
+
+              <!--Nickname-->
+              <div class="field">
+                <h5>Display name</h5>
+                <div class="p-float-label p-input-icon-right">
+                  <pv-input-text
+                    type="text"
+                    v-model="userData.nickName"
+                    id="nickName"
+                    required="true"
+                    autocomplete="off"
+                  />
+                </div>
+              </div>
+              <!--Location-->
+              <div class="field">
+                <h5>Location</h5>
+                <div class="p-float-label p-input-icon-right">
+                  <pv-input-text type="text" v-model="userData.location" />
+                </div>
+              </div>
+              <div class="field">
+                <h5>Biography</h5>
+                <pv-input-text-area v-model="userData.description" />
+              </div>
+              <!--ButtonSignIn-->
+              <div class="flex">
+                <pv-button
+                  type="submit"
+                  label="Save changes"
+                  class="mt-2 p-button-secondary"
+                  style="width: 8vw"
                 />
               </div>
-            </div>
-            <!--Location-->
-            <div class="field">
-              <h5>Location</h5>
-              <div class="p-float-label p-input-icon-right">
-                <pv-input-text type="text" v-model="userData.location" />
-              </div>
-            </div>
-            <div class="field">
-              <h5>Biography</h5>
-              <pv-input-text-area v-model="userData.description" />
-            </div>
-            <!--ButtonSignIn-->
-            <div class="flex">
-              <pv-button
-                type="submit"
-                label="Save changes"
-                class="mt-2 p-button-secondary"
-                style="width: 8vw"
-              />
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -115,7 +126,6 @@ export default {
     getUser(id) {
       this.usersService.getUsersById(id).then((response) => {
         this.userData = response.data;
-        // console.log("esta es ", this.userData);
       });
     },
     getDisplayableUserProfile(user) {
@@ -164,16 +174,7 @@ export default {
 <style scoped>
 .user-img {
   object-fit: cover;
-  width: 20%;
   height: 200px;
-  /*background: no-repeat;*/
-  /*background-size: cover;*/
-  /*overflow: hidden;*/
-  /*-webkit-border-radius: 50%;*/
-  /*-moz-border-radius: 50%;*/
-  /*border-radius: 50%;*/
-  /*width: 90px;*/
-  /*height: 90px;*/
 }
 .form .card {
   min-width: 450px;
@@ -193,19 +194,5 @@ form {
   font-size: 0.9rem;
   border: none;
   color: #ffffff;
-}
-
-/*@media screen and (max-width: 900px) {*/
-/*  .card {*/
-/*    width: 80%;*/
-/*  }*/
-/*}*/
-/*pv-button {*/
-/*  background: #005FF9;*/
-/*}*/
-.center {
-  display: flex;
-  justify-content: center;
-  padding-left: 0;
 }
 </style>

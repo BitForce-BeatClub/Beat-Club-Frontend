@@ -21,7 +21,7 @@
       </div>
     </template>
     <template #end>
-      <div class="card" v-if="!isConnected" style="margin-right: 10rem">
+      <div class="card" v-if="!isConnected" style="">
         <div class="flex flex-row card-container">
           <div class="flex align-items-center justify-content-center">
             <router-link
@@ -58,7 +58,7 @@
               </pv-button>
             </pv-split-button>
           </div>
-          <div class="flex align-items-center justify-content-center">
+          <div class="flex align-items-center ">
             <router-link
               v-for="item in access"
               :to="item.to"
@@ -121,19 +121,17 @@ export default {
       loggedIn: false,
       isConnected: false,
       items: [
-        { label: "Explore", to: "/sign-in", icon: "pi pi-users" },
-        { label: "Creator", to: "/sign-in", icon: "pi pi-users" },
         { label: "Sign In", to: "/sign-in", icon: "pi pi-sign-in" },
         { label: "Sign Up", to: "/sign-up", icon: "pi pi-users" },
       ],
       items2: [
-        { label: "Recommended", to: "/recommended" },
         { label: "Trending", to: "/trending" },
-        { label: "Following", to: "/user-view" },
+        { label: "Recommended", to: "/recommended" },
+        // { label: "Following", to: "/user-view" },
       ],
 
       access: [
-        { label: "Message", to: "/message", icon: "pi pi-comment" },
+        { label: "Messages", to: "/messages", icon: "pi pi-comment" },
         { label: "Creator Hub", to: "/creator-hub", icon: "pi pi-sliders-v" },
       ],
       menuUser: [
@@ -203,6 +201,7 @@ export default {
   background: #212429;
   display: flex;
   justify-content: space-between;
+  border-radius: 0;
 }
 .p-button-text {
   font-family: "Comfortaa", cursive;
@@ -211,7 +210,6 @@ export default {
 }
 .logo img {
   padding-right: 1vmax;
-  //margin-left: 3rem;
 }
 .custom-font {
   font-family: "Comfortaa", cursive;
@@ -228,10 +226,6 @@ span {
   font-family: "Comfortaa", cursive;
   color: #e5e3e3 !important;
 }
-//.font-poppins {
-//  font-family: "Poppins", sans-serif;
-//}
-
 .card {
   margin-left: 1rem;
   min-width: 450px;

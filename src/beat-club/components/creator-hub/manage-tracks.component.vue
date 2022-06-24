@@ -322,7 +322,7 @@ export default {
       };
     },
     findIndexById(id) {
-      return this.songs.findIndex((offer) => offer.id === id);
+      return this.songs.findIndex((song) => song.id === id);
     },
     openNew() {
       this.song = {};

@@ -70,7 +70,7 @@ export default {
     getUser(id) {
       this.usersService.getUsersById(id).then((response) => {
         this.userData = response.data;
-        console.log("esta es ", this.userData);
+        // console.log("esta es ", this.userData);
       });
     },
   },

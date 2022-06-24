@@ -66,15 +66,11 @@
     </div>
 &ndash;&gt;
   </div>-->
-  <div class="flex flex-wrap justify-content-start" style="margin-top: 3rem">
+  <div class="flex flex-wrap justify-content-start" style="margin-top: 1.5rem">
     <pv-card class="userCard shadow-8">
       <template #header>
         <div class="grid">
-          <img
-            class="user-img"
-            alt="UserImage"
-            :src="userData.urlToImage"
-          />
+          <img class="user-img" alt="UserImage" :src="userData.urlToImage" />
         </div>
       </template>
       <template #title>
@@ -93,10 +89,10 @@
       <template #content>
         <div class="grid">
           <pv-button
-            icon="pi pi-heart-fill"
-            label="Follow"
-            class="p-button-secondary"
-            @click="editProfile"
+              label="Message"
+              icon="pi pi-comment"
+            class="p-button"
+            @click="goUserProfile(this.$route.params.userId)"
           />
         </div>
         <h3 style="color: #f5cb5c">Stats</h3>
@@ -154,20 +150,16 @@ export default {
   },
   created() {
     this.usersService = new UsersApiServices();
-    // const auth = getAuth();
-    // console.log("Info current", auth.currentUser);
     this.getUser(this.$route.params.userId);
   },
   methods: {
     getUser(id) {
       this.usersService.getUsersById(id).then((response) => {
         this.userData = response.data;
-        // console.log("UserPo", this.userData);
       });
     },
-    editProfile() {
-      console.log(this.$route.params.userId);
-      this.$router.push("/user/" + this.$route.params.userId);
+    goUserProfile(userId) {
+      this.$router.push("/messages/" + userId);
     },
   },
 };

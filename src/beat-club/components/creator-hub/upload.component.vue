@@ -231,7 +231,6 @@ export default {
         publishDate: (displayableTrack.date = this.dateTime()),
       };
     },
-
     openNew() {
       this.track = {};
       this.submitted = false;

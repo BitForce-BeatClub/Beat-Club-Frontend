@@ -1,14 +1,10 @@
 <template>
   <div>
     <div class="users">
-      <div class="user-animation">
-        <div class="icon">
-          <img class="user-img-0" alt="user header" :src="users.urlToImage" />
-          <p>
-            {{ users.nickName }}
-          </p>
-        </div>
-      </div>
+      <img class="user-img-0" alt="user header" :src="users.urlToImage" />
+      <p>
+        {{ users.nickName }}
+      </p>
     </div>
   </div>
 </template>
@@ -23,16 +19,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.card {
-  background-color: #161d21;
-  color: white;
-}
 
 .users {
   display: flex;
-  text-align: center;
+  align-items: center;
 }
 .user-img-0 {
+  margin-right: 1rem;
   object-fit: cover;
   height: 50px;
   width: 50px;
