@@ -1,4 +1,3 @@
-
 <template>
   <div>
     <p className="date">{{ messages.messageDate }}</p>
@@ -28,7 +27,9 @@ export default {
   font-family: "Bebas Neue", cursive;
   color: rgb(245, 203, 92) !important;
 }
-
+p {
+  margin-left: 1rem;
+}
 .user-img-0 {
   object-fit: cover;
   height: 50px;

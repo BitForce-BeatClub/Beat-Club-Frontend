@@ -58,7 +58,7 @@
               </pv-button>
             </pv-split-button>
           </div>
-          <div class="flex align-items-center ">
+          <div class="flex align-items-center">
             <router-link
               v-for="item in access"
               :to="item.to"

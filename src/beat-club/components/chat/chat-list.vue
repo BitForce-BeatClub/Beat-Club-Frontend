@@ -1,5 +1,6 @@
 <template>
   <div class="cardBg shadow-8">
+    <h1 class="mt-3">Messages</h1>
     <user-card-chat
       @click="goUserProfile(user.id)"
       style="cursor: pointer; margin: 1rem 0 1rem"
@@ -54,7 +55,7 @@ export default {
 <style scoped>
 .cardBg {
   overflow: hidden;
-  box-shadow: 0 5px 30px rgba(0, 0, 0, .2);
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
   background: rgba(26, 25, 25, 0.5);
   font-family: "Comfortaa", cursive;
   font-size: 18px;
@@ -67,15 +68,9 @@ export default {
   flex-direction: column;
 }
 
-h1 {
-  padding-top: 10px;
-  padding-left: 165px;
-  margin-bottom: 20px;
-}
-h1,
-p {
+h1{
   color: white;
-  font-family: "Poppins", sans-serif;
+  font-family: "Comfortaa", sans-serif;
 }
 
 p {

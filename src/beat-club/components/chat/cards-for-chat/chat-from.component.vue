@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div >
     <p class="date">{{ messages.messageDate }}</p>
     <div>
       <div style="display: flex; justify-content: end; align-items: center">
@@ -23,7 +23,9 @@ export default {
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap");
-
+p {
+  margin-right: 1rem;
+}
 .date {
   font-family: "Bebas Neue", cursive;
   color: rgb(245, 203, 92) !important;

@@ -89,8 +89,8 @@
       <template #content>
         <div class="grid">
           <pv-button
-              label="Message"
-              icon="pi pi-comment"
+            label="Message"
+            icon="pi pi-comment"
             class="p-button"
             @click="goUserProfile(this.$route.params.userId)"
           />

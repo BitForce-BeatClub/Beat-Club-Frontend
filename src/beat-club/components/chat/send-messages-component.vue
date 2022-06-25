@@ -1,22 +1,22 @@
 <template>
   <div class="">
     <div>
-      <user-card-chat style="display: flex" :users="userIdTo" />
+      <user-card-chat style="margin-left: 1rem" :users="userIdTo" />
       <div class="chat-box">
         <div id="flex">
           <chat-from-component
-            id="to"
+            :id="msg.id"
             :user="this.userIdFrom"
             v-for="msg in messagesFrom"
-            :key="msg"
+            :key="msg.id"
             :messages="msg"
           >
           </chat-from-component>
           <chat-to-component
-            id="from"
+            :id="msg.id"
             :user="this.userIdTo"
             v-for="msg in messagesTo"
-            :key="msg"
+            :key="msg.id"
             :messages="msg"
           >
           </chat-to-component>
@@ -43,7 +43,6 @@
       </div>
     </form>
   </div>
-
 </template>
 
 <script>
@@ -177,12 +176,11 @@ export default {
 };
 </script>
 
-<style lang="scss" >
-
+<style lang="scss" scoped>
 .chat-box {
   //@include center;
   z-index: 2;
-  box-shadow: 0 5px 30px rgba(0, 0, 0, .2);
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
   background: rgba(26, 25, 25, 0.5);
   margin: 1rem 0 1rem;
   /*border: 1px solid #aaa;*/
@@ -193,38 +191,40 @@ export default {
   border-radius: 8px;
 }
 
-/* Estilos para motores Webkit y blink (Chrome, Safari, Opera... )*/
-
 .chat-box::-webkit-scrollbar {
   -webkit-appearance: none;
 }
-
 .chat-box::-webkit-scrollbar:vertical {
   width: 7px;
 }
-
 .chat-box::-webkit-scrollbar-button:increment,
 .chat-box::-webkit-scrollbar-button {
   display: none;
 }
-
 .chat-box::-webkit-scrollbar:horizontal {
   height: 7px;
 }
-
 .chat-box::-webkit-scrollbar-thumb {
-  background-color: #797979;
+  background-color: #4b4e53;
   border-radius: 20px;
 }
-
 .chat-box::-webkit-scrollbar-track {
   border-radius: 10px;
 }
+
+//@for $msg from 0 to #msg {
+//  div:nth-child(#{$msg})::after {
+//    order: $msg;
+//    content: "$i == #{$msg}";
+//    background: hsl($msg * 10, 50%, 50%);
+//  }
+//}
+
 #flex {
   display: flex;
   flex-direction: column;
 }
-#from {
+#msg {
   order: 1;
 }
 #to {
