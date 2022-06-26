@@ -2,15 +2,13 @@
   "users": [
     {
       "id": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
-      "firstName": "Adrian Manuel",
+      "firstName": "Adrian",
       "lastName": "Esqueiros Cabrera",
       "nickName": "Eminem",
       "email": "u201718169@upc.edu.pe",
       "location": "Peru, lima",
       "description": "Slim shady",
-      "urlToImage": "https://i0.wp.com/urbanroosters.news/wp-content/uploads/2022/01/500x500.jpg?w=500&ssl=1",
-      "userType": "Producer",
-      "membership": "Free"
+      "urlToImage": "https://i0.wp.com/urbanroosters.news/wp-content/uploads/2022/01/500x500.jpg?w=500&ssl=1"
     },
     {
       "id": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
@@ -18,9 +16,8 @@
       "lastName": "esqueiros",
       "nickName": "Post Malone",
       "email": "jhonlennon1998@gmail.com",
-      "urlToImage": "https://i0.wp.com/plus.cusica.com/wp-content/uploads/2021/07/post-malone.jpg?fit=1638%2C2048&ssl=1",
-      "userType": "Artist",
-      "membership": "Free"
+      "urlToImage": "https://i0.wp.com/plus.cusica.com/wp-content/uploads/2021/07/post-malone.jpg?fit=1638%2C2048&ssl=1"
+
     },
     {
       "id": "N8dStM3l85SV5NOPIco6cVxttQt2",
@@ -28,8 +25,7 @@
       "lastName": "Postigo",
       "nickName": "Anuel",
       "email": "epostigo1999@gmail.com",
-      "urlToImage": "https://i.scdn.co/image/ab6761610000e5ebc5c589b667f600c299552ee5",
-      "membership": "Free"
+      "urlToImage": "https://i.scdn.co/image/ab6761610000e5ebc5c589b667f600c299552ee5"
     },
     {
       "id": "elZ7Y1TmObUUyd1swgleelRO9jf2",
@@ -71,24 +67,31 @@
   "payments": [
     {
       "userId": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
-      "date": "2022-6-26 1:42:57",
-      "plan": "Producer Pro",
-      "price": "$20",
+      "date": "2022-6-26 1:52:47",
+      "plan": "Musician",
+      "price": 10,
       "id": 1
     },
     {
-      "userId": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
-      "date": "2022-6-26 1:45:32",
-      "plan": "Musician",
-      "price": "$10",
+      "userId": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
+      "date": "2022-6-26 2:44:44",
+      "plan": "Producer Pro",
+      "price": 20,
       "id": 2
     },
     {
-      "userId": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
-      "date": "2022-6-26 1:47:20",
+      "userId": "N8dStM3l85SV5NOPIco6cVxttQt2",
+      "date": "2022-6-26 2:44:44",
       "plan": "Producer Pro",
       "price": 20,
       "id": 3
+    },
+    {
+      "userId": "elZ7Y1TmObUUyd1swgleelRO9jf2",
+      "date": "2022-6-26 2:44:44",
+      "plan": "Musician",
+      "price": 20,
+      "id": 4
     }
   ],
   "tracks": [

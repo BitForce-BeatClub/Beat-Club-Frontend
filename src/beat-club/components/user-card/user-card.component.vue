@@ -13,9 +13,16 @@
               />
             </template>
             <template #content>
-              <p>
-                {{ users.nickName }}
-              </p>
+              <div style="margin-top: -1.6rem">
+                <p>
+                  {{ users.nickName }}
+                </p>
+                <pv-chip
+                  :label="payment.plan"
+                  icon="pi pi-check"
+                  :class="{ 'custom-chip': payment.plan === 'Musician','custom-chip-b': payment.plan === 'Producer Pro' }"
+                ></pv-chip>
+              </div>
             </template>
           </pv-card>
         </div>
@@ -28,6 +35,7 @@
 export default {
   name: "user-card",
   props: {
+    payment: Object,
     users: Object,
   },
 };
@@ -44,14 +52,24 @@ export default {
 .users {
   display: flex;
   text-align: center;
-  justify-content: center;
 }
 .p-card-header img {
   object-fit: cover;
   height: 220px;
   width: 220px;
 }
-
+.p-chip {
+  font-family: Poppins, sans-serif;
+  font-size: 13px;
+}
+.p-chip.custom-chip {
+  background: linear-gradient(to top, #000000, #434343); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: rgb(245, 203, 92) !important;
+}
+.p-chip.custom-chip-b {
+  background: linear-gradient(to bottom, #2980b9, #2c3e50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #ffffff;
+}
 .icon {
   margin-inline: 1rem;
   transition: transform ease-in-out 150ms;

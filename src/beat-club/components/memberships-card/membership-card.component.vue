@@ -115,7 +115,6 @@
       />
     </template>
   </pv-dialog>
-
   <pv-card class="userCard">
     <template #header>
       <img class="img" alt="membership" :src="membershipData.urlToImage" />
@@ -154,6 +153,7 @@
 import { getAuth } from "firebase/auth";
 import { useToast } from "primevue/usetoast";
 import { PaymentsApiServices } from "../../services/payment/payments-api.services";
+import { UsersApiServices } from "../../services/users/users-api.services";
 export default {
   name: "membership-card.component",
   props: {
@@ -174,6 +174,7 @@ export default {
   created() {
     this.toast = useToast();
     this.paymentsService = new PaymentsApiServices();
+    this.usersService = new UsersApiServices();
   },
   methods: {
     openNew() {
