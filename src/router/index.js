@@ -25,6 +25,7 @@ import { getAuth } from "firebase/auth";
 import MessagesView from "../beat-club/pages/messages-view.vue";
 import MessagesComponent from "../beat-club/components/chat/send-messages-component.vue";
 
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -133,6 +134,7 @@ const router = createRouter({
       component: songt,
     },
     { path: "/:pathMatch(.*)*", component: PathNotFound },
+
   ],
 });
 router.beforeEach((to, from, next) => {

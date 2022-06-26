@@ -265,6 +265,7 @@ export default {
         nickName: (displayableUser.nickName = this.nickname),
         email: (displayableUser.email = this.email),
         urlToImage: (displayableUser.urlToImage = this.urlToImage),
+        userType: (displayableUser.userType = "Free"),
       };
     },
     saveUser(uid) {

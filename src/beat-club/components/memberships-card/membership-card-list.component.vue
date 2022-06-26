@@ -1,12 +1,11 @@
 <template>
   <div>
     <h1>Memberships</h1>
-    <div class="flex flex-wrap justify-content-center card-container gap-3">
+    <div class="flex justify-content-center card-container gap-3">
       <membership-card
         v-for="membership in membershipData"
         :key="membership.id"
         :membershipData="membership"
-        style="max-width: 24rem"
       ></membership-card>
     </div>
   </div>

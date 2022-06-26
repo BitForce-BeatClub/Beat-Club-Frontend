@@ -32,12 +32,12 @@
             <pv-button
               icon="pi pi-pencil"
               class="p-button-text p-button-rounded"
-              @click="editChallenge(slotProps.data)"
+              @click="editTrack(slotProps.data)"
             />
             <pv-button
               icon="pi pi-trash"
               class="p-button-text p-button-rounded"
-              @click="confirmDeleteChallenge(slotProps.data)"
+              @click="confirmDeleteTrack(slotProps.data)"
             />
           </template>
         </pv-column>
@@ -197,7 +197,7 @@
           label="Save"
           icon="pi pi-check"
           class="p-button-text"
-          @click="saveChallenge"
+          @click="saveTrack"
         />
       </template>
     </pv-dialog>
@@ -224,7 +224,7 @@
           label="Yes"
           icon="pi pi-check"
           class="p-button-text"
-          @click="deleteChallenge"
+          @click="deleteTrack"
         />
       </template>
     </pv-dialog>
@@ -333,7 +333,7 @@ export default {
       this.songDialog = false;
       this.submitted = false;
     },
-    saveChallenge() {
+    saveTrack() {
       this.submitted = true;
       if (this.song.title.trim()) {
         if (this.song.id) {
@@ -357,15 +357,15 @@ export default {
       this.songDialog = false;
       this.song = {};
     },
-    editChallenge(challenge) {
-      this.song = { ...challenge };
+    editTrack(track) {
+      this.song = { ...track };
       this.songDialog = true;
     },
-    confirmDeleteChallenge(challenge) {
-      this.song = challenge;
+    confirmDeleteTrack(track) {
+      this.song = track;
       this.deleteSongDialog = true;
     },
-    deleteChallenge() {
+    deleteTrack() {
       this.songsService.deleteTracks(this.song.id).then((response) => {
         this.songs = this.songs.filter((t) => t.id !== this.song.id);
         this.deleteSongDialog = false;

@@ -27,7 +27,7 @@ export default {
   },
   computed: {
     label() {
-      return this.isConnected;
+      return this.isConnected ? this.isConnected : !this.isConnected;
     },
   },
   created() {
