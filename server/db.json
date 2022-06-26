@@ -47,60 +47,49 @@
     {
       "id": 1,
       "title": "Free",
-      "price": "$0",
+      "price": 0,
       "feature": "For sellers just starting their music business",
-      "description": "Up to 10 tracks\n Upload Track Stems\n Instant Payments\n Accept PayPal payments\n Accept Stripe payments",
+      "description": "✓ Up to 10 tracks\n✓ Upload Track Stems\n✓ Instant Payments\n✓ Accept PayPal payments\n✓ Accept Stripe payments",
       "urlToImage": "https://www.picng.com/upload/free/png_free_52922.png"
     },
     {
       "id": 2,
       "title": "Musician",
-      "price": "$10",
+      "price": 10,
       "feature": "For sellers who want to grow their business and have access to selected features.",
-      "description": " All free feature plus: \n Unlimited tracks\n      20 Monthly Private Messages\n      Sell Sound Kits\n      Sell Custom Services",
+      "description": " ✓ All free feature plus: \n✓ Unlimited tracks\n✓      20 Monthly Private Messages\n✓      Sell Sound Kits\n✓      Sell Custom Services",
       "urlToImage": "https://cdn.sanity.io/images/7g6d2cj1/production/6b5ebabcc318c675c2e30a4c63895249f391f3e4-1000x604.jpg?h=604&q=70&auto=format"
     },
     {
       "id": 3,
       "title": "Producer Pro",
-      "price": "$20",
+      "price": 20,
       "feature": "For sellers who want to scale their business quickly, have a customized storefront, and complete features.",
-      "description": "All marketplace features plus:\n Unlimited tracks\n      20 Monthly Private Messages\n      Sell Sound Kits\n      Sell Custom Services",
+      "description": "✓ All marketplace features plus:\n✓ Unlimited tracks\n✓      20 Monthly Private Messages\n✓      Sell Sound Kits\n ✓     Sell Custom Services",
       "urlToImage": "https://www.careersinmusic.com/wp-content/uploads/2019/11/what-does-a-music-producer-do.jpg"
     }
   ],
   "payments": [
     {
-      "userId": "elZ7Y1TmObUUyd1swgleelRO9jf2",
-      "id": {
-        "isTrusted": true
-      },
-      "date": "2022-6-24 13:50:40",
-      "plan": "Producer Pro"
-    },
-    {
-      "userId": "elZ7Y1TmObUUyd1swgleelRO9jf2",
-      "date": "2022-6-24 13:52:21",
-      "plan": "Musician",
-      "id": "-oXZfAi"
-    },
-    {
-      "userId": "elZ7Y1TmObUUyd1swgleelRO9jf2",
-      "date": "2022-6-24 13:54:18",
+      "userId": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
+      "date": "2022-6-26 1:42:57",
       "plan": "Producer Pro",
-      "id": "ixmgM7i"
+      "price": "$20",
+      "id": 1
     },
     {
-      "userId": "elZ7Y1TmObUUyd1swgleelRO9jf2",
-      "date": "2022-6-24 14:59:0",
+      "userId": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
+      "date": "2022-6-26 1:45:32",
       "plan": "Musician",
-      "id": "AMhNKGg"
+      "price": "$10",
+      "id": 2
     },
     {
-      "userId": "elZ7Y1TmObUUyd1swgleelRO9jf2",
-      "date": "2022-6-24 15:1:52",
+      "userId": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
+      "date": "2022-6-26 1:47:20",
       "plan": "Producer Pro",
-      "id": "M0CRjD6"
+      "price": 20,
+      "id": 3
     }
   ],
   "tracks": [

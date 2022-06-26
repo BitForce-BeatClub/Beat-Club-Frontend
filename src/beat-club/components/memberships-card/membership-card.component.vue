@@ -1,19 +1,131 @@
 <template>
+  <pv-toast></pv-toast>
+
+  <pv-dialog
+    v-model:visible="paymentDialog"
+    :header="'Plan ' + membershipData.title + ' at $' + membershipData.price"
+    :modal="true"
+    style="width: 450px"
+    class="p-fluid"
+  >
+    <div class="field">
+      <span class="p-float-label">
+        <pv-dropdown
+          style="margin-top: 0.4em"
+          v-model="payment.card"
+          :options="cards"
+          optionLabel="name"
+          required="true"
+        />
+        <label for="card">Type Card</label>
+        <small class="p-error" v-if="submitted && !payment.card"
+          >Type card is required.</small
+        >
+      </span>
+    </div>
+    <div class="field">
+      <span class="p-float-label">
+        <pv-input-text
+          type="text"
+          id="firstname"
+          v-model="payment.firstName"
+          required="true"
+          :class="{ 'p-invalid': submitted && !payment.firstName }"
+        />
+        <label for="firstname">FirstName</label>
+        <small class="p-error" v-if="submitted && !payment.firstName"
+          >FirstName is required.</small
+        >
+      </span>
+    </div>
+    <div class="field">
+      <span class="p-float-label">
+        <pv-input-text
+          type="text"
+          id="lastname"
+          v-model.trim="payment.lastName"
+          required="true"
+          :class="{ 'p-invalid': submitted && !payment.lastName }"
+        />
+        <label for="lastname">LastName</label>
+        <small class="p-error" v-if="submitted && !payment.lastName"
+          >LastName is required.</small
+        >
+      </span>
+    </div>
+    <div class="field">
+      <label for="cardNumber">Card Number</label>
+      <span class="p-float-label">
+        <pv-input-mask
+          mask="9999 9999 9999 9999"
+          placeholder="1234 5678 9123 4567"
+          v-model="payment.num"
+          :class="{ 'p-invalid': submitted && !payment.num }"
+        />
+        <small class="p-error" v-if="submitted && !payment.num"
+          >Card Number is required.</small
+        >
+      </span>
+    </div>
+    <div class="field">
+      <label for="cardNumber">CVV</label>
+      <span class="p-float-label">
+        <pv-input-mask
+          mask="999"
+          placeholder="123"
+          v-model="payment.cvv"
+          :class="{ 'p-invalid': submitted && !payment.cvv }"
+        />
+        <small class="p-error" v-if="submitted && !payment.cvv"
+          >CVV is required.</small
+        >
+      </span>
+    </div>
+    <div class="field">
+      <span class="p-float-label">
+        <pv-calendar
+          id="date"
+          v-model="payment.date"
+          view="month"
+          dateFormat="mm/yy"
+          required="false"
+          :showIcon="true"
+          autocomplete="off"
+          :class="{ 'p-invalid': submitted && !payment.date }"
+        />
+        <label for="date">Date Expiration</label>
+
+        <small class="p-error" v-if="submitted && !payment.date"
+          >Date Expiration is required.</small
+        >
+      </span>
+    </div>
+    <template #footer>
+      <pv-button
+        label="Cancel"
+        icon="pi pi-times"
+        class="p-button-text"
+        @click="hideDialog()"
+      />
+      <pv-button
+        label="Confirm"
+        icon="pi pi-check"
+        class="p-button-text"
+        @click="saveUser()"
+      />
+    </template>
+  </pv-dialog>
 
   <pv-card class="userCard">
     <template #header>
-      <img
-        alt="membership"
-        :src="membershipData.urlToImage"
-        style="height: 18rem"
-      />
+      <img class="img" alt="membership" :src="membershipData.urlToImage" />
     </template>
     <template #title>
       <div class="flex justify-content-between">
         <section>
           {{ membershipData.title }}
         </section>
-        {{ membershipData.price }}
+        ${{ membershipData.price }}
       </div>
     </template>
     <template #subtitle>
@@ -26,130 +138,22 @@
         {{ membershipData.description }}
       </p>
     </template>
-    <template #footer="slotProps" >
-      <div class="btnPos">
-        <pv-button label="Subscribe" class="p-button-secondary" @click="editChallenge(slotProps.data)"></pv-button>
+    <template #footer>
+      <div v-if="membershipData.id !== 1" class="btnPos">
+        <pv-button
+          label="Subscribe"
+          class="p-button-secondary"
+          @click="openNew()"
+        ></pv-button>
       </div>
-      <pv-dialog
-          v-model:visible="Dialog"
-          :style="{ width: '450px' }"
-          header="Payment Method"
-          :modal="true"
-          class="p-fluid"
-      >
-        <div class="field">
-        <span class="p-float-label">
-          <pv-dropdown
-              style="width: 100%"
-              v-model="userProfile.card"
-              :options="cards"
-              optionLabel="name"
-              :placeholder="userData.card"
-              required="false"
-          />
-          <label for="card">Type Card</label>
-        </span>
-        </div>
-        <div class="field">
-        <span class="p-float-label">
-          <pv-input-text
-              id="firstname"
-              v-model="fn"
-              required="false"
-          />
-          <label for="firstname">FirstName</label>
-        </span>
-        </div>
-        <div class="field">
-        <span class="p-float-label">
-          <pv-input-text
-              id="lastname"
-              v-model="ln"
-              required="false"
-          />
-          <label for="lastname">Lastname</label>
-        </span>
-        </div>
-        <div class="field">
-        <span class="p-float-label">
-          <pv-input-text
-              id="caa"
-              v-model="caa"
-              required="false"
-          />
-          <label for="caa">Card Number</label>
-        </span>
-        </div>
-        <div class="field">
-        <span class="p-float-label">
-          <pv-input-text
-              id="cvv"
-              v-model="cvv"
-              required="false"
-          />
-          <label for="cvv">CVV</label>
-        </span>
-        </div>
-        <div class="field">
-        <span class="p-float-label">
-          <pv-calendar
-
-              id="date"
-              v-model="userData.date"
-              view="month" dateFormat="mm/yy"
-              required="false"
-              :showIcon="true"
-          />
-          <label for="date">Date</label>
-        </span>
-        </div>
-        <div class="field">
-        <span class="p-float-label">
-          <div class="flex justify-content-evenly">
-            <div
-                v-for="category of categories"
-                :key="category.key"
-                class="field-radiobutton"
-            >
-              <pv-radio-button
-                  name="category"
-                  :value="category.name"
-                  v-model="userData.plan"
-              />
-              <label class="mt-1 mx-auto" :for="category.key">{{
-                  category.name
-                }}</label>
-            </div>
-          </div>
-          <label for="description">Plan</label>
-        </span>
-        </div>
-        <template #footer>
-          <pv-button
-              label="Cancel"
-              icon="pi pi-times"
-              class="p-button-text"
-              @click="hideDialog"
-          />
-          <pv-button
-              label="Confirm"
-              icon="pi pi-check"
-              class="p-button-text"
-              @click="saveUser"
-          />
-        </template>
-      </pv-dialog>
-
     </template>
   </pv-card>
-
 </template>
 
 <script>
-
-import {getAuth} from "firebase/auth";
+import { getAuth } from "firebase/auth";
 import { useToast } from "primevue/usetoast";
-import {PaymentsApiServices} from "../../services/payment/payments-api.services";
+import { PaymentsApiServices } from "../../services/payment/payments-api.services";
 export default {
   name: "membership-card.component",
   props: {
@@ -157,98 +161,102 @@ export default {
   },
   data() {
     return {
-      cards: [
-        { name: "Visa" },
-        { name: "MasterCard" },
-        { name: "Express" },
-      ],
-      fn:null,
-      ln:null,
-      cvv: null,
-      caa: null,
-      categories: [{ name: "Free" }, { name: "Musician" }, { name: "Producer Pro" }],
-      Dialog: false,
-      userData:[],
-      userProfile:{},
-      submitted:false,
+      cards: [{ name: "Visa" }, { name: "MasterCard" }, { name: "Express" }],
+      paymentDialog: false,
+      subscriptionData: [],
+      payment: {},
+      submitted: false,
       toast: null,
       paymentsService: undefined,
-
       auth: getAuth(),
     };
   },
   created() {
     this.toast = useToast();
     this.paymentsService = new PaymentsApiServices();
-
   },
-methods : {
-  dateTime() {
-    const current = new Date();
-    const date =
+  methods: {
+    openNew() {
+      this.payment = {};
+      this.submitted = false;
+      this.paymentDialog = true;
+    },
+    dateTime() {
+      const current = new Date();
+      const date =
         current.getFullYear() +
         "-" +
         (current.getMonth() + 1) +
         "-" +
         current.getDate();
-    const time =
+      const time =
         current.getHours() +
         ":" +
         current.getMinutes() +
         ":" +
         current.getSeconds();
-    return date + " " + time;
+      return date + " " + time;
+    },
+    hideDialog() {
+      this.paymentDialog = false;
+      this.submitted = false;
+    },
+    showSuccess() {
+      this.toast.add({
+        severity: "success",
+        summary: "Success",
+        detail: "Congrats now you're " + this.membershipData.title + "!!",
+        life: 3000,
+      });
+    },
+    getDisplayablePayment(payment) {
+      return payment;
+    },
+    getStorablePayment(displayablePayment) {
+      return {
+        id: displayablePayment.id,
+        userId: (displayablePayment.userId = this.auth.currentUser.uid),
+        date: (displayablePayment.date = this.dateTime()),
+        plan: (displayablePayment.plan = this.membershipData.title),
+        price: (displayablePayment.price = this.membershipData.price),
+      };
+    },
+    saveUser() {
+      this.submitted = true;
+      if (this.payment.firstName.trim()) {
+        this.payment = this.getStorablePayment(this.payment);
+        this.paymentsService.createPayments(this.payment).then((response) => {
+          this.payment = this.getDisplayablePayment(response.data);
+          this.subscriptionData.push(this.payment);
+          this.showSuccess();
+        });
+      } else {
+        this.toast.add({
+          severity: "error",
+          summary: "Error",
+          detail: "Required fields must complete filled in",
+          life: 3000,
+        });
+      }
+      this.paymentDialog = false;
+      this.payment = {};
+    },
   },
-  editChallenge(challenge) {
-    this.userData = { ...challenge };
-    this.Dialog = true;
-  },
-  hideDialog() {
-    this.Dialog = false;
-    this.submitted = false;
-  },
-  showSuccess() {
-    this.toast.add({
-      severity: "success",
-      summary: "Success",
-      detail: "Your profile has been saved successfully",
-      life: 3000,
-    });
-  },
-  getDisplayableUserProfile(user) {
-    return user;
-  },
-  getStorableUserProfile(displayableUser) {
-    return {
-      userId: (displayableUser.userId = this.auth.currentUser.uid),
-      id: (displayableUser.id =this.userData.id),
-      date: (displayableUser.date = this.dateTime()),
-      plan: (displayableUser.plan = this.userData.plan),
-      price: (displayableUser.price = this.userData.price),
-    };
-  },
-  saveUser(uid) {
-    this.userProfile.id = uid;
-    this.userProfile = this.getStorableUserProfile(this.userProfile);
-    this.paymentsService.createPayments(this.userProfile).then((response) => {
-      this.userProfile = this.getDisplayableUserProfile(response.data);
-      this.userData.push(this.userProfile);
-      // console.log(response.data.nickName);
-      // console.log("aca", this.user.nickName);
-    });
-
-    this.Dialog = false;
-    this.userProfile = {};
-    this.showSuccess();
-  },
-},
 };
 </script>
 
 <style scoped>
+.w {
+  width: 450px !important;
+}
+.img {
+  object-fit: cover;
+  height: 17em;
+}
 .userCard {
   background-color: #212429;
   color: white;
+  width: 25em;
 }
 .btnPos {
   display: flex;
@@ -256,7 +264,6 @@ methods : {
 }
 p {
   white-space: pre-line;
-  display: flex;
-  justify-content: center;
+  text-align: start;
 }
 </style>
