@@ -4,7 +4,7 @@
     <div style="margin-left: 3rem">
       <chat-list></chat-list>
     </div>
-    <div style="margin:1rem 0 0 12vw">
+    <div style="margin: 1rem 0 0 12vw">
       <router-view :key="$route.fullPath"></router-view>
       <!--      <messages-to></messages-to>-->
     </div>

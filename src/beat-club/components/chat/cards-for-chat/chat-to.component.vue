@@ -1,10 +1,10 @@
 <template>
   <div>
-    <p className="date">{{ messages.messageDate }}</p>
+    <p class="date">{{ messages.messageDate }}</p>
     <div>
       <div style="display: flex; align-items: center">
-        <img className="user-img-0" alt="user header" :src="user.urlToImage" />
-        <p>{{ messages.content }}</p>
+        <img class="user-img-0" alt="user header" :src="user.urlToImage" />
+        <p class="content">{{ messages.content }}</p>
       </div>
     </div>
   </div>
@@ -27,7 +27,7 @@ export default {
   font-family: "Bebas Neue", cursive;
   color: rgb(245, 203, 92) !important;
 }
-p {
+.content {
   margin-left: 1rem;
 }
 .user-img-0 {

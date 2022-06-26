@@ -68,7 +68,7 @@ export default {
   flex-direction: column;
 }
 
-h1{
+h1 {
   color: white;
   font-family: "Comfortaa", sans-serif;
 }

@@ -134,108 +134,59 @@
   "messages": [
     {
       "userIdFrom": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
-      "userIdTo": "elZ7Y1TmObUUyd1swgleelRO9jf2",
-      "content": "1",
-      "messageDate": "2022-6-24 2:30:13",
+      "userIdTo": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
+      "content": "Hi there",
+      "messageDate": "2022-6-25 21:33:35",
       "id": 1
-    },
-    {
-      "userIdFrom": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
-      "userIdTo": "elZ7Y1TmObUUyd1swgleelRO9jf2",
-      "content": "2",
-      "messageDate": "2022-6-24 2:30:13",
-      "id": 2
     },
     {
       "userIdFrom": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
       "userIdTo": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
-      "content": "3",
-      "messageDate": "2022-6-24 2:58:28",
+      "content": "Hey em",
+      "messageDate": "2022-6-25 21:33:39",
+      "id": 2
+    },
+    {
+      "userIdFrom": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
+      "userIdTo": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
+      "content": "3 3",
+      "messageDate": "2022-6-25 21:34:57",
       "id": 3
     },
     {
       "userIdFrom": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
       "userIdTo": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
-      "content": "4",
-      "messageDate": "2022-6-24 2:58:29",
+      "content": "2 2?",
+      "messageDate": "2022-6-25 21:35:2",
       "id": 4
     },
     {
       "userIdFrom": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
-      "userIdTo": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
-      "content": "xd",
-      "messageDate": "2022-6-24 2:59:59",
+      "userIdTo": "N8dStM3l85SV5NOPIco6cVxttQt2",
+      "content": "Hi Anuel",
+      "messageDate": "2022-6-25 21:40:45",
       "id": 5
     },
     {
-      "userIdFrom": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
+      "userIdFrom": "N8dStM3l85SV5NOPIco6cVxttQt2",
       "userIdTo": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
-      "content": "xd",
-      "messageDate": "2022-6-24 3:0:2",
+      "content": "Hey",
+      "messageDate": "2022-6-25 21:40:45",
       "id": 6
     },
     {
       "userIdFrom": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
-      "userIdTo": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
-      "content": "f",
-      "messageDate": "2022-6-24 3:2:8",
+      "userIdTo": "N8dStM3l85SV5NOPIco6cVxttQt2",
+      "content": "Hi Anuel brr",
+      "messageDate": "2022-6-25 21:40:45",
       "id": 7
     },
     {
-      "userIdFrom": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
+      "userIdFrom": "N8dStM3l85SV5NOPIco6cVxttQt2",
       "userIdTo": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
-      "content": "sdfasdf",
-      "messageDate": "2022-6-24 13:8:10",
+      "content": "Hey eminem",
+      "messageDate": "2022-6-25 21:40:45",
       "id": 8
-    },
-    {
-      "userIdFrom": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
-      "userIdTo": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
-      "content": "asdf",
-      "messageDate": "2022-6-24 15:21:35",
-      "id": 9
-    },
-    {
-      "userIdFrom": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
-      "userIdTo": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
-      "content": "asdf",
-      "messageDate": "2022-6-24 15:21:38",
-      "id": 10
-    },
-    {
-      "userIdFrom": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
-      "userIdTo": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
-      "content": "asd",
-      "messageDate": "2022-6-24 16:43:41",
-      "id": 11
-    },
-    {
-      "userIdFrom": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
-      "userIdTo": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
-      "content": "asd",
-      "messageDate": "2022-6-24 16:43:44",
-      "id": 12
-    },
-    {
-      "userIdFrom": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
-      "userIdTo": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
-      "content": "asd",
-      "messageDate": "2022-6-24 16:44:1",
-      "id": 13
-    },
-    {
-      "userIdFrom": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
-      "userIdTo": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
-      "content": "asd",
-      "messageDate": "2022-6-24 16:44:2",
-      "id": 14
-    },
-    {
-      "userIdFrom": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
-      "userIdTo": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
-      "content": "asd",
-      "messageDate": "2022-6-24 16:44:2",
-      "id": 15
     }
   ]
 }

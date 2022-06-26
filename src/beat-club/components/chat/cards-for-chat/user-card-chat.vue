@@ -24,7 +24,7 @@ export default {
   align-items: center;
 }
 .user-img-0 {
-  margin-right: 1rem;
+  margin: 0.3rem;
   object-fit: cover;
   height: 50px;
   width: 50px;

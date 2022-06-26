@@ -1,9 +1,9 @@
 <template>
-  <div >
+  <div>
     <p class="date">{{ messages.messageDate }}</p>
     <div>
       <div style="display: flex; justify-content: end; align-items: center">
-        <p>{{ messages.content }}</p>
+        <p class="content">{{ messages.content }}</p>
 
         <img class="user-img-0" alt="user header" :src="user.urlToImage" />
       </div>
@@ -23,7 +23,7 @@ export default {
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap");
-p {
+.content {
   margin-right: 1rem;
 }
 .date {
