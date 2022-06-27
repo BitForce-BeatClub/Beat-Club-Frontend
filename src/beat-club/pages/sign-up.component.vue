@@ -72,7 +72,7 @@
           </pv-dialog>
           <div class="flex justify-content-center">
             <div class="card">
-              <form @submit.prevent="registerWithEmail()" class="p-fluid">
+              <form @submit.prevent="saveUser()" class="p-fluid">
                 <div class="flex gap-3 mb-4">
                   <section>
                     <div class="p-float-label p-input-icon-right">
@@ -259,16 +259,19 @@ export default {
     },
     getStorableUser(displayableUser) {
       return {
-        id: displayableUser.id,
-        firstName: (displayableUser.nickName = this.firstName),
-        lastName: (displayableUser.nickName = this.lastName),
-        nickName: (displayableUser.nickName = this.nickname),
+        // id: displayableUser.id,
+        firstname: (displayableUser.firstname = this.firstName),
+        lastname: (displayableUser.lastname = this.lastName),
+        nickname: (displayableUser.nickname = this.nickname),
+        password: (displayableUser.password = this.password),
         email: (displayableUser.email = this.email),
+        location: (displayableUser.location = "none"),
+        description: (displayableUser.description = "none"),
         urlToImage: (displayableUser.urlToImage = this.urlToImage),
       };
     },
-    saveUser(uid) {
-      this.user.id = uid;
+    saveUser() {
+      // this.user.id = uid;
       this.user = this.getStorableUser(this.user);
       this.usersService.createUsers(this.user).then((response) => {
         this.user = this.getDisplayableUser(response.data);

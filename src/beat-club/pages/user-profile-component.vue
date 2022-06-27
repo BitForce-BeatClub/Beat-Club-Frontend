@@ -35,12 +35,12 @@
             <h4>0</h4>
           </div>
           <div class="flex justify-content-between">
-            <h4>Plays</h4>
-            <h4>0</h4>
+            <h4>Description</h4>
+            <h4>{{userData.description}}</h4>
           </div>
           <div class="flex justify-content-between">
             <h4>Tracks</h4>
-            <h4>0</h4>
+            <h4>{{}}</h4>
           </div>
         </template>
         <template #footer>

@@ -15,10 +15,6 @@ export class SongsApiServices {
   createTrack(data) {
     return http.post("/tracks", data);
   }
-  //GET BY ID
-  getUsersById(id) {
-    return http.get(`/users/${id}`);
-  }
   //UPDATE
   updateTrack(id, data) {
     return http.put(`/tracks/${id}`, data);

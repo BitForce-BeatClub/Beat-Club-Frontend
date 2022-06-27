@@ -7,7 +7,7 @@ export class UsersApiServices {
   }
   //POST
   createUsers(data) {
-    return http.post("/users", data);
+    return http.post("/users/sign-up", data);
   }
   //GET BY ID
   getUsersById(id) {
