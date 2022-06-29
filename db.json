@@ -2,14 +2,13 @@
   "users": [
     {
       "id": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
-      "firstName": "Adrian Manuel",
+      "firstName": "Adrian",
       "lastName": "Esqueiros Cabrera",
       "nickName": "Eminem",
       "email": "u201718169@upc.edu.pe",
       "location": "Peru, lima",
       "description": "Slim shady",
-      "urlToImage": "https://i0.wp.com/urbanroosters.news/wp-content/uploads/2022/01/500x500.jpg?w=500&ssl=1",
-      "userType": "Producer"
+      "urlToImage": "https://i0.wp.com/urbanroosters.news/wp-content/uploads/2022/01/500x500.jpg?w=500&ssl=1"
     },
     {
       "id": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
@@ -17,92 +16,87 @@
       "lastName": "esqueiros",
       "nickName": "Post Malone",
       "email": "jhonlennon1998@gmail.com",
-      "urlToImage": "https://i0.wp.com/plus.cusica.com/wp-content/uploads/2021/07/post-malone.jpg?fit=1638%2C2048&ssl=1",
-      "userType": "Artist"
+      "urlToImage": "https://i0.wp.com/plus.cusica.com/wp-content/uploads/2021/07/post-malone.jpg?fit=1638%2C2048&ssl=1"
+
     },
     {
       "id": "N8dStM3l85SV5NOPIco6cVxttQt2",
-      "firstName": "Enrique",
+      "firstName": "julio",
       "lastName": "Postigo",
       "nickName": "Anuel",
       "email": "epostigo1999@gmail.com",
-      "urlToImage": "https://i.scdn.co/image/ab6761610000e5ebc5c589b667f600c299552ee5",
-      "userType": "Producer"
+      "urlToImage": "https://i.scdn.co/image/ab6761610000e5ebc5c589b667f600c299552ee5"
     },
     {
       "id": "elZ7Y1TmObUUyd1swgleelRO9jf2",
-      "firstName": "Enrique",
+      "firstName": "Enriques",
       "lastName": "Postigo",
       "nickName": "Versatil",
       "email": "eldes345xd.ep@gmail.com",
       "location": "arabia",
       "description": "me gusta el aji de gallina",
-      "urlToImage": "https://yt3.ggpht.com/N7khFcO3mqI8qld0yzksTNBqWHWfmBbRdqgiVL_CcFuu8gfbIbdvt_ZhjzJ3CPgJD6Rl2VGqLzM=s900-c-k-c0x00ffffff-no-rj",
-      "userType": "Artist"
+      "urlToImage": "https://i.scdn.co/image/ab6761610000e5ebc5c589b667f600c299552ee5"
     }
   ],
-  "songs": [],
   "memberships": [
     {
       "id": 1,
       "title": "Free",
-      "price": "$0",
+      "price": 0,
       "feature": "For sellers just starting their music business",
-      "description": "Up to 10 tracks\n Upload Track Stems\n Instant Payments\n Accept PayPal payments\n Accept Stripe payments",
+      "description": "✓ Up to 10 tracks\n✓ Upload Track Stems\n✓ Instant Payments\n✓ Accept PayPal payments\n✓ Accept Stripe payments",
       "urlToImage": "https://www.picng.com/upload/free/png_free_52922.png"
     },
     {
       "id": 2,
       "title": "Musician",
-      "price": "$10",
+      "price": 10,
       "feature": "For sellers who want to grow their business and have access to selected features.",
-      "description": " All free feature plus: \n Unlimited tracks\n      20 Monthly Private Messages\n      Sell Sound Kits\n      Sell Custom Services",
+      "description": " ✓ All free feature plus: \n✓ Unlimited tracks\n✓      20 Monthly Private Messages\n✓      Sell Sound Kits\n✓      Sell Custom Services",
       "urlToImage": "https://cdn.sanity.io/images/7g6d2cj1/production/6b5ebabcc318c675c2e30a4c63895249f391f3e4-1000x604.jpg?h=604&q=70&auto=format"
     },
     {
       "id": 3,
       "title": "Producer Pro",
-      "price": "$20",
+      "price": 20,
       "feature": "For sellers who want to scale their business quickly, have a customized storefront, and complete features.",
-      "description": "All marketplace features plus:\n Unlimited tracks\n      20 Monthly Private Messages\n      Sell Sound Kits\n      Sell Custom Services",
+      "description": "✓ All marketplace features plus:\n✓ Unlimited tracks\n✓      20 Monthly Private Messages\n✓      Sell Sound Kits\n ✓     Sell Custom Services",
       "urlToImage": "https://www.careersinmusic.com/wp-content/uploads/2019/11/what-does-a-music-producer-do.jpg"
+    }
+  ],
+  "payments": [
+    {
+      "userId": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
+      "date": "2022-6-26 1:52:47",
+      "plan": "Musician",
+      "price": 10,
+      "id": 1
+    },
+    {
+      "userId": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
+      "date": "2022-6-26 2:44:44",
+      "plan": "Producer Pro",
+      "price": 20,
+      "id": 2
+    },
+    {
+      "userId": "N8dStM3l85SV5NOPIco6cVxttQt2",
+      "date": "2022-6-26 2:44:44",
+      "plan": "Producer Pro",
+      "price": 20,
+      "id": 3
+    },
+    {
+      "userId": "elZ7Y1TmObUUyd1swgleelRO9jf2",
+      "date": "2022-6-26 2:44:44",
+      "plan": "Musician",
+      "price": 20,
+      "id": 4
     }
   ],
   "tracks": [
     {
-      "userId": "elZ7Y1TmObUUyd1swgleelRO9jf2",
-      "title": "Back on Saratoga",
-      "genre": "Reggae",
-      "privacy": "Public",
-      "artist": "Versatil",
-      "cover": "https://is5-ssl.mzstatic.com/image/thumb/Music115/v4/15/20/af/1520afbe-1774-b43c-c601-bef35b3a9a5f/812814029920.jpg/600x600bf-60.jpg",
-      "source": "https://github.com/BitForce-BeatClub/Files/blob/main/Stro%20-%20Uninspired%20(DISCOSMP3.ONLINE).mp3?raw=true",
-      "publishDate": "2022-6-9 0:57:38",
-      "id": 4
-    },
-    {
-      "userId": "N8dStM3l85SV5NOPIco6cVxttQt2",
-      "title": "Ella Quiere Beber",
-      "genre": "Salsa",
-      "privacy": "Public",
-      "artist": "Anuel",
-      "cover": "https://cdn.themedizine.com/2018/07/Anuel-AA-Real-Hasta-La-Muerte-Album.jpg",
-      "source": "https://github.com/BitForce-BeatClub/Files/blob/main/Anuel%20AA%20-%20Ella%20Quiere%20Beber%20(Remix)%20ft.%20Romeo%20Santos%20(DISCOSMP3.ONLINE).mp3?raw=true",
-      "publishDate": "2022-6-9 1:1:50",
-      "id": 5
-    },
-    {
-      "id": 6,
-      "userId": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
-      "title": "Shake that",
-      "privacy": "Public",
-      "artist": "Eminem ft. Nate Dogg",
-      "cover": "https://i1.sndcdn.com/artworks-000245882375-d78v4p-t500x500.jpg",
-      "source": "https://github.com/BitForce-BeatClub/Files/blob/main/Eminem%20-%20Shake%20That%20(Official%20Music%20Video)%20ft.%20Nate%20Dogg%20(DISCOSMP3.ONLINE).mp3?raw=true",
-      "publishDate": "2022-6-9 18:50:41"
-    },
-    {
-      "id": 7,
+      "id": 1,
       "userId": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
       "title": "Venom",
       "privacy": "Public",
@@ -119,7 +113,7 @@
       "cover": "https://m.media-amazon.com/images/I/91VAjJ6YxrL._SL1500_.jpg",
       "source": "https://github.com/BitForce-BeatClub/Files/blob/main/Post%20Malone%20-%20Congratulations%20ft.%20Quavo%20(DISCOSMP3.ONLINE).mp3?raw=true",
       "publishDate": "2022-6-9 18:59:57",
-      "id": 8
+      "id": 2
     },
     {
       "userId": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
@@ -129,7 +123,97 @@
       "cover": "https://m.media-amazon.com/images/I/91VAjJ6YxrL._SL1500_.jpg",
       "source": "https://github.com/BitForce-BeatClub/Files/blob/main/Deja%20Vu-%20Post%20Malone%20ft.%20Justin%20Bieber%20(official%20audio)%20(DISCOSMP3.ONLINE).mp3?raw=true",
       "publishDate": "2022-6-9 19:4:21",
-      "id": 9
+      "id": 3
+    },
+    {
+      "userId": "elZ7Y1TmObUUyd1swgleelRO9jf2",
+      "title": "Back on Saratoga",
+      "genre": "Reggae",
+      "privacy": "Public",
+      "artist": "Versatil",
+      "cover": "https://is5-ssl.mzstatic.com/image/thumb/Music115/v4/15/20/af/1520afbe-1774-b43c-c601-bef35b3a9a5f/812814029920.jpg/600x600bf-60.jpg",
+      "source": "https://github.com/BitForce-BeatClub/Files/blob/main/Stro%20-%20Uninspired%20(DISCOSMP3.ONLINE).mp3?raw=true",
+      "publishDate": "2022-6-9 0:57:38",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "userId": "N8dStM3l85SV5NOPIco6cVxttQt2",
+      "title": "Ella Quiere Beber",
+      "genre": "Reggae",
+      "privacy": "Public",
+      "artist": "Anuel",
+      "cover": "https://cdn.themedizine.com/2018/07/Anuel-AA-Real-Hasta-La-Muerte-Album.jpg",
+      "source": "https://github.com/BitForce-BeatClub/Files/blob/main/Anuel%20AA%20-%20Ella%20Quiere%20Beber%20(Remix)%20ft.%20Romeo%20Santos%20(DISCOSMP3.ONLINE).mp3?raw=true",
+      "publishDate": "2022-6-9 1:1:50"
+    },
+    {
+      "id": 6,
+      "userId": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
+      "title": "Shake that",
+      "privacy": "Public",
+      "artist": "Eminem ft. Nate Dogg",
+      "cover": "https://i1.sndcdn.com/artworks-000245882375-d78v4p-t500x500.jpg",
+      "source": "https://github.com/BitForce-BeatClub/Files/blob/main/Eminem%20-%20Shake%20That%20(Official%20Music%20Video)%20ft.%20Nate%20Dogg%20(DISCOSMP3.ONLINE).mp3?raw=true",
+      "publishDate": "2022-6-9 18:50:41"
+    }
+  ],
+  "messages": [
+    {
+      "userIdFrom": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
+      "userIdTo": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
+      "content": "Hi there",
+      "messageDate": "2022-6-25 21:33:35",
+      "id": 1
+    },
+    {
+      "userIdFrom": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
+      "userIdTo": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
+      "content": "Hey em",
+      "messageDate": "2022-6-25 21:33:39",
+      "id": 2
+    },
+    {
+      "userIdFrom": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
+      "userIdTo": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
+      "content": "3 3",
+      "messageDate": "2022-6-25 21:34:57",
+      "id": 3
+    },
+    {
+      "userIdFrom": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
+      "userIdTo": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
+      "content": "2 2?",
+      "messageDate": "2022-6-25 21:35:2",
+      "id": 4
+    },
+    {
+      "userIdFrom": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
+      "userIdTo": "N8dStM3l85SV5NOPIco6cVxttQt2",
+      "content": "Hi Anuel",
+      "messageDate": "2022-6-25 21:40:45",
+      "id": 5
+    },
+    {
+      "userIdFrom": "N8dStM3l85SV5NOPIco6cVxttQt2",
+      "userIdTo": "iQHNyrHnQUbcY0TyyPF2NX7PyCG2",
+      "content": "Hey",
+      "messageDate": "2022-6-25 21:40:45",
+      "id": 6
+    },
+    {
+      "userIdFrom": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
+      "userIdTo": "N8dStM3l85SV5NOPIco6cVxttQt2",
+      "content": "Hi Anuel brr",
+      "messageDate": "2022-6-25 21:40:45",
+      "id": 7
+    },
+    {
+      "userIdFrom": "N8dStM3l85SV5NOPIco6cVxttQt2",
+      "userIdTo": "ycv0MbjK3DW7s1PzynTTxADxDuA3",
+      "content": "Hey eminem",
+      "messageDate": "2022-6-25 21:40:45",
+      "id": 8
     }
   ]
 }
